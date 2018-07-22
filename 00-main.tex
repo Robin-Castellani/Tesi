@@ -88,8 +88,10 @@
 \pgfplotsset{compat=newest}	% ultima versione
 \pgfplotsset{set layers}	% per visualizzare due assi
 \SendSettingsToPgf
-\usepgfplotslibrary{fillbetween}
-\usepgfplotslibrary{dateplot}
+\usepgfplotslibrary{fillbetween}	% per riempire di colore i grafici
+\usepgfplotslibrary{dateplot}	% per usare date come numeri
+\usepgfplotslibrary{external}	% per creare pdf esterni dei grafici
+\tikzexternalize
 
 % per riferimenti
 \usepackage{hyperref}

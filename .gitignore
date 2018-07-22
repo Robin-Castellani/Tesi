@@ -2,6 +2,7 @@
 
 # LaTeX compilation files
 *.aux
+*.auxlock
 *.bcf
 *.log
 *.out
@@ -13,3 +14,9 @@
 *.toc
 *.lot
 00-main.pdf
+
+# figures externalized from LaTeX compilation
+*figure*.dep
+*figure*.dpth
+*figure*.md5
+*figure*.pdf
