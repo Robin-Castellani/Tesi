@@ -9,4 +9,7 @@
 *.synctex.gz
 *.tex.bak
 *.xmpi
+*.lof
+*.toc
+*.lot
 00-main.pdf
