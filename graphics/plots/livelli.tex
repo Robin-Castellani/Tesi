@@ -4,9 +4,14 @@
 		date coordinates in = x,
 		xticklabel = {\year-\month-\day},
 		xticklabel style = {
-			rotate = 90,
+			rotate = 45,
 			anchor = near xticklabel
 		},
+		enlarge x limits = 0.05,
+		enlarge y limits = 0.01,
+		ylabel = {Livello idrometrico},
+		grid = major,
+		no markers,
 		]
 		\addplot table [x=data, y=media-gg] {graphics/data/Dati_Villuzza.csv};
 	\end{axis}
