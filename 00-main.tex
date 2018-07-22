@@ -104,13 +104,54 @@
 
 
 \begin{document}
-Questa è la mia tesi!
+Il grafico~\ref{graph:livelli-orto-sat} mostra i livelli idrometrici registrati presso l'idrometro di Villuzza, corrispondente al ponte di Pinzano; sono inoltre mostrati con delle linee le date di cui si dispongono immagini satellitari (ASTER, Pleiades, Sentinel2, Google~Earth) e ortofoto.
+La tabella~\ref{tab:date-orto-sat} mostra le date e la risoluzione delle immagini utilizzate nell'analisi.
 
 \begin{figure}[ht]
 	\centering
 	\input{graphics/plots/livelli}
-	\caption[livelli idrometrici e foto aeree - satellitari]{livello idrometrico (in blu) presso l'idrometro di Villuzza. Le linee indicano le immagini satellitari e le ortofoto considerate (ASTER in magenta, Pleiades in verde~acqua, Sentinel2 in azzurro, G-Earth in verde).}
+	\caption[Livelli idrometrici e foto aeree - satellitari]{livello idrometrico (in blu) presso l'idrometro di Villuzza. Le linee indicano le immagini satellitari e le ortofoto considerate (ASTER in magenta, Pleiades in verde~acqua, Sentinel2 in azzurro, G-Earth in verde).}
 	\label{graph:livelli-orto-sat}
 \end{figure}
+
+
+
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{c c S[table-format=2.1]}
+		\toprule
+		Data		&	Fonte		&	\multicolumn{1}{c}{Risoluzione \si{[\m]}}	\\
+		\midrule	
+		2000-09-17	&	ASTER	&	15	\\
+		2001-06-07	&	ASTER	&	15	\\
+		2001-12-09	&	ASTER	&	15	\\
+		2002-05-18	&	ASTER	&	15	\\
+		2002-06-12	&	ASTER	&	15	\\
+		2003-06-22	&	ASTER	&	15	\\
+		2003-11-29	&	ASTER	&	15	\\
+		2004-10-14	&	ASTER	&	15	\\
+		2005-08-30	&	ASTER	&	15	\\
+		2006-07-16	&	ASTER	&	15	\\
+		2007-09-21	&	ASTER	&	15	\\
+		2008-07-05	&	ASTER	&	15	\\
+		2009-07-08	&	ASTER	&	15	\\
+		2010-09-29	&	ASTER	&	15	\\
+		2012-08-01	&	ASTER	&	15	\\
+		2013-09-05	&	ASTER	&	15	\\
+		2014-09-08	&	ASTER	&	15	\\
+		2014-10-31	&	Pleiades	&	0.5	\\
+		2015-09-11	&	ASTER	&	15	\\
+		2015-09-29	&	Sentinel2	&	10	\\
+		2016-09-13	&	Sentinel2	&	10	\\
+		2017-04-21	&	Sentinel2	&	10	\\
+		2017-07-07	&	G-Earth	&	0.45	\\
+		\bottomrule
+	\end{tabular}
+	\caption{data e risoluzione delle immagini satellitari e delle ortofoto utilizzate.}
+	\label{tab:date-orto-sat}
+\end{table}
+
+
 
 \end{document}
