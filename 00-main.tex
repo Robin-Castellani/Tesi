@@ -84,7 +84,9 @@
 % serie di pacchetti per la stesura con Latex di grafici e disegni
 \usepackage{tikz}
 \usepackage{pgfplots}	% pacchetto per grafici
-\pgfplotsset{compat=newest}
+\usetikzlibrary{calc}
+\pgfplotsset{compat=newest}	% ultima versione
+\pgfplotsset{set layers}	% per visualizzare due assi
 \SendSettingsToPgf
 \usepgfplotslibrary{fillbetween}
 \usepgfplotslibrary{dateplot}

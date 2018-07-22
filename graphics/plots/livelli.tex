@@ -1,5 +1,36 @@
 \begin{tikzpicture}
+	%\begin{groupplot}
 	\begin{axis}[
+		%name = orto-sat,
+		axis y line* = right,
+		axis x line* = top,
+		%height = .3\textwidth,
+		width = \textwidth,
+		date coordinates in = x,
+		%symbolic y coords = {ASTER,PLEIADES,SENTINEL2,G-EARTH},
+		xticklabel = {\year-\month-\day},
+		xtick = data,
+		ytick = data,
+		xticklabel style = {
+			rotate = 90,
+			anchor = near xticklabel
+		},
+		enlarge x limits = 0.05,
+		enlarge y limits = 0.01,
+		ylabel = {Fonte},
+		ymax = 3.6,
+		ymin = -0.1,
+		grid = none,
+		only marks,
+		]
+		\addplot table [x=data, y=numero] {graphics/data/data-orto-sat.txt};
+	\end{axis}
+	%
+	\begin{axis}[
+		%name = stages,
+		%at = {($(orto-sat.south)-(0,2cm)$)},
+		%anchor = north,
+		axis y line* = left,
 		width = \textwidth,
 		date coordinates in = x,
 		xticklabel = {\year-\month-\day},
@@ -9,6 +40,8 @@
 		},
 		enlarge x limits = 0.05,
 		enlarge y limits = 0.01,
+		ymax = 3.6,
+		ymin = -0.1,
 		ylabel = {Livello idrometrico},
 		grid = major,
 		no markers,
