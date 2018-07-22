@@ -1,0 +1,108 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath,amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage{pdflscape}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{colortbl}
+\usepackage{graphicx}
+\usepackage{wrapfig}	% per didascalie avvolte nel testo
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{parskip}	% pacchetto per la non indentazione del paragrafo
+\usepackage{enumitem}	% per elenchi con label
+\usepackage{subcaption} 	% più performante rispetto subfigure
+\usepackage{geometry}	% cambiare la geometria del decumento
+\usepackage{tabularx}	% per stabilire autonomamente la larghezza delle tabelle
+\usepackage{rotating}   % per ruotare le scritte all'interno delle tabelle
+\usepackage{sidecap}	% per le didascalie laterali
+\usepackage{longtable}	% per fare tabelle più lunghe di una pagina
+\usepackage{eurosym}    % per mettere il simbolo dell'euro
+\usepackage{adjustbox}  % per rendere le tabelle più piccole
+\usepackage{verbatim}	% per usare l'ambiente comment
+
+% licenza
+\usepackage{xmpincl}	% permette di includere licenze in formato XMP
+\includexmp{CC_Attribution-NonCommercial-ShareAlike_4.0_International}	% file della licenza
+
+% bibliografia
+\usepackage[autostyle,italian=guillemets]{csquotes}	% per citare con le virgolette giuste
+\usepackage[bibstyle=authoryear,citestyle=authoryear-ibid,backend=biber]{biblatex}	% per la bib
+%\addbibresource{bibliografia.bib}
+%\defbibheading{cartaceo}{\section*{Bibliografia cartacea}}
+%\defbibheading{web}{\section*{Sitografia}}
+
+% per scrivere bene le unità di misura
+\usepackage{siunitx}
+\sisetup{
+	output-decimal-marker	=	{.},
+	list-final-separator	=	{ e },
+	list-pair-separator		=	{ e },
+	range-phrase			=	{ a },
+	per-mode				=	symbol,
+    sticky-per 				=	true,
+    detect-all				=	true,
+}
+\DeclareSIUnit\anni{anni}
+\DeclareSIUnit\anno{anno}
+\DeclareSIUnit\minuti{minuti}
+\DeclareSIUnit\minuto{minuto}
+\DeclareSIUnit\ore{ore}
+\DeclareSIUnit\ora{ora}
+\DeclareSIUnit\none{-}
+\DeclareSIUnit\e{\euro}
+
+% per personalizzare le caption
+\usepackage{caption}
+\captionsetup{
+	labelformat=simple, % simple senza parentesi, parens con le parentesi
+	font={it},
+	labelfont=bf,
+	justification=centerlast
+}
+
+% pacchetto per personalizzare le testatine
+\begin{comment}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{}
+\fancyhead[RO]{\bfseries\rightmark}
+\fancyhead[LE]{\bfseries\leftmark}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\end{comment}
+
+% serie di pacchetti per la stesura con Latex di grafici e disegni
+\usepackage{tikz}
+\usepackage{pgfplots}	% pacchetto per grafici
+\pgfplotsset{compat=newest}
+\SendSettingsToPgf
+\usepgfplotslibrary{fillbetween}
+
+% per riferimenti
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks	=	true,	% attiva il colore per i link, altrimenti sono inscatolati
+	linkcolor	=	black,	% il colore dei link è nero
+	pdftitle	=	Tesi: Dinamiche vegetazionali nel fiume Tagliamento,
+	pdfauthor	=	 Castellani Robin,
+	hidelinks,
+}
+
+
+
+\begin{document}
+
+Questa è la mia tesi!
+
+
+\end{document}
