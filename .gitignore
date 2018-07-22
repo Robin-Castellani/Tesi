@@ -1,0 +1,12 @@
+# ignore these files in keeping track
+
+# LaTeX compilation files
+*.aux
+*.bcf
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.tex.bak
+*.xmpi
+00-main.pdf
