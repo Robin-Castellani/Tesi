@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+	\begin{axis}[
+		width = \textwidth,
+		date coordinates in = x,
+		xticklabel = {\year-\month-\day},
+		xticklabel style = {
+			rotate = 90,
+			anchor = near xticklabel
+		},
+		]
+		\addplot table [x=data, y=media-gg] {graphics/data/Dati_Villuzza.csv};
+	\end{axis}
+\end{tikzpicture}

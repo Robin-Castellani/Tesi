@@ -28,7 +28,7 @@
 
 % licenza
 \usepackage{xmpincl}	% permette di includere licenze in formato XMP
-\includexmp{CC_Attribution-NonCommercial-ShareAlike_4.0_International}	% file della licenza
+\includexmp{files/CC_Attribution-NonCommercial-ShareAlike_4.0_International}	% file della licenza
 
 % bibliografia
 \usepackage[autostyle,italian=guillemets]{csquotes}	% per citare con le virgolette giuste
@@ -87,6 +87,7 @@
 \pgfplotsset{compat=newest}
 \SendSettingsToPgf
 \usepgfplotslibrary{fillbetween}
+\usepgfplotslibrary{dateplot}
 
 % per riferimenti
 \usepackage{hyperref}
@@ -104,5 +105,9 @@
 
 Questa è la mia tesi!
 
+\begin{figure}[ht]
+	\centering
+	\input{graphics/plots/livelli}
+\end{figure}
 
 \end{document}
