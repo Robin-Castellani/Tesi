@@ -14,9 +14,14 @@
 *.toc
 *.lot
 00-main.pdf
+*.bbl
+*.blg
 
 # figures externalized from LaTeX compilation
 *figure*.dep
 *figure*.dpth
 *figure*.md5
 *figure*.pdf
+
+# versions of the thesis
+*tesi*.pdf
