@@ -123,6 +123,19 @@ Inoltre si trovano valori soglia per l'erosione della vegetazione.
 \clearpage
 
 \pagenumbering{arabic}
+
+\section{Dati e metodi}
+% dati
+Sono state utilizzate le immagini satellitari multibande delle missioni ASTER, Livello~1T (ottenuti in data~21~luglio~2018, \cite{data:ASTER}), 
+Pleiades (\href{https://pleiades.cnes.fr/en/PLEIADES/index.htm}{Centre National d'Etudes Spatiales}) 
+e Sentinel2, sensore~MSI Livello~1C (ottenuti in data~21~luglio~2018 tramite la API del \href{http://scihub.copernicus.eu/}{Copernicus Open Access Hub}).
+
+
+% strumenti
+Per eseguire le analisi sulle immagini aeree e satellitari sono stati utilizzati i GIS GRASS (\cite{soft:GRASS}) e QGIS (\cite{soft:QGIS}). Per il download e il pre-processing delle immagini satellitari è stato usato SCP, plugin di QGIS (\cite{soft:SCP}).
+
+
+\section{Livelli idrometrici e quantità di vegetazione}
 Il grafico~\ref{graph:livelli-orto-sat} mostra i livelli idrometrici registrati presso l'idrometro di Villuzza, corrispondente al ponte di Pinzano; sono inoltre mostrati con delle linee le date di cui si dispongono immagini satellitari (ASTER, Pleiades, Sentinel2, Google~Earth) e ortofoto.
 La tabella~\ref{tab:date-orto-sat} mostra le date e la risoluzione delle immagini utilizzate nell'analisi.
 
@@ -141,7 +154,7 @@ La tabella~\ref{tab:date-orto-sat} mostra le date e la risoluzione delle immagin
 	\centering
 	\begin{tabular}{c c S[table-format=2.1]}
 		\toprule
-		Data		&	Fonte		&	\multicolumn{1}{c}{Risoluzione \si{[\m]}}	\\
+		Data		&	Fonte		&	\multicolumn{1}{c}{Ris \si{[\m]}}	\\
 		\midrule	
 		2000-09-17	&	ASTER	&	15	\\
 		2001-06-07	&	ASTER	&	15	\\
@@ -173,6 +186,48 @@ La tabella~\ref{tab:date-orto-sat} mostra le date e la risoluzione delle immagin
 \end{table}
 
 
+
+Per misurare l'area occupata dalla vegetazione presente in alveo e nella floodplain è stata dapprima individuata una maschera di calcolo che comprendesse l'alveo attivo e la parte di piana alluvionale che è stata coinvolta nelle piene o in cui è presente un canale attivo.
+In seguito è stato calcolato il \emph{Normalized Difference Vegetation Index} (NDVI) grazie alle bande del \emph{Near Infrared} (NIR) e del \emph{Red}:
+%
+\begin{equation}
+	%\notag
+	NDVI = \frac{NIR - Red}{NIR + Red}
+	\label{eq:ndvi}
+\end{equation}
+%
+\`{E} stata effettuata una digitalizzazione manuale di alcune aree per le immagini del , e ; 
+%
+%
+tali aree sono state suddivise in tre classi: vegetazione, alveo attivo e canale. 
+Nelle figure ...
+%
+%
+sono mostrati i valori di NDVI presenti nelle aree divisi per percentili.
+% grafici
+Da tali grafici sono state ottenute delle soglie di NDVI per classificare le immagini satellitari (tabella~\ref{tab:ndvi-soglia}).
+%
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{
+		c 
+		S[table-format=1]@{\,}
+		c@{\,}
+		c@{\,}
+		c@{\,}
+		S[table-format=1.1]
+		}
+		\toprule
+		\multicolumn{6}{c}{\textbf{Soglie}}	\\
+		\midrule
+		Vegetazione		&		&			&	NDVI	&	$\geq$	& 0.2	\\
+		Alveo attivo	&	0 	&	$\leq$	&	NDVI	&	$<$		& 0.2	\\
+		Canale			&	0	&	$<$		&	NDVI	&			&		\\
+		\bottomrule
+	\end{tabular}
+	\caption[soglie NDVI]{soglie di NDVI per la classificazione delle immagini satellitari.}
+	\label{tab:ndvi-soglia}
+\end{table}
 
 \begin{figure}[ht]
 	\centering
