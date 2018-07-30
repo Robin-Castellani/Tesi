@@ -1,0 +1,46 @@
+\begin{tikzpicture}
+	\begin{axis}[
+		width = \textwidth,
+		date coordinates in = x,
+		date ZERO = 2000-01-01,
+		xticklabel = {\year-\month-\day},
+		xticklabel style = {
+			rotate = 80,
+			anchor = near xticklabel
+		},
+		axis y line* = right,
+		%enlarge x limits = 0.05,
+		%enlarge y limits = 0.01,
+		ymax = 70,
+		ymin = 0,
+		ylabel = {Percentuale di vegetazione},
+		grid = none,
+		]
+		\addplot+
+        	[red, mark=+, ultra thick]
+        	table [x=data, y=veg] {graphics/data/Class_sat_veg-H2O-ghiaia.txt};
+	\end{axis}
+	
+	\begin{axis}[
+		width = \textwidth,
+		date coordinates in = x,
+		date ZERO = 2000-01-01,
+		xticklabel = {\year-\month-\day},
+		xticklabel style = {
+			rotate = 80,
+			anchor = near xticklabel
+		},
+		axis y line* = left,
+		axis x line = none,
+		enlarge x limits = 0.05,
+		enlarge y limits = 0.01,
+		ymax = 3.7,
+		%ymin = -0.1,
+		ylabel = {Livello idrometrico},
+		grid = none,
+		]
+		\addplot+
+        	[blue, no markers, ultra thin]
+        	table [x=data, y=media-gg] {graphics/data/Dati_Villuzza.csv};
+	\end{axis}
+\end{tikzpicture}
