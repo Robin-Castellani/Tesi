@@ -102,6 +102,7 @@
 	%hidelinks,
 }
 
+\hyphenation{NDVI}
 
 
 \begin{document}
@@ -195,48 +196,57 @@ La tabella~\ref{tab:date-orto-sat} mostra le date e la risoluzione delle immagin
 
 Si è misurata l'area della vegetazione presente in alveo e nella parte di floodplain soggetta a a forti disturbi (erosione e distacco di isole); 
 a tal fine si è seguito l'approccio di altri autori in analisi simili eseguite su immagini ASTER e LandSat~TM (\cite{Bertoldi:2011-ASTER}, \cite{Henshaw:2013-LandSat}).
-\\
- è stata dapprima individuata una maschera di calcolo che comprendesse l'alveo attivo e la parte di piana alluvionale che è stata coinvolta nelle piene o in cui è presente un canale attivo.
-In seguito è stato calcolato il \emph{Normalized Difference Vegetation Index} (NDVI) grazie alle bande del \emph{Near Infrared} (NIR) e del \emph{Red}:
 %
-\begin{equation}
-	%\notag
-	NDVI = \frac{NIR - Red}{NIR + Red}
-	\label{eq:ndvi}
-\end{equation}
-%
-\`{E} stata effettuata una digitalizzazione manuale di alcune aree per le immagini del , e ; 
-%
-%
-tali aree sono state suddivise in tre classi: vegetazione, alveo attivo e canale. 
-Nelle figure ...
-%
-%
-sono mostrati i valori di NDVI presenti nelle aree divisi per percentili.
-% grafici
-Da tali grafici sono state ottenute delle soglie di NDVI per classificare le immagini satellitari (tabella~\ref{tab:ndvi-soglia}).
-%
-\begin{table}[ht]
-	\centering
-	\begin{tabular}{
-		c 
-		S[table-format=1.1]@{\,}
-		c@{\,}
-		c@{\,}
-		c@{\,}
-		S[table-format=1.1]
-		}
-		\toprule
-		\multicolumn{6}{c}{\textbf{Soglie}}	\\
-		\midrule
-		Vegetazione		&	0.2	&	$\leq$	&	NDVI	&		& 	\\
-		Alveo attivo	&	0.0	&	$\leq$	&	NDVI	&	$<$		&	0.2	\\
-		Canale			&		&			&	NDVI	&	$<$		&	0.0	\\
-		\bottomrule
-	\end{tabular}
-	\caption[soglie NDVI]{soglie di NDVI per la classificazione delle immagini satellitari.}
-	\label{tab:ndvi-soglia}
-\end{table}
+\begin{enumerate}
+	\item Dapprima è stata individuata una maschera di calcolo che comprendesse l'alveo attivo e la parte di piana alluvionale che è stata erosa quando coinvolta nelle piene; 
+	tale maschera si estende da Enemonzo al ponte di Madrisio
+	(figura...)
+	%
+	%
+	. 
+	Applicandola, il dominio computazionale è stato ridotto alla parte di alveo attivo.
+	\item In questa area si è calcolato il \emph{Normalized Difference Vegetation Index} (NDVI) grazie alle bande del \emph{Near Infrared} (NIR) e del \emph{Red}
+	%
+	\begin{equation}
+		%\notag
+		NDVI = \frac{NIR - Red}{NIR + Red} \quad ;
+		\label{eq:ndvi}
+	\end{equation}
+	%
+	\item \`{E} stata effettuata una digitalizzazione manuale di alcune zone per le immagini ASTER del~2005-08-30 e del~2012-08-01, l'immagine Plaiades del~2014-10-31 e l'immagine Sentinel2 del~2017-04-21 (figura...
+	%
+	%
+	. 
+	Queste aree sono state suddivise in tre classi: vegetazione, alveo attivo e canale.
+	Per ogni immagine si è osservata la distribuzione dell'NDVI in ogni classe (figura ...
+	% box plot con baffi (10% e 90%), box (25% e 75%) e mediana
+	% 4 grafici in una figura unica
+	. 
+	\item Da tali grafici sono state ottenute delle soglie di NDVI per classificare le immagini satellitari (tabella~\ref{tab:ndvi-soglia}). Le soglie sono in accordo con quanto riportato in letteratura (\cite{Bertoldi:2011-ASTER}).
+	%
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{
+			c 
+			S[table-format=1.1]@{\,}
+			c@{\,}
+			c@{\,}
+			c@{\,}
+			S[table-format=1.1]
+			}
+			\toprule
+			\multicolumn{6}{c}{\textbf{Soglie}}	\\
+			\midrule
+			Vegetazione		&	0.2	&	$\leq$	&	NDVI	&		& 	\\
+			Alveo attivo	&	0.0	&	$\leq$	&	NDVI	&	$<$		&	0.2	\\
+			Canale			&		&			&	NDVI	&	$<$		&	0.0	\\
+			\bottomrule
+		\end{tabular}
+		\caption[soglie NDVI]{soglie di NDVI per la classificazione delle immagini satellitari.}
+		\label{tab:ndvi-soglia}
+	\end{table}
+\end{enumerate}
+
 
 \begin{figure}[ht]
 	\centering
