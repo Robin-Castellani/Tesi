@@ -136,7 +136,12 @@ Per eseguire le analisi sulle immagini aeree e satellitari sono stati utilizzati
 
 
 \section{Livelli idrometrici e quantità di vegetazione}
-Il grafico~\ref{graph:livelli-orto-sat} mostra i livelli idrometrici registrati presso l'idrometro di Villuzza, corrispondente al ponte di Pinzano; sono inoltre mostrati con delle linee le date di cui si dispongono immagini satellitari (ASTER, Pleiades, Sentinel2, Google~Earth) e ortofoto.
+I grafici in figura~\ref{graph:livelli-orto-sat} mostrano rispettivamente i livelli idrometrici registrati presso l'idrometro di Villuzza, corrispondente al ponte di Pinzano, e le date di cui si dispongono ortofoto e immagini satellitari (ASTER, Pleiades, Sentinel2, Google~Earth). 
+Nel secondo grafico sono riportati solamente i livelli maggiori di~\SI{2}{\m} in quanto, secondo ...
+%
+% Bertoldi, W., Gurnell, A.M., Surian, N., Tockner, K., Zanoni, L., Ziliani, L., Zolezzi, G., 2009. Understanding reference processes: linkages between river flows, sediment dy- namics and vegetated landforms along the Tagliamento River, Italy. River Research and Applications 25, 501–516.
+%
+, livelli superiori a tale soglia iniziano ad avere effetti di disturbo sulla vegetazione.
 La tabella~\ref{tab:date-orto-sat} mostra le date e la risoluzione delle immagini utilizzate nell'analisi.
 
 \begin{figure}[ht]
@@ -188,7 +193,10 @@ La tabella~\ref{tab:date-orto-sat} mostra le date e la risoluzione delle immagin
 
 
 
-Per misurare l'area occupata dalla vegetazione presente in alveo e nella floodplain è stata dapprima individuata una maschera di calcolo che comprendesse l'alveo attivo e la parte di piana alluvionale che è stata coinvolta nelle piene o in cui è presente un canale attivo.
+Si è misurata l'area della vegetazione presente in alveo e nella parte di floodplain soggetta a a forti disturbi (erosione e distacco di isole); 
+a tal fine si è seguito l'approccio di altri autori in analisi simili eseguite su immagini ASTER e LandSat~TM (\cite{Bertoldi:2011-ASTER}, \cite{Henshaw:2013-LandSat}).
+\\
+ è stata dapprima individuata una maschera di calcolo che comprendesse l'alveo attivo e la parte di piana alluvionale che è stata coinvolta nelle piene o in cui è presente un canale attivo.
 In seguito è stato calcolato il \emph{Normalized Difference Vegetation Index} (NDVI) grazie alle bande del \emph{Near Infrared} (NIR) e del \emph{Red}:
 %
 \begin{equation}
@@ -212,7 +220,7 @@ Da tali grafici sono state ottenute delle soglie di NDVI per classificare le imm
 	\centering
 	\begin{tabular}{
 		c 
-		S[table-format=1]@{\,}
+		S[table-format=1.1]@{\,}
 		c@{\,}
 		c@{\,}
 		c@{\,}
@@ -221,9 +229,9 @@ Da tali grafici sono state ottenute delle soglie di NDVI per classificare le imm
 		\toprule
 		\multicolumn{6}{c}{\textbf{Soglie}}	\\
 		\midrule
-		Vegetazione		&		&			&	NDVI	&	$\geq$	& 0.2	\\
-		Alveo attivo	&	0 	&	$\leq$	&	NDVI	&	$<$		& 0.2	\\
-		Canale			&	0	&	$<$		&	NDVI	&			&		\\
+		Vegetazione		&	0.2	&	$\leq$	&	NDVI	&		& 	\\
+		Alveo attivo	&	0.0	&	$\leq$	&	NDVI	&	$<$		&	0.2	\\
+		Canale			&		&			&	NDVI	&	$<$		&	0.0	\\
 		\bottomrule
 	\end{tabular}
 	\caption[soglie NDVI]{soglie di NDVI per la classificazione delle immagini satellitari.}
