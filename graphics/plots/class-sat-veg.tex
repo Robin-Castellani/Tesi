@@ -1,18 +1,17 @@
 \begin{tikzpicture}
 	\begin{axis}[
 		width = \textwidth,
+		height = 0.5\textwidth,
 		date coordinates in = x,
 		date ZERO = 2000-01-01,
-		xticklabel = {\year-\month-\day},
+		xticklabel = {\year},
 		xticklabel style = {
 			rotate = 80,
 			anchor = near xticklabel
 		},
 		axis y line* = right,
-		%enlarge x limits = 0.05,
-		%enlarge y limits = 0.01,
 		ymax = 70,
-		ymin = 0,
+		%ymin = 0,
 		ylabel = {Percentuale di vegetazione},
 		grid = none,
 		]
@@ -23,9 +22,10 @@
 	
 	\begin{axis}[
 		width = \textwidth,
+		height = 0.5\textwidth,
 		date coordinates in = x,
 		date ZERO = 2000-01-01,
-		xticklabel = {\year-\month-\day},
+		xticklabel = {\year},
 		xticklabel style = {
 			rotate = 80,
 			anchor = near xticklabel
@@ -35,7 +35,7 @@
 		enlarge x limits = 0.05,
 		enlarge y limits = 0.01,
 		ymax = 3.7,
-		%ymin = -0.1,
+		ymin = 2,
 		ylabel = {Livello idrometrico},
 		grid = none,
 		]
