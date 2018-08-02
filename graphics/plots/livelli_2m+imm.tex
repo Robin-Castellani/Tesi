@@ -12,7 +12,7 @@
 		enlarge x limits = 0.05,
 		enlarge y limits = 0.01,
 		ymax = 3.7,
-		ymin = 2,
+		ymin = 1.95,
 		ylabel = {Livello idrometrico},
 		grid = major,
 		]
@@ -59,11 +59,17 @@
         	[magenta, semithick, style=solid, mark=x]
         	coordinates {(2010-09-29, 2)(2010-09-29, 3.7)};
 		\addplot+
+        	[orange!85!black, semithick, style=solid, mark=x]
+        	coordinates {(2011-07-01, 2)(2011-07-01, 3.7)};
+		\addplot+
         	[magenta, semithick, style=solid, mark=x]
         	coordinates {(2012-08-01, 2)(2012-08-01, 3.7)};
 		\addplot+
         	[magenta, semithick, style=solid, mark=x]
         	coordinates {(2013-09-05, 2)(2013-09-05, 3.7)};
+		\addplot+
+        	[orange!85!black, semithick, style=solid, mark=x]
+        	coordinates {(2013-10-22, 2)(2013-10-22, 3.7)};
 		\addplot+
         	[magenta, semithick, style=solid, mark=x]
         	coordinates {(2014-09-08, 2)(2014-09-08, 3.7)};
@@ -86,7 +92,7 @@
         	[green, semithick, style=solid, mark=x]
         	coordinates {(2017-07-07, 2)(2017-07-07, 3.7)};
 		\addplot+
-        	[blue, no markers]
+        	[blue, solid, no markers]
         	table [x=data, y=media-gg] {graphics/data/Dati_Villuzza.csv};
 	\end{axis}
 \end{tikzpicture}
