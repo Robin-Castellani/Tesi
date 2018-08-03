@@ -129,15 +129,30 @@ Inoltre si trovano valori soglia per l'erosione della vegetazione.
 
 \section{Materiali e metodi}
 % materiali
-Sono state utilizzate le immagini satellitari multibande delle missioni Terra, sensore ASTER Livello~1T (ottenuti in data~21~luglio~2018, \cite{data:ASTER}), 
-Pleiades (\href{https://pleiades.cnes.fr/en/PLEIADES/index.htm}{Centre National d'Etudes Spatiales}) 
-e Sentinel2, sensore~MSI Livello~1C (ottenuti in data~21~luglio~2018 tramite la API del \href{http://scihub.copernicus.eu/}{Copernicus Open Access Hub}).
-\\
-Le ortofoto dell'estate~2011 provengono dal \href{http://www.pcn.minambiente.it/mattm/}{Portale Cartografico Nazionale del Ministero dell'Ambiente e della tutela del territorio e del mare}; le ortofoto del~2013 sono state effettuate su commissione; le ortofoto del~2017 sono state ottenute da \href{https://www.google.com/earth/}{Google Earth}.
+Sono state considerate le bande spettrali del \emph{Near-InfraRed}~(NIR) e del \emph{Red}~(R) nelle immagini satellitari multibande provenienti dalle seguenti missioni:
+%
+\begin{itemize}
+	\item satellite Terra, sensore ASTER Livello~1T (ottenuti in data~21~luglio~2018, \cite{data:ASTER});  
+		\\
+		NIR (Banda~3N)~\SIrange[range-phrase={-}]{0.78}{0.86}{\nano\m}, R (Banda~2)~\SIrange[range-phrase={-}]{0.63}{0.69}{\micro\m};
+	\item costellazione Pleiades (\href{https://pleiades.cnes.fr/en/PLEIADES/index.htm}{Centre National d'Etudes Spatiales}\footnote{\texttt{https://pleiades.cnes.fr/en/PLEIADES/index.htm}}); 
+		\\
+		NIR~\SIrange[range-phrase={-}]{0.74}{0.94}{\micro\m}, R~\SIrange[range-phrase={-}]{0.59}{0.71}{\micro\m};
+	\item satellite Sentinel2A, sensore~MSI Livello~1C (ottenuti in data~21~luglio~2018 tramite la API del \href{http://scihub.copernicus.eu/}{Copernicus Open Access Hub}\footnote{\texttt{http://scihub.copernicus.eu/}});
+		\\
+		NIR (Banda~8)~\SIrange[range-phrase={-}]{0.763}{0.908}{\micro\m}, R (Banda~4)~\SIrange[range-phrase={-}]{0.645}{0.683}{\micro\m}.
+\end{itemize}
+%
+
+Le ortofoto dell'estate~2011 provengono dal \href{http://www.pcn.minambiente.it/mattm/}{Portale Cartografico Nazionale del Ministero dell'Ambiente e della tutela del territorio e del mare}\footnote{\texttt{http://www.pcn.minambiente.it/mattm/}};
+le ortofoto del~2013 sono state effettuate su commissione; 
+%
+%
+le ortofoto del~2017 sono state ottenute da \href{https://www.google.com/earth/}{Google Earth}\footnote{\texttt{https://www.google.com/earth/}}.
 
 
 % strumenti
-Per eseguire le analisi sulle immagini aeree e satellitari sono stati utilizzati i GIS GRASS (\cite{soft:GRASS}) e QGIS (\cite{soft:QGIS}). Per il download e il pre-processing delle immagini satellitari è stato usato SCP, plugin di QGIS (\cite{soft:SCP}). Per il download delle ortofoto del~2017 si è utilizzato \href{https://github.com/sourcepole/qgis-openlayers-plugin}{OpenLayers}, plugin di QGIS.
+Per eseguire le analisi sulle immagini aeree e satellitari sono stati utilizzati i GIS GRASS (\cite{soft:GRASS}) e QGIS (\cite{soft:QGIS}). Per il download e il pre-processing delle immagini satellitari è stato usato SCP, plugin di QGIS (\cite{soft:SCP}). Per il download delle ortofoto del~2017 si è utilizzato \href{https://github.com/sourcepole/qgis-openlayers-plugin}{OpenLayers}\footnote{\texttt{https://github.com/sourcepole/qgis-openlayers-plugin}}, plugin di QGIS.
 
 
 \section{Livelli idrometrici e quantità di vegetazione}
@@ -207,11 +222,11 @@ a tal fine si è seguito l'approccio di altri autori in analisi simili eseguite 
 	%
 	. 
 	Applicandola, il dominio computazionale è stato ridotto alla parte di alveo attivo.
-	\item In questa area si è calcolato il \emph{Normalized Difference Vegetation Index} (NDVI) grazie alle bande del \emph{Near Infrared} (NIR) e del \emph{Red}
+	\item In questa area si è calcolato il \emph{Normalized Difference Vegetation Index} (NDVI) grazie alle bande del \emph{Near Infrared} (NIR) e del \emph{Red} (R)
 	%
 	\begin{equation}
 		%\notag
-		NDVI = \frac{NIR - Red}{NIR + Red} \quad ;
+		NDVI = \frac{NIR - R}{NIR + R} \quad ;
 		\label{eq:ndvi}
 	\end{equation}
 	%
