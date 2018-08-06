@@ -174,18 +174,11 @@ le ortofoto del~2013 sono state effettuate su commissione;
 le ortofoto del~2017 sono state ottenute da \href{https://www.google.com/earth/}{Google Earth}\footnote{\texttt{https://www.google.com/earth/}}.
 \\
 I dati idrometrici sono stati forniti dalla \href{http://www.protezionecivile.fvg.it/it/rete-idrometeorologica}{rete idrometeorologica della Protezione Civile della Regione Autonoma Friuli Venezia Giulia}\footnote{\texttt{http://www.protezionecivile.fvg.it/it/rete-idrometeorologica}}.
-
-
-% strumenti
-\medskip
-Per eseguire le analisi sulle immagini aeree e satellitari sono stati utilizzati i GIS GRASS (\cite{soft:GRASS}) e QGIS (\cite{soft:QGIS}). Per il download e il pre-processing delle immagini satellitari è stato usato SCP, plugin di QGIS (\cite{soft:SCP}). Per il download delle ortofoto del~2017 si è utilizzato \href{https://github.com/sourcepole/qgis-openlayers-plugin}{OpenLayers}\footnote{\texttt{https://github.com/sourcepole/qgis-openlayers-plugin}}, plugin di QGIS.
-
-
-\section{Livelli idrometrici e quantità di vegetazione}
+\\
 I grafici in figura~\ref{graph:livelli-orto-sat} mostrano rispettivamente i livelli idrometrici registrati presso l'idrometro di Villuzza, corrispondente al ponte di Pinzano, e le date di cui si dispongono ortofoto e immagini satellitari (ASTER, Pleiades, Sentinel2, Google~Earth). 
 Nel secondo grafico sono riportati solamente i livelli maggiori di~\SI{2}{\m} in quanto, secondo \cite{Bertoldi:2009-2m}, livelli superiori a tale soglia iniziano ad avere effetti di disturbo sulla vegetazione.
 La tabella~\ref{tab:date-orto-sat} mostra le date e la risoluzione delle immagini utilizzate nell'analisi.
-
+%%
 \begin{figure}[ht]
 	\centering
 	\input{graphics/plots/livelli}
@@ -194,10 +187,7 @@ La tabella~\ref{tab:date-orto-sat} mostra le date e la risoluzione delle immagin
 	In basso un ingrandimento per i livelli superiori a~\SI{2}{\m}. Le linee indicano le immagini satellitari e le ortofoto considerate (ASTER in magenta, ortofoto in arancione, Pleiades in verde~acqua, Sentinel2 in azzurro, G-Earth in verde).}
 	\label{graph:livelli-orto-sat}
 \end{figure}
-
-
-
-
+%%%
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{c c S[table-format=2.1]}
@@ -237,6 +227,14 @@ La tabella~\ref{tab:date-orto-sat} mostra le date e la risoluzione delle immagin
 
 
 
+% strumenti
+\medskip
+Per eseguire le analisi sulle immagini aeree e satellitari sono stati utilizzati i GIS GRASS (\cite{soft:GRASS}) e QGIS (\cite{soft:QGIS}). Per il download e il pre-processing delle immagini satellitari è stato usato SCP, plugin di QGIS (\cite{soft:SCP}). Per il download delle ortofoto del~2017 si è utilizzato \href{https://github.com/sourcepole/qgis-openlayers-plugin}{OpenLayers}\footnote{\texttt{https://github.com/sourcepole/qgis-openlayers-plugin}}, plugin di QGIS.
+
+
+
+
+\section{Quantità di vegetazione in alveo}
 Si è misurata l'area della vegetazione presente in alveo e nella parte di floodplain soggetta a a forti disturbi (erosione e distacco di isole); 
 a tal fine si è seguito l'approccio di altri autori in analisi simili eseguite su immagini ASTER e LandSat~TM \parencites{Bertoldi:2011-ASTER}{Henshaw:2013-LandSat}.
 %
