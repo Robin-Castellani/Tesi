@@ -18,7 +18,7 @@
 \usepackage{wrapfig}	% per didascalie avvolte nel testo
 \usepackage{booktabs}
 \usepackage{multirow}
-\usepackage{parskip}	% pacchetto per la non indentazione del paragrafo
+%\usepackage{parskip}	% pacchetto per la non indentazione del paragrafo, sconsigliato con scrbook
 \usepackage{enumitem}	% per elenchi con label
 \usepackage{subcaption}	% più performante rispetto subfigure
 \usepackage{geometry}	% cambiare la geometria del decumento
@@ -29,8 +29,8 @@
 \usepackage{eurosym}    % per mettere il simbolo dell'euro
 \usepackage{adjustbox}  % per rendere le tabelle più piccole
 \usepackage{verbatim}	% per usare l'ambiente comment
-\usepackage{pdfpages}	% per includere pdf
 \usepackage[section]{placeins}	% per usare \FloatBarrier; l'opzione lo include in \section{}
+\usepackage[onlyinclude,nowrite]{frontespizio}	% usato per includere il frontespizio
 
 % licenza
 \usepackage{xmpincl}	% permette di includere licenze in formato XMP
@@ -102,10 +102,9 @@
 
 
 \begin{document}
-%\includepdf[pages=-]{files/frontespizio.pdf}
+\includefront{files/frontespizio.pdf}
 
 \frontmatter
-%\pagenumbering{roman}
 %----------------------------------------------------------
 %\begin{abstract}
 La presente tesi mira a studiare come cambia la vegetazione nel fiume braided Tagliamento in risposta all'idrologia. 
@@ -118,15 +117,11 @@ Inoltre si trovano valori soglia per l'erosione della vegetazione.
 %\end{abstract}
 %----------------------------------------------------------
 
-%\clearpage
 
 \tableofcontents
 \listoffigures
 \listoftables
 
-%\clearpage
-
-%\pagenumbering{arabic}
 
 \mainmatter
 \chapter{Inizio}

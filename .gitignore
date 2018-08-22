@@ -25,3 +25,6 @@
 
 # versions of the thesis
 *tesi*.pdf
+
+# other files
+*.docx
