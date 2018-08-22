@@ -26,5 +26,8 @@
 # versions of the thesis
 *tesi*.pdf
 
+# frontespizio files
+*frn.tex
+
 # other files
 *.docx

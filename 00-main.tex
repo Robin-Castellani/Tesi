@@ -1,3 +1,4 @@
+% arara: frontespizio
 \documentclass[12pt,a4paper,italian,twoside]{scrbook}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -30,7 +31,7 @@
 \usepackage{adjustbox}  % per rendere le tabelle più piccole
 \usepackage{verbatim}	% per usare l'ambiente comment
 \usepackage[section]{placeins}	% per usare \FloatBarrier; l'opzione lo include in \section{}
-\usepackage[onlyinclude,nowrite]{frontespizio}	% usato per includere il frontespizio
+\usepackage[swapnames,norules,nouppercase]{frontespizio}%[onlyinclude,nowrite]{frontespizio}	% usato per includere il frontespizio
 
 % licenza
 \usepackage{xmpincl}	% permette di includere licenze in formato XMP
@@ -39,7 +40,7 @@
 % bibliografia
 \usepackage[autostyle,italian=guillemets]{csquotes}	% per citare con le virgolette giuste
 \usepackage[bibstyle=authoryear,citestyle=authoryear-ibid,backend=biber]{biblatex}	% per la bib
-\addbibresource{99-bibliografia.bib}
+\addbibresource{materiale_iniziale_finale/bibliografia.bib}
 %\defbibheading{cartaceo}{\section*{Bibliografia cartacea}}
 %\defbibheading{web}{\section*{Sitografia}}
 
@@ -98,230 +99,47 @@
 \usepackage{varioref}	% per riferimenti con pagine
 \usepackage[noabbrev]{cleveref}	% per riferimenti intelligenti
 
+
+
+
 \hyphenation{NDVI}
 
 
 \begin{document}
-\includefront{files/frontespizio.pdf}
-
+%**********************************************************
+%**********************************************************
 \frontmatter
 %----------------------------------------------------------
-%\begin{abstract}
-La presente tesi mira a studiare come cambia la vegetazione nel fiume braided Tagliamento in risposta all'idrologia. 
-L'obiettivo principale è quello di ricercare una relazione tra i livelli del pelo libero registrati da alcuni idrometri e la vegetazione erosa, tra i livelli e la quantità di legname che si ritrova in alveo.
+\input{materiale_iniziale_finale/frontespizio}
 
-Si analizzano immagini satellitari e ortofoto al fine di distinguere la parte vegetata dell'alveo e il legname presente.
-Con i dati di piovosità media mensile e di temperatura media mensile si cercano correlazioni con l'espansione della vegetazione che si osserva negli anni.
-Dalla quantificazione dell'erosione della vegetazione dovuta alle piene, della quantità di legno in alveo e di un tasso di crescita della vegetazione si tenta di costruire un bilancio di materia vegetale a scala di evento di piena.
-Inoltre si trovano valori soglia per l'erosione della vegetazione.
-%\end{abstract}
 %----------------------------------------------------------
-
-
 \tableofcontents
 \listoffigures
 \listoftables
+%----------------------------------------------------------
+\chapter{Prefazione}
+\input{materiale_iniziale_finale/prefazione}
+%----------------------------------------------------------
 
 
+
+%**********************************************************
+%**********************************************************
 \mainmatter
 \chapter{Inizio}
-\section{Introduzione}
-Il Fiume Tagliamento, situato nel Nord-Est italiano, è uno dei pochi fiumi allo stato quasi naturale presenti nelle Alpi. 
-Il suo bacino idrografico, ampio circa~\SI{2900}{\kilo\m\tothe{2}}, si estende tra le province di Udine, Pordenone e Venezia.
-Il suo corso di circa~\SI{170}{\kilo\m} presenta morfologia intrecciata (\emph{braided}) nelle parti montane e planiziali; verso valle il fiume si restringe assumendo prima una forma transizionale monocursale nei pressi di Madrisio, infine meandriforme a Latisana.
-\\
-Il tratto studiato è quello intrecciato multicanale compreso tra Tolmezzo e Madrisio (\vref{fig:overview}).
-%
-\begin{figure}[b]
-	\centering
-	\includegraphics[width=\textwidth]{files/overview.jpeg}
-	\caption[inquadramento dell'area di studio]
-		{inquadramento dell'area di studio (poligono nero); a sinistra è mostrata l'Italia settentrionale (in alto) e un ingrandimento delle province e degli estremi dell'area di studio (in basso); a destra si vede il bacino idrografico del Tagliamento e di altri fiumi nelle vicinanze (in blu), il reticolo idrografico (in azzurro) e la linea di costa (in verde acqua).}
-	\label{fig:overview}
-\end{figure}
-%
-
-
-\section{Materiali e metodi}
-% materiali
-Sono state considerate le bande spettrali del \emph{Near-InfraRed}~(NIR) e del \emph{Red}~(R) nelle immagini satellitari multibande provenienti dalle seguenti missioni:
-%
-\begin{itemize}
-	\item satellite Terra, sensore ASTER Livello~1T (ottenuti in data~21~luglio~2018, \cite{data:ASTER});  
-		\\
-		NIR (Banda~3N)~\SIrange[range-phrase={-}]{0.78}{0.86}{\nano\m}, R (Banda~2)~\SIrange[range-phrase={-}]{0.63}{0.69}{\micro\m};
-	\item costellazione Pleiades (\href{https://pleiades.cnes.fr/en/PLEIADES/index.htm}{Centre National d'Etudes Spatiales}\footnote{\texttt{https://pleiades.cnes.fr/en/PLEIADES/index.htm}}); 
-		\\
-		NIR~\SIrange[range-phrase={-}]{0.74}{0.94}{\micro\m}, R~\SIrange[range-phrase={-}]{0.59}{0.71}{\micro\m};
-	\item satellite Sentinel2A, sensore~MSI Livello~1C (ottenuti in data 21~luglio 2018 tramite la API del \href{http://scihub.copernicus.eu/}{Copernicus Open Access Hub}\footnote{\texttt{http://scihub.copernicus.eu/}});
-		\\
-		NIR (Banda~8)~\SIrange[range-phrase={-}]{0.763}{0.908}{\micro\m}, R (Banda~4)~\SIrange[range-phrase={-}]{0.645}{0.683}{\micro\m}.
-\end{itemize}
-%
-
-Le ortofoto dell'estate~2011 provengono dal \href{http://www.pcn.minambiente.it/mattm/}{Portale Cartografico Nazionale del Ministero dell'Ambiente e della tutela del territorio e del mare}\footnote{\texttt{http://www.pcn.minambiente.it/mattm/}};
-le ortofoto del~2013 sono state effettuate su commissione; 
-%
-%
-le ortofoto del~2017 sono state ottenute da \href{https://www.google.com/earth/}{Google Earth}\footnote{\texttt{https://www.google.com/earth/}}.
-\\
-I dati idrometrici sono stati forniti dalla \href{http://www.protezionecivile.fvg.it/it/rete-idrometeorologica}{rete idrometeorologica della Protezione Civile della Regione Autonoma Friuli Venezia Giulia}\footnote{\texttt{http://www.protezionecivile.fvg.it/it/rete-idrometeorologica}}.
-\\
-I grafici \vref{graph:livelli-orto-sat} in \cpageref{graph:livelli-orto-sat} mostrano rispettivamente i livelli idrometrici registrati presso l'idrometro di Villuzza, corrispondente al ponte di Pinzano, e le date di cui si dispongono ortofoto e immagini satellitari (ASTER, Pleiades, Sentinel2, Google~Earth). 
-Nel secondo grafico sono riportati solamente i livelli maggiori di~\SI{2}{\m} in quanto, secondo \cite{Bertoldi:2009-2m}, livelli superiori a tale soglia iniziano ad avere effetti di disturbo sulla vegetazione.
-La \cpageref{tab:date-orto-sat} mostra le date e la risoluzione delle immagini utilizzate nell'analisi.
-%%
-\begin{figure}[p]
-	\centering
-	\input{graphics/plots/livelli}
-	\input{graphics/plots/livelli_2m+imm}
-	\caption[livelli idrometrici e foto aeree - satellitari]{in alto il livello idrometrico (in blu) presso l'idrometro di Villuzza. 
-	In basso un ingrandimento per i livelli superiori a~\SI{2}{\m}. Le linee indicano le immagini satellitari e le ortofoto considerate (ASTER in magenta, ortofoto in arancione, Pleiades in verde~acqua, Sentinel2 in azzurro, G-Earth in verde).}
-	\label{graph:livelli-orto-sat}
-\end{figure}
-%%%
-\begin{table}[p]
-	\centering
-	\begin{tabular}{c c S[table-format=2.2]}
-		\toprule
-		Data		&	Fonte		&	\multicolumn{1}{c}{Ris \si{[\m]}}	\\
-		\midrule	
-		2000-09-17		&	ASTER		&	15	\\
-		2001-06-07		&	ASTER		&	15	\\
-		2001-12-09		&	ASTER		&	15	\\
-		2002-05-18		&	ASTER		&	15	\\
-		2002-06-12		&	ASTER		&	15	\\
-		2003-06-22		&	ASTER		&	15	\\
-		2003-11-29		&	ASTER		&	15	\\
-		2004-10-14		&	ASTER		&	15	\\
-		2005-08-30		&	ASTER		&	15	\\
-		2006-07-16		&	ASTER		&	15	\\
-		2007-09-21		&	ASTER		&	15	\\
-		2008-07-05		&	ASTER		&	15	\\
-		2009-07-08		&	ASTER		&	15	\\
-		2010-09-29		&	ASTER		&	15	\\
-		2011-06-26/07-02	&	Ortofoto	&	1	\\
-		2012-08-01		&	ASTER		&	15	\\
-		2013-09-05		&	ASTER		&	15	\\
-		2013-10-22		&	Ortofoto	&	0.2	\\
-		2014-09-08		&	ASTER		&	15	\\
-		2014-10-31		&	Pleiades	&	0.5	\\
-		2015-09-11		&	ASTER		&	15	\\
-		2015-09-29		&	Sentinel2	&	10	\\
-		2016-09-13		&	Sentinel2	&	10	\\
-		2017-04-21		&	Sentinel2	&	10	\\
-		2017-06-26/08-02	&	G-Earth	&	0.45	\\
-		\bottomrule
-	\end{tabular}
-	\caption{data e risoluzione delle immagini satellitari e delle ortofoto utilizzate.}
-	\label{tab:date-orto-sat}
-\end{table}
+\input{capitoli/1-introduzione}
+%----------------------------------------------------------
 
 
 
-% strumenti
-\medskip
-Per eseguire le analisi sulle immagini aeree e satellitari sono stati utilizzati i GIS GRASS (\cite{soft:GRASS}) e QGIS (\cite{soft:QGIS}). Per il download e il pre-processing delle immagini satellitari è stato usato SCP, plugin di QGIS (\cite{soft:SCP}). Per il download delle ortofoto del~2017 si è utilizzato \href{https://github.com/sourcepole/qgis-openlayers-plugin}{OpenLayers}\footnote{\texttt{https://github.com/sourcepole/qgis-openlayers-plugin}}, plugin di QGIS.
+\chapter{Vegetazione e piene}
+\input{capitoli/2-vegetazione-piene}
+%----------------------------------------------------------
 
 
 
-
-\section{Quantità di vegetazione in alveo}
-Si è misurata l'area della vegetazione presente in alveo e nella parte di floodplain soggetta a a forti disturbi (erosione e distacco di isole); 
-a tal fine si è seguito l'approccio di altri autori in analisi simili eseguite su immagini ASTER e LandSat~TM \parencites{Bertoldi:2011-ASTER}{Henshaw:2013-LandSat}.
-%
-\begin{enumerate}
-	\item Dapprima è stata individuata manualmente una maschera di calcolo che comprendesse l'alveo attivo e la parte di piana alluvionale che è stata erosa quando coinvolta nelle piene; 
-	tale maschera si estende da Tolmezzo al ponte di Madrisio
-	(\vref{fig:esempio-maschera}). 
-	Applicandola, il dominio computazionale è stato ridotto a comprendere l'inviluppo degli alvei attivi che si sono succeduti dall'immagine del~2000 all'ortofoto del~2017.
-	%
-	\begin{figure}[t]
-		\centering
-		\begin{subfigure}[b]{0.296\textwidth}
-			\includegraphics[width=\textwidth]{files/esempio_mask_2000_09_17.jpeg}
-			\caption{ASTER 2000-09-17.}
-		\end{subfigure}
-		\qquad
-		\begin{subfigure}[b]{0.30\textwidth}
-			\includegraphics[width=\textwidth]{files/esempio_mask_2015_09_11.jpeg}
-			\caption{ASTER 2015-09-11.}
-		\end{subfigure}
-		\caption[definizione della maschera per limitare il dominio computazionale]
-			{esempio in cui si vede come la maschera utilizzata per limitare il dominio computazionale (in giallo) sia il risultato dell'inviluppo degli alvei attivi che si sono modificati nel tempo; le immagini sono in falsi colori (IR-R-G).}
-		\label{fig:esempio-maschera}
-	\end{figure}
-	%
-	\item In questa area è stato calcolato il \emph{Normalized Difference Vegetation Index} (NDVI) grazie alle bande del \emph{Near Infrared} (NIR) e del \emph{Red} (R)
-	%
-	\begin{equation}
-		%\notag
-		NDVI = \frac{NIR - R}{NIR + R} \quad .
-		\label{eq:ndvi}
-	\end{equation}
-	%
-	\item \`{E} stata effettuata una digitalizzazione manuale di alcune aree campione per le immagini ASTER del~2005-08-30 ($\sim 70$) e del~2012-08-01 ($\sim 100$), l'immagine Plaiades del~2014-10-31 ($\sim 40$) e l'immagine Sentinel2 del~2017-04-21 ($\sim 45$) (\vref{fig:esempio-aree-campione}).
-	Sono state selezionate immagini per ogni satellite poiché ciascuno è sensibile a bande leggermente diverse; si sono osservate due immagini ASTER dato il grande numero di immagini disponibili scegliendo quelle con minor nuvolosità.
-	Queste aree campione sono state suddivise in tre classi: vegetazione, alveo attivo e canale.
-	%
-	\begin{figure}[ht]
-		\centering
-		\includegraphics[width=\textwidth]{files/esempio_aree_campione_2014_10_31.jpeg}
-		\caption[esempio di aree campione per calcolare la distribuzione dell'NDVI]{esempio di digitalizzazione di alcune aree campione per l'immagine Pleiades del~2014-10-31; sullo sfondo la mappa dell'NDVI.}
-		\label{fig:esempio-aree-campione}
-	\end{figure}
-	%
-	\item Per ogni immagine si è osservata la distribuzione dell'NDVI in ogni classe (\vref{graph:percentili}).
-	% 
-	\begin{figure}[ht]
-		\centering
-		\input{graphics/plots/percentili}
-		\caption[boxplot dell'NDVI nelle aree campione in quattro immagini satellitari]{boxplot dell'NDVI nelle aree campione in quattro immagini satellitari; i baffi indicano il 10mo e il 90mo percentile, gli estremi della scatola rappresentano il 25mo e il 75mo percentile, la linea nella scatola è la mediana.}
-		\label{graph:percentili}
-	\end{figure}
-	%
-	\item Da tali grafici sono state ottenute delle soglie di NDVI per classificare le immagini satellitari (\vref{tab:ndvi-soglia}). Le soglie sono in accordo con quanto riportato in letteratura \parencite{Bertoldi:2011-ASTER}.
-	%
-	\begin{table}[ht]
-		\centering
-		\begin{tabular}{
-			c 
-			S[table-format=1.1]@{\,}
-			c@{\,}
-			c@{\,}
-			c@{\,}
-			S[table-format=1.1]
-			}
-			\toprule
-			\multicolumn{6}{c}{\textbf{Soglie}}	\\
-			\midrule
-			Vegetazione		&	0.2	&	$\leq$	&	NDVI	&		& 	\\
-			Alveo attivo	&	0.0	&	$\leq$	&	NDVI	&	$<$		&	0.2	\\
-			Canale			&		&			&	NDVI	&	$<$		&	0.0	\\
-			\bottomrule
-		\end{tabular}
-		\caption[soglie NDVI]{soglie di NDVI per la classificazione delle immagini satellitari.}
-		\label{tab:ndvi-soglia}
-	\end{table}
-\end{enumerate}
-
-
-Con la riclassificazione delle immagini dell'NDVI rispetto alle soglie proposte è stato possibile ottenere la percentuale di alveo coperta da vegetazione per ogni anno. 
-Si ricorda, grazie alla maschera applicata, tale copertura include sia isole vegetate sia la parte di piana alluvionale che nel periodo di studio ha esperito fenomeni di erosione della vegetazione e quindi espansione dell'alveo attivo.
-Infine, per le immagini l'alveo parzialmente coperto da nuvole, la maschera è stata estesa per escludere tali zone coperte poiché queste presentano valori di NDVI non corretti.
-\\
-I risultati sono mostrati nel grafico in \vref{graph:class-sat-veg}.
-
-
-\begin{figure}[ht]
-	\centering
-	\input{graphics/plots/class-sat-veg}
-	\caption[andamento dell'areale della vegetazione nelle isole  e nella floodplain]{andamento dell'areale della vegetazione nelle isole e nella floodplain (in rosso). I dati provengono dalla classificazione delle immagini satellitari (ASTER, Pleiades e Sentinel2). In blu sono mostrati i livelli idrometrici superiori a~\SI{2}{\m} registrati alla stazione di Villuzza.}
-	\label{graph:class-sat-veg}
-\end{figure}
-
-
-
+%**********************************************************
+%**********************************************************
 \backmatter
 \printbibliography
 
