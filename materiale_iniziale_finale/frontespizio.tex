@@ -1,0 +1,31 @@
+\begin{Preambolo*}
+	\usepackage {fontspec} % per nuovi font, compila con XeLaTeX
+	\newfontfamily \frntitle {Quadrat Serial} % per logo università
+	\setmainfont {Tahoma} % per tutot il resto
+	\renewcommand{\frontinstitutionfont}{%
+		\fontsize{18}{17}\selectfont}
+	\renewcommand{\frontdivisionfont}{%
+		\fontsize{18}{16}\selectfont}
+	\renewcommand{\fronttitlefont}{%
+		\fontsize{18}{16}\selectfont}
+	\renewcommand{\frontfixednamesfont}{%
+		\fontsize{14}{16}\selectfont}
+	\renewcommand{\frontnamesfont}{%
+		\fontsize{14}{16}\selectfont}
+	\renewcommand{\frontfootfont}{%
+		\fontsize{14}{16}\selectfont}
+	\Margini {2cm}{5.9cm}{2cm}{1.9cm}
+	\NCandidato{Laureando}
+	\Punteggiatura % elimina i : dopo Relatore e Laureando
+\end{Preambolo*}
+%
+\begin{frontespizio}
+	\Istituzione {{\frntitle UNIVERSIT\`{A} DEGLI STUDI DI TRENTO}}
+	\Logo [2.65cm]{files/logo_UniTN.jpg}
+	\Dipartimento {Ingegneria Civile Ambientale Meccanica}
+	\Corso {\\Ingegneria per l'Ambiente e il Territorio}
+	\Titolo {Dinamiche vegetazionali nel fiume Tagliamento}
+	\Candidato {Castellani Robin}
+	\Relatore {Prof. Bertoldi Walter}
+	\Annoaccademico {2017-2018}
+\end{frontespizio}
