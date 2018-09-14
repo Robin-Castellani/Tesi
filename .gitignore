@@ -29,5 +29,11 @@
 # frontespizio files
 *frn.tex
 
+# glossaries files
+*.glo
+*.glg
+*.gls
+*.ist
+
 # other files
 *.docx

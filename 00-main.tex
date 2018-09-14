@@ -98,7 +98,14 @@
 \usepackage{varioref}	% per riferimenti con pagine
 \usepackage[noabbrev]{cleveref}	% per riferimenti intelligenti
 
+% glossari
+\usepackage[translate=babel]{glossaries}
+\setacronymstyle{long-short}
+\makeglossaries
 
+\newglossaryentry{es}{name={esempio},plural={esempi},description={un piccolo esempio}}
+
+\newacronym{ndvi}{NDVI}{Normalized Difference Vegetation Index}
 
 
 \hyphenation{NDVI}
@@ -140,6 +147,17 @@
 %**********************************************************
 %**********************************************************
 \backmatter
+
+% glossario
+\manualmark
+\markboth{\spacedlowsmallcaps{\glossaryname}}%
+{\spacedlowsmallcaps{\glossaryname}}
+\phantomsection
+\pagestyle{scrheadings}
+\addcontentsline{toc}{chapter}{\tocEntry{\glossaryname}}
+\printglossary
+
+% bibliografia
 \printbibliography
 
 \end{document}
