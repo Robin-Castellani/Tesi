@@ -1,0 +1,28 @@
+!config
+
+preambles:
+  arara_commands: |
+    % arara: pdflatex: { 
+    % arara: --> shell: yes,
+    % arara: --> synctex: yes,
+    % arara: --> interaction: nonstopmode
+    % arara: --> } 
+    % arara: makeglossaries if 
+    % arara: --> found('aux', '@istfilename') &&
+    % arara: --> changed('ist')
+    % arara: xelatex: {
+    % arara: --> files: [ 00-main-frn.tex ],
+    % arara: --> interaction: nonstopmode
+    % arara: --> } 
+    % arara: --> if missing(toFile('00-main-frn.pdf'))
+    % arara: pdflatex: {
+    % arara: --> interaction: nonstopmode
+    % arara: --> } 
+    % arara: --> if changed(toFile('00-main-frn.pdf'))
+    % arara: biber if changed('bbl') || missing('bbl')
+    % arara: pdflatex: { 
+    % arara: --> synctex: yes,
+    % arara: --> interaction: nonstopmode
+    % arara: --> } 
+    % arara: --> while found('log', 'undefined references')
+
