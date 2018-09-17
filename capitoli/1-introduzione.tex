@@ -42,6 +42,38 @@ Con i dati di piovosità media mensile e di temperatura media mensile si cercano
 Dalla quantificazione dell'erosione della vegetazione dovuta alle piene, della quantità di legno in alveo e di un tasso di crescita della vegetazione si tenta di costruire un bilancio di materia vegetale a scala di evento di piena.
 Inoltre si trovano valori soglia del livello del pelo libero per l'erosione della vegetazione.
 
+
+\section{Bande spettrali}
+Gli strumenti di acquisizione di immagini aeree e satellitari sono sensibili a determinate bande della radiazione elettromagnetica (\vref{graph:el-mag-radiation}), cioè sono in grado di registrarne solo alcune porzioni. 
+L'occhio umano può distinguere solo le bande del visibile, mentre i sensori artificiali possono acquisire altre bande della radiazione. 
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/electromagnetic_radiation}
+	\caption{radiazione elettromagnetica con le sue lunghezze d'onda.}
+	\label{graph:el-mag-radiation}
+\end{figure}
+%
+\\
+Le immagini nel visibile sono solitamente suddivise nelle bande del Rosso, Verde e Blu (\emph{Red}, \emph{Green}, \emph{Blue}, RGB); ognuna indica la quantità di colore presente; la combinazione di queste quantità di colore restituisce l'immagine a colori. 
+\\
+Per poter osservare immagini con bande diverse dal visibile si sostituisce una o più bande RGB con le bande in questione. 
+Ad esempio, è possibile sostituire la banda del Rosso con quella dell'Infrarosso (IR): la quantità di colore del Rosso sarà rimpiazzata dalla quantità di colore dell'Infrarosso. 
+Il risultato sarà un'immagine riconoscibile dall'occhio umano, ma in falsi colori (\vref{fig:confronto-bande-intro}).
+%
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{files/confronto_bande_intro.jpeg}
+	\caption[confronto immagini R-G-B e IR-R-G]{confronto di un'immagine in veri colori (R-G-B, a sinistra) con una in falsi colori (IR-G-B, a destra); quest'ultima evidenza la presenza di vegetazione viva rispetto alla ghiaia in alveo e all'acqua nei canali.}
+	\label{fig:confronto-bande-intro}
+\end{figure} 
+%
+\\
+Questo procedimento serve per distinguere più facilmente degli elementi e degli oggetti presenti nelle immagini; per esempio la vegetazione viva riflette particolarmente la banda dell'Infrarosso più vicina al Rosso.
+
+
+
+
 \section{Inquadramento dell'area di studio}
 Il Fiume Tagliamento, situato nel Nord-Est italiano, è uno dei pochi fiumi alpini allo stato quasi naturale. 
 Il suo bacino idrografico, ampio circa~\SI{2900}{\kilo\m\tothe{2}}, si estende tra le province di Udine, Pordenone e Venezia.
@@ -63,6 +95,7 @@ Il tratto studiato è quello intrecciato multicanale compreso tra Tolmezzo e Mad
 	\caption[inquadramento su Google Earth dell'area di studio]{inquadramento su Google Earth dell'area di studio (contornata in rosso).}
 	\label{fig:overview-gearth}
 \end{figure}
+
 
 
 \section{Materiali e metodi}

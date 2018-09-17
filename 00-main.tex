@@ -83,6 +83,17 @@
 \usepgfplotslibrary{dateplot}	% per usare date come numeri
 \usepgfplotslibrary{statistics}	% per fare boxplot
 \usepgfplotslibrary{groupplots}	% per fare grafici a gruppi
+\usepgfplotslibrary{units}	% to add units easily to axis
+\usepgfplotslibrary{colormaps}	% to create colormaps
+\pgfdeclarehorizontalshading{visiblelight}{50bp}{
+color(0.00000000000000bp)=(violet);
+color(8.33333333333333bp)=(blue);
+color(16.66666666666670bp)=(cyan);
+color(25.00000000000000bp)=(green);
+color(33.33333333333330bp)=(yellow);
+color(41.66666666666670bp)=(orange);
+color(50.00000000000000bp)=(red)
+}%
 \usepgfplotslibrary{external}	% per creare pdf esterni dei grafici
 \tikzexternalize
 
