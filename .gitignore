@@ -1,12 +1,12 @@
 # ignore these files in keeping track
 
-# LaTeX compilation files
+# LaTeX typesetting files
 *.aux
 *.auxlock
 *.bcf
 *.log
 *.out
-*.run.xml
+*.xml
 *.synctex.gz
 *.tex.bak
 *.xmpi
@@ -17,7 +17,7 @@
 *.bbl
 *.blg
 
-# figures externalized from LaTeX compilation
+# figures externalized from LaTeX typesetting
 *figure*.dep
 *figure*.dpth
 *figure*.md5
