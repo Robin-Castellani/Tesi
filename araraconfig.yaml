@@ -7,9 +7,10 @@ preambles:
     % arara: --> synctex: yes,
     % arara: --> interaction: nonstopmode
     % arara: --> } 
+    
     % arara: makeglossaries if 
-    % arara: --> found('aux', '@istfilename') &&
-    % arara: --> changed('ist')
+    % arara: --> found('aux', '@istfilename')
+    
     % arara: xelatex: {
     % arara: --> files: [ 00-main-frn.tex ],
     % arara: --> interaction: nonstopmode
@@ -19,10 +20,12 @@ preambles:
     % arara: --> interaction: nonstopmode
     % arara: --> } 
     % arara: --> if changed(toFile('00-main-frn.pdf'))
+    
     % arara: biber if changed('bbl') || missing('bbl')
+      
     % arara: pdflatex: { 
     % arara: --> synctex: yes,
     % arara: --> interaction: nonstopmode
     % arara: --> } 
-    % arara: --> while found('log', 'undefined references')
+    % arara: --> until !found('log', 'undefined references')
 
