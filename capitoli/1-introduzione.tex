@@ -43,8 +43,8 @@ Dalla quantificazione dell'erosione della vegetazione dovuta alle piene, della q
 Inoltre si trovano valori soglia del livello del pelo libero per l'erosione della vegetazione.
 
 
-\section{Bande spettrali}
-Gli strumenti di acquisizione di immagini aeree e satellitari sono sensibili a determinate bande della radiazione elettromagnetica (\vref{graph:el-mag-radiation}), cioè sono in grado di registrarne solo alcune porzioni. 
+\section{Bande}
+Gli strumenti di acquisizione di immagini aeree e satellitari sono sensibili a determinate lunghezze d'onda della radiazione elettromagnetica (\vref{graph:el-mag-radiation}), cioè sono in grado di registrarne solo alcune porzioni (bande). 
 L'occhio umano può distinguere solo le bande del visibile, mentre i sensori artificiali possono acquisire altre bande della radiazione. 
 %
 \begin{figure}
@@ -55,9 +55,9 @@ L'occhio umano può distinguere solo le bande del visibile, mentre i sensori art
 \end{figure}
 %
 \\
-Le immagini nel visibile sono solitamente suddivise nelle bande del Rosso, Verde e Blu (\emph{Red}, \emph{Green}, \emph{Blue}, RGB); ognuna indica la quantità di colore presente; la combinazione di queste quantità di colore restituisce l'immagine a colori. 
+Le immagini nel visibile sono solitamente suddivise nelle bande del Rosso, Verde e Blu (\emph{Red}, \emph{Green}, \emph{Blue}, R-G-B); ognuna indica la quantità di colore presente; la combinazione di queste quantità di colore restituisce l'immagine a colori. 
 \\
-Per poter osservare immagini con bande diverse dal visibile si sostituisce una o più bande RGB con le bande in questione. 
+Per poter osservare immagini con bande diverse dal visibile si sostituisce una o più bande R-G-B con le bande in questione. 
 Ad esempio, è possibile sostituire la banda del Rosso con quella dell'Infrarosso (IR): la quantità di colore del Rosso sarà rimpiazzata dalla quantità di colore dell'Infrarosso. 
 Il risultato sarà un'immagine riconoscibile dall'occhio umano, ma in falsi colori (\vref{fig:confronto-bande-intro}).
 %
@@ -98,9 +98,23 @@ Il tratto studiato è quello intrecciato multicanale compreso tra Tolmezzo e Mad
 
 
 
-\section{Materiali e metodi}
+\section{Convenzioni}
+Le seguenti convenzioni saranno utilizzate nella presente tesi:
+\begin{description}
+	\item[Mappe] riportate secondo WGS84/UTM~32N (EPSG:~32633);
+	\item[Formato delle date] AAAA-MM-GG;
+	\item[Citazioni] sono nel formato Autore/i-Anno, racchiuse tra parentesi quadre;
+	\item[Web link] sono riportati in note a piè pagina;
+	\item[Termini in lingua straniera] sono in corsivo;
+	\item[Glossario] presente nel materiale finale;
+	%
+\end{description}
+
+
+
+\section{Materiali}
 % materiali
-Sono state considerate le bande spettrali del \emph{Near-InfraRed}~(NIR) e del \emph{Red}~(R) nelle immagini satellitari multibande provenienti dalle seguenti missioni:
+Sono state considerate le bande del \emph{Near-InfraRed}~(NIR) e del \emph{Red}~(R) nelle immagini satellitari multibande provenienti dalle seguenti missioni:
 %
 \begin{itemize}
 	\item satellite Terra, sensore ASTER Livello~1T (ottenuti in data~21~luglio~2018 \squarecite{data:ASTER});  
@@ -124,7 +138,7 @@ le ortofoto del~2017 sono state ottenute da \href{https://www.google.com/earth/}
 I dati idrometrici sono stati forniti dalla \href{http://www.protezionecivile.fvg.it/it/rete-idrometeorologica}{rete idrometeorologica della Protezione Civile della Regione Autonoma Friuli Venezia Giulia}\footnote{\texttt{http://www.protezionecivile.fvg.it/it/rete-idrometeorologica}}.
 \\
 I grafici in \vref{graph:livelli-orto-sat} mostrano rispettivamente i livelli idrometrici registrati presso l'idrometro di Villuzza, corrispondente al ponte di Pinzano, e le date di cui si dispongono ortofoto e immagini satellitari (ASTER, Pleiades, Sentinel2, Google~Earth). 
-Nel secondo grafico sono riportati solamente i livelli maggiori di~\SI{2}{\m} in quanto, \cite[secondo][]{Bertoldi:2009-2m}, livelli superiori a tale soglia iniziano ad avere effetti di disturbo sulla vegetazione.
+Nel secondo grafico sono riportati solamente i livelli maggiori di~\SI{2}{\m} in quanto livelli superiori a tale soglia iniziano ad avere effetti di disturbo sulla vegetazione \squarecite{Bertoldi:2009-2m}.
 La \vref{tab:date-orto-sat} mostra le date e la risoluzione delle immagini utilizzate nell'analisi.
 %%
 \begin{figure}[p]
