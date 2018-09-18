@@ -109,14 +109,10 @@ color(50.00000000000000bp)=(red)
 \usepackage{varioref}	% per riferimenti con pagine
 \usepackage[noabbrev]{cleveref}	% per riferimenti intelligenti
 
-% glossari
-\usepackage[translate=babel]{glossaries}
-\setacronymstyle{long-short}
+% glossario
+\usepackage[translate=babel,nonumberlist]{glossaries}
 \makeglossaries
-
-\newglossaryentry{es}{name={esempio},plural={esempi},description={un piccolo esempio}}
-
-\newacronym{ndvi}{NDVI}{Normalized Difference Vegetation Index}
+\loadglsentries{materiale_iniziale_finale/voci-glossario}
 
 
 \hyphenation{NDVI}
@@ -155,6 +151,11 @@ color(50.00000000000000bp)=(red)
 
 
 
+
+%----------------------------------------------------------
+% aggiunge tutte le voci del glossario
+\glsaddall
+%----------------------------------------------------------
 %**********************************************************
 %**********************************************************
 \backmatter
@@ -166,7 +167,7 @@ color(50.00000000000000bp)=(red)
 \phantomsection
 \pagestyle{scrheadings}
 \addcontentsline{toc}{chapter}{\tocEntry{\glossaryname}}
-\printglossary
+\printglossaries
 
 % bibliografia
 \printbibliography
