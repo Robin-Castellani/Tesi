@@ -1,7 +1,7 @@
 \begin{tikzpicture}
 	\begin{groupplot}[
 		group style = {
-			group size = 2 by 2,
+			group size = 2 by 3,
 			ylabels at = edge left,
 			x descriptions at = edge bottom,
 			horizontal sep = 1.1cm,
@@ -14,7 +14,7 @@
 		xtick = {1,2,3},
 		xticklabels = {Veg., Alveo, Canale},
 		ymax = 0.75,
-		ymin = -0.5,
+		ymin = -0.55,
 		grid = major,
 	]
 	\nextgroupplot % ASTER 2005-08-31
@@ -99,8 +99,7 @@
 				lower quartile = 0.350238,
 				median = 0.415502,
 				upper quartile = 0.483495,
-				upper whisker = 0.549505		
-,
+				upper whisker = 0.549505,
 				},
         	]
         	coordinates {};
@@ -127,7 +126,45 @@
         	]
         	coordinates {};
         \node [fill = white, draw = black, anchor = center] 
-        	at (2.5,0.6) {Pl 2014-10-31};
+        	at (2.5,0.6) {PL 2014-10-31};
+	%------------------------------------------------------
+	\nextgroupplot % Pleiades 2015-08-13
+		\addplot+ [ % vegetazione
+			teal, very thick,
+			boxplot prepared = {
+				lower whisker = 0.415693,
+				lower quartile = 0.5,
+				median = 0.570359,
+				upper quartile = 0.638507,
+				upper whisker = 0.704044		
+,
+				},
+        	]
+        	coordinates {};
+		\addplot+ [ % alveo attivo
+			brown, very thick,
+			boxplot prepared = {
+				lower whisker = 0.075052,
+				lower quartile = 0.080858,
+				median = 0.087921,
+				upper quartile = 0.096031,
+				upper whisker = 0.106198,
+				},
+        	]
+        	coordinates {};
+		\addplot+ [ % canale
+			cyan, very thick,
+			boxplot prepared = {
+				lower whisker = -0.262599,
+				lower quartile = -0.244228,
+				median = -0.214393,
+				upper quartile = -0.176471,
+				upper whisker = -0.132762,
+				},
+        	]
+        	coordinates {};
+        \node [fill = white, draw = black, anchor = center] 
+        	at (2.5,0.6) {PL 2015-08-13};
 	%------------------------------------------------------
 	\nextgroupplot % Sentinel2 2017-04-21
 		\addplot+ [ % vegetazione
@@ -165,5 +202,42 @@
         	coordinates {};
         \node [fill = white, draw = black, anchor = center] 
         	at (2.5,0.6) {S2 2017-04-21};
+	%------------------------------------------------------
+	\nextgroupplot % WorldView2 2018-06-15
+		\addplot+ [ % vegetazione
+			teal, very thick,
+			boxplot prepared = {
+				lower whisker = 0.557798,
+				lower quartile = 0.612511,
+				median = 0.66306,
+				upper quartile = 0.692203,
+				upper whisker = 0.711096,
+				},
+        	]
+        	coordinates {};
+		\addplot+ [ % alveo attivo
+			brown, very thick,
+			boxplot prepared = {
+				lower whisker = 0.314356,
+				lower quartile = 0.320849,
+				median = 0.328292,
+				upper quartile = 0.334212,
+				upper whisker = 0.344664,
+				},
+        	]
+        	coordinates {};
+		\addplot+ [ % canale
+			cyan, very thick,
+			boxplot prepared = {
+				lower whisker = -0.527174,
+				lower quartile = -0.491803,
+				median = -0.451852,
+				upper quartile = -0.408867,
+				upper whisker = -0.356322,
+				},
+        	]
+        	coordinates {};
+        \node [fill = white, draw = black, anchor = center] 
+        	at (2.55,0.6) {WV2 2018-06-15};
 	\end{groupplot}
 \end{tikzpicture}
