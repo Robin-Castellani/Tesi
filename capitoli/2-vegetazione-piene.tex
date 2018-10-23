@@ -1,9 +1,10 @@
-\section{Quantità di vegetazione in alveo}
-Si è misurata l'area della vegetazione presente in alveo e nella parte di floodplain soggetta a a forti disturbi (erosione e distacco di isole); 
+F\section{Quantità di vegetazione in alveo}
+Si è misurata l'area della vegetazione presente in alveo e nella parte di floodplain soggetta a forti disturbi (erosione e distacco di isole); 
 a tal fine si è seguito l'approccio di altri autori in analisi simili eseguite su immagini ASTER e LandSat~TM \squarecites{Bertoldi:2011-ASTER}{Henshaw:2013-LandSat}.
 %
-\begin{enumerate}
-	\item Dapprima è stata individuata manualmente una maschera di calcolo che comprendesse l'alveo attivo e la parte di piana alluvionale che è stata erosa quando coinvolta nelle piene; 
+\begin{description}
+	\item[Maschera computazionale] 
+	Dapprima è stata individuata manualmente una maschera di calcolo che comprendesse l'alveo attivo e la parte di piana alluvionale che è stata erosa quando coinvolta nelle piene; 
 	tale maschera si estende da Tolmezzo al ponte di Madrisio
 	(\vref{fig:esempio-maschera}). 
 	Applicandola, il dominio computazionale è stato ridotto a comprendere l'inviluppo degli alvei attivi che si sono succeduti dall'immagine del~2000 all'ortofoto del~2017.
@@ -24,7 +25,9 @@ a tal fine si è seguito l'approccio di altri autori in analisi simili eseguite 
 		\label{fig:esempio-maschera}
 	\end{figure}
 	%
-	\item In questa area è stato calcolato il \emph{Normalized Difference Vegetation Index} (NDVI) grazie alle bande del \emph{Near Infrared} (NIR) e del \emph{Red} (R)
+	%
+	\item[NDVI] 
+	In questa area è stato calcolato il \emph{Normalized Difference Vegetation Index} (NDVI) grazie alle bande del \emph{Near Infrared} (NIR) e del \emph{Red} (R)
 	%
 	\begin{equation}
 		%\notag
@@ -32,8 +35,11 @@ a tal fine si è seguito l'approccio di altri autori in analisi simili eseguite 
 		\label{eq:ndvi}
 	\end{equation}
 	%
-	\item \`{E} stata effettuata una digitalizzazione manuale di alcune aree campione per le immagini ASTER del~2005-08-30 ($\sim 70$) e del~2012-08-01 ($\sim 100$), l'immagine Plaiades del~2014-10-31 ($\sim 40$) e l'immagine Sentinel2 del~2017-04-21 ($\sim 45$) (\vref{fig:esempio-aree-campione}).
-	Sono state selezionate immagini per ogni satellite poiché ciascuno è sensibile a bande leggermente diverse; si sono osservate due immagini ASTER dato il grande numero di immagini disponibili scegliendo quelle con minor nuvolosità.
+	%
+	\item[Aree campione]
+	\`{E} stata effettuata una digitalizzazione manuale di alcune aree campione per le immagini ASTER del~2005-08-30 ($\sim 70$) e del~2012-08-01 ($\sim 100$), l'immagine Plaiades del~2014-10-31 ($\sim 40$) e l'immagine Sentinel2 del~2017-04-21 ($\sim 45$) (\vref{fig:esempio-aree-campione}).
+	Sono state selezionate immagini per ogni satellite poiché ciascuno è sensibile a bande leggermente diverse; si sono osservate due immagini ASTER dato il grande numero di immagini disponibili da questo sensore scegliendo quelle con minor nuvolosità.
+	\\
 	Queste aree campione sono state suddivise in tre classi: vegetazione, alveo attivo e canale.
 	%
 	\begin{figure}[ht]
@@ -43,7 +49,9 @@ a tal fine si è seguito l'approccio di altri autori in analisi simili eseguite 
 		\label{fig:esempio-aree-campione}
 	\end{figure}
 	%
-	\item Per ogni immagine si è osservata la distribuzione dell'NDVI in ogni classe (\vref{graph:percentili}).
+	%
+	\item[Percentili aree campione]
+	Per ogni immagine si è osservata la distribuzione dell'NDVI in ogni classe (\vref{graph:percentili}).
 	% 
 	\begin{figure}[ht]
 		\centering
@@ -52,7 +60,9 @@ a tal fine si è seguito l'approccio di altri autori in analisi simili eseguite 
 		\label{graph:percentili}
 	\end{figure}
 	%
-	\item Da tali grafici sono state ottenute delle soglie di NDVI per classificare le immagini satellitari (\vref{tab:ndvi-soglia}). Le soglie sono in accordo con quanto riportato in letteratura \squarecite{Bertoldi:2011-ASTER}.
+	%
+	\item[Soglie NDVI] 
+	Da tali grafici sono state ottenute delle soglie di NDVI per classificare le immagini satellitari (\vref{tab:ndvi-soglia}); per l'immagine WorldView2 la soglia che distingue vegetazione da alveo attivo è maggiore. Le soglie sono in accordo con quanto riportato in letteratura \squarecite{Bertoldi:2011-ASTER}.
 	%
 	\begin{table}[ht]
 		\centering
@@ -63,21 +73,110 @@ a tal fine si è seguito l'approccio di altri autori in analisi simili eseguite 
 			c@{\,}
 			c@{\,}
 			S[table-format=1.1]
+			S[table-format=1.1]@{\,}
+			c@{\,}
+			c@{\,}
+			c@{\,}
+			S[table-format=1.1]
 			}
 			\toprule
-			\multicolumn{6}{c}{\textbf{Soglie}}	\\
+			&	\multicolumn{5}{c}{\textbf{Soglie AST PL S2}}	&	\multicolumn{5}{c}{\textbf{Soglie WV2}}	\\
 			\midrule
-			Vegetazione		&	0.2	&	$\leq$	&	NDVI	&		& 	\\
-			Alveo attivo	&	0.0	&	$\leq$	&	NDVI	&	$<$		&	0.2	\\
-			Canale			&		&			&	NDVI	&	$<$		&	0.0	\\
+			Vegetazione		&	0.2	&	$\leq$	&	NDVI	&			&		& 	0.3	&	$\leq$	&	NDVI	&			& 	\\
+			Alveo attivo	&	0.0	&	$\leq$	&	NDVI	&	$<$		&	0.2	&	0.0	&	$\leq$	&	NDVI	&	$<$		&	0.3\\
+			Canale			&		&			&	NDVI	&	$<$		&	0.0	&		&			&	NDVI	&	$<$		&	0.0\\
 			\bottomrule
 		\end{tabular}
 		\caption[soglie NDVI]{soglie di NDVI per la classificazione delle immagini satellitari.}
 		\label{tab:ndvi-soglia}
 	\end{table}
-\end{enumerate}
+	%
+	%
+	\item[Divisione in 23 tratti]
+	La maschera di calcolo è stata suddivisa manualmente in 23~tratti con 22~sezioni al fine di avere un maggior dettaglio spaziale delle dinamiche di vegetazione (\vref{fig:23-tratti}). 
+	Questi tratti sono stati selezionati in modo da possedere caratteristiche omogenee per portata e crescita della vegetazione; 
+	pertanto confluenze di immissari, bruschi restringimenti o allargamenti, inizio di pronunciato \emph{upwelling} o \emph{downwelling} ed evidenti cambiamenti di morfologia fluviale sono stati gli elementi per individuare le 22~sezioni che determinano i 23~tratti.
+	%
+	\begin{figure}
+		\centering
+		\includegraphics[width=.8\textwidth]{files/tutti_23_tratti.jpeg}
+		\caption[immagine con la maschera suddivisa in 23 tratti]{immagine con la maschera suddivisa in 23 tratti; la sezione di monte del tratto~1 corrisponde a Tolmezzo, la sezione di valle del tratto~23 corrisponde al ponte di Madrisio.}
+		\label{fig:23-tratti}
+	\end{figure}
+	%
+	%
+	\item[isole e \emph{Floodplain}]
+	Tramite una procedura semi-automatica e con il supporto di Google Earth, la classe della vegetazione è stata suddivisa in \emph{floodplain} e isole. 
+	Tale procedura si basa sul fatto che la maschera computazionale comprende parte della piana alluvionale e che le isole sono completamente circondate dalla ghiaia dell'alveo durante periodi di magra.
+	\\
+	Successivamente, un controllo visivo del risultato e una correzione manuale di alcune celle hanno permesso sia di distinguere correttamente le isole, sia di evitare che isole molto prossime alla \emph{floodplain} ne fossero considerate parte; la classe delle celle corrette è stata aggiunta alla classificazione.
+	%
+	%
+	\item[Nuvole e nodata] Alcune immagini presentano una lieve copertura nuvolosa che si estende nella maschera; queste zone sono state manualmente delimitate poiché presentano valori NDVI alterati.
+	\\
+	Altre immagini hanno un'estensione limitata rispetto alla maschera; questo porta ad avere aree prive di dati (\texttt{nodata}).
+	\\
+	Alla classificazione sono state aggiunte la classe delle nuvole e dei \texttt{nodata}.
+	%
+	%
+	\item[Classificazione finale dei tratti] La \vref{tab:class_tratti} mostra le classi in cui è stato classificato ognuno dei 23~tratti; la %\vref{fig:class_is_fl} ne mostra un esempio.
+	%
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{
+			c 
+			c
+			}
+			\toprule
+			\textbf{Macroclasse}	&	\textbf{Classe}	\\
+			\midrule
+			Vegetazione		&	Isola	\\
+							&	Floodplain	\\
+			Alveo attivo	&	Cella corretta	\\
+							&	Ghiaia	\\
+							&	Canale	\\
+			Altro			&	Nuvola	\\
+							&	Nodata	\\
+			\bottomrule
+		\end{tabular}
+		\caption[classificazione dell'area dei tratti]{classificazione finale dell'area di ogni tratto all'interno della maschera computazionale.}
+		\label{tab:class_tratti}
+	\end{table}
+	%
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=.8\textwidth]{files/esempio_class_is_fl.jpeg}
+		\caption[esempio della classificazione dell'area dei tratti]{esempio della classificazione dell'area dei tratti.}
+		\label{fig:class_is_fl}
+	\end{figure}
+	%
+	Al fine di validare la precedente procedura di controllo e correzione della distinzione isole - \emph{floodplain}, si è osservato per ogni tratto l'andamento temporale della larghezza media~$B$, esprimibile semplicemente come il rapporto dell'area dell'alveo di ogni tratto (somma dell'alveo attivo e delle isole) per la sua lunghezza seguendo la corrente:
+	%
+	\begin{equation}
+		B = \frac{\text{Area alveo}}{Lunghezza} 
+		\quad .
+		\label{eq:larghezza_tratto}
+	\end{equation}
+	% 
+	Si è verificato che la larghezza~$B$ rimanesse costante nel tempo, indice di una corretta classificazione tra isole e \emph{floodplain}. 
+	La~$B$ non rimane costante solo nel caso di distacco di isole o di fusione di isole nella piana. 
+	\\
+	La \vref{fig:b-media-7-e-15} mostra l'andamento temporale della~$B$ dei tratti~7 e~15: nel primo tratto, in cui non si osserva alcuna variazione sensibile dell'alveo, la~$B$ oscilla solo di qualche decina di metri; nel secondo si assiste alla progressiva fusione di una grande isola nella \emph{floodplain}, e questo lo si vede proprio nella diminuzione della~$B$. Ciò che conta non è quanto è largo l'alveo, ma quanto cambia la larghezza.
+	%
+	\begin{figure}
+		\centering
+		\input{graphics/plots/larghezze_tr_7_tr_15.tex}
+		\quad
+		\includegraphics[width=0.3\textwidth]{files/fusione_isola_tr_15.jpeg}
+		\caption[andamento temporale di $B$ per i tratti~7 e~15]{a sinistra si vede l'andamento nel tempo della larghezza media dei tratti~7 e~15; la $B$ del tratto~7 oscilla solamente di qualche decina di metri, mentre il tratto~15 riduce improvvisamente la sua $B$ a causa della fusione di una grande isola nella \emph{floodplain}, fenomeno mostrato a destra (A: 2003-11-29, B: 2005-08-30).}
+		\label{fig:b-media-7-e-15}
+	\end{figure}
+	
+\end{description}
 
 
+% tenere questa parte? forse la si può togliere
+% e mostrare direttamente i risultati sul cambiamento
 Con la riclassificazione delle immagini dell'NDVI rispetto alle soglie proposte è stato possibile ottenere la percentuale di alveo coperta da vegetazione per ogni anno. 
 Si ricorda, grazie alla maschera applicata, tale copertura include sia isole vegetate sia la parte di piana alluvionale che nel periodo di studio ha esperito fenomeni di erosione della vegetazione e quindi espansione dell'alveo attivo.
 Infine, per le immagini l'alveo parzialmente coperto da nuvole, la maschera è stata estesa per escludere tali zone coperte poiché queste presentano valori di NDVI non corretti.
@@ -88,6 +187,22 @@ I risultati sono mostrati nel grafico in \vref{graph:class-sat-veg}.
 \begin{figure}[ht]
 	\centering
 	\input{graphics/plots/class-sat-veg}
-	\caption[andamento dell'areale della vegetazione nelle isole  e nella floodplain]{andamento dell'areale della vegetazione nelle isole e nella floodplain (in rosso). I dati provengono dalla classificazione delle immagini satellitari (ASTER, Pleiades e Sentinel2). In blu sono mostrati i livelli idrometrici superiori a~\SI{2}{\m} registrati alla stazione di Villuzza.}
+	\caption[andamento dell'areale della vegetazione nelle isole  e nella floodplain]{andamento dell'areale della vegetazione nelle isole e nella floodplain (in rosso). I dati provengono dalla classificazione delle immagini satellitari (ASTER, Pleiades, Sentinel2 e WorldView2). In blu sono mostrati i livelli idrometrici medi giornalieri superiori a~\SI{2}{\m} registrati alla stazione di Villuzza.}
 	\label{graph:class-sat-veg}
 \end{figure}
+
+
+% grafico piene 2m+ - %veg tratti (nuovo file comprensivo di tutti i tratti)
+
+
+
+% nuova sezione sul cambiamento della vegetazione
+
+
+% cambiamento della vegetazione
+% spostamento delle immagini che lo necessitano
+
+% età della vegetazione
+
+
+
