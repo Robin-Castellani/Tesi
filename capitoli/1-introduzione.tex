@@ -118,16 +118,16 @@ Le seguenti convenzioni saranno utilizzate nella presente tesi:
 Sono state considerate le bande del \emph{Near-InfraRed}~(NIR) e del \emph{Red}~(R) nelle immagini satellitari multibande provenienti dalle seguenti missioni:
 %
 \begin{itemize}
-	\item satellite Terra, sensore ASTER Livello~1T (ottenuti in data~21~luglio~2018 \squarecite{data:ASTER});  
+	\item satellite Terra, sensore \AST{} Livello~1T (ottenuti in data~21~luglio~2018 \squarecite{data:ASTER});  
 		\\
 		NIR (Banda~3N)~\SIrange[range-phrase={-}]{0.78}{0.86}{\nano\m}, R (Banda~2)~\SIrange[range-phrase={-}]{0.63}{0.69}{\micro\m};
-	\item costellazione Pleiades (\href{https://pleiades.cnes.fr/en/PLEIADES/index.htm}{Centre National d'Etudes Spatiales}\footnote{\texttt{https://pleiades.cnes.fr/en/PLEIADES/index.htm}}), immagini acquistate dall'Università degli Studi di Trento; 
+	\item costellazione \Pl{} (\href{https://pleiades.cnes.fr/en/PLEIADES/index.htm}{Centre National d'Etudes Spatiales}\footnote{\texttt{https://pleiades.cnes.fr/en/PLEIADES/index.htm}}), immagini acquistate dall'Università degli Studi di Trento; 
 		\\
 		NIR~\SIrange[range-phrase={-}]{0.74}{0.94}{\micro\m}, R~\SIrange[range-phrase={-}]{0.59}{0.71}{\micro\m};
-	\item satellite Sentinel2A-B, sensore~MSI Livello~1C (ottenuti in data 21~luglio 2018 tramite la API del \href{http://scihub.copernicus.eu/}{Copernicus Open Access Hub}\footnote{\texttt{http://scihub.copernicus.eu/}});
+	\item satellite \Se{}A-B, sensore~MSI Livello~1C (ottenuti in data 21~luglio 2018 tramite la API del \href{http://scihub.copernicus.eu/}{Copernicus Open Access Hub}\footnote{\texttt{http://scihub.copernicus.eu/}});
 		\\
 		NIR (Banda~8)~\SIrange[range-phrase={-}]{0.763}{0.908}{\micro\m}, R (Banda~4)~\SIrange[range-phrase={-}]{0.645}{0.683}{\micro\m};
-	\item satellite WorldView2  (\href{https://dg-cms-uploads-production.s3.amazonaws.com/uploads/document/file/98/WorldView2-DS-WV2-rev2.pdf}{DigitalGlobe}), immagini acquistate dall'Università degli Studi di Trento;
+	\item satellite \WV{}  (\href{https://dg-cms-uploads-production.s3.amazonaws.com/uploads/document/file/98/WorldView2-DS-WV2-rev2.pdf}{DigitalGlobe}), immagini acquistate dall'Università degli Studi di Trento;
 		\\
 		NIR (Banda~MS1)~\SIrange[range-phrase={-}]{0.770}{0.895}{\micro\m}, R (Banda~MS2)~\SIrange[range-phrase={-}]{0.630}{0.690}{\micro\m}.
 \end{itemize}
@@ -139,16 +139,16 @@ le ortofoto del~2017 sono state ottenute da \href{https://www.google.com/earth/}
 \\
 I dati idrometrici orari o semi-orari dal 2000-01-01 al 2018-10-14 presso l'idrometro di Villuzza (\num{46.181}N, \num{12.958}E, quota s.l.m.m.~\num{240}, corrispondente al ponte di Pinzano) sono stati forniti dalla \href{http://www.protezionecivile.fvg.it/it/rete-idrometeorologica}{rete idrometeorologica della Protezione Civile della Regione Autonoma Friuli Venezia Giulia}\footnote{\texttt{http://www.protezionecivile.fvg.it/it/rete-idrometeorologica}}.
 
-I grafici in \vref{graph:livelli-orto-sat} mostrano rispettivamente la media giornaliera dei livelli idrometrici e le date di cui si dispongono ortofoto e immagini satellitari (ASTER, Pleiades, Sentinel2, Google~Earth, WorldView2). 
+I grafici in \vref{graph:livelli-orto-sat} mostrano rispettivamente la media giornaliera dei livelli idrometrici e le date di cui si dispongono ortofoto e immagini satellitari (\AST{}, \Pl{}, \Se{}, Google~Earth, \WV{}). 
 Nel secondo grafico sono riportati solamente i livelli medi giornalieri maggiori di~\SI{2}{\m} in quanto livelli superiori a tale soglia iniziano ad avere effetti di disturbo sulla vegetazione \squarecite{Bertoldi:2009-2m}.
-La \vref{tab:date-orto-sat} mostra le date e la risoluzione delle immagini utilizzate nell'analisi.
+La \vref{tab:date-orto-sat} mostra le date e la dimensione delle celle delle immagini utilizzate nell'analisi.
 %%
 \begin{figure}[p]
 	\centering
 	\input{graphics/plots/livelli}
 	\input{graphics/plots/livelli_2m+imm}
 	\caption[livelli idrometrici e foto aeree - satellitari]{in alto il livello idrometrico medio giornaliero (in blu) presso l'idrometro di Villuzza. 
-	In basso un ingrandimento per i livelli medi giornalieri superiori a~\SI{2}{\m}. Le linee indicano le immagini satellitari e le ortofoto considerate (ASTER in magenta, ortofoto in arancione, Pleiades in verde~acqua, Sentinel2 in azzurro, G-Earth in verde, WorldView2 in nero).}
+	In basso un ingrandimento per i livelli medi giornalieri superiori a~\SI{2}{\m}. Le linee indicano le immagini satellitari e le ortofoto considerate (\AST{} in magenta, ortofoto in arancione, \Pl{} in verde~acqua, \Se{} in azzurro, G-Earth in verde, \WV{} in nero).}
 	\label{graph:livelli-orto-sat}
 \end{figure}
 %%%
@@ -156,37 +156,37 @@ La \vref{tab:date-orto-sat} mostra le date e la risoluzione delle immagini utili
 	\centering
 	\begin{tabular}{c c S[table-format=2.2]}
 		\toprule
-		Data		&	Fonte		&	\multicolumn{1}{c}{Ris \si{[\m]}}	\\
+		Data		&	Fonte		&	\multicolumn{1}{c}{Dim. celle \si{[\m]}}	\\
 		\midrule	
-		2000-09-17		&	ASTER		&	15	\\
-		2001-06-07		&	ASTER		&	15	\\
-		2002-05-18		&	ASTER		&	15	\\
-		2002-06-12		&	ASTER		&	15	\\
-		2003-06-22		&	ASTER		&	15	\\
-		2003-11-29		&	ASTER		&	15	\\
-		2004-10-14		&	ASTER		&	15	\\
-		2005-08-30		&	ASTER		&	15	\\
-		2006-07-16		&	ASTER		&	15	\\
-		2007-09-21		&	ASTER		&	15	\\
-		2008-07-05		&	ASTER		&	15	\\
-		2009-07-08		&	ASTER		&	15	\\
-		2010-09-29		&	ASTER		&	15	\\
+		2000-09-17		&	\AST{}		&	15	\\
+		2001-06-07		&	\AST{}		&	15	\\
+		2002-05-18		&	\AST{}		&	15	\\
+		2002-06-12		&	\AST{}		&	15	\\
+		2003-06-22		&	\AST{}		&	15	\\
+		2003-11-29		&	\AST{}		&	15	\\
+		2004-10-14		&	\AST{}		&	15	\\
+		2005-08-30		&	\AST{}		&	15	\\
+		2006-07-16		&	\AST{}		&	15	\\
+		2007-09-21		&	\AST{}		&	15	\\
+		2008-07-05		&	\AST{}		&	15	\\
+		2009-07-08		&	\AST{}		&	15	\\
+		2010-09-29		&	\AST{}		&	15	\\
 		2011-06-26/07-02	&	Ortofoto	&	1	\\
-		2012-08-01		&	ASTER		&	15	\\
-		2013-09-05		&	ASTER		&	15	\\
+		2012-08-01		&	\AST{}		&	15	\\
+		2013-09-05		&	\AST{}		&	15	\\
 		2013-10-22		&	Ortofoto	&	0.2	\\
-		2014-09-08		&	ASTER		&	15	\\
-		2014-10-31		&	Pleiades	&	0.5	\\
-		2015-08-13		&	Pleiades	&	0.5	\\
-		2015-09-11		&	ASTER		&	15	\\
-		2015-09-29		&	Sentinel2	&	10	\\
-		2016-09-13		&	Sentinel2	&	10	\\
-		2017-04-21		&	Sentinel2	&	10	\\
+		2014-09-08		&	\AST{}		&	15	\\
+		2014-10-31		&	\Pl{}	&	0.5	\\
+		2015-08-13		&	\Pl{}	&	0.5	\\
+		2015-09-11		&	\AST{}		&	15	\\
+		2015-09-29		&	\Se{}	&	10	\\
+		2016-09-13		&	\Se{}	&	10	\\
+		2017-04-21		&	\Se{}	&	10	\\
 		2017-06-26/08-02	&	G-Earth	&	0.45	\\
-		2018-06-15		&	WorldView2	&	0.5	\\
+		2018-06-15		&	\WV{}	&	0.5	\\
 		\bottomrule
 	\end{tabular}
-	\caption{data e risoluzione delle immagini satellitari e delle ortofoto utilizzate.}
+	\caption{data e dimensione delle celle delle immagini satellitari e delle ortofoto utilizzate.}
 	\label{tab:date-orto-sat}
 \end{table}
 
@@ -196,7 +196,7 @@ La \vref{tab:date-orto-sat} mostra le date e la risoluzione delle immagini utili
 \medskip
 Per eseguire le analisi sulle immagini aeree e satellitari sono stati utilizzati i GIS GRASS \squarecite{soft:GRASS} e QGIS \squarecite{soft:QGIS}. 
 \\
-Per il download e l'estrazione delle immagini satellitari ASTER e Sentinel2 è stato usato SCP, plugin di QGIS \squarecite{soft:SCP}. 
+Per il download e l'estrazione delle immagini satellitari \AST{} e \Se{} è stato usato SCP, plugin di QGIS \squarecite{soft:SCP}. 
 \\
 Per il download delle ortofoto dell'estate~2017 si è utilizzato \href{https://github.com/sourcepole/qgis-openlayers-plugin}{OpenLayers}\footnote{\texttt{https://github.com/sourcepole/qgis-openlayers-plugin}}, plugin di QGIS.
 \\

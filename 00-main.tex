@@ -6,7 +6,7 @@
 	eulerchapternumbers,eulermath,floatperchapter]
 	{classicthesis} % per uno stile bello
 \usepackage{arsclassica}	% per uno stile ancora più bello
-\usepackage{amsmath,amsfonts}
+%\usepackage{amsmath,amsfonts}
 \usepackage{amssymb}
 \usepackage{mathtools}
 \usepackage{multicol}
@@ -108,13 +108,19 @@ color(50.00000000000000bp)=(red)
 	%hidelinks,
 }
 \usepackage{varioref}	% per riferimenti con pagine
-\usepackage[noabbrev]{cleveref}	% per riferimenti intelligenti
+\usepackage{cleveref}	% per riferimenti intelligenti
+
+%\crefname{equation}{equazione}{equazioni}
 
 % glossario
 \usepackage[translate=babel,nonumberlist]{glossaries}
 \makeglossaries
 \loadglsentries{materiale_iniziale_finale/voci-glossario}
 
+\newcommand{\AST}{ASTER}
+\newcommand{\Se}{Sentinel2}
+\newcommand{\Pl}{Pleiades}
+\newcommand{\WV}{WorldView2}
 
 \hyphenation{NDVI}
 
