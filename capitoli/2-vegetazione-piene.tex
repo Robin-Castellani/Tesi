@@ -1,24 +1,26 @@
-F\section{Quantità di vegetazione in alveo}
-Si è misurata l'area della vegetazione presente in alveo e nella parte di floodplain soggetta a forti disturbi (erosione e distacco di isole); 
-a tal fine si è seguito l'approccio di altri autori in analisi simili eseguite su immagini ASTER e LandSat~TM \squarecites{Bertoldi:2011-ASTER}{Henshaw:2013-LandSat}.
+\section{Quantità di vegetazione in alveo}
+Si è quantificato l'areale delle isole presenti in alveo avendo accortezza di distinguerlo chiaramente dall'areale della \emph{floodplain}, il quale è soggetto a dinamiche diverse rispetto alle isole.
+
+\subsection{Metodi: classificare l'alveo}
+Per classificare il terreno occupato dall'alveo è stato seguito l'approccio di altri autori in analisi simili eseguite su immagini \AST{} e LandSat~TM \squarecites{Bertoldi:2011-ASTER}{Henshaw:2013-LandSat}.
 %
 \begin{description}
 	\item[Maschera computazionale] 
 	Dapprima è stata individuata manualmente una maschera di calcolo che comprendesse l'alveo attivo e la parte di piana alluvionale che è stata erosa quando coinvolta nelle piene; 
 	tale maschera si estende da Tolmezzo al ponte di Madrisio
 	(\vref{fig:esempio-maschera}). 
-	Applicandola, il dominio computazionale è stato ridotto a comprendere l'inviluppo degli alvei attivi che si sono succeduti dall'immagine del~2000 all'ortofoto del~2017.
+	Applicandola, il dominio computazionale è stato ridotto a comprendere l'inviluppo degli alvei attivi che si sono succeduti dall'immagine del~2000 a quella del~2018.
 	%
 	\begin{figure}[t]
 		\centering
 		\begin{subfigure}[b]{0.296\textwidth}
 			\includegraphics[width=\textwidth]{files/esempio_mask_2000_09_17.jpeg}
-			\caption{ASTER 2000-09-17.}
+			\caption{\AST{} 2000-09-17.}
 		\end{subfigure}
 		\qquad
 		\begin{subfigure}[b]{0.30\textwidth}
 			\includegraphics[width=\textwidth]{files/esempio_mask_2015_09_11.jpeg}
-			\caption{ASTER 2015-09-11.}
+			\caption{\AST{} 2015-09-11.}
 		\end{subfigure}
 		\caption[definizione della maschera per limitare il dominio computazionale]
 			{esempio in cui si vede come la maschera utilizzata per limitare il dominio computazionale (in giallo) sia il risultato dell'inviluppo degli alvei attivi che si sono modificati nel tempo; le immagini sono in falsi colori (IR-R-G).}
@@ -37,15 +39,16 @@ a tal fine si è seguito l'approccio di altri autori in analisi simili eseguite 
 	%
 	%
 	\item[Aree campione]
-	\`{E} stata effettuata una digitalizzazione manuale di alcune aree campione per le immagini ASTER del~2005-08-30 ($\sim 70$) e del~2012-08-01 ($\sim 100$), l'immagine Plaiades del~2014-10-31 ($\sim 40$) e l'immagine Sentinel2 del~2017-04-21 ($\sim 45$) (\vref{fig:esempio-aree-campione}).
-	Sono state selezionate immagini per ogni satellite poiché ciascuno è sensibile a bande leggermente diverse; si sono osservate due immagini ASTER dato il grande numero di immagini disponibili da questo sensore scegliendo quelle con minor nuvolosità.
+	\`{E} stata effettuata una digitalizzazione manuale di alcune aree campione per le immagini \AST{} del~2005-08-30 ($\sim 70$) e del~2012-08-01 ($\sim 100$), le immagini Plaiades del~2014-10-31 ($\sim 40$) e del~2015-06-13 ($\sim 40$), l'immagine \Se{} del~2017-04-21 ($\sim 45$) e l'immagine \WV{} del 2018-06-15 ($\sim 55$) (\vref{fig:esempio-aree-campione}).
+	Sono state selezionate immagini per ogni satellite poiché ciascuno è sensibile a bande leggermente diverse. 
+	%; si sono osservate due immagini \AST{} dato il grande numero di immagini disponibili da questo sensore scegliendo quelle con minor nuvolosità.
 	\\
 	Queste aree campione sono state suddivise in tre classi: vegetazione, alveo attivo e canale.
 	%
 	\begin{figure}[ht]
 		\centering
 		\includegraphics[width=\textwidth]{files/esempio_aree_campione_2014_10_31.jpeg}
-		\caption[esempio di aree campione per calcolare la distribuzione dell'NDVI]{esempio di digitalizzazione di alcune aree campione per l'immagine Pleiades del~2014-10-31; sullo sfondo la mappa dell'NDVI.}
+		\caption[esempio di aree campione per calcolare la distribuzione dell'NDVI]{esempio di digitalizzazione di alcune aree campione per l'immagine \Pl{} del~2014-10-31; sullo sfondo la mappa dell'NDVI.}
 		\label{fig:esempio-aree-campione}
 	\end{figure}
 	%
@@ -62,7 +65,7 @@ a tal fine si è seguito l'approccio di altri autori in analisi simili eseguite 
 	%
 	%
 	\item[Soglie NDVI] 
-	Da tali grafici sono state ottenute delle soglie di NDVI per classificare le immagini satellitari (\vref{tab:ndvi-soglia}); per l'immagine WorldView2 la soglia che distingue vegetazione da alveo attivo è maggiore. Le soglie sono in accordo con quanto riportato in letteratura \squarecite{Bertoldi:2011-ASTER}.
+	Da tali grafici sono state ottenute delle soglie di NDVI per classificare le immagini satellitari (\vref{tab:ndvi-soglia}); per l'immagine \WV{} la soglia che distingue vegetazione da alveo attivo è maggiore. Le soglie sono in accordo con quanto riportato in letteratura \squarecite{Bertoldi:2011-ASTER}.
 	%
 	\begin{table}[ht]
 		\centering
@@ -146,16 +149,16 @@ a tal fine si è seguito l'approccio di altri autori in analisi simili eseguite 
 	\begin{figure}[ht]
 		\centering
 		\includegraphics[width=.8\textwidth]{files/esempio_class_is_fl.jpeg}
-		\caption[esempio della classificazione dell'area dei tratti]{esempio della classificazione dell'area dei tratti.}
+		\caption[esempio della classificazione dell'area dei tratti]{esempio della classificazione dell'area dei tratti; la zona raffigurata si colloca a ridosso del ponte autostradale a valle di Braulins.}
 		\label{fig:class_is_fl}
 	\end{figure}
 	%
 	Al fine di validare la precedente procedura di controllo e correzione della distinzione isole - \emph{floodplain}, si è osservato per ogni tratto l'andamento temporale della larghezza media~$B$, esprimibile semplicemente come il rapporto dell'area dell'alveo di ogni tratto (somma dell'alveo attivo e delle isole) per la sua lunghezza seguendo la corrente:
 	%
 	\begin{equation}
+		\label{eq:larghezza-tratto}
 		B = \frac{\text{Area alveo}}{Lunghezza} 
 		\quad .
-		\label{eq:larghezza_tratto}
 	\end{equation}
 	% 
 	Si è verificato che la larghezza~$B$ rimanesse costante nel tempo, indice di una corretta classificazione tra isole e \emph{floodplain}. 
@@ -175,6 +178,7 @@ a tal fine si è seguito l'approccio di altri autori in analisi simili eseguite 
 \end{description}
 
 
+\begin{comment}
 % tenere questa parte? forse la si può togliere
 % e mostrare direttamente i risultati sul cambiamento
 Con la riclassificazione delle immagini dell'NDVI rispetto alle soglie proposte è stato possibile ottenere la percentuale di alveo coperta da vegetazione per ogni anno. 
@@ -187,22 +191,200 @@ I risultati sono mostrati nel grafico in \vref{graph:class-sat-veg}.
 \begin{figure}[ht]
 	\centering
 	\input{graphics/plots/class-sat-veg}
-	\caption[andamento dell'areale della vegetazione nelle isole  e nella floodplain]{andamento dell'areale della vegetazione nelle isole e nella floodplain (in rosso). I dati provengono dalla classificazione delle immagini satellitari (ASTER, Pleiades, Sentinel2 e WorldView2). In blu sono mostrati i livelli idrometrici medi giornalieri superiori a~\SI{2}{\m} registrati alla stazione di Villuzza.}
+	\caption[andamento dell'areale della vegetazione nelle isole  e nella floodplain]{andamento dell'areale della vegetazione nelle isole e nella floodplain (in rosso). I dati provengono dalla classificazione delle immagini satellitari (\AST{}, \Pl{}, \Se{} e \WV{}). In blu sono mostrati i livelli idrometrici medi giornalieri superiori a~\SI{2}{\m} registrati alla stazione di Villuzza.}
 	\label{graph:class-sat-veg}
 \end{figure}
-
-
 % grafico piene 2m+ - %veg tratti (nuovo file comprensivo di tutti i tratti)
+\end{comment}
 
 
 
-% nuova sezione sul cambiamento della vegetazione
+\subsection{Risultati: evoluzione della larghezza}
+Utilizzando le mappe di classificazione del terreno all'interno della maschera computazionale, si è ottenuta una larghezza media~$B$ secondo l'equazione~\eqref{eq:larghezza-tratto}.
+%\vref{eq:larghezza-tratto}. 
+\\
+Osservando la variazione temporale di~$B$ è possibile evincere delle traiettorie evolutive sia a livello di singolo tratto, sia a scala più ampia.
+Inoltre, considerando la variazione spaziale (da monte verso valle) dell'areale delle isole, sono evidenti i pattern di \emph{upwelling} o \emph{downwelling} utilizzati durante la definizione dei 23~tratti.
 
 
-% cambiamento della vegetazione
-% spostamento delle immagini che lo necessitano
 
-% età della vegetazione
 
+
+
+\section{Cambiamento delle isole}
+A partire dalle mappe di classificazione dell'alveo, sono state ottenute mappe sul cambiamento che le isole hanno, o non hanno, esperito: erosione, crescita, fusione nella \emph{floodplain} o permanenza (nessun cambiamento).
+Il risultato sono i dati di partenza per ricercare relazioni con gli eventi di piena.
+\\
+A tal fine, ogni mappa è stata confrontata con quella temporalmente precedente.
+\\
+L'analisi si è focalizzata sulle isole, escludendo così la piana alluvionale.
+
+\subsection{Metodi: ottenere il cambiamento}
+\paragraph{Limitazioni} \label{par:camb-limiti}
+Alcune mappe hanno una estensione limitata oppure presentano zone con copertura nuvolosa: ciò riduce il numero di confronti possibili per alcuni tratti. 
+Dalle 23 immagini satellitari (si veda la \vref{tab:date-orto-sat}) si sono ottenute in media 16~immagini per tratto.
+
+Inoltre, le immagini \AST{} non sono correttamente georeferenziate e non sono perfettamente sovrapponibili; l'entità di questo scostamento è dell'ordine di qualche cella.
+Questo difetto è di grande importanza poiché per poter investigare l'evoluzione temporale delle isole occorre poter osservare nel tempo ogni cella; se questa si sposta da un'immagine alla successiva, il confronto non è più valido.
+\\
+La soluzione adottata è stata quella di traslare ogni mappa a nord, sud, est o ovest del numero di celle necessario per poterla sovrapporre alla mappa temporalmente precedente.
+L'operazione è stata ripetuta per ogni confronto, per ogni tratto, ed è stata verificata visivamente.
+Il massimo errore residuo è di 1~cella di scostamento in pochissime zone nei primi tratti (\numrange[range-phrase={ - }]{1}{4}); data la locale topografia montuosa si è preferito ridurre l'errore a tale entità e tenerlo sotto controllo piuttosto di distorcere la mappa con altre misure di georettifica.
+\\
+Le altre immagini sono invece correttamente georeferenziate.
+
+Infine, per poter confrontare immagini a diversa dimensione di cella, come le \AST{} a~\SI{15}{\m} con le \Pl{} a~\SI{0.5}{\m}, è stato necessario ricampionare le immagini con la dimensione minore (ad esempio le \Pl{}) alla risoluzione di quelle a dimensione maggiore (le \AST{} o le \Se{}).
+\\
+Nel ricampionamento l'areale delle isole subisce un incremento o una riduzione, così come l'areale della ghiaia e delle altre classi in quanto nelle celle a dimensione maggiore sono presenti numerose celle a dimensione minore, ognuna con un valore diverso (\vref{fig:ricamp-explanation}).
+%
+\begin{figure}
+	\centering
+	\includegraphics[width=.9\textwidth]{files/ricamp_griglia.jpeg}
+	\caption[celle a risoluzione diversa]{immagine \Pl{} 2015-08-13 a~\SI{0.5}{\m} sullo sfondo con la griglia a~\SI{15}{\m} in primo piano; si vede come diverse celle più piccole siano contenute in una singola cella maggiore.}
+	\label{fig:ricamp-explanation}
+\end{figure}
+%
+Nel ricampionamento si sceglie quale valore assegnare alla nuova cella più grande in base ai valori delle celle minori; nel presente lavoro si è scelto di assegnare un percentile.
+La scelta del percentile è stata effettuata confrontando la radice quadrata della somma dei quadrati residui (RSQR):
+%
+\begin{equation}
+	\label{eq:rad-som-quad-res}
+	RSQR = \left\lbrace \sum_{n=1}^{cl} \left[\left( \frac{area_{\mathrm{orig,n}}}{area_{\mathrm{orig,tot}}} - \frac{area_{\mathrm{perc,n}}}{area_{\mathrm{perc,tot}}} \right)^2 \right] \right\rbrace ^ \frac{1}{2}	
+\end{equation}
+%
+dove 
+\begin{itemize}
+	\item $cl$ è il numero di classi (\vref{tab:class_tratti});
+	\item $n$ indica la $n$-esima classe;
+	\item $area_{\mathrm{orig,n}}$ e $area_{\mathrm{perc,n}}$ sono rispettivamente l'area della $n$-esima classe nella mappa originale e in quella ricampionata ad un percentile;
+	\item $area_{\mathrm{orig,tot}}$ e $area_{\mathrm{perc,tot}}$ sono rispettivamente l'area totale della mappa originale e in quella ricampionata ad un percentile. 
+\end{itemize} 
+%
+Si è scelto di normalizzare l'area di ogni classe per l'area totale per lavorare con percentuali.
+\\
+Nei ricampionamenti da \SI{0.5}{\m} il $50_\mathrm{mo}$ percentile (mediana) è quello che mostra il minor RSQR ($<\SI{3}{\percent}$); in quelli da \SI{10}{\m} il $75_\mathrm{mo}$ percentile (terzo quartile) è il migliore ($RSQR<\SI{6}{\percent}$). Un esempio del risultato ottenuto è mostrato in \vref{fig:ricampionamento}.
+%
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{files/ricamp_class_is_fl.jpeg}
+	\caption[confronto originale - ricampionamento]{a sinistra l'immagine \WV{} originale, poco a valle dell'isola di Cornino; a destra la stessa immagine ricampionata distribuendo i valori con la mediana.}
+	\label{fig:ricampionamento}
+\end{figure} 
+%
+
+
+\paragraph{Confronti validi}
+Dalle 23 immagini satellitari è stato possibile ottenere il numero di confronti mostrati in \vref{tab:confronti}. 
+I confronti effettuati hanno la massima risoluzione temporale possibile, cioè per ogni tratto si sono confrontate le immagini valide temporalmente più vicine in modo da poter osservare gli effetti cumulati del minor numero possibile di eventi di piena.
+%
+\begin{table}
+	\centering
+	\begin{tabular}{
+		S[table-format=2.0] 
+		S[table-format=2.0]
+		c 
+		c}
+		\toprule
+		\textbf{Tratto}	&	\textbf{Confronti}	&	\textbf{Primo}		&	\textbf{Ultimo}	\\
+						&	\textbf{validi}		&	\textbf{confronto}	&	\textbf{confronto}	\\
+		\midrule
+		1	&	13	&	2000-09-17/2003-06-22	&	2016-09-13/2017-04-21	\\
+		2	&	13	&	2000-09-17/2001-06-17	&	2016-09-13/2017-04-21	\\
+		3	&	16	&	2000-09-17/2001-06-17	&	2016-09-13/2017-04-21	\\
+		4	&	16	&	2000-09-17/2001-06-17	&	2016-09-13/2017-04-21	\\
+		5	&	16	&	2000-09-17/2001-06-20	&	2016-09-13/2017-04-21	\\
+		6	&	18	&	2000-09-17/2001-06-17	&	2017-04-21/2018-06-15	\\
+		7	&	18	&	2000-09-17/2001-06-17	&	2017-04-21/2018-06-15	\\
+		8	&	19	&	2000-09-17/2001-06-17	&	2017-04-21/2018-06-15	\\
+		9	&	18	&	2000-09-17/2002-05-18	&	2017-04-21/2018-06-15	\\
+		10	&	18	&	2000-09-17/2002-05-18	&	2017-04-21/2018-06-15	\\
+		11	&	18	&	2000-09-17/2002-05-18	&	2017-04-21/2018-06-15	\\
+		12	&	18	&	2000-09-17/2002-05-18	&	2017-04-21/2018-06-15	\\
+		13	&	18	&	2000-09-17/2002-05-18	&	2017-04-21/2018-06-15	\\
+		14	&	21	&	2000-09-17/2002-05-18	&	2017-04-21/2018-06-15	\\
+		15	&	16	&	2000-09-17/2002-06-12	&	2016-09-13/2017-04-21	\\
+		16	&	16	&	2000-09-17/2002-06-12	&	2016-09-13/2017-04-21	\\
+		17	&	16	&	2000-09-17/2002-06-12	&	2016-09-13/2017-04-21	\\
+		18	&	16	&	2000-09-17/2002-06-12	&	2016-09-13/2017-04-21	\\
+		19	&	13	&	2000-09-17/2002-06-12	&	2016-09-13/2017-04-39	\\
+		20	&	13	&	2000-09-17/2002-06-12	&	2014-09-28/2015-09-11	\\
+		21	&	13	&	2000-09-17/2002-06-12	&	2014-09-28/2015-09-11	\\
+		22	&	13	&	2000-09-17/2002-06-12	&	2014-09-28/2015-09-11	\\
+		23	&	12	&	2002-06-12/2003-06-22	&	2014-09-28/2015-09-11	\\
+		\bottomrule
+	\end{tabular}
+	\caption[confronti effettuati]{confronti effettuati con le 23 immagini satellitari a disposizione per ottenere dati sul cambiamento delle isole.}
+	\label{tab:confronti}
+\end{table}
+%
+
+\paragraph{Classi del cambiamento}
+In ogni confronto ci si è concentrati sul ciò che è successo alle isole, definendo quindi le seguenti 4~classi (si veda anche la \vref{tab:class_tratti}):
+%
+\begin{itemize}
+	\item erosione (da isola ad alveo attivo);
+	\item crescita (da alveo attivo ad isola);
+	\item fusione nella \emph{floodplain} (da isola a \emph{floodplain});
+	\item distaccamento dalla \emph{floodplain} (da \emph{floodplain} a isola);
+	\item nessun cambiamento (da isola a isola).
+\end{itemize}
+%
+Un esempio di questa classificazione è riportato nella \vref{fig:confr-class-is-fl}.
+%
+\begin{figure}
+	\centering
+	\includegraphics[width=.8\textwidth]{files/confr_class_is_fl.jpeg}
+	\caption[esempio di mappa di cambiamento]{esempio di mappa di cambiamento ottenuta con il confronto tra le immagini \AST{} 2008-07-05 e 2010-09-29. Si possono osservare tutti i cambiamenti possibili; la prima classe serve solamente a visualizzare l'area della maschera computazionale. Il tratto mostrato è posto qualche \si{\kilo\m} a monte del ponte di Madrisio.}
+	\label{fig:confr-class-is-fl}
+\end{figure}
+%
+
+
+\subsection{Risultati: eventi eccezionali}
+% crescita dal 2005 al 2008 (vedi idrogramma...) e successiva erosione massiccia
+% trend spaziali: alcuni tratti sono più soggetti ad un certo cambiamento?
+% zone con alta erosione
+% qualche grafico, magari normalizzato per le isole inizialmente presenti in un tratto (puoi fare operazioni con le colonne direttamente con pgfplot)
+
+% preludio: forse è la vegetazione più giovane quella che viene asportata? Qual è la composizione delle isole in termini di età?
+
+
+
+\section{Età della vegetazione nelle isole}
+Utilizzando le mappe del cambiamento esperito dalle isole si possono ottenere mappe che indicano un'età approssimativa della vegetazione che compone queste isole. 
+\\
+L'ipotesi che si vuole verificare è che sia la vegetazione più giovane quella ad essere maggiormente erosa in quanto può essere divelta più facilmente.
+Non si esclude tuttavia di osservare erosione anche di vegetazione matura poiché le isole poste in corrispondenza dell'estradosso di un canale curvo sono soggette a scavo laterale.
+
+\subsection{Metodi: estendere i confronti e ottenere un'età}
+\paragraph{Limiti}
+Con le immagini satellitari utilizzate non è possibile distinguere i singoli alberi che compongono le isole; se con le immagini a miglior risoluzione si distinguono gli arbusti isolati, non si può certo ottenere una stima dell'età tanto precisa quanto quella fornita da un carotaggio del tronco.
+In più, una cella è classificata come vegetazione solo quando le piante al suo interno presentano una chioma sufficientemente grande da occupare gran parte della cella; pertanto le immagini con celle di \SI{10}{\m} o addirittura \SI{15}{\m} non possono mostrare che grandi macchie di vegetazione.
+Prima dei \SI{3}{\anni} una pianta di salice generalmente non ha fronde molto estese.
+\\
+Occorre poi tenere in conto che le piante crescono differentemente in base alle condizioni ambientali: periodi di stress idrico o termico rallentano la crescita, così come il parziale seppellimento con ghiaia dovuto ad eventi di piena; una falda non troppo profonda la cui altezza varia lentamente, terreno di granulometria sottile con sabbia e buone temperature sono invece fattori favorevoli alla crescita.
+
+Si crede che ciò che possa accadere è che fino ad una certa età, circa \SI{3}{\anni}, la nuova vegetazione non sia visibile dal satellite. 
+
+Le mappe del cambiamento sono state ottenute dalle mappe di classificazione; non essendo le seconde correttamente georeferenziate, neanche le prime lo sono. L'errore residuo nel processo di correzione è di 1~cella.
+
+Infine, per poter confrontare nel corso degli anni ogni cella, le mappe del cambiamento sono state ricampionate alla risoluzione più bassa, corrispondente a celle di~\SI{15}{\m} di lato. Si è proceduto come mostrato nel paragrafo \ref{par:camb-limiti} ottenendo valori $RSQR < \SI{1.5}{\percent}$.
+ 
+
+% le piante crescono diversamente in base alle condizioni ambientali (cita articolo Gurnell?) → definire un'età in base al tempo di osservazione è un approccio limitato (qualche altro lavoro simile)
+% la vegetazione può essere distinta da satellite solamente quando occupa una certa area. Si è ritenuto che al momento di una prima osservazione la vegetazione abbia \SI{3}{\anni}
+
+\paragraph{Obiettivo ed approccio} 
+Date le precedenti premesse, bisogna riflettere su ciò che si vuole ottenere: dividere la vegetazione in classi di età.
+Si vuole sapere quanta vegetazione giovane è stata erosa; non importa se questa ha esattamente \SI{3}{\anni} o \SI{4}{\anni}, l'importante è che sia grossomodo classificata come giovane.
+
+Ogni mappa del cambiamento è formata dalle informazioni contenute in due mappe: quella più vecchia e quella più recente. La distanza temporale tra queste due mappe definisce il periodo di osservazione.
+\\
+Per la mappa del cambiamento più vecchia, l'età della vegetazione delle isole è stata arbitrariamente essere pari al periodo di osservazione, cui si sono aggiunti \SI{3}{\anni}.
+\\
+Per le mappe via via più recenti, l'età nelle celle delle isole che non sono cambiate è pari al periodo di osservazione sommato all'età precedente; per le celle si sono vegetate a partire dall'alveo l'età è pari al periodo di osservazione con l'aggiunta di \SI{3}{\anni}, ritenuto il periodo minimo affinché un insieme di piante diventi visibile per il satellite.
+
+\medskip
+Per quanto precedentemente esposto, l'approccio di definire un'età in base al periodo di osservazione è limitato, ma è sufficiente per gli scopi della ricerca.
 
 
