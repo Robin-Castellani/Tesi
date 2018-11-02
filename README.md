@@ -5,9 +5,7 @@ Questo repository contiene i file necessari alla compilazione con Latex
 della tesi di laurea magistrale in Ingegneria per l'Ambiente e il Territorio
 di Robin Castellani.
 
-Se riuscirò pubblicherò le versioni successive della tesi in formato .pdf.
-
-Ciò che deve essere compilato è il file 00-main.tex.
+Ciò che deve essere compilato è il file `00-main.tex` attraverso il comando `pdflatex -shell-escape -synctex=1 -interaction=nonstopmode %.tex`.
 
 Vi sono cartelle che comprendono dati, grafici, immagini, licenza e altro.
 
