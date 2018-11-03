@@ -1,0 +1,54 @@
+\begin{tikzpicture}
+	\begin{groupplot}[
+		group style = {
+			group size = 2 by 1,
+			ylabels at = edge left,
+			x descriptions at = edge bottom,
+			horizontal sep = 1.1cm,
+			vertical sep = 0.1cm,
+		},
+		width = 0.5\textwidth,
+		height = 0.5\textwidth,
+		date coordinates in = x,
+		xticklabel = {\year},
+		xticklabel style = {
+			rotate = 80,
+			anchor = near xticklabel
+		},
+		xtick distance = 731,
+		ymax = 0.75,
+		ylabel = {Cambiamento/Isole iniziali \si{[\percent]}},%\si{[\m\tothe{2}]}},
+		grid = major,
+		]
+	\nextgroupplot % tr_17_accrescimento
+		\addplot+
+        	[only marks, blue]
+        	table [
+        		x=data_fine, 
+        		y expr=\thisrow{alv->is}/808650.0
+        		] {graphics/data/tr_17_camb_eros_accr.txt};
+		\addplot+
+        	[only marks, mark=x, black]
+        	table [
+        		x=data_ini, 
+        		y expr=\thisrow{alv->is}/808650.0
+        		] {graphics/data/tr_17_camb_eros_accr.txt};
+        \node [fill = white, draw = black, anchor = south west] 
+        	at (axis description cs: 0.05,0.8) {Accr.};
+	\nextgroupplot % tr_17_erosione
+		\addplot+
+        	[only marks, blue]
+        	table [
+        		x=data_fine, 
+        		y expr=\thisrow{is->alv}/808650.0,
+        		] {graphics/data/tr_17_camb_eros_accr.txt};
+		\addplot+
+        	[only marks, mark=x, black]
+        	table [
+        		x=data_ini, 
+        		y expr=\thisrow{is->alv}/808650.0,
+        		] {graphics/data/tr_17_camb_eros_accr.txt};
+        \node [fill = white, draw = black, anchor = south west] 
+        	at (axis description cs: 0.05,0.8) {Eros.};
+	\end{groupplot}
+\end{tikzpicture}

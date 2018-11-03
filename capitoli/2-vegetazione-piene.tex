@@ -122,7 +122,7 @@ Per classificare il terreno occupato dall'alveo è stato seguito l'approccio di 
 	Alla classificazione sono state aggiunte la classe delle nuvole e dei \texttt{nodata}.
 	%
 	%
-	\item[Classificazione finale dei tratti] La \vref{tab:class_tratti} mostra le classi in cui è stato classificato ognuno dei 23~tratti; la %\vref{fig:class_is_fl} ne mostra un esempio.
+	\item[Classificazione finale dei tratti] La \vref{tab:class_tratti} mostra le classi in cui è stato classificato ognuno dei 23~tratti; la \vref{fig:class_is_fl} ne mostra un esempio.
 	%
 	\begin{table}[ht]
 		\centering
@@ -153,7 +153,8 @@ Per classificare il terreno occupato dall'alveo è stato seguito l'approccio di 
 		\label{fig:class_is_fl}
 	\end{figure}
 	%
-	Al fine di validare la precedente procedura di controllo e correzione della distinzione isole - \emph{floodplain}, si è osservato per ogni tratto l'andamento temporale della larghezza media~$B$, esprimibile semplicemente come il rapporto dell'area dell'alveo di ogni tratto (somma dell'alveo attivo e delle isole) per la sua lunghezza seguendo la corrente:
+
+Al fine di validare la precedente procedura di controllo e correzione della distinzione isole - \emph{floodplain}, si è osservato per ogni tratto l'andamento temporale della larghezza media~$B$, esprimibile semplicemente come il rapporto dell'area dell'alveo di ogni tratto (somma dell'alveo attivo e delle isole) per la sua lunghezza seguendo la corrente:
 	%
 	\begin{equation}
 		\label{eq:larghezza-tratto}
@@ -179,7 +180,7 @@ Per classificare il terreno occupato dall'alveo è stato seguito l'approccio di 
 
 
 \begin{comment}
-% tenere questa parte? forse la si può togliere
+%TODO tenere questa parte? forse la si può togliere
 % e mostrare direttamente i risultati sul cambiamento
 Con la riclassificazione delle immagini dell'NDVI rispetto alle soglie proposte è stato possibile ottenere la percentuale di alveo coperta da vegetazione per ogni anno. 
 Si ricorda, grazie alla maschera applicata, tale copertura include sia isole vegetate sia la parte di piana alluvionale che nel periodo di studio ha esperito fenomeni di erosione della vegetazione e quindi espansione dell'alveo attivo.
@@ -201,7 +202,7 @@ I risultati sono mostrati nel grafico in \vref{graph:class-sat-veg}.
 
 \subsection{Risultati: evoluzione della larghezza}
 Utilizzando le mappe di classificazione del terreno all'interno della maschera computazionale, si è ottenuta una larghezza media~$B$ secondo l'equazione~\eqref{eq:larghezza-tratto}.
-%\vref{eq:larghezza-tratto}. 
+%TODO \vref{eq:larghezza-tratto}. 
 \\
 Osservando la variazione temporale di~$B$ è possibile evincere delle traiettorie evolutive sia a livello di singolo tratto, sia a scala più ampia.
 Inoltre, considerando la variazione spaziale (da monte verso valle) dell'areale delle isole, sono evidenti i pattern di \emph{upwelling} o \emph{downwelling} utilizzati durante la definizione dei 23~tratti.
@@ -341,12 +342,40 @@ Un esempio di questa classificazione è riportato nella \vref{fig:confr-class-is
 
 
 \subsection{Risultati: eventi eccezionali}
-% crescita dal 2005 al 2008 (vedi idrogramma...) e successiva erosione massiccia
-% trend spaziali: alcuni tratti sono più soggetti ad un certo cambiamento?
-% zone con alta erosione
-% qualche grafico, magari normalizzato per le isole inizialmente presenti in un tratto (puoi fare operazioni con le colonne direttamente con pgfplot)
+Dall'osservazione dell'idrogramma in \vref{graph:livelli-orto-sat} (riportato \vpageref{graph:tr-17-camb}) si può ipotizzare che le piene maggiori, come quelle avvenute verso la fine degli anni~2012 e~2014, siano quelle che abbiano asportato il maggior quantitativo di isole.
+\\
+I grafici in \vref{graph:tr-17-camb} mostrano alcuni risultati ottenuti dalle mappe di cambiamento per il tratto~17, posto nel tratto vallivo immediatamente a valle della confluenza con il torrente Cosa.
+I dati sono rappresentati con due simboli: il pallino rappresenta la data finale di ogni confronto, mentre la croce indica la data iniziale; 
+chiaramente il pallino di un confronto ha la stessa data della croce del confronto successivo. 
+La croce serve solamente a sapere quanto dura ogni confronto; il pallino è il dato vero e proprio.
+I dati sono normalizzati per l'areale delle isole nell'immagine \AST{} del 2000-09-17.
+\\
+Ciò che si vede è una spiccata crescita a cavallo degli anni~2006 e~2008, seguita da una erosione delle medesime proporzioni.
+Dall'altra parte, nonostante la maggior intensità e durata le piene del 2012 e del~2014 hanno eroso meno di quanto ci si aspettava.
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/livelli}
+	\\
+	\input{graphics/plots/tr_17_camb}
+	\caption[cambiamenti esperiti dalle isole nel tratto~17]{cambiamenti esperiti dalle isole nel tratto~17 rappresentati come percentuale rispetto all'areale delle isole nella prima immagine utile. 
+	Si nota il dato relativo al confronto 2008-07-05/2010-09-29, particolarmente elevato e di pari entità tra crescita ed erosione.}
+	\label{graph:tr-17-camb}
+\end{figure}
+%
+Questa osservazione può trovare la seguente giustificazione: il periodo privo di piene con livello al disopra dei \SI{2}{\m} tra fine del 2004 e la fine del 2008 è stato favorevole per l'insediamento di nuova vegetazione;
+le macchie vegetate sono diventate visibili da satellite solamente quando le piante hanno sviluppato una chioma sufficientemente ampia, cioè dopo qualche anno, nell'immagine del 2008-07-05;
+questa più recente vegetazione si è espansa sulle barre e sulle forme morfologiche a quota minore rispetto alle isole più vecchie;
+con questi fatti, la prima piena che è giunta ha facilmente portato via tutte queste isole giovani e basse.
+\\
+Occorre quindi ragionare non solo in termini di singoli eventi di piena, ma estendere le proprie considerazioni all'intero idrogramma, al periodo di tempo tra piene oltre un certo livello, alla loro frequenza, poiché sono questi i fattori che possono determinare le dinamiche delle isole.
+Il periodo 2005-2008 privo di grandi piene può essere considerato un evento tanto importante quanto la piena lunga ed intensa del mese di Novembre, 2014.
 
-% preludio: forse è la vegetazione più giovane quella che viene asportata? Qual è la composizione delle isole in termini di età?
+%TODO c'è un trend: i tratti con upwelling sono quelli che si vegetano di più
+
+
+Da queste osservazioni il passo successivo è naturale: trovare la composizione delle isole in termini di età e riflettere se è la vegetazione più giovane quella ad essere più facilmente erosa.
+
 
 
 
@@ -362,7 +391,7 @@ Con le immagini satellitari utilizzate non è possibile distinguere i singoli al
 In più, una cella è classificata come vegetazione solo quando le piante al suo interno presentano una chioma sufficientemente grande da occupare gran parte della cella; pertanto le immagini con celle di \SI{10}{\m} o addirittura \SI{15}{\m} non possono mostrare che grandi macchie di vegetazione.
 Prima dei \SI{3}{\anni} una pianta di salice generalmente non ha fronde molto estese.
 \\
-Occorre poi tenere in conto che le piante crescono differentemente in base alle condizioni ambientali: periodi di stress idrico o termico rallentano la crescita, così come il parziale seppellimento con ghiaia dovuto ad eventi di piena; una falda non troppo profonda la cui altezza varia lentamente, terreno di granulometria sottile con sabbia e buone temperature sono invece fattori favorevoli alla crescita.
+Occorre poi tenere in conto che le piante crescono differentemente in base alle condizioni ambientali: periodi di stress idrico o termico rallentano la crescita, così come il parziale seppellimento con ghiaia dovuto ad eventi di piena; una falda non troppo profonda la cui altezza varia lentamente, terreno di granulometria sottile con sabbia e buone temperature sono invece fattori favorevoli alla crescita \squarecite{Gurnell:2001-island-formation}.
 
 Si crede che ciò che possa accadere è che fino ad una certa età, circa \SI{3}{\anni}, la nuova vegetazione non sia visibile dal satellite. 
 
@@ -371,8 +400,7 @@ Le mappe del cambiamento sono state ottenute dalle mappe di classificazione; non
 Infine, per poter confrontare nel corso degli anni ogni cella, le mappe del cambiamento sono state ricampionate alla risoluzione più bassa, corrispondente a celle di~\SI{15}{\m} di lato. Si è proceduto come mostrato nel paragrafo \ref{par:camb-limiti} ottenendo valori $RSQR < \SI{1.5}{\percent}$.
  
 
-% le piante crescono diversamente in base alle condizioni ambientali (cita articolo Gurnell?) → definire un'età in base al tempo di osservazione è un approccio limitato (qualche altro lavoro simile)
-% la vegetazione può essere distinta da satellite solamente quando occupa una certa area. Si è ritenuto che al momento di una prima osservazione la vegetazione abbia \SI{3}{\anni}
+%TODO le piante crescono diversamente in base alle condizioni ambientali (cita articolo Gurnell?) → definire un'età in base al tempo di osservazione è un approccio limitato (qualche altro lavoro simile)
 
 \paragraph{Obiettivo ed approccio} 
 Date le precedenti premesse, bisogna riflettere su ciò che si vuole ottenere: dividere la vegetazione in classi di età.
@@ -385,6 +413,59 @@ Per la mappa del cambiamento più vecchia, l'età della vegetazione delle isole 
 Per le mappe via via più recenti, l'età nelle celle delle isole che non sono cambiate è pari al periodo di osservazione sommato all'età precedente; per le celle si sono vegetate a partire dall'alveo l'età è pari al periodo di osservazione con l'aggiunta di \SI{3}{\anni}, ritenuto il periodo minimo affinché un insieme di piante diventi visibile per il satellite.
 
 \medskip
-Per quanto precedentemente esposto, l'approccio di definire un'età in base al periodo di osservazione è limitato, ma è sufficiente per gli scopi della ricerca.
+L'approccio di definire un'età in base al periodo di osservazione è limitato, in particolare per le mappe più vecchie poiché non è possibile tener conto della vegetazione che era presente antecedentemente alla prima immagine valida;
+si ritiene che a partire dalla $4^a$ o $5^a$ mappa di età il metodo inizi ad essere affidabile (generalmente quindi dalla mappa di età del 2007-09-21).
+Per gli scopi della ricerca questo approccio risulta essere sufficiente.
+
+\paragraph{Validazione}
+Il CSM (\emph{Canopy Surface Model}) è il modello digitale della copertura arborea; similmente al DEM, mostra delle quote; queste sono tuttavia riferite all'altezza della vegetazione sopra il terreno.
+\\
+È generalmente sensato affermare che piante più mature abbiano un'altezza maggiore di piante giovani.
+Quindi si sono utilizzate le informazioni del CSM relativo alla ortofoto del 2013-10-22 per verificare che nelle celle della mappa di età della vegetazione del 2013-09-05 l'altezza fosse all'incirca proporzionale all'età.
+%TODO grafico con i quantili
+
+\subsection{Risultati: un trend per la vegetazione erosa}
+I grafici in \vref{graph:distr-eta} mostrano la distribuzione di età della vegetazione nelle isole in termini di areale occupato; per gli scopi del lavoro ci si limita a definire 3~classi di vegetazione:
+%
+\begin{itemize}
+	\item giovane, con meno di \SI{5}{\anni};
+	\item intermedia, con età compresa tra \SIrange[range-phrase={ e }]{5}{10}{\anni};
+	\item matura, con più di \SI{10}{\anni}.
+\end{itemize}
+
+%TODO da migliorare (togliere la descrizione all'asse y?)
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/tr_8_eta}
+	\caption[areale delle classi d'età per i tratti~8, 11 e~17]{areale delle tre classi di età per alcune immagini dei tratti~8, 11 e~17.}% \numlist[list-final-separator={ e }]{8;11;17}.}
+	\label{graph:distr-eta}
+\end{figure}
+%
+
+Focalizzandosi sugli eventi di piena della fine del~2008 e del~2012, si vede chiaramente come l'areale della vegetazione giovane sia fortemente diminuito dalle immagini antecedenti le piene alle immagini successive (tratti \numrange[range-phrase={ e }]{11}{17});
+sia in termini relativi che in termini assoluti, la vegetazione giovane è quella che è prevalentemente portata via dalle piene, quando è presente;
+in seguito alle due piene considerate si osserva inoltre una diminuzione dell'area occupata dalle isole.
+Si tenga comunque in conto che parte della vegetazione non erosa invecchia e può passare da una classe a quella successiva; questo fenomeno non è tuttavia quello predominante durante le piene del~2008 e del~2012 per evidenza.
+\\
+Con il confronto tra anni in cui non c'è stata una forte espansione delle isole ma in cui ci sono stati particolari eventi, come tra il \numrange[range-phrase={ e il }]{2014}{2015} o tra il \numrange[range-phrase={ e il }]{2017}{2018}, non si nota un cambiamento particolare nella distribuzione d'età.
+%Anzi, nell'undicesimo tratto, dove sono presenti grandi isole, la piena ne ha probabilmente asportato alcune con età intermedia
+
+% magari secondo grafico con stesso tratto, stesse immagini ma solo vegetazione erosa
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
