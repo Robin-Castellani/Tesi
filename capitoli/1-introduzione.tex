@@ -101,7 +101,7 @@ Il tratto studiato è quello intrecciato multicanale compreso tra Tolmezzo e Mad
 \section{Convenzioni}
 Le seguenti convenzioni saranno utilizzate nella presente tesi:
 \begin{description}
-	\item[Mappe] riportate secondo WGS84/UTM~32N (EPSG:~32633);
+	\item[Mappe] riportate secondo WGS84/UTM~33N (EPSG:~32633);
 	\item[Direzione della corrente] riportata con una freccia blu nelle immagini;
 	\item[Formato delle date] AAAA-MM-GG;
 	\item[Citazioni] sono nel formato Autore/i-Anno, racchiuse tra parentesi quadre;
@@ -136,8 +136,13 @@ Sono state considerate le bande del \emph{Near-InfraRed}~(NIR) e del \emph{Red}~
 Le ortofoto dell'estate~2011 provengono dal \href{http://www.pcn.minambiente.it/mattm/}{Portale Cartografico Nazionale del Ministero dell'Ambiente e della tutela del territorio e del mare}\footnote{\texttt{http://www.pcn.minambiente.it/mattm/}};
 le ortofoto del~2013 sono state ottenuta da volo \href{http://www.cgrspa.com/}{CGR}\footnote{\texttt{http://www.cgrspa.com/}} su commissione; 
 le ortofoto del~2017 sono state ottenute da \href{https://www.google.com/earth/}{Google Earth}\footnote{\texttt{https://www.google.com/earth/}}.
-\\
-I dati idrometrici orari o semi-orari dal 2000-01-01 al 2018-10-14 presso l'idrometro di Villuzza (\num{46.181}N, \num{12.958}E, quota s.l.m.m.~\num{240}, corrispondente al ponte di Pinzano) sono stati forniti dalla \href{http://www.protezionecivile.fvg.it/it/rete-idrometeorologica}{rete idrometeorologica della Protezione Civile della Regione Autonoma Friuli Venezia Giulia}\footnote{\texttt{http://www.protezionecivile.fvg.it/it/rete-idrometeorologica}}.
+
+Assieme alla ortofoto del~2013 è stato effettuato un rilievo LiDAR, grazie al quale sono a disposizione un DEM (\emph{Digital Elevation Model}) e un CSM (\emph{Canopy Surface Model}): il primo consiste di una mappa con le quote del suolo; il secondo è una mappa di altezza della vegetazione.
+
+È bene evidenziare che le mappe non hanno tutte la medesima estensione e una piccola parte non comprende tutto il tratto oggetto di studio.
+Ciò limita minimamente le analisi che è possibile fare.
+
+I dati idrometrici orari o semi-orari dal 2000-01-01 al 2018-10-14 presso l'idrometro di Villuzza (\SI{46.181}{\degree}N, \SI{12.958}{\degree}E, quota s.l.m.m.~\num{240}, corrispondente al ponte di Pinzano) sono stati forniti dalla \href{http://www.protezionecivile.fvg.it/it/rete-idrometeorologica}{rete idrometeorologica della Protezione Civile della Regione Autonoma Friuli Venezia Giulia}\footnote{\texttt{http://www.protezionecivile.fvg.it/it/rete-idrometeorologica}}.
 
 I grafici in \vref{graph:livelli-orto-sat} mostrano rispettivamente la media giornaliera dei livelli idrometrici e le date di cui si dispongono ortofoto e immagini satellitari (\AST{}, \Pl{}, \Se{}, Google~Earth, \WV{}). 
 Nel secondo grafico sono riportati solamente i livelli medi giornalieri maggiori di~\SI{2}{\m} in quanto livelli superiori a tale soglia iniziano ad avere effetti di disturbo sulla vegetazione \squarecite{Bertoldi:2009-2m}.
@@ -174,7 +179,7 @@ La \vref{tab:date-orto-sat} mostra le date e la dimensione delle celle delle imm
 		2011-06-26/07-02	&	Ortofoto	&	1	\\
 		2012-08-01		&	\AST{}		&	15	\\
 		2013-09-05		&	\AST{}		&	15	\\
-		2013-10-22		&	Ortofoto	&	0.2	\\
+		2013-10-22		&	Ortofoto e rilievo LiDAR	&	0.2	\\
 		2014-09-08		&	\AST{}		&	15	\\
 		2014-10-31		&	\Pl{}	&	0.5	\\
 		2015-08-13		&	\Pl{}	&	0.5	\\
