@@ -13,17 +13,17 @@ Per classificare il terreno occupato dall'alveo è stato seguito l'approccio di 
 	%
 	\begin{figure}[t]
 		\centering
-		\begin{subfigure}[b]{0.296\textwidth}
-			\includegraphics[width=\textwidth]{files/esempio_mask_2000_09_17.jpeg}
-			\caption{\AST{} 2000-09-17.}
+		\begin{subfigure}[b]{0.4\textwidth}
+			\includegraphics[width=\textwidth]{files/esempio_mask_2002_06_12.jpeg}
+			\caption{\AST{} 2002-06-12.}
 		\end{subfigure}
 		\qquad
-		\begin{subfigure}[b]{0.30\textwidth}
-			\includegraphics[width=\textwidth]{files/esempio_mask_2015_09_11.jpeg}
-			\caption{\AST{} 2015-09-11.}
+		\begin{subfigure}[b]{0.4\textwidth}
+			\includegraphics[width=\textwidth]{files/esempio_mask_2015_09_12.jpeg}
+			\caption{\Se{} 2015-09-12.}
 		\end{subfigure}
 		\caption[definizione della maschera per limitare il dominio computazionale]
-			{esempio in cui si vede come la maschera utilizzata per limitare il dominio computazionale (in giallo) sia il risultato dell'inviluppo degli alvei attivi che si sono modificati nel tempo; le immagini sono in falsi colori (IR-R-G).}
+			{esempio in cui si vede come la maschera utilizzata per limitare il dominio computazionale (in giallo) sia il risultato dell'inviluppo degli alvei attivi che si sono modificati nel tempo; le immagini sono le mappe di NDVI.}
 		\label{fig:esempio-maschera}
 	\end{figure}
 	%
@@ -71,11 +71,11 @@ Per classificare il terreno occupato dall'alveo è stato seguito l'approccio di 
 		\centering
 		\begin{tabular}{
 			c 
-			S[table-format=1.1]@{\,}
+			S[table-format=1.2]@{\,}
 			c@{\,}
 			c@{\,}
 			c@{\,}
-			S[table-format=1.1]
+			S[table-format=1.2]
 			S[table-format=1.1]@{\,}
 			c@{\,}
 			c@{\,}
@@ -85,8 +85,8 @@ Per classificare il terreno occupato dall'alveo è stato seguito l'approccio di 
 			\toprule
 			&	\multicolumn{5}{c}{\textbf{Soglie AST PL S2}}	&	\multicolumn{5}{c}{\textbf{Soglie WV2}}	\\
 			\midrule
-			Vegetazione		&	0.2	&	$\leq$	&	NDVI	&			&		& 	0.3	&	$\leq$	&	NDVI	&			& 	\\
-			Alveo attivo	&	0.0	&	$\leq$	&	NDVI	&	$<$		&	0.2	&	0.0	&	$\leq$	&	NDVI	&	$<$		&	0.3\\
+			Vegetazione		&	0.25	&	$\leq$	&	NDVI	&			&		& 	0.3	&	$\leq$	&	NDVI	&			& 	\\
+			Alveo attivo	&	0.0	&	$\leq$	&	NDVI	&	$<$		&	0.25	&	0.0	&	$\leq$	&	NDVI	&	$<$		&	0.3\\
 			Canale			&		&			&	NDVI	&	$<$		&	0.0	&		&			&	NDVI	&	$<$		&	0.0\\
 			\bottomrule
 		\end{tabular}
@@ -102,7 +102,7 @@ Per classificare il terreno occupato dall'alveo è stato seguito l'approccio di 
 	%
 	\begin{figure}
 		\centering
-		\includegraphics[width=.8\textwidth]{files/tutti_23_tratti.jpeg}
+		\includegraphics[width=\textwidth]{files/tutti_23_tratti.jpeg}
 		\caption[immagine con la maschera suddivisa in 23 tratti]{immagine con la maschera suddivisa in 23 tratti; la sezione di monte del tratto~1 corrisponde a Tolmezzo, la sezione di valle del tratto~23 corrisponde al ponte di Madrisio.}
 		\label{fig:23-tratti}
 	\end{figure}
@@ -148,8 +148,8 @@ Per classificare il terreno occupato dall'alveo è stato seguito l'approccio di 
 	%
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=.8\textwidth]{files/esempio_class_is_fl.jpeg}
-		\caption[esempio della classificazione dell'area dei tratti]{esempio della classificazione dell'area dei tratti; la zona raffigurata si colloca a ridosso del ponte autostradale a valle di Braulins.}
+		\includegraphics[width=\textwidth]{files/esempio_class_is_fl.jpeg}
+		\caption[esempio della classificazione dell'area dei tratti]{esempio della classificazione dell'area dei tratti; le zone raffigurate sono rispettivamente a monte dell'isola di Cornino (in corrispondenza del monte Prat) e in corrispondenza della confluenza del Fella.}
 		\label{fig:class_is_fl}
 	\end{figure}
 	%
@@ -172,10 +172,31 @@ Al fine di validare la precedente procedura di controllo e correzione della dist
 		\input{graphics/plots/larghezze_tr_7_tr_15.tex}
 		\quad
 		\includegraphics[width=0.3\textwidth]{files/fusione_isola_tr_15.jpeg}
-		\caption[andamento temporale di $B$ per i tratti~7 e~15]{a sinistra si vede l'andamento nel tempo della larghezza media dei tratti~7 e~15; la $B$ del tratto~7 oscilla solamente di qualche decina di metri, mentre il tratto~15 riduce improvvisamente la sua $B$ a causa della fusione di una grande isola nella \emph{floodplain}, fenomeno mostrato a destra (A: 2003-11-29, B: 2005-08-30).}
+		\caption[andamento temporale di $B$ per i tratti~7 e~15]{a sinistra si vede l'andamento nel tempo della larghezza media dei tratti~7 e~15; la $B$ del tratto~7 oscilla solamente di qualche decina di metri, mentre il tratto~15 riduce improvvisamente la sua $B$ a causa della fusione di una grande isola nella \emph{floodplain}, fenomeno mostrato a destra (A: 2002-06-12, B: 2005-08-30).}
 		\label{fig:b-media-7-e-15}
 	\end{figure}
-	
+	%
+	%
+	\item[Ulteriore validazione] Si è confrontata la classificazione del 2011-10-02 con la classificazione eseguita manualmente da \cite{Surian:2015} nei tratti \numrange[range-phrase={$\div$}]{6}{12} (dal ponte autostradale di Braulins alla stretta di Pinzano).
+	Le mappe di classificazione del 2005-08-30, 2010-09-29, 2013-09-05 sono state confrontate con i CSM ricavati dai rilievi aerei LiDAR eseguiti nei corrispondenti anni sui tratti \numrange[range-phrase={$\div$}]{6}{12} (\vref{fig:validazione-class-is-fl}).
+	%	
+	\begin{figure}
+		\centering
+		\includegraphics[width=\textwidth]{files/Class_mia_vs_surian_csm.jpeg}
+		\caption[validazione della classificazione dell'alveo]{confronto tra le mappe di classificazione dell'alveo e i CSM dai rilievi aerei LiDAR e la classificazione manuale eseguita in \cite{Surian:2015}; le aree scure corrispondono alla vegetazione individuata nei CSM e dalla classificazione manuale; per la legenda delle mappe di classificazione dell'alveo vedere la \vref{fig:class_is_fl}.}
+		\label{fig:validazione-class-is-fl}
+	\end{figure}
+	%
+	\\
+	Visualmente si verifiche che c'è sostanziale corrispondenza tra le classificazioni ottenute dalle immagini satellitari e la vegetazione individuata dai CSM, così come tra la classificazione manuale di \cite{Surian:2015} e la mappa del 2011-10-22.
+	\\
+	Esiste una certa differenza tra la classificazione manuale e quella semi-automatica utilizzata nel presente lavoro: la metodologia con cui si procede influisce sul risultato finale.
+	Avendo \cite{Surian:2015} utilizzato ortofoto ad alta risoluzione (\SI{0.1}{\m}), hanno potuto facilmente distinguere le chiome dei singoli alberi dalla ghiaia o vegetazione bassa circostante; le immagini satellitari utilizzate (principalmente a risoluzione di \SI{10}{\m} o \SI{15}{\m}) permettono invece di osservare macchie di vegetazione.
+	In quanto si considera come isola non solo la vegetazione presente all'interno dell'alveo attivo, ma anche la zona meno vegetata posta circa alla medesima quota, l'approccio seguito sembra delineare più nettamente il contorno delle isole maggiori, sebbene le isole più piccole (con estensione minore di una cella) non siano individuate.
+	\\
+	Un rapido confronto delle mappe di classificazione \Pl{} e \WV{} ad alta risoluzione (\SI{0.5}{\m}) con le mappe di classificazione manuale e il CSM del 2013-10-22 mostra una sovrapposizione quasi completa della vegetazione individuata con i diversi metodi.
+	\\
+	A fronte di quanto esposto, si ritiene che la classificazione eseguita sia sufficientemente validata.
 \end{description}
 
 
@@ -223,14 +244,15 @@ L'analisi si è focalizzata sulle isole, escludendo così la piana alluvionale.
 \subsection{Metodi: ottenere il cambiamento}
 \paragraph{Limitazioni} \label{par:camb-limiti}
 Alcune mappe hanno una estensione limitata oppure presentano zone con copertura nuvolosa: ciò riduce il numero di confronti possibili per alcuni tratti. 
-Dalle 23 immagini satellitari (si veda la \vref{tab:date-orto-sat}) si sono ottenute in media 16~immagini per tratto.
+Dalle 23 immagini satellitari (si veda la \vref{tab:date-orto-sat}) si sono ottenute in media 20~immagini di confronto per tratto (\vref{tab:confronti}).
 
 Inoltre, le immagini \AST{} non sono correttamente georeferenziate e non sono perfettamente sovrapponibili; l'entità di questo scostamento è dell'ordine di qualche cella.
 Questo difetto è di grande importanza poiché per poter investigare l'evoluzione temporale delle isole occorre poter osservare nel tempo ogni cella; se questa si sposta da un'immagine alla successiva, il confronto non è più valido.
 \\
 La soluzione adottata è stata quella di traslare ogni mappa a nord, sud, est o ovest del numero di celle necessario per poterla sovrapporre alla mappa temporalmente precedente.
 L'operazione è stata ripetuta per ogni confronto, per ogni tratto, ed è stata verificata visivamente.
-Il massimo errore residuo è di 1~cella di scostamento in pochissime zone nei primi tratti (\numrange[range-phrase={ - }]{1}{4}); data la locale topografia montuosa si è preferito ridurre l'errore a tale entità e tenerlo sotto controllo piuttosto di distorcere la mappa con altre misure di georettifica.
+Il massimo errore residuo è di 1~cella (\SI{15}{\m}) di scostamento in pochissime zone nei primi tratti (\numrange[range-phrase={ - }]{1}{4}); data la locale topografia montuosa si è preferito ridurre l'errore a tale entità e tenerlo sotto controllo piuttosto di distorcere la mappa con altre misure di georettifica.
+L'entità di questo errore è accettabile poiché quasi tutte le isole hanno estensione maggiore di \SI{225}{\m\tothe{2}}.
 \\
 Le altre immagini sono invece correttamente georeferenziate.
 
@@ -263,7 +285,7 @@ dove
 %
 Si è scelto di normalizzare l'area di ogni classe per l'area totale per lavorare con percentuali.
 \\
-Nei ricampionamenti da \SI{0.5}{\m} il $50_\mathrm{mo}$ percentile (mediana) è quello che mostra il minor RSQR ($<\SI{3}{\percent}$); in quelli da \SI{10}{\m} il $75_\mathrm{mo}$ percentile (terzo quartile) è il migliore ($RSQR<\SI{6}{\percent}$). Un esempio del risultato ottenuto è mostrato in \vref{fig:ricampionamento}.
+Nei ricampionamenti da \SI{0.5}{\m} il $50_\mathrm{mo}$ percentile (mediana) è quello che mostra il minor RSQR ($<\SI{3}{\percent}$). Un esempio del risultato ottenuto è mostrato in \vref{fig:ricampionamento}.
 %
 \begin{figure}
 	\centering
@@ -289,29 +311,29 @@ I confronti effettuati hanno la massima risoluzione temporale possibile, cioè p
 		\textbf{Tratto}	&	\textbf{Confronti}	&	\textbf{Primo}		&	\textbf{Ultimo}	\\
 						&	\textbf{validi}		&	\textbf{confronto}	&	\textbf{confronto}	\\
 		\midrule
-		1	&	13	&	2000-09-17/2003-06-22	&	2016-09-13/2017-04-21	\\
-		2	&	13	&	2000-09-17/2001-06-17	&	2016-09-13/2017-04-21	\\
-		3	&	16	&	2000-09-17/2001-06-17	&	2016-09-13/2017-04-21	\\
-		4	&	16	&	2000-09-17/2001-06-17	&	2016-09-13/2017-04-21	\\
-		5	&	16	&	2000-09-17/2001-06-20	&	2016-09-13/2017-04-21	\\
-		6	&	18	&	2000-09-17/2001-06-17	&	2017-04-21/2018-06-15	\\
-		7	&	18	&	2000-09-17/2001-06-17	&	2017-04-21/2018-06-15	\\
-		8	&	19	&	2000-09-17/2001-06-17	&	2017-04-21/2018-06-15	\\
-		9	&	18	&	2000-09-17/2002-05-18	&	2017-04-21/2018-06-15	\\
-		10	&	18	&	2000-09-17/2002-05-18	&	2017-04-21/2018-06-15	\\
-		11	&	18	&	2000-09-17/2002-05-18	&	2017-04-21/2018-06-15	\\
-		12	&	18	&	2000-09-17/2002-05-18	&	2017-04-21/2018-06-15	\\
-		13	&	18	&	2000-09-17/2002-05-18	&	2017-04-21/2018-06-15	\\
-		14	&	21	&	2000-09-17/2002-05-18	&	2017-04-21/2018-06-15	\\
-		15	&	16	&	2000-09-17/2002-06-12	&	2016-09-13/2017-04-21	\\
-		16	&	16	&	2000-09-17/2002-06-12	&	2016-09-13/2017-04-21	\\
-		17	&	16	&	2000-09-17/2002-06-12	&	2016-09-13/2017-04-21	\\
-		18	&	16	&	2000-09-17/2002-06-12	&	2016-09-13/2017-04-21	\\
-		19	&	13	&	2000-09-17/2002-06-12	&	2016-09-13/2017-04-39	\\
-		20	&	13	&	2000-09-17/2002-06-12	&	2014-09-28/2015-09-11	\\
-		21	&	13	&	2000-09-17/2002-06-12	&	2014-09-28/2015-09-11	\\
-		22	&	13	&	2000-09-17/2002-06-12	&	2014-09-28/2015-09-11	\\
-		23	&	12	&	2002-06-12/2003-06-22	&	2014-09-28/2015-09-11	\\
+		1	&	17	&	2000-09-17/2002-05-18	&	2017-09-13/2018-09-16	\\
+		2	&	18	&	2000-09-17/2002-05-18	&	2017-09-13/2018-09-16	\\
+		3	&	19	&	2000-09-17/2001-06-07	&	2017-09-13/2018-09-16	\\
+		4	&	19	&	2000-09-17/2001-06-07	&	2017-09-13/2018-09-16	\\
+		5	&	19	&	2000-09-17/2001-06-07	&	2017-09-13/2018-09-16	\\
+		6	&	23	&	2000-09-17/2001-06-07	&	2018-06-15/2018-09-16	\\
+		7	&	23	&	2000-09-17/2001-06-07	&	2018-06-15/2018-09-16	\\
+		8	&	23	&	2000-09-17/2001-06-07	&	2018-06-15/2018-09-16	\\
+		9	&	22	&	2000-09-17/2002-05-18	&	2018-06-15/2018-09-16	\\
+		10	&	22	&	2000-09-17/2002-05-18	&	2018-06-15/2018-09-16	\\
+		11	&	21	&	2000-09-17/2002-05-18	&	2018-06-15/2018-09-16	\\
+		12	&	21	&	2000-09-17/2002-05-18	&	2018-06-15/2018-09-16	\\
+		13	&	22	&	2000-09-17/2002-05-18	&	2018-06-15/2018-09-16	\\
+		14	&	23	&	2000-09-17/2002-05-18	&	2018-06-15/2018-09-16	\\
+		15	&	19	&	2000-09-17/2002-06-12	&	2017-09-13/2018-09-16	\\
+		16	&	19	&	2000-09-17/2002-06-12	&	2017-09-13/2018-09-16	\\
+		17	&	19	&	2000-09-17/2002-06-12	&	2017-09-13/2018-09-16	\\
+		18	&	19	&	2000-09-17/2002-06-12	&	2017-09-13/2018-09-16	\\
+		19	&	19	&	2000-09-17/2002-06-12	&	2017-09-13/2018-09-16	\\
+		20	&	19	&	2000-09-17/2002-06-12	&	2017-09-13/2018-09-16	\\
+		21	&	19	&	2000-09-17/2001-06-07	&	2017-09-13/2018-09-16	\\
+		22	&	19	&	2001-06-07/2002-06-12	&	2017-09-13/2018-09-16	\\
+		23	&	19	&	2001-06-07/2002-06-12	&	2017-09-13/2018-09-16	\\
 		\bottomrule
 	\end{tabular}
 	\caption[confronti effettuati]{confronti effettuati con le 23 immagini satellitari a disposizione per ottenere dati sul cambiamento delle isole.}
@@ -335,7 +357,7 @@ Un esempio di questa classificazione è riportato nella \vref{fig:confr-class-is
 \begin{figure}
 	\centering
 	\includegraphics[width=.8\textwidth]{files/confr_class_is_fl.jpeg}
-	\caption[esempio di mappa di cambiamento]{esempio di mappa di cambiamento ottenuta con il confronto tra le immagini \AST{} 2008-07-05 e 2010-09-29. Si possono osservare tutti i cambiamenti possibili; la prima classe serve solamente a visualizzare l'area della maschera computazionale. Il tratto mostrato è posto qualche \si{\kilo\m} a monte del ponte di Madrisio.}
+	\caption[esempio di mappa di cambiamento]{esempio di mappa di cambiamento ottenuta con il confronto tra le immagini \AST{} 2008-07-05 e 2009-07-08. Si possono osservare tutti i cambiamenti possibili; la prima classe serve solamente a visualizzare l'area della maschera computazionale. Il tratto mostrato è posto qualche \si{\kilo\m} a monte del ponte di Madrisio.}
 	\label{fig:confr-class-is-fl}
 \end{figure}
 %
@@ -358,8 +380,8 @@ Dall'altra parte, nonostante la maggior intensità e durata le piene del 2012 e 
 	\input{graphics/plots/livelli}
 	\\
 	\input{graphics/plots/tr_17_camb}
-	\caption[cambiamenti esperiti dalle isole nel tratto~17]{cambiamenti esperiti dalle isole nel tratto~17 rappresentati come percentuale rispetto all'areale delle isole nella prima immagine utile. 
-	Si nota il dato relativo al confronto 2008-07-05/2010-09-29, particolarmente elevato e di pari entità tra crescita ed erosione.}
+	\caption[cambiamenti esperiti dalle isole nel tratto~17]{cambiamenti esperiti dalle isole nel tratto~17 rappresentati come percentuale rispetto all'areale delle isole nel 2000-09-17. 
+	Si nota il dato relativo al confronto 2008-07-05/2009-07-08, particolarmente elevato e di quasi pari entità tra crescita ed erosione.}
 	\label{graph:tr-17-camb}
 \end{figure}
 %
@@ -397,7 +419,7 @@ Si crede che ciò che possa accadere è che fino ad una certa età, circa \SI{3}
 
 Le mappe del cambiamento sono state ottenute dalle mappe di classificazione; non essendo le seconde correttamente georeferenziate, neanche le prime lo sono. L'errore residuo nel processo di correzione è di 1~cella.
 
-Infine, per poter confrontare nel corso degli anni ogni cella, le mappe del cambiamento sono state ricampionate alla risoluzione più bassa, corrispondente a celle di~\SI{15}{\m} di lato. Si è proceduto come mostrato nel paragrafo \ref{par:camb-limiti} ottenendo valori $RSQR < \SI{1.5}{\percent}$.
+Infine, per poter confrontare nel corso degli anni ogni cella, le mappe del cambiamento sono state ricampionate alla risoluzione più bassa, corrispondente a celle di~\SI{15}{\m} di lato. Si è proceduto come mostrato nel paragrafo \ref{par:camb-limiti} ottenendo sempre valori $RSQR < \SI{1.5}{\percent}$; i confronti a~\SI{10}{\m} sono stati ricampionati a~\SI{15}{\m} applicando il valore del $75_\mathrm{mo}$ percentile (terzo quartile).
  
 
 %TODO le piante crescono diversamente in base alle condizioni ambientali (cita articolo Gurnell?) → definire un'età in base al tempo di osservazione è un approccio limitato (qualche altro lavoro simile)
@@ -434,10 +456,10 @@ I grafici in \vref{graph:distr-eta} mostrano la distribuzione di età della vege
 \end{itemize}
 
 %TODO da migliorare (togliere la descrizione all'asse y?)
-%
+%TODO come rappresentare i dati? Una colonna per la veg presente e una per quella erosa? Come differenza con stack negative = separate?
 \begin{figure}
 	\centering
-	\input{graphics/plots/tr_8_eta}
+	\input{graphics/plots/eta_tratti_8_11_17}
 	\caption[areale delle classi d'età per i tratti~8, 11 e~17]{areale delle tre classi di età per alcune immagini dei tratti~8, 11 e~17.}% \numlist[list-final-separator={ e }]{8;11;17}.}
 	\label{graph:distr-eta}
 \end{figure}
