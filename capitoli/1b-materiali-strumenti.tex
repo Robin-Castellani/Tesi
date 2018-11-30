@@ -1,0 +1,139 @@
+\section{Lo strumento principale: la radiazione elettromagnetica}
+Gli strumenti di acquisizione di immagini aeree e satellitari sono sensibili a determinate lunghezze d'onda della radiazione elettromagnetica (\vref{graph:el-mag-radiation}), cioè sono in grado di registrarne solo alcune porzioni (bande).
+L'occhio umano può distinguere solo le bande del visibile, mentre i sensori artificiali possono acquisire altre bande della radiazione.
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/electromagnetic_radiation}
+	\caption{radiazione elettromagnetica con le sue lunghezze d'onda.}
+	\label{graph:el-mag-radiation}
+\end{figure}
+%
+\\
+Le immagini nel visibile sono solitamente suddivise nelle bande del Rosso, Verde e Blu (\emph{Red}, \emph{Green}, \emph{Blue}, R-G-B); ognuna indica la quantità di colore presente; la combinazione di queste quantità di colore restituisce l'immagine a colori.
+\\
+Per poter osservare immagini con bande diverse dal visibile si sostituisce una o più bande R-G-B con le bande in questione.
+Ad esempio, è possibile sostituire la banda del Rosso con quella dell'Infrarosso (IR): la quantità di colore del Rosso sarà rimpiazzata dalla quantità di colore dell'Infrarosso.
+Il risultato sarà un'immagine riconoscibile dall'occhio umano, ma in falsi colori (\vref{fig:confronto-bande-intro}).
+%
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{files/confronto_bande_intro.jpeg}
+	\caption[confronto immagini R-G-B e IR-R-G]{confronto di un'immagine in veri colori (R-G-B, a sinistra) con una in falsi colori (IR-G-B, a destra); quest'ultima evidenza la presenza di vegetazione viva rispetto alla ghiaia in alveo e all'acqua nei canali.}
+	\label{fig:confronto-bande-intro}
+\end{figure}
+%
+\\
+Questo procedimento serve per distinguere più facilmente degli elementi e degli oggetti presenti nelle immagini; per esempio la vegetazione viva riflette particolarmente la banda dell'Infrarosso più vicina al Rosso.
+
+
+
+\section{Materiali}
+% materiali
+\paragraph{Immagini aeree e satellitari}
+Sono state considerate le bande del \emph{Near-InfraRed}~(NIR) e del \emph{Red}~(R) nelle immagini satellitari multibande provenienti dalle seguenti missioni:
+%
+\begin{itemize}
+	\item satellite Terra, sensore \AST{} Livello~1T (ottenuti in data~21~luglio~2018 e~30~settembre~2018 \squarecite{data:ASTER});  
+		\\
+		NIR (Banda~3N)~\SIrange[range-phrase={-}]{0.78}{0.86}{\nano\m}, R (Banda~2)~\SIrange[range-phrase={-}]{0.63}{0.69}{\micro\m};
+	\item costellazione \Pl{} (\href{https://pleiades.cnes.fr/en/PLEIADES/index.htm}{Centre National d'Etudes Spatiales}\footnote{\texttt{https://pleiades.cnes.fr/en/PLEIADES/index.htm}}), immagini acquistate dall'Università degli Studi di Trento; 
+		\\
+		NIR~\SIrange[range-phrase={-}]{0.74}{0.94}{\micro\m}, R~\SIrange[range-phrase={-}]{0.59}{0.71}{\micro\m};
+	\item satellite \Se{}A-B, sensore~MSI Livello~1C (ottenuti in data 21~luglio 2018 e~21~novembre~2018 tramite il \href{http://scihub.copernicus.eu/}{Copernicus Open Access Hub}\footnote{\texttt{http://scihub.copernicus.eu/}});
+		\\
+		NIR (Banda~8)~\SIrange[range-phrase={-}]{0.763}{0.908}{\micro\m}, R (Banda~4)~\SIrange[range-phrase={-}]{0.645}{0.683}{\micro\m};
+	\item satellite \WV{} (\href{satimagingcorp.s3.amazonaws.com/site/pdf/WV1\_{}WV2\_{}SpectralResponse.pdf}{DigitalGlobe}\footnote{\texttt{satimagingcorp.s3.amazonaws.com/site/pdf/WV1\_{}WV2\_{}SpectralResponse.pdf}}), immagini acquistate dall'Università degli Studi di Trento;
+		\\
+		NIR (Banda~MS1)~\SIrange[range-phrase={-}]{0.770}{0.895}{\micro\m}, R (Banda~MS2)~\SIrange[range-phrase={-}]{0.630}{0.690}{\micro\m}.
+\end{itemize}
+%
+
+Le ortofoto dell'estate~2011 provengono dal \href{http://www.pcn.minambiente.it/mattm/}{Portale Cartografico Nazionale del Ministero dell'Ambiente e della tutela del territorio e del mare}\footnote{\texttt{http://www.pcn.minambiente.it/mattm/}};
+le ortofoto del~2013 sono state ottenute da volo \href{http://www.cgrspa.com/}{CGR}\footnote{\texttt{http://www.cgrspa.com/}} su commissione; 
+le ortofoto del~2017 sono state ottenute da \href{https://www.google.com/earth/}{Google Earth}\footnote{\texttt{https://www.google.com/earth/}} (Map data: Google, Digital Globe, European Space Imaging).
+
+Nei mesi di Maggio~2005, Agosto~2010 ed Ottobre~2013 (congiuntamente all'ortofoto) è stato effettuato un rilievo aereo LiDAR, grazie al quale sono a disposizione un DEM (\emph{Digital Elevation Model}) e un CSM (\emph{Canopy Surface Model}) per ogni anno: il primo consiste di una mappa con le quote del suolo; il secondo è una mappa di altezza della vegetazione.
+Per questi rilievi si ringraziano rispettivamente il UK Natural Environment Research Council, Nicola Surian dell'Università di Padova (progetto CARIPARO) e Yasuhiro Takemon dell'Università di Kyoto.
+
+Il DEM del~2009 proviene dal \href{http://irdat.regione.fvg.it/CTRN/ricerca-cartografia/}{Portale Cartografico della regione autonoma Friuli Venezia Giulia}\footnote{\texttt{http://irdat.regione.fvg.it/CTRN/ricerca-cartografia/}}.
+
+È bene evidenziare che le mappe non hanno tutte la medesima estensione e una piccola parte non comprende tutto il tratto oggetto di studio.
+Ciò limita minimamente le analisi che è possibile fare.
+\\
+La risoluzione temporale, inferiore ad~\SI{1}{\anno} con \num{25} immagini per un periodo di studio di quasi \SI{19}{\anni}, è sufficiente per interpretare i processi che hanno luogo nel Tagliamento; la risoluzione spaziale varia da~\SIrange[range-phrase={ a }]{15}{0.5}{\m}, adeguata per poter distinguere correttamente le caratteristiche del fiume (limite dell'alveo attivo, isole, canali nella \emph{floodplain}, canali attivi, \ldots).
+
+\paragraph{Dati idrometrici}
+I dati idrometrici orari o semi-orari dal 2000-01-01 al 2018-10-14 presso l'idrometro di Villuzza (\SI{46.181}{\degree}N, \SI{12.958}{\degree}E, quota~\SI{240}{\m}~s.l.m.m., corrispondente al ponte di Pinzano) sono stati forniti dalla \href{http://www.protezionecivile.fvg.it/it/rete-idrometeorologica}{rete idrometeorologica della Protezione Civile della Regione Autonoma Friuli Venezia Giulia}\footnote{\texttt{http://www.protezionecivile.fvg.it/it/rete-idrometeorologica}}.
+Questi dati consistono dell'altezza del pelo libero dell'acqua rispetto ad un livello di riferimento locale dell'idrometro.
+La dinamica della morfologia del fondo del fiume non permette di ottenere una scala di deflusso (delle portate) generalmente valida; ciò comunque non costituisce un limite.
+
+I grafici in \vref{graph:livelli-orto-sat} mostrano rispettivamente la media giornaliera dei livelli idrometrici e le date di cui si dispongono ortofoto e immagini satellitari (\AST{}, \Pl{}, \Se{}, Google~Earth, \WV{}). 
+Nel secondo grafico sono riportati solamente i livelli medi giornalieri maggiori di~\SI{2}{\m} in quanto livelli superiori a tale soglia iniziano ad avere effetti di disturbo sulla vegetazione \squarecite{Bertoldi:2009-2m}.
+La \vref{tab:date-orto-sat} mostra le date e la dimensione delle celle delle immagini utilizzate nell'analisi.
+%%
+\begin{figure}[p]
+	\centering
+	\input{graphics/plots/livelli}
+	\input{graphics/plots/livelli_2m+imm}
+	\caption[livelli idrometrici e foto aeree - satellitari]{in alto il livello idrometrico medio giornaliero (in blu) presso l'idrometro di Villuzza. 
+	In basso un ingrandimento per i livelli medi giornalieri superiori a~\SI{2}{\m}. Le linee indicano le immagini satellitari e le ortofoto considerate (\AST{} in rosso, ortofoto, rilievi aerei LiDAR e G-Earth in verde, \Pl{} in nero, \Se{} in azzurro, \WV{} in viola).}
+	\label{graph:livelli-orto-sat}
+\end{figure}
+%%%
+\begin{table}[p]
+	\centering
+	\begin{tabular}{c c S[table-format=2.2]}
+		\toprule
+		Data		&	Tipo		&	\multicolumn{1}{c}{Risoluzione \si{[\m]}}	\\
+		\midrule	
+		2000-09-17		&	\AST{}		&	15	\\
+		2001-06-07		&	\AST{}		&	15	\\
+		2002-05-18		&	\AST{}		&	15	\\
+		2002-06-12		&	\AST{}		&	15	\\
+		2003-11-29		&	\AST{}		&	15	\\
+		2004-10-14		&	\AST{}		&	15	\\
+		2005-05			&	Rilievo aereo LiDAR	&	2	\\
+		2005-08-30		&	\AST{}		&	15	\\
+		2006-07-16		&	\AST{}		&	15	\\
+		2007-09-21		&	\AST{}		&	15	\\
+		2008-07-05		&	\AST{}		&	15	\\
+		2009			&	DEM			&	20	\\
+		2009-07-08		&	\AST{}		&	15	\\
+		2010-08			&	Rilievo aereo LiDAR	&	1	\\
+		2010-09-29		&	\AST{}		&	15	\\
+		2011-06-26/07-02	&	Ortofoto	&	1	\\
+		2011-10-02		&	\AST{}		&	15	\\
+		2012-08-01		&	\AST{}		&	15	\\
+		2013-09-05		&	\AST{}		&	15	\\
+		2013-10-22		&	Ortofoto	&	0.2	\\
+		2013-10-22		&	Rilievo aereo LiDAR	&	1	\\
+		2014-09-08		&	\AST{}		&	15	\\
+		2014-10-31		&	\Pl{}	&	0.5	\\
+		2015-08-13		&	\Pl{}	&	0.5	\\
+		2015-09-12		&	\Se{}	&	10	\\
+		2015-10-22		&	\Se{}	&	10	\\
+		2016-09-13		&	\Se{}	&	10	\\
+		2017-04-21		&	\Se{}	&	10	\\
+		2017-06-13		&	\Se{}	&	10	\\
+		2017-06-26/08-02	&	G-Earth	&	0.45	\\
+		2018-06-15		&	\WV{}	&	0.5	\\
+		2018-09-16		&	\Se{}	&	10	\\
+		\bottomrule
+	\end{tabular}
+	\caption{data e risoluzione (dimensione delle celle) delle immagini satellitari, delle ortofoto, del DEM e dei rilievi aerei LiDAR utilizzati.}
+	\label{tab:date-orto-sat}
+\end{table}
+
+
+
+% strumenti
+\medskip
+\paragraph{Strumenti}
+Per eseguire le analisi sulle immagini aeree e satellitari sono stati utilizzati i GIS GRASS \squarecite{soft:GRASS} e QGIS \squarecite{soft:QGIS}. 
+\\
+Per il download e l'estrazione delle immagini satellitari \AST{} e \Se{} è stato usato SCP, plugin di QGIS \squarecite{soft:SCP}. 
+\\
+Per il download delle ortofoto dell'estate~2017 si è utilizzato \href{https://github.com/sourcepole/qgis-openlayers-plugin}{OpenLayers}\footnote{\texttt{https://github.com/sourcepole/qgis-openlayers-plugin}}, plugin di QGIS.
+\\
+Per le analisi dei dati sono stati realizzati script in Python~2.7.5 utilizzando la libreria PyGRASS\footnote{\texttt{https://grass.osgeo.org/programming7/}} e in Python~3.7.1\footnote{\texttt{https://www.python.org}}.
