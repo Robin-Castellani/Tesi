@@ -18,10 +18,10 @@
 *.blg
 
 # figures externalized from LaTeX typesetting
-*figure*.dep
-*figure*.dpth
-*figure*.md5
-*figure*.pdf
+*.dep
+*.dpth
+*.md5
+*.pdf
 
 # versions of the thesis
 *tesi*.pdf
