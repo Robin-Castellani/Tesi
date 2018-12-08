@@ -2,17 +2,17 @@
 Utilizzando le mappe del cambiamento esperito dalle isole si possono ottenere mappe che indicano un'età approssimativa della vegetazione che compone queste isole. 
 \\
 L'ipotesi che si vuole verificare è che sia la vegetazione più giovane quella ad essere maggiormente erosa in quanto può essere divelta più facilmente.
-Non si esclude tuttavia di osservare erosione anche di vegetazione matura poiché le isole poste in corrispondenza dell'estradosso di un canale curvo sono soggette a scavo laterale.
+Non si esclude tuttavia di osservare erosione anche di vegetazione matura poiché le isole poste in corrispondenza dell'estradosso di un canale in curva sono soggette a scavo laterale.
 
 \subsection{Metodi: estendere i confronti e ottenere un'età}
 \paragraph{Limiti}
 Con le immagini satellitari utilizzate non è possibile distinguere i singoli alberi che compongono le isole; se con le immagini a miglior risoluzione si distinguono gli arbusti isolati, non si può certo ottenere una stima dell'età tanto precisa quanto quella fornita da un carotaggio del tronco.
-In più, una cella è classificata come vegetazione solo quando le piante al suo interno presentano una chioma sufficientemente grande da occupare gran parte della cella; pertanto le immagini con celle di \SI{10}{\m} o addirittura \SI{15}{\m} non possono mostrare che grandi macchie di vegetazione.
+In più, una cella è classificata come vegetazione solo quando le piante al suo interno presentano complessivamente una chioma sufficientemente grande da occupare gran parte della cella; pertanto le immagini con celle di \SI{10}{\m} o  \SI{15}{\m} non possono mostrare che grandi macchie di vegetazione.
 Prima dei \SI{3}{\anni} una pianta di salice generalmente non ha fronde molto estese.
 \\
 Occorre poi tenere in conto che le piante crescono differentemente in base alle condizioni ambientali: periodi di stress idrico o termico rallentano la crescita, così come il parziale seppellimento con ghiaia dovuto ad eventi di piena; una falda non troppo profonda la cui altezza varia lentamente, terreno di granulometria sottile con sabbia e buone temperature sono invece fattori favorevoli alla crescita \squarecite{Gurnell:2001-island-formation}.
 
-Si crede che ciò che possa accadere è che fino ad una certa età, circa \SI{3}{\anni}, la nuova vegetazione non sia visibile dal satellite. 
+Si crede che ciò che possa generalmente accadere è che fino ad una certa età, circa \SI{3}{\anni}, la nuova vegetazione non sia visibile dal satellite; quindi si può definire come età della vegetazione presente in una cella la somma della persistenza (il periodo di tempo in cui si osserva che la cella rimane vegetata) con i \SI{3}{\anni} iniziali. 
 
 Le mappe del cambiamento sono state ottenute dalle mappe di classificazione; non essendo le seconde correttamente georeferenziate, neanche le prime lo sono. L'errore residuo nel processo di correzione è di 1~cella.
 
@@ -23,68 +23,87 @@ Infine, per poter confrontare nel corso degli anni ogni cella, le mappe del camb
 
 \paragraph{Obiettivo ed approccio} 
 Date le precedenti premesse, bisogna riflettere su ciò che si vuole ottenere: dividere la vegetazione in classi di età.
-Si vuole sapere quanta vegetazione giovane è stata erosa; non importa se questa ha esattamente \SI{3}{\anni} o \SI{4}{\anni}, l'importante è che sia grossomodo classificata come giovane.
+Si vuole sapere quanta vegetazione giovane è stata erosa; non conta se questa ha esattamente \SI{3}{\anni} o \SI{4}{\anni}, l'importante è che sia grossomodo classificata come giovane.
 
 Ogni mappa del cambiamento è formata dalle informazioni contenute in due mappe: quella più vecchia e quella più recente. La distanza temporale tra queste due mappe definisce il periodo di osservazione.
 \\
-Per la mappa del cambiamento più vecchia, l'età della vegetazione delle isole è stata arbitrariamente essere pari al periodo di osservazione, cui si sono aggiunti \SI{3}{\anni}.
+Per la mappa del cambiamento più vecchia (la prima mappa di confronto in \vref{tab:confronti}), l'età della vegetazione delle isole è stata scelta essere pari al periodo di osservazione, cui si sono aggiunti \SI{3}{\anni}, che è ritenuto il periodo minimo affinché un insieme di piante diventi visibile per il satellite.
 \\
-Per le mappe via via più recenti, l'età nelle celle delle isole che non sono cambiate è pari al periodo di osservazione sommato all'età precedente; per le celle si sono vegetate a partire dall'alveo l'età è pari al periodo di osservazione con l'aggiunta di \SI{3}{\anni}, ritenuto il periodo minimo affinché un insieme di piante diventi visibile per il satellite.
+Per le mappe via via più recenti, l'età nelle celle delle isole che non sono cambiate è pari al periodo di osservazione sommato all'età precedente; per le celle si sono vegetate a partire dall'alveo l'età è pari al periodo di osservazione con l'aggiunta di \SI{3}{\anni}.
 
-\medskip
-L'approccio di definire un'età in base al periodo di osservazione è limitato, in particolare per le mappe più vecchie poiché non è possibile tener conto della vegetazione che era presente antecedentemente alla prima immagine valida;
+L'approccio di definire un'età in base al periodo di osservazione è limitato, in particolare per le mappe più vecchie, poiché non è possibile tener conto della vegetazione che era presente antecedentemente alla prima immagine valida;
 si ritiene che a partire dalla $4^a$ o $5^a$ mappa di età il metodo inizi ad essere affidabile (generalmente quindi dalla mappa di età del 2007-09-21).
 Per gli scopi della ricerca questo approccio risulta essere sufficiente.
 
-\paragraph{Validazione}
-Il CSM (\emph{Canopy Surface Model}) è il modello digitale della copertura arborea; similmente al DEM, mostra delle quote; queste sono tuttavia riferite all'altezza della vegetazione sopra il terreno.
+\medskip
+Si osservino i grafici in \vref{graph:distrib-rapp-eros-eta}, i quali rappresentano quante isole sono state erose rispetto alle isole presenti in ogni tratto in base all'età delle prime.
+Si vede come le isole con età minore di \SI{5}{\anni} siano spesso erose; si evidenzia anche una dinamicità per le isole con età tra \SIrange[range-phrase={ e }]{5}{8}{\anni}. 
 \\
-È generalmente sensato affermare che piante più mature abbiano un'altezza maggiore di piante giovani.
-Quindi si sono utilizzate le informazioni del CSM relativo alla ortofoto del 2013-10-22 per verificare che nelle celle della mappa di età della vegetazione del 2013-09-05 l'altezza fosse all'incirca proporzionale all'età.
-%TODO grafico con i quantili
-
-\subsection{Risultati: un trend per la vegetazione erosa}
-I grafici in \vref{graph:distr-eta} mostrano la distribuzione di età della vegetazione nelle isole in termini di areale occupato; per gli scopi del lavoro ci si limita a definire 3~classi di vegetazione:
+Si definiscono quindi le seguenti classi di età:
 %
 \begin{itemize}
 	\item giovane, con meno di \SI{5}{\anni};
-	\item intermedia, con età compresa tra \SIrange[range-phrase={ e }]{5}{10}{\anni};
-	\item matura, con più di \SI{10}{\anni}.
+	\item intermedia, con età compresa tra \SIrange[range-phrase={ e }]{5}{8}{\anni};
+	\item matura, con più di \SI{8}{\anni}.
 \end{itemize}
-
-%TODO da migliorare (togliere la descrizione all'asse y?)
-%TODO come rappresentare i dati? Una colonna per la veg presente e una per quella erosa? Come differenza con stack negative = separate?
+%
 \begin{figure}
 	\centering
-	\input{graphics/plots/eta_tratti_8_11_17}
-	\caption[areale delle classi d'età per i tratti~8, 11 e~17]{areale delle tre classi di età per alcune immagini dei tratti~8, 11 e~17.}% \numlist[list-final-separator={ e }]{8;11;17}.}
-	\label{graph:distr-eta}
+	\input{graphics/plots/rapp_eros_eta}
+	\caption[distribuzione del rapporto tra isole erose e la somma delle isole presenti]{distribuzione del rapporto tra le isole erose e la sommatoria di tutte le isole presenti per ogni tratto nei tratti da \numrange[range-phrase={ a }, mode=text]{1}{23} in base all'età; le linee verticali rosse tratteggiate indicano l'età di \SIrange[range-phrase={ e }]{5}{8}{\anni}.}
+	\label{graph:distrib-rapp-eros-eta}
+\end{figure}
+
+\paragraph{Validazione}
+Il CHM (\emph{Canopy Height Model}) è il modello digitale della copertura arborea; similmente al DEM, mostra delle quote; queste sono tuttavia riferite all'altezza della vegetazione sopra il terreno.
+\\
+È generalmente sensato affermare che piante più mature abbiano un'altezza maggiore di piante giovani.
+Quindi si sono utilizzati i dati di altezza della copertura arborea contenuti nei CHM di agosto~2010 e del~2013-10-22 per verificare che nelle celle della mappa di età della vegetazione rispettivamente del~2010-09-29 e del~2013-09-05 l'altezza fosse all'incirca proporzionale all'età.
+I CHM sono stati ricampionati a \SI{15}{\m} (larghezza delle celle delle immagini \AST{}) applicando il valore del $75_{\mathrm{mo}}$ percentile in quanto rappresenta l'altezza delle chiome più elevate ed espanse, le quali dovrebbero definire i valori di età nelle mappe essendo maggiormente visibili da satellite.
+\\
+Si è scelto di validare la procedura solo sulle mappe di età del~2010 e del~2013 poiché sono più rappresentative della reale distribuzione d'età delle piante, mentre la mappa di età del 2005-08-30 potrebbe non essere affidabile per quanto precedentemente esposto.
+\\
+I boxplot della distribuzione dell'altezza della vegetazione rispetto all'età sono presentati nel grafico in \vref{graph:altezza-chm-eta}.
+Il loro andamento crescente riflette sufficientemente quello dei dati da rilievi dendrometrici effettuati da \cite{Gurnell:2018-canopy-height} su isole pioniere nel Tagliamento localizzate nei medesimi tratti del CHM; pertanto ci si ritiene soddisfatti della procedura sviluppata in quanto riesce ad ottenere una stima dell'età delle piante nelle isole adeguata agli scopi della tesi.
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/percentili_CHM_eta}
+	\caption[distribuzione dell'altezza delle piante secondo l'età]{distribuzione dell'altezza delle piante (dal CHM) secondo l'età (dalle mappe di età) per il 2010 e il 2013 confrontati con rilievi dendrometrici presentati da \cite{Gurnell:2018-canopy-height}.}
+	\label{graph:altezza-chm-eta}
 \end{figure}
 %
 
-Focalizzandosi sugli eventi di piena della fine del~2008 e del~2012, si vede chiaramente come l'areale della vegetazione giovane sia fortemente diminuito dalle immagini antecedenti le piene alle immagini successive (tratti \numrange[range-phrase={ e }]{11}{17});
-sia in termini relativi che in termini assoluti, la vegetazione giovane è quella che è prevalentemente portata via dalle piene, quando è presente;
-in seguito alle due piene considerate si osserva inoltre una diminuzione dell'area occupata dalle isole.
-Si tenga comunque in conto che parte della vegetazione non erosa invecchia e può passare da una classe a quella successiva; questo fenomeno non è tuttavia quello predominante durante le piene del~2008 e del~2012 per evidenza.
+\subsection{Risultati: un trend per la vegetazione erosa}
+Osservando la distribuzione del rapporto tra isole erose e isole presenti rispetto all'età, sono state definite 3~classi di età della vegetazione:
+%
+\begin{itemize}
+	\item giovane, con meno di \SI{5}{\anni};
+	\item intermedia, con età compresa tra \SIrange[range-phrase={ e }]{5}{8}{\anni};
+	\item matura, con più di \SI{8}{\anni}.
+\end{itemize}
+%
+Si considerino le isole presenti in alcuni tratti e alcune immagini divise per classi di età; si considerino anche le isole erose in seguito alle immagini di cui sopra, divise per classi di età e nei medesimi tratti: ciò che si vede nel grafico in \vref{graph:distr-eta} è la quantità di isole erose per ogni classe rispetto alle isole presenti. 
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/eta_tratti_8_11_17}
+	\caption[areale delle isole e dell'erosione subita divise in classi d'età per i tratti~8, 11 e~17]{areale delle isole e dell'erosione subita divise in classi d'età per alcune immagini per i tratti~8, 11 e~17.}
+	\label{graph:distr-eta}
+\end{figure}
+%
+Focalizzandosi sugli eventi di piena della fine del~2008 e del~2012, si vede chiaramente come l'areale della vegetazione giovane sia stato fortemente eroso (tratti \numrange[range-phrase={ e }]{11}{17});
+sia in termini relativi che in termini assoluti, la vegetazione giovane è quella che è prevalentemente portata via dalle piene.
 \\
-Con il confronto tra anni in cui non c'è stata una forte espansione delle isole ma in cui ci sono stati particolari eventi, come tra il \numrange[range-phrase={ e il }]{2014}{2015} o tra il \numrange[range-phrase={ e il }]{2017}{2018}, non si nota un cambiamento particolare nella distribuzione d'età.
-%Anzi, nell'undicesimo tratto, dove sono presenti grandi isole, la piena ne ha probabilmente asportato alcune con età intermedia
+Questo è molto probabilmente dovuto alla colonizzazione delle piante delle zone a quota medio-elevata, come le creste delle barre, durante il periodo tra due piene; 
+se le condizioni ambientali (velocità di abbassamento della falda, temperatura, disponibilità di un substrato di pezzatura adeguata, \ldots) sono adatte, se non hanno luogo piene particolarmente intense ma piene di piccola-media entità (\emph{flow pulses}) allora le piante possono crescere ottimamente e le isole si accrescono \squarecite{Gurnell:2001-island-formation}.
+\\
+Il periodo compreso tra il 2005 e il 2008 molto probabilmente è stato caratterizzato da condizioni idrologiche ottimali per la crescita di nuova vegetazione, come già osservato nella sezione~\vref{sec:camb-ris}.
+%TODO sistema il label
+Ora è possibile affermare che la forte erosione osservata dall'immagine del cambiamento 2008-07-05/2009-07-08 si è concentrata sulla vegetazione giovane.
+\\
+Data la ricolonizzazione per via vegetativa di \emph{Populus Nigra} e \emph{Salix spp.} che ha luogo dopo ogni piena da parte di tronchi depositati su barre e attorno a isole già esistenti, la presenza di piante giovani è quasi costante; a meno di eventi molto intensi o di isole poste all'estradosso di canali, è questa la componente delle isole che viene asportata per prima.
 
-% magari secondo grafico con stesso tratto, stesse immagini ma solo vegetazione erosa
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Momenti in cui non ci sono state piene con livello oltre i \SI{2}{\m}, come nei periodi 2013-2014 e 2015-2017, mostrano che l'erosione delle isole è stata modesta, di entità ben minore rispetto a quanto appena esposto.
+%Si tenga comunque in conto che parte della vegetazione non erosa invecchia e può passare da una classe a quella successiva; questo fenomeno non è tuttavia quello predominante durante le piene del~2008 e del~2012 per evidenza.
 

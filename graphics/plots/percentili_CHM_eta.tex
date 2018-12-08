@@ -1,0 +1,243 @@
+\tikzsetnextfilename{percentili_CHM_eta}
+\begin{tikzpicture}
+	\begin{groupplot}[
+		group style = {
+			group size = 3 by 1,
+			y descriptions at = edge left,
+			x descriptions at = edge bottom,
+			horizontal sep = 0.3cm,
+			vertical sep = 0.1cm,
+		},
+		width = 0.38\textwidth,
+		height = 0.4\textwidth,
+		xlabel = {Età \si{[\anni]}},
+		xticklabel style = {font=\tiny},
+		ylabel = {Altezza della chioma[\si{[\m]}},
+		boxplot/draw direction = y,
+		ymax = 25,
+		ymin = 0,
+		enlarge y limits = 0.05,
+		grid = major,
+	]
+	\nextgroupplot[
+		xtick = {1, 2, 3, 4, 5, 6},
+		xticklabels = {$4$, $5$, $6$, $7$, $9$, $13$},
+		] % CSM età 2010
+		\addplot [
+			boxplot prepared = {
+				lower whisker=0.44979499999999994,
+				lower quartile=0.706821,
+				median=1.349386,
+				upper quartile=2.248977,
+				upper whisker=3.919646,
+				}
+			]
+			coordinates{};
+		\addplot [
+			boxplot prepared = {
+				lower whisker=0.578308,
+				lower quartile=0.963847,
+				median=2.37749,
+				upper quartile=4.048159,
+				upper whisker=5.461802,
+				}
+			]
+			coordinates{};
+		\addplot [
+			boxplot prepared = {
+				lower whisker=0.706821,
+				lower quartile=1.349386,
+				median=2.634516,
+				upper quartile=4.819237,
+				upper whisker=8.700328600000006,
+				}
+			]
+			coordinates{};
+		\addplot [
+			boxplot prepared = {
+				lower whisker=0.9252931000000002,
+				lower quartile=1.51002725,
+				median=2.37749,
+				upper quartile=4.0160307500000005,
+				upper whisker=7.5951168,
+				}
+			]
+			coordinates{};
+		\addplot [
+			boxplot prepared = {
+				lower whisker=1.349386,
+				lower quartile=2.634516,
+				median=6.361392,
+				upper quartile=11.244886,
+				upper whisker=17.156482,
+				}
+			]
+			coordinates{};
+		\addplot [
+			boxplot prepared = {
+				lower whisker=4.94775,
+				lower quartile=9.3814475,
+				median=14.200684,
+				upper quartile=19.341203,
+				upper whisker=23.350807599999996,
+				}
+			]
+			coordinates{};
+		\node [fill = white, draw = black, anchor = north west] 
+        	at (axis description cs: 0,1) {2010};
+	%------------------------------------------------------
+	\nextgroupplot[
+		xtick = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
+		xticklabels = {$4$, $6$, $7$, $8$, $9$, $10$, $11$, $12$, $14$, $16$},
+		] % CSM età 2013
+		\addplot [
+			boxplot prepared = {
+				lower whisker=0.304544,
+				lower quartile=0.657206,
+				median=1.597636,
+				upper quartile=3.713603,
+				upper whisker=6.1352108000000065,
+				}
+			]
+			coordinates {};
+		\addplot [
+			boxplot prepared = {
+				lower whisker=0.774759,
+				lower quartile=1.244974,
+				median=2.420512,
+				upper quartile=3.831157,
+				upper whisker=5.594463,
+				}
+			]
+			coordinates {};
+		\addplot [
+			boxplot prepared = {
+				lower whisker=1.244974,
+				lower quartile=1.950297,
+				median=3.360942,
+				upper quartile=5.006695,
+				upper whisker=6.770001,
+				}
+			]
+			coordinates {};
+		\addplot [
+			boxplot prepared = {
+				lower whisker=1.6211462,
+				lower quartile=3.125835,
+				median=5.006695,
+				upper quartile=7.122662,
+				upper whisker=9.4972484,
+				}
+			]
+			coordinates {};
+		\addplot [
+			boxplot prepared = {
+				lower whisker=1.950297,
+				lower quartile=3.243388,
+				median=4.654033,
+				upper quartile=6.534893,
+				upper whisker=8.262933799999999,
+				}
+			]
+			coordinates {};
+		\addplot [
+			boxplot prepared = {
+				lower whisker=2.65562,
+				lower quartile=3.59605,
+				median=5.124248,
+				upper quartile=6.9169435,
+				upper whisker=9.097565300000001,
+				}
+			]
+			coordinates {};
+		\addplot [
+			boxplot prepared = {
+				lower whisker=3.478496,
+				lower quartile=4.71281,
+				median=6.652447,
+				upper quartile=9.4149605,
+				upper whisker=12.2009848,
+				}
+			]
+			coordinates {};
+		\addplot [
+			boxplot prepared = {
+				lower whisker=2.65562,
+				lower quartile=4.5952565,
+				median=8.2982,
+				upper quartile=12.706465999999999,
+				upper whisker=17.608457000000005,
+				}
+			]
+			coordinates {};
+		\addplot [
+			boxplot prepared = {
+				lower whisker=3.125835,
+				lower quartile=4.418926,
+				median=8.592084,
+				upper quartile=13.35301175,
+				upper whisker=15.351425,
+				}
+			]
+			coordinates {};
+		\addplot [
+			boxplot prepared = {
+				lower whisker=6.570159200000001,
+				lower quartile=11.3252095,
+				median=15.351425,
+				upper quartile=21.3760555,
+				upper whisker=24.8027469,
+				}
+			]
+			coordinates {};
+		\node [fill = white, draw = black, anchor = north west] 
+        	at (axis description cs: 0,1) {2013};
+	%------------------------------------------------------
+	\nextgroupplot[
+		xtick = {1, 2, 3, 4},
+		xticklabels = {$5$, $10$, $13$, $16$},
+		]
+		\addplot [
+			boxplot prepared = {
+				lower whisker=1.46,
+				lower quartile=1.9,
+				median=1.96,
+				upper quartile=3.99,
+				upper whisker=5.25,
+				}
+			]
+			coordinates {};
+		\addplot [
+			boxplot prepared = {
+				lower whisker=4.27,
+				lower quartile=6.23,
+				median=7.06,
+				upper quartile=9.08,
+				upper whisker=11.61,
+				}
+			]
+			coordinates {};
+		\addplot [
+			boxplot prepared = {
+				lower whisker=7.85,
+				lower quartile=8.99,
+				median=10.25,
+				upper quartile=13.42,
+				upper whisker=14.12,
+				}
+			]
+			coordinates {};
+		\addplot [
+			boxplot prepared = {
+				lower whisker=10.92,
+				lower quartile=12.06,
+				median=14.46,
+				upper quartile=16.11,
+				upper whisker=21.30,
+				}
+			]
+			coordinates {};
+		\node [fill = white, draw = black, anchor = north west] 
+        	at (axis description cs: 0,1) {Gurnell et al. 2018};
+	\end{groupplot}
+\end{tikzpicture}

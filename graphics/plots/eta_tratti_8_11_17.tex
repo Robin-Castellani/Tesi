@@ -1,0 +1,131 @@
+\tikzsetnextfilename{eta_tratti_8_11_17}
+\begin{tikzpicture}
+	\begin{groupplot}[
+		group style = {
+			group size = 3 by 1,
+			x descriptions at = edge bottom,
+			y descriptions at = edge left,
+			xticklabels at = all,
+			horizontal sep = 0.25cm,
+			vertical sep = 0.25cm,
+		},
+		width = 0.37\textwidth,
+		height = 0.7\textwidth,
+	    xbar stacked,
+		enlarge x limits = 0.02,
+		enlarge y limits = 0.10,
+		symbolic y coords = {
+			2008-07-05, 2009-07-08, 
+			2012-08-01, 2013-09-05,  
+			2016-09-13, 2017-06-13
+		},
+		ytick distance = 1,
+		%scaled x ticks = false,
+		xlabel = {Areale \si{[\m\tothe{2}]}},
+		xmajorgrids = true,
+		]
+		\nextgroupplot % tratto_8
+			\addplot[bar shift = .4cm, pattern = north east lines]
+		       	table [y=data, x=giovane-e] {graphics/data/tr_8_eta.txt};
+			\addplot[bar shift = .4cm, fill = green]
+		       	table [
+		       		y=data, 
+		       		x expr=\thisrow{giovane} - \thisrow{giovane-e}
+		       		] {graphics/data/tr_8_eta.txt};
+		       		
+			\resetstackedplots
+			\addplot[bar shift = 0cm, pattern = north east lines, forget plot]
+		       	table [y=data, x=interm-e] {graphics/data/tr_8_eta.txt};
+			\addplot[bar shift = 0cm, fill = green!75!black]
+		       	table [
+		       		y=data, 
+		       		x expr=\thisrow{interm} - \thisrow{interm-e}
+		       		] {graphics/data/tr_8_eta.txt};
+		       		
+			\resetstackedplots
+			\addplot[bar shift = -.4cm, pattern = north east lines, forget plot]
+		       	table [y=data, x=matura-e] {graphics/data/tr_8_eta.txt};
+			\addplot[bar shift = -.4cm, fill = green!40!black]
+		       	table [
+		       		y=data, 
+		       		x expr=\thisrow{matura} - \thisrow{matura-e}
+		       		] {graphics/data/tr_8_eta.txt};
+		    
+        	\node [fill = white, draw = black, anchor = north east] 
+        		at (axis description cs: 1,1) {Tr. 8};
+        %
+		\nextgroupplot [% tratto_11
+			legend style = {
+				at = {(0.5,1.02)},
+				legend columns = 4,
+				anchor = south
+			}, 
+			]
+			\addplot[bar shift = .4cm, pattern = north east lines]
+		       	table [y=data, x=giovane-e] {graphics/data/tr_11_eta.txt};
+		    \addlegendentry{Erosione}
+			\addplot[bar shift = .4cm, fill = green]
+		       	table [
+		       		y=data, 
+		       		x expr=\thisrow{giovane} - \thisrow{giovane-e}
+		       		] {graphics/data/tr_11_eta.txt};
+		    \addlegendentry{Giovane}
+		       		
+			\resetstackedplots
+			\addplot[bar shift = 0cm, pattern = north east lines, forget plot]
+		       	table [y=data, x=interm-e] {graphics/data/tr_11_eta.txt};
+			\addplot[bar shift = 0cm, fill = green!75!black]
+		       	table [
+		       		y=data, 
+		       		x expr=\thisrow{interm} - \thisrow{interm-e}
+		       		] {graphics/data/tr_11_eta.txt};
+		    \addlegendentry{Intermedia}
+		       		
+			\resetstackedplots
+			\addplot[bar shift = -.4cm, pattern = north east lines, forget plot]
+		       	table [y=data, x=matura-e] {graphics/data/tr_11_eta.txt};
+			\addplot[bar shift = -.4cm, fill = green!40!black]
+		       	table [
+		       		y=data, 
+		       		x expr=\thisrow{matura} - \thisrow{matura-e}
+		       		] {graphics/data/tr_11_eta.txt};
+		    \addlegendentry{Matura}
+		    
+        	\node [fill = white, draw = black, anchor = north east] 
+        		at (axis description cs: 1,1) {Tr. 11};
+        	%
+        	
+		\nextgroupplot % tratto_17
+			\addplot[bar shift = .4cm, pattern = north east lines]
+		       	table [y=data, x=giovane-e] {graphics/data/tr_17_eta.txt};
+			\addplot[bar shift = .4cm, fill = green]
+		       	table [
+		       		y=data, 
+		       		x expr=\thisrow{giovane} - \thisrow{giovane-e}
+		       		] {graphics/data/tr_17_eta.txt};
+		       		
+			\resetstackedplots
+			\addplot[bar shift = 0cm, pattern = north east lines, forget plot]
+		       	table [y=data, x=interm-e] {graphics/data/tr_17_eta.txt};
+			\addplot[bar shift = 0cm, fill = green!75!black]
+		       	table [
+		       		y=data, 
+		       		x expr=\thisrow{interm} - \thisrow{interm-e}
+		       		] {graphics/data/tr_17_eta.txt};
+		       		
+			\resetstackedplots
+			\addplot[bar shift = -.4cm, pattern = north east lines, forget plot]
+		       	table [y=data, x=matura-e] {graphics/data/tr_17_eta.txt};
+			\addplot[bar shift = -.4cm, fill = green!40!black]
+		       	table [
+		       		y=data, 
+		       		x expr=\thisrow{matura} - \thisrow{matura-e}
+		       		] {graphics/data/tr_17_eta.txt};
+		    
+        	\node [fill = white, draw = black, anchor = north east] 
+        		at (axis description cs: 1,1) {Tr. 17};
+	\end{groupplot}
+\end{tikzpicture}
+
+
+

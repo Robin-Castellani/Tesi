@@ -1,0 +1,85 @@
+\tikzsetnextfilename{rapp_eros_eta}
+\begin{tikzpicture}
+	\begin{groupplot}[
+		group style = {
+			group size = 2 by 3,
+			y descriptions at = edge left,
+			x descriptions at = edge bottom,
+			horizontal sep = 0.4cm,
+			vertical sep = 0.4cm,
+		},
+		width = 0.5\textwidth,
+		height = 0.5\textwidth,
+		xlabel = {Età \si{[\anni]}},
+		xmin = 3,
+		xmax = 20,
+		xtick distance = 3,
+		enlarge x limits = 0.05,
+		ylabel = {Isole erose / isole totali \si{[\percent]}},
+		boxplot/draw direction = y,
+		ymax = 70,
+		ymin = 0,
+		enlarge y limits = 0.05,
+		grid = major,
+	]
+	\nextgroupplot % ASTER 2008_07_05
+		\addplot [only marks]
+			table [x=Eta, y=Perc_erosa_su_tot_isole] {graphics/data/rapp_eros_eta_2008_07_05.txt};
+		\addplot [no markers, dashed, red]
+			coordinates{(5,0) (5,70)};
+		\addplot [no markers, dashed, red]
+			coordinates{(8,0) (8,70)};
+        \node [fill = white, draw = black, anchor = north east] 
+        	at (axis description cs: 1,1) {AST 2008-07-05};
+	%------------------------------------------------------
+	\nextgroupplot % ASTER 2010_09_29
+		\addplot [only marks]
+			table [x=Eta, y=Perc_erosa_su_tot_isole] {graphics/data/rapp_eros_eta_2010_09_29.txt};
+		\addplot [no markers, dashed, red]
+			coordinates{(5,0) (5,70)};
+		\addplot [no markers, dashed, red]
+			coordinates{(8,0) (8,70)};
+        \node [fill = white, draw = black, anchor = north east] 
+        	at (axis description cs: 1,1) {AST 2010-09-29};
+	%------------------------------------------------------
+	\nextgroupplot % ASTER 2014_09_08
+		\addplot [only marks]
+			table [x=Eta, y=Perc_erosa_su_tot_isole] {graphics/data/rapp_eros_eta_2014_09_08.txt};
+		\addplot [no markers, dashed, red]
+			coordinates{(5,0) (5,70)};
+		\addplot [no markers, dashed, red]
+			coordinates{(8,0) (8,70)};
+        \node [fill = white, draw = black, anchor = north east] 
+        	at (axis description cs: 1,1) {AST 2014-09-08};
+	%------------------------------------------------------
+	\nextgroupplot % Sentinel2 2015_09_12
+		\addplot [only marks]
+			table [x=Eta, y=Perc_erosa_su_tot_isole] {graphics/data/rapp_eros_eta_2015_09_12.txt};
+		\addplot [no markers, dashed, red]
+			coordinates{(5,0) (5,70)};
+		\addplot [no markers, dashed, red]
+			coordinates{(8,0) (8,70)};
+        \node [fill = white, draw = black, anchor = north east] 
+        	at (axis description cs: 1,1) {S2 2015-09-12};
+	%------------------------------------------------------
+	\nextgroupplot % Sentinel2 2015_10_22
+		\addplot [only marks]
+			table [x=Eta, y=Perc_erosa_su_tot_isole] {graphics/data/rapp_eros_eta_2015_10_22.txt};
+		\addplot [no markers, dashed, red]
+			coordinates{(5,0) (5,70)};
+		\addplot [no markers, dashed, red]
+			coordinates{(8,0) (8,70)};
+        \node [fill = white, draw = black, anchor = north east] 
+        	at (axis description cs: 1,1) {S2 2015-10-22};
+	%------------------------------------------------------
+	\nextgroupplot % Sentinel2 2017_06_13
+		\addplot [only marks]
+			table [x=Eta, y=Perc_erosa_su_tot_isole] {graphics/data/rapp_eros_eta_2017_06_13.txt};
+		\addplot [no markers, dashed, red]
+			coordinates{(5,0) (5,70)};
+		\addplot [no markers, dashed, red]
+			coordinates{(8,0) (8,70)};
+        \node [fill = white, draw = black, anchor = north east] 
+        	at (axis description cs: 1,1) {S2 2017-06-13};
+	\end{groupplot}
+\end{tikzpicture}
