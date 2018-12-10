@@ -1,4 +1,8 @@
-\section{Lo strumento principale: la radiazione elettromagnetica}
+Nel presente capitolo viene inizialmente introdotta l'entità fisica a fondamento di tutto il lavoro: la radiazione elettromegnetica;
+in seguito vengono riportati i materiali da cui sono stati estratti i dati per le analisi e gli strumenti utilizzati nelle elaborazioni.
+
+
+\section{La radiazione elettromagnetica}
 Gli strumenti di acquisizione di immagini aeree e satellitari sono sensibili a determinate lunghezze d'onda della radiazione elettromagnetica (\vref{graph:el-mag-radiation}), cioè sono in grado di registrarne solo alcune porzioni (bande).
 L'occhio umano può distinguere solo le bande del visibile, mentre i sensori artificiali possono acquisire altre bande della radiazione.
 %
@@ -29,9 +33,9 @@ Questo procedimento serve per distinguere più facilmente degli elementi e degli
 
 
 \section{Materiali}
-% materiali
-\paragraph{Immagini aeree e satellitari}
-Sono state considerate le bande del \emph{Near-InfraRed}~(NIR) e del \emph{Red}~(R) nelle immagini satellitari multibande provenienti dalle seguenti missioni:
+\subsection{Immagini satellitari e rilievi aerei}
+Nelle immagini satellitari multibande sia scaricate che in possesso sono state considerate le bande del \emph{Near-InfraRed}~(NIR) e del \emph{Red}~(R) in quanto permettono di distinguere la vegetazione dalle altre coperture del suolo;
+le immagini provengono dalle seguenti missioni:
 %
 \begin{itemize}
 	\item satellite Terra, sensore \AST{} Livello~1T (ottenuti in data~21~luglio~2018 e~30~settembre~2018 \squarecite{data:ASTER});  
@@ -48,12 +52,22 @@ Sono state considerate le bande del \emph{Near-InfraRed}~(NIR) e del \emph{Red}~
 		NIR (Banda~MS1)~\SIrange[range-phrase={-}]{0.770}{0.895}{\micro\m}, R (Banda~MS2)~\SIrange[range-phrase={-}]{0.630}{0.690}{\micro\m}.
 \end{itemize}
 %
+Le immagini sono state selezionate secondo i seguenti criteri:
+%
+\begin{itemize}
+	\item minima copertura nuvolosa del tratto di studio;
+	\item data compresa metà aprile e fine ottobre, che è il periodo vegetativo delle piante decidue (\emph{Salix spp.}, \emph{Populus nigra}) che caratterizzano le isole fluviali e la piana alluvionale;
+	\item basso livello dell'acqua per evitare che alcune isole siano sommerse e non visibili;
+	\item estensione di almeno qualche decina di chilometri sul tratto di studio.
+\end{itemize}
+%
+Tutte le immagini mostrano la radianza registrata al sensore, sono geometricamente corrette tramite modelli digitali del terreno e georeferenziate secondo la proiezione UTM~33N.
 
 Le ortofoto dell'estate~2011 provengono dal \href{http://www.pcn.minambiente.it/mattm/}{Portale Cartografico Nazionale del Ministero dell'Ambiente e della tutela del territorio e del mare}\footnote{\texttt{http://www.pcn.minambiente.it/mattm/}};
 le ortofoto del~2013 sono state ottenute da volo \href{http://www.cgrspa.com/}{CGR}\footnote{\texttt{http://www.cgrspa.com/}} su commissione; 
 le ortofoto del~2017 sono state ottenute da \href{https://www.google.com/earth/}{Google Earth}\footnote{\texttt{https://www.google.com/earth/}} (Map data: Google, Digital Globe, European Space Imaging).
 
-Nei mesi di Maggio~2005, Agosto~2010 ed Ottobre~2013 (congiuntamente all'ortofoto) è stato effettuato un rilievo aereo LiDAR, grazie al quale sono a disposizione un DEM (\emph{Digital Elevation Model}) e un CSM (\emph{Canopy Surface Model}) per ogni anno: il primo consiste di una mappa con le quote del suolo; il secondo è una mappa di altezza della vegetazione.
+Nei mesi di Maggio~2005, Agosto~2010 ed Ottobre~2013 (congiuntamente all'ortofoto) è stato effettuato un rilievo aereo LiDAR, grazie al quale sono a disposizione un DEM (\emph{Digital Elevation Model}) e un CHM (\emph{Canopy Height Model}) per ogni anno: il primo consiste di una mappa con le quote del suolo; il secondo è una mappa di altezza della vegetazione.
 Per questi rilievi si ringraziano rispettivamente il UK Natural Environment Research Council, Nicola Surian dell'Università di Padova (progetto CARIPARO) e Yasuhiro Takemon dell'Università di Kyoto.
 
 Il DEM del~2009 proviene dal \href{http://irdat.regione.fvg.it/CTRN/ricerca-cartografia/}{Portale Cartografico della regione autonoma Friuli Venezia Giulia}\footnote{\texttt{http://irdat.regione.fvg.it/CTRN/ricerca-cartografia/}}.
@@ -62,24 +76,6 @@ Il DEM del~2009 proviene dal \href{http://irdat.regione.fvg.it/CTRN/ricerca-cart
 Ciò limita minimamente le analisi che è possibile fare.
 \\
 La risoluzione temporale, inferiore ad~\SI{1}{\anno} con \num{25} immagini per un periodo di studio di quasi \SI{19}{\anni}, è sufficiente per interpretare i processi che hanno luogo nel Tagliamento; la risoluzione spaziale varia da~\SIrange[range-phrase={ a }]{15}{0.5}{\m}, adeguata per poter distinguere correttamente le caratteristiche del fiume (limite dell'alveo attivo, isole, canali nella \emph{floodplain}, canali attivi, \ldots).
-
-\paragraph{Dati idrometrici}
-I dati idrometrici orari o semi-orari dal 2000-01-01 al 2018-10-14 presso l'idrometro di Villuzza (\SI{46.181}{\degree}N, \SI{12.958}{\degree}E, quota~\SI{240}{\m}~s.l.m.m., corrispondente al ponte di Pinzano) sono stati forniti dalla \href{http://www.protezionecivile.fvg.it/it/rete-idrometeorologica}{rete idrometeorologica della Protezione Civile della Regione Autonoma Friuli Venezia Giulia}\footnote{\texttt{http://www.protezionecivile.fvg.it/it/rete-idrometeorologica}}.
-Questi dati consistono dell'altezza del pelo libero dell'acqua rispetto ad un livello di riferimento locale dell'idrometro.
-La dinamica della morfologia del fondo del fiume non permette di ottenere una scala di deflusso (delle portate) generalmente valida; ciò comunque non costituisce un limite.
-
-I grafici in \vref{graph:livelli-orto-sat} mostrano rispettivamente la media giornaliera dei livelli idrometrici e le date di cui si dispongono ortofoto e immagini satellitari (\AST{}, \Pl{}, \Se{}, Google~Earth, \WV{}). 
-Nel secondo grafico sono riportati solamente i livelli medi giornalieri maggiori di~\SI{2}{\m} in quanto livelli superiori a tale soglia iniziano ad avere effetti di disturbo sulla vegetazione \squarecite{Bertoldi:2009-2m}.
-La \vref{tab:date-orto-sat} mostra le date e la dimensione delle celle delle immagini utilizzate nell'analisi.
-%%
-\begin{figure}[p]
-	\centering
-	\input{graphics/plots/livelli}
-	\input{graphics/plots/livelli_2m+imm}
-	\caption[livelli idrometrici e foto aeree - satellitari]{in alto il livello idrometrico medio giornaliero (in blu) presso l'idrometro di Villuzza. 
-	In basso un ingrandimento per i livelli medi giornalieri superiori a~\SI{2}{\m}. Le linee indicano le immagini satellitari e le ortofoto considerate (\AST{} in rosso, ortofoto, rilievi aerei LiDAR e G-Earth in verde, \Pl{} in nero, \Se{} in azzurro, \WV{} in viola).}
-	\label{graph:livelli-orto-sat}
-\end{figure}
 %%%
 \begin{table}[p]
 	\centering
@@ -126,14 +122,31 @@ La \vref{tab:date-orto-sat} mostra le date e la dimensione delle celle delle imm
 \end{table}
 
 
+\subsection{Dati idrometrici}
+I dati idrometrici orari o semi-orari dal 2000-01-01 al 2018-10-14 presso l'idrometro di Villuzza~(UD) (\SI{46.181}{\degree}N, \SI{12.958}{\degree}E, quota~\SI{240}{\m}~s.l.m.m., corrispondente al ponte di Pinzano) sono stati forniti dalla \href{http://www.protezionecivile.fvg.it/it/rete-idrometeorologica}{rete idrometeorologica della Protezione Civile della Regione Autonoma Friuli Venezia Giulia}\footnote{\texttt{http://www.protezionecivile.fvg.it/it/rete-idrometeorologica}}.
+Questi dati consistono dell'altezza del pelo libero dell'acqua rispetto ad un livello di riferimento locale dell'idrometro.
+La dinamica della morfologia del fondo del fiume non permette di ottenere una scala di deflusso (delle portate) generalmente valida; ciò comunque non costituisce un limite poiché questi dati forniscono adeguate e sufficienti informazioni sulle piene di intensità medio-elevata.
 
-% strumenti
-\medskip
-\paragraph{Strumenti}
+I grafici in \vref{graph:livelli-orto-sat} mostrano rispettivamente la media giornaliera dei livelli idrometrici e le date di cui si dispongono ortofoto e immagini satellitari (\AST{}, \Pl{}, \Se{}, Google~Earth, \WV{}). 
+Nel secondo grafico sono riportati solamente i livelli medi giornalieri maggiori di~\SI{2}{\m}: da questa soglia si assiste ad una completa connessione di pozze, canali e sorgenti tramite l'inondazione delle barre in ghiaia più alte, iniziando quindi ad esercitare effetti di disturbo sulla vegetazione \squarecite{Bertoldi:2009-2m}.
+La \vref{tab:date-orto-sat} mostra le date e la dimensione delle celle delle immagini utilizzate nell'analisi.
+%%
+\begin{figure}[p]
+	\centering
+	\input{graphics/plots/livelli}
+	\input{graphics/plots/livelli_2m+imm}
+	\caption[livelli idrometrici e foto aeree - satellitari]{in alto il livello idrometrico medio giornaliero (in blu) presso l'idrometro di Villuzza. 
+	In basso un ingrandimento per i livelli medi giornalieri superiori a~\SI{2}{\m}. Le linee indicano le immagini satellitari e le ortofoto considerate (\AST{} in rosso, ortofoto, rilievi aerei LiDAR e G-Earth in verde, \Pl{} in nero, \Se{} in azzurro, \WV{} in viola).}
+	\label{graph:livelli-orto-sat}
+\end{figure}
+
+
+
+\section{Strumenti}
 Per eseguire le analisi sulle immagini aeree e satellitari sono stati utilizzati i GIS GRASS \squarecite{soft:GRASS} e QGIS \squarecite{soft:QGIS}. 
 \\
-Per il download e l'estrazione delle immagini satellitari \AST{} e \Se{} è stato usato SCP, plugin di QGIS \squarecite{soft:SCP}. 
+Per l'estrazione delle immagini satellitari \AST{} dagli archivi \texttt{.hdf} è stato usato SCP, plugin di QGIS \squarecite{soft:SCP}. 
 \\
 Per il download delle ortofoto dell'estate~2017 si è utilizzato \href{https://github.com/sourcepole/qgis-openlayers-plugin}{OpenLayers}\footnote{\texttt{https://github.com/sourcepole/qgis-openlayers-plugin}}, plugin di QGIS.
 \\
-Per le analisi dei dati sono stati realizzati script in Python~2.7.5 utilizzando la libreria PyGRASS\footnote{\texttt{https://grass.osgeo.org/programming7/}} e in Python~3.7.1\footnote{\texttt{https://www.python.org}}.
+Per le analisi dei dati sono stati realizzati script in Python~2.7.5 utilizzando la libreria PyGRASS\footnote{\texttt{https://grass.osgeo.org/programming7/}} \squarecite{Zambelli:2013-pygrass} e in Python~3.7.1\footnote{\texttt{https://www.python.org}}.

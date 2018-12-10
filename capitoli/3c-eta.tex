@@ -55,21 +55,35 @@ Si definiscono quindi le seguenti classi di età:
 \end{figure}
 
 \paragraph{Validazione}
+Da un controllo visuale delle mappe di età si vede una corrispondenza tra struttura dell'età in diversi tipi di isole e quanto osservato da rilievi e osservazioni in campo \squarecite{Gurnell:2001-island-formation}: le isole complesse hanno una struttura d'età a macchie, quelle distaccate da floodplain uniforme (\vref{fig:struttura-eta}).
+%
+\begin{figure}
+	\centering
+	\includegraphics[width = \textwidth]{files/struttura_eta.jpeg}
+	\caption[mappe della struttura di età in due tratti]{mappe della struttura di età in due tratti; i colori più scuri indicano una maggiore età.
+		Nel tratto~7 (2017-06-13) si vede la struttura a macchie dell'età della vegetazione nelle isole complesse;
+		nel tratto~8 (2009-07-08) si osserva la distribuzione più unifome dell'età nell'isola in basso, che si è formata dalla \emph{floodplain}.
+		La maschera computazionale è mostrata in giallo; sullo sfondo sono mostrate le mappe NDVI.}
+	\label{fig:struttura-eta}
+\end{figure}
+%
+
 Il CHM (\emph{Canopy Height Model}) è il modello digitale della copertura arborea; similmente al DEM, mostra delle quote; queste sono tuttavia riferite all'altezza della vegetazione sopra il terreno.
 \\
 È generalmente sensato affermare che piante più mature abbiano un'altezza maggiore di piante giovani.
 Quindi si sono utilizzati i dati di altezza della copertura arborea contenuti nei CHM di agosto~2010 e del~2013-10-22 per verificare che nelle celle della mappa di età della vegetazione rispettivamente del~2010-09-29 e del~2013-09-05 l'altezza fosse all'incirca proporzionale all'età.
+Tra le date di ottenimento dei CHM e delle immagini \AST{} non vi sono stati eventi idrologici rilevanti.
 I CHM sono stati ricampionati a \SI{15}{\m} (larghezza delle celle delle immagini \AST{}) applicando il valore del $75_{\mathrm{mo}}$ percentile in quanto rappresenta l'altezza delle chiome più elevate ed espanse, le quali dovrebbero definire i valori di età nelle mappe essendo maggiormente visibili da satellite.
 \\
 Si è scelto di validare la procedura solo sulle mappe di età del~2010 e del~2013 poiché sono più rappresentative della reale distribuzione d'età delle piante, mentre la mappa di età del 2005-08-30 potrebbe non essere affidabile per quanto precedentemente esposto.
 \\
 I boxplot della distribuzione dell'altezza della vegetazione rispetto all'età sono presentati nel grafico in \vref{graph:altezza-chm-eta}.
-Il loro andamento crescente riflette sufficientemente quello dei dati da rilievi dendrometrici effettuati da \cite{Gurnell:2018-canopy-height} su isole pioniere nel Tagliamento localizzate nei medesimi tratti del CHM; pertanto ci si ritiene soddisfatti della procedura sviluppata in quanto riesce ad ottenere una stima dell'età delle piante nelle isole adeguata agli scopi della tesi.
+Il loro andamento crescente riflette sufficientemente quello dei dati da rilievi dendrometrici effettuati da \squarecite{Gurnell:2018-canopy-height} su isole pioniere nel Tagliamento localizzate nei medesimi tratti del CHM; pertanto ci si ritiene soddisfatti della procedura sviluppata in quanto riesce ad ottenere una stima dell'età delle piante nelle isole adeguata agli scopi della tesi.
 %
 \begin{figure}
 	\centering
 	\input{graphics/plots/percentili_CHM_eta}
-	\caption[distribuzione dell'altezza delle piante secondo l'età]{distribuzione dell'altezza delle piante (dal CHM) secondo l'età (dalle mappe di età) per il 2010 e il 2013 confrontati con rilievi dendrometrici presentati da \cite{Gurnell:2018-canopy-height}.}
+	\caption[distribuzione dell'altezza delle piante secondo l'età]{distribuzione dell'altezza delle piante (dal CHM) secondo l'età (dalle mappe di età) per il 2010 e il 2013 confrontati con rilievi dendrometrici presentati da \squarecite{Gurnell:2018-canopy-height}.}
 	\label{graph:altezza-chm-eta}
 \end{figure}
 %
@@ -96,14 +110,14 @@ Focalizzandosi sugli eventi di piena della fine del~2008 e del~2012, si vede chi
 sia in termini relativi che in termini assoluti, la vegetazione giovane è quella che è prevalentemente portata via dalle piene.
 \\
 Questo è molto probabilmente dovuto alla colonizzazione delle piante delle zone a quota medio-elevata, come le creste delle barre, durante il periodo tra due piene; 
-se le condizioni ambientali (velocità di abbassamento della falda, temperatura, disponibilità di un substrato di pezzatura adeguata, \ldots) sono adatte, se non hanno luogo piene particolarmente intense ma piene di piccola-media entità (\emph{flow pulses}) allora le piante possono crescere ottimamente e le isole si accrescono \squarecite{Gurnell:2001-island-formation}.
+se le condizioni ambientali sono adatte, se non hanno luogo piene particolarmente intense ma piene di piccola-media entità (\emph{flow pulses}) allora le piante possono crescere ottimamente e le isole si accrescono, come riportato nella sezione introduttiva~\ref{sec:descr-area-studio}.
 \\
-Il periodo compreso tra il 2005 e il 2008 molto probabilmente è stato caratterizzato da condizioni idrologiche ottimali per la crescita di nuova vegetazione, come già osservato nella sezione~\vref{sec:camb-ris}.
+Il periodo compreso tra il~2005 e il~2008 molto probabilmente è stato caratterizzato da condizioni idrologiche ottimali per la crescita di nuova vegetazione, come già osservato nella sezione~\ref{sec:camb-ris}.
 %TODO sistema il label
 Ora è possibile affermare che la forte erosione osservata dall'immagine del cambiamento 2008-07-05/2009-07-08 si è concentrata sulla vegetazione giovane.
 \\
-Data la ricolonizzazione per via vegetativa di \emph{Populus Nigra} e \emph{Salix spp.} che ha luogo dopo ogni piena da parte di tronchi depositati su barre e attorno a isole già esistenti, la presenza di piante giovani è quasi costante; a meno di eventi molto intensi o di isole poste all'estradosso di canali, è questa la componente delle isole che viene asportata per prima.
+Data la ricolonizzazione per via vegetativa di \emph{Populus nigra} e \emph{Salix spp.} che ha luogo dopo ogni piena da parte di tronchi depositati su barre e attorno a isole già esistenti, la presenza di piante giovani è quasi costante; a meno di eventi molto intensi o di isole poste all'estradosso di canali, è questa la componente delle isole che viene asportata per prima.
 
-Momenti in cui non ci sono state piene con livello oltre i \SI{2}{\m}, come nei periodi 2013-2014 e 2015-2017, mostrano che l'erosione delle isole è stata modesta, di entità ben minore rispetto a quanto appena esposto.
+Momenti in cui non ci sono state piene con livello oltre i~\SI{2}{\m}, come nei periodi 2013-2014 e 2015-2017, mostrano che l'erosione delle isole è stata modesta, di entità ben minore rispetto a quanto appena esposto.
 %Si tenga comunque in conto che parte della vegetazione non erosa invecchia e può passare da una classe a quella successiva; questo fenomeno non è tuttavia quello predominante durante le piene del~2008 e del~2012 per evidenza.
 

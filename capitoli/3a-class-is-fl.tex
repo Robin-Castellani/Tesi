@@ -41,7 +41,6 @@ Per classificare il terreno occupato dall'alveo è stato seguito l'approccio di 
 	\item[Aree campione]
 	\`{E} stata effettuata una digitalizzazione manuale di alcune aree campione per le immagini \AST{} del~2005-08-30 ($\sim 70$) e del~2012-08-01 ($\sim 100$), le immagini Plaiades del~2014-10-31 ($\sim 40$) e del~2015-06-13 ($\sim 40$), l'immagine \Se{} del~2017-04-21 ($\sim 45$) e l'immagine \WV{} del 2018-06-15 ($\sim 55$) (\vref{fig:esempio-aree-campione}).
 	Sono state selezionate immagini per ogni satellite poiché ciascuno è sensibile a bande leggermente diverse. 
-	%; si sono osservate due immagini \AST{} dato il grande numero di immagini disponibili da questo sensore scegliendo quelle con minor nuvolosità.
 	\\
 	Queste aree campione sono state suddivise in tre classi: vegetazione, alveo attivo e canale.
 	%
@@ -65,7 +64,8 @@ Per classificare il terreno occupato dall'alveo è stato seguito l'approccio di 
 	%
 	%
 	\item[Soglie NDVI] 
-	Da tali grafici sono state ottenute delle soglie di NDVI per classificare le immagini satellitari (\vref{tab:ndvi-soglia}); per l'immagine \WV{} la soglia che distingue vegetazione da alveo attivo è maggiore. Le soglie sono in accordo con quanto riportato in letteratura \squarecite{Bertoldi:2011-ASTER}.
+	Da tali grafici sono state ottenute delle soglie di NDVI per classificare le immagini satellitari (\vref{tab:ndvi-soglia}); per l'immagine \WV{} la soglia che distingue vegetazione da alveo attivo è maggiore. 
+	Le soglie sono leggermente maggiori a quanto riportato in letteratura \squarecites{Bertoldi:2011-ASTER}{Henshaw:2013-LandSat} poiché in questo modo c'è una maggior corrispondenza con i dati utilizzati per validare il processo (riportati di seguito).
 	%
 	\begin{table}[ht]
 		\centering
@@ -95,20 +95,7 @@ Per classificare il terreno occupato dall'alveo è stato seguito l'approccio di 
 	\end{table}
 	%
 	%
-	\item[Divisione in 23 tratti]
-	La maschera di calcolo è stata suddivisa manualmente in 23~tratti con 22~sezioni al fine di avere un maggior dettaglio spaziale delle dinamiche di vegetazione (\vref{fig:23-tratti}). 
-	Questi tratti sono stati selezionati in modo da possedere caratteristiche omogenee per portata e crescita della vegetazione; 
-	pertanto confluenze di immissari, bruschi restringimenti o allargamenti, inizio di pronunciato \emph{upwelling} o \emph{downwelling} ed evidenti cambiamenti di morfologia fluviale sono stati gli elementi per individuare le 22~sezioni che determinano i 23~tratti.
-	%
-	\begin{figure}
-		\centering
-		\includegraphics[width=\textwidth]{files/tutti_23_tratti.jpeg}
-		\caption[immagine con la maschera suddivisa in 23 tratti]{immagine con la maschera suddivisa in 23 tratti; la sezione di monte del tratto~1 corrisponde a Tolmezzo, la sezione di valle del tratto~23 corrisponde al ponte di Madrisio.}
-		\label{fig:23-tratti}
-	\end{figure}
-	%
-	%
-	\item[isole e \emph{Floodplain}]
+	\item[Isole e \emph{Floodplain}]
 	Tramite una procedura semi-automatica e con il supporto di Google Earth, la classe della vegetazione è stata suddivisa in \emph{floodplain} e isole. 
 	Tale procedura si basa sul fatto che la maschera computazionale comprende parte della piana alluvionale e che le isole sono completamente circondate dalla ghiaia dell'alveo durante periodi di magra.
 	\\
@@ -176,24 +163,25 @@ Al fine di validare la precedente procedura di controllo e correzione della dist
 	\end{figure}
 	%
 	%
-	\item[Ulteriore validazione] Si è confrontata la classificazione del 2011-10-02 con la classificazione eseguita manualmente da \cite{Surian:2015} nei tratti \numrange[range-phrase={$\div$}]{6}{12} (dal ponte autostradale di Braulins alla stretta di Pinzano).
-	Le mappe di classificazione del 2005-08-30, 2010-09-29, 2013-09-05 sono state confrontate con i CSM ricavati dai rilievi aerei LiDAR eseguiti nei corrispondenti anni sui tratti \numrange[range-phrase={$\div$}]{6}{12} (\vref{fig:validazione-class-is-fl}).
+	\item[Ulteriore validazione] Si è confrontata la classificazione del 2011-10-02 con la classificazione eseguita manualmente da \squarecite{Surian:2015} nei tratti \numrange[range-phrase={$\div$}]{6}{12} (dal ponte autostradale di Braulins alla stretta di Pinzano).
+	Le mappe di classificazione del 2005-08-30, 2010-09-29, 2013-09-05 sono state confrontate con i CHM ricavati dai rilievi aerei LiDAR eseguiti nei corrispondenti anni sui tratti \numrange[range-phrase={$\div$}]{6}{12} (\vref{fig:validazione-class-is-fl}).
+	Tra i rilievi LiDAR e le immagini \AST{} non hanno avuto luogo particolari eventi di piena.
 	%	
 	\begin{figure}
 		\centering
-		\includegraphics[width=\textwidth]{files/Class_mia_vs_surian_csm.jpeg}
-		\caption[validazione della classificazione dell'alveo]{confronto tra le mappe di classificazione dell'alveo e i CSM dai rilievi aerei LiDAR e la classificazione manuale eseguita in \cite{Surian:2015}; le aree scure corrispondono alla vegetazione individuata nei CSM e dalla classificazione manuale; per la legenda delle mappe di classificazione dell'alveo vedere la \vref{fig:class_is_fl}.}
+		\includegraphics[width=\textwidth]{files/class_mia_vs_surian_chm.jpeg}
+		\caption[validazione della classificazione dell'alveo]{confronto tra le mappe di classificazione dell'alveo e i CHM dai rilievi aerei LiDAR e la classificazione manuale eseguita in \squarecite{Surian:2015}; le aree scure corrispondono alla vegetazione individuata nei CHM e dalla classificazione manuale; per la legenda delle mappe di classificazione dell'alveo vedere la \vref{fig:class_is_fl}.}
 		\label{fig:validazione-class-is-fl}
 	\end{figure}
 	%
 	\\
-	Visualmente si verifiche che c'è sostanziale corrispondenza tra le classificazioni ottenute dalle immagini satellitari e la vegetazione individuata dai CSM, così come tra la classificazione manuale di \cite{Surian:2015} e la mappa del 2011-10-22.
+	Visualmente si verifiche che c'è sostanziale corrispondenza tra le classificazioni ottenute dalle immagini satellitari e la vegetazione individuata dai CHM, così come tra la classificazione manuale di \squarecite{Surian:2015} e la mappa del 2011-10-22.
 	\\
 	Esiste una certa differenza tra la classificazione manuale e quella semi-automatica utilizzata nel presente lavoro: la metodologia con cui si procede influisce sul risultato finale.
-	Avendo \cite{Surian:2015} utilizzato ortofoto ad alta risoluzione (\SI{0.1}{\m}), hanno potuto facilmente distinguere le chiome dei singoli alberi dalla ghiaia o vegetazione bassa circostante; le immagini satellitari utilizzate (principalmente a risoluzione di \SI{10}{\m} o \SI{15}{\m}) permettono invece di osservare macchie di vegetazione.
+	Avendo \squarecite{Surian:2015} utilizzato ortofoto ad alta risoluzione (\SI{0.1}{\m}), hanno potuto facilmente distinguere le chiome dei singoli alberi dalla ghiaia o vegetazione bassa circostante; le immagini satellitari utilizzate (principalmente a risoluzione di \SI{10}{\m} o \SI{15}{\m}) permettono invece di osservare macchie di vegetazione.
 	In quanto si considera come isola non solo la vegetazione presente all'interno dell'alveo attivo, ma anche la zona meno vegetata posta circa alla medesima quota, l'approccio seguito sembra delineare più nettamente il contorno delle isole maggiori, sebbene le isole più piccole (con estensione minore di una cella) non siano individuate.
 	\\
-	Un rapido confronto delle mappe di classificazione \Pl{} e \WV{} ad alta risoluzione (\SI{0.5}{\m}) con le mappe di classificazione manuale e il CSM del 2013-10-22 mostra una sovrapposizione quasi completa della vegetazione individuata con i diversi metodi.
+	Un rapido confronto delle mappe di classificazione \Pl{} e \WV{} ad alta risoluzione (\SI{0.5}{\m}) con le mappe di classificazione manuale e il CHM del 2013-10-22 mostra una sovrapposizione quasi completa della vegetazione individuata con i diversi metodi.
 	\\
 	A fronte di quanto esposto, si ritiene che la classificazione eseguita sia sufficientemente validata.
 \end{description}
