@@ -13,100 +13,101 @@
 		xtick distance = 732,
 		enlarge x limits = 0.05,
 		enlarge y limits = 0.01,
-		ymax = 3.7,
-		ymin = 1.95,
+		%ymax = 3.7,
+		ymin = 1.45,
 		ylabel = {Livello idrometrico \si{[\m]}},
 		grid = major,
 		]
-		\addplot+ 
-			[red, mark=x, semithick, style=solid, mark=x]
-			coordinates {(2000-09-17, 2)(2000-09-17, 3.7)};
-		\addplot+ 
-			[red, semithick, style=solid, mark=x]
-			coordinates {(2001-06-07, 2)(2001-06-07, 3.7)};
-		\addplot+
-        	[red, semithick, style=solid, mark=x]
-        	coordinates {(2002-05-18, 2)(2002-05-18, 3.7)};
-		\addplot+
-        	[red, semithick, style=solid, mark=x]
-        	coordinates {(2002-06-12, 2)(2002-06-12, 3.7)};
-		\addplot+
-        	[red, semithick, style=solid, mark=x]
-        	coordinates {(2003-06-22, 2)(2003-06-22, 3.7)};
-		\addplot+
-        	[red, semithick, style=solid, mark=x]
-        	coordinates {(2004-10-14, 2)(2004-10-14, 3.7)};
-		\addplot+
-        	[green, semithick, style=solid, mark=x]
-        	coordinates {(2005-05-01, 2)(2005-05-01, 3.7)};
-		\addplot+
-        	[red, semithick, style=solid, mark=x]
-        	coordinates {(2005-08-30, 2)(2005-08-30, 3.7)};
-		\addplot+
-        	[red, semithick, style=solid, mark=x]
-        	coordinates {(2006-07-16, 2)(2006-07-16, 3.7)};
-		\addplot+
-        	[red, semithick, style=solid, mark=x]
-        	coordinates {(2007-09-21, 2)(2007-09-21, 3.7)};
-		\addplot+
-        	[red, semithick, style=solid, mark=x]
-        	coordinates {(2008-07-05, 2)(2008-07-05, 3.7)};
-		\addplot+
-        	[red, semithick, style=solid, mark=x]
-        	coordinates {(2009-07-08, 2)(2009-07-08, 3.7)};
-		\addplot+
-        	[green, semithick, style=solid, mark=x]
-        	coordinates {(2010-08-01, 2)(2010-08-01, 3.7)};
-		\addplot+
-        	[red, semithick, style=solid, mark=x]
-        	coordinates {(2010-09-29, 2)(2010-09-29, 3.7)};
-		\addplot+
-        	[green, semithick, style=solid, mark=x]
-        	coordinates {(2011-07-01, 2)(2011-07-01, 3.7)};
-		\addplot+
-        	[red, semithick, style=solid, mark=x]
-        	coordinates {(2012-08-01, 2)(2012-08-01, 3.7)};
-		\addplot+
-        	[red, semithick, style=solid, mark=x]
-        	coordinates {(2013-09-05, 2)(2013-09-05, 3.7)};
-		\addplot+
-        	[green, semithick, style=solid, mark=x]
-        	coordinates {(2013-10-22, 2)(2013-10-22, 3.7)};
-		\addplot+
-        	[red, semithick, style=solid, mark=x]
-        	coordinates {(2014-09-08, 2)(2014-09-08, 3.7)};
-		\addplot+
-        	[black, semithick, style=solid, mark=x]
-        	coordinates {(2014-10-31, 2)(2014-10-31, 3.7)};
-       	\addplot+
-        	[black, semithick, style=solid, mark=x]
-        	coordinates {(2015-08-13, 2)(2015-08-13, 3.7)};
-		\addplot+
-        	[cyan, semithick, style=solid, mark=x]
-        	coordinates {(2015-09-12, 2)(2015-09-12, 3.7)};
-		\addplot+
-        	[cyan, semithick, style=solid, mark=x]
-        	coordinates {(2015-10-22, 2)(2015-10-22, 3.7)};
-		\addplot+
-        	[cyan, semithick, style=solid, mark=x]
-        	coordinates {(2016-09-13, 2)(2016-09-13, 3.7)};
-		\addplot+
-        	[cyan, semithick, style=solid, mark=x]
-        	coordinates {(2017-04-21, 2)(2017-04-21, 3.7)};
-		\addplot+
-        	[cyan, semithick, style=solid, mark=x]
-        	coordinates {(2017-06-13, 2)(2017-06-13, 3.7)};
-		\addplot+
-        	[green, semithick, style=solid, mark=x]
-        	coordinates {(2017-07-07, 2)(2017-07-07, 3.7)};
-       	\addplot+
-        	[violet, semithick, style=solid, mark=x]
-        	coordinates {(2018-06-15, 2)(2018-06-15, 3.7)};
-		\addplot+
-        	[cyan, semithick, style=solid, mark=x]
-        	coordinates {(2018-09-16, 2)(2018-09-16, 3.7)};
-		\addplot+
+		\addplot 
+			[fill=red, mark=diamond*]
+			coordinates {(2000-09-17, 1.5)};
+		\addplot 
+			[fill=red, mark=diamond*]
+			coordinates {(2001-06-07, 1.5)};
+		\addplot
+        	[fill=red, mark=diamond*]
+        	coordinates {(2002-05-18, 1.5)};
+		\addplot
+        	[fill=red, mark=diamond*]
+        	coordinates {(2002-06-12, 1.5)};
+		\addplot
+        	[fill=red, mark=diamond*]
+        	coordinates {(2003-06-22, 1.5)};
+		\addplot
+        	[fill=red, mark=diamond*]
+        	coordinates {(2004-10-14, 1.5)};
+		\addplot
+        	[fill=green, mark=diamond*]
+        	coordinates {(2005-05-01, 1.5)};
+		\addplot
+        	[fill=red, mark=diamond*]
+        	coordinates {(2005-08-30, 1.5)};
+		\addplot
+        	[fill=red, mark=diamond*]
+        	coordinates {(2006-07-16, 1.5)};
+		\addplot
+        	[fill=red, mark=diamond*]
+        	coordinates {(2007-09-21, 1.5)};
+		\addplot
+        	[fill=red, mark=diamond*]
+        	coordinates {(2008-07-05, 1.5)};
+		\addplot
+        	[fill=red, mark=diamond*]
+        	coordinates {(2009-07-08, 1.5)};
+		\addplot
+        	[fill=green, mark=diamond*]
+        	coordinates {(2010-08-01, 1.5)};
+		\addplot
+        	[fill=red, mark=diamond*]
+        	coordinates {(2010-09-29, 1.5)};
+		\addplot
+        	[fill=green, mark=diamond*]
+        	coordinates {(2011-07-01, 1.5)};
+		\addplot
+        	[fill=red, mark=diamond*]
+        	coordinates {(2012-08-01, 1.5)};
+		\addplot
+        	[fill=red, mark=diamond*]
+        	coordinates {(2013-09-05, 1.5)};
+		\addplot
+        	[fill=green, mark=diamond*]
+        	coordinates {(2013-10-22, 1.5)};
+		\addplot
+        	[fill=red, mark=diamond*]
+        	coordinates {(2014-09-08, 1.5)};
+		\addplot
+        	[fill=black, mark=diamond*]
+        	coordinates {(2014-10-31, 1.5)};
+       	\addplot
+        	[fill=black, mark=diamond*]
+        	coordinates {(2015-08-13, 1.5)};
+		\addplot
+        	[fill=cyan, mark=diamond*]
+        	coordinates {(2015-09-12, 1.5)};
+		\addplot
+        	[fill=cyan, mark=diamond*]
+        	coordinates {(2015-10-22, 1.5)};
+		\addplot
+        	[fill=cyan, mark=diamond*]
+        	coordinates {(2016-09-13, 1.5)};
+		\addplot
+        	[fill=cyan, mark=diamond*]
+        	coordinates {(2017-04-21, 1.5)};
+		\addplot
+        	[fill=cyan, mark=diamond*]
+        	coordinates {(2017-06-13, 1.5)};
+		\addplot
+        	[fill=green, mark=diamond*]
+        	coordinates {(2017-07-07, 1.5)};
+       	\addplot
+        	[fill=violet, mark=diamond*]
+        	coordinates {(2018-06-15, 1.5)};
+		\addplot
+        	[fill=cyan, mark=diamond*]
+        	coordinates {(2018-09-16, 1.5)};
+		\addplot
         	[blue, solid, no markers]
-        	table [x=data, y=media-gg] {graphics/data/Dati_Villuzza.csv};
+        	%table [x=data, y=media-gg] {graphics/data/Dati_Villuzza.csv};
+        	table [x=data, y=livello, col sep = comma] {graphics/data/Idro_grezzi.txt};
 	\end{axis}
 \end{tikzpicture}
