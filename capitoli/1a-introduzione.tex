@@ -38,7 +38,7 @@ I dati così ottenuti sono stati messi in relazione al regime idrologico dello s
 \section{Inquadramento dell'area di studio}
 Il Fiume Tagliamento, situato nel Nord-Est italiano, è uno dei pochi fiumi alpini allo stato quasi naturale. 
 Gli interventi effettuati sono arginature, derivazioni, pennelli, estrazione di ghiaia sia in tratti posti a monte che altri posti a valle; la loro entità è comunque tanto limitata da poter parlare di “contesto non gestito”.
-Difatti il Tagliamento presenta un regime idrologico non alterato, con piene frequenti ed imprevedibili dovute all'alta piovosità nel bacino \squarecite{Bertoldi:2009-2m} e alla limitata presenza di bacini di regolazione (solo il \SI{3}{\percent} dell'area drenante del bacino è intercettata da dighe \squarecite{Sitzia:2016-d50}); inoltre le sponde e l'alveo sono colonizzate da ampie porzioni di vegetazione riparia lungo quasi tutto il suo corso. 
+Difatti il Tagliamento presenta un regime idrologico non alterato, con piene frequenti ed imprevedibili dovute all'alta piovosità nel bacino \squarecites{Mosetti:1983}{Bertoldi:2009-2m} e alla limitata presenza di bacini di regolazione (solo il \SI{3}{\percent} dell'area drenante del bacino è intercettata da dighe \squarecite{Sitzia:2016-d50}); inoltre le sponde e l'alveo sono colonizzate da ampie porzioni di vegetazione riparia lungo quasi tutto il suo corso. 
 Questi fatti indicano che le attività umane sul Tagliamento non sono tali da aver alterato o da alterare il regime del fiume.
 
 Il bacino idrografico del Tagliamento, ampio circa~\SI{2900}{\kilo\m\tothe{2}}, si estende tra le province di Belluno, Udine, Pordenone e Venezia.
@@ -97,7 +97,7 @@ Questo restringimento, congiuntamente all'innalzamento dello strato di roccia ch
 L'acqua filtrante da monte risale in alveo sottoforma di sorgenti diffuse: si assiste al fenomeno dell'\emph{upwelling}.
 A valle della stretta, dove l'alveo non è più confinato e il letto roccioso sprofonda nel sottosuolo, l'acqua torna ad infiltrarsi nel materasso ghiaioso (\emph{downwelling}) tanto da portare il fiume in condizioni di secca in certi tratti quando non ci sono piene.
 \\
-L'\emph{upwelling} e il \emph{downwelling} sono fenomeni rilevanti durante i periodi di magra: certi tratti a valle della stretta di Pinzano possono essere in condizioni di secca, privi completamente di acqua, la quale scorre tutta nel sottosuolo e riemerge presso la “Linea delle risorgive”, quando la morfologia fluviale diventa transizionale vicino al ponte di Madrisio.
+L'\emph{upwelling} e il \emph{downwelling} sono fenomeni rilevanti durante i periodi di magra: certi tratti a valle della stretta di Pinzano possono essere in condizioni di secca, privi completamente di acqua, la quale scorre tutta nel sottosuolo e riemerge presso la “Linea delle risorgive” \squarecite{Mosetti:1983}, quando la morfologia fluviale diventa transizionale pochi chilometri a monte del ponte di Madrisio.
 \\
 Durante le piene questi fenomeni sono invece irrilevanti: l'acqua che emerge o che si infiltra contribuisce minimamente alla portata fluente.
 \\
@@ -109,8 +109,8 @@ Nel tratto di studio vi sono diversi affluenti (\vref{fig:affluenti}); vengono q
 \begin{itemize}
 	\item poco a valle di Tolmezzo c'è il Fella in sinistra idrografica (\SI{706}{\kilo\m\tothe{2}});
 	\item all'altezza del paese di Venzone~(UD), in sinistra idrografica, sfocia il torrente Venzonassa (\SI{39}{\kilo\m\tothe{2}});
-	\item qualche chilometro a monte del paese di Cornino~(UD) in destra idrografica c'è il Leale (\SI{100}{\kilo\m\tothe{2}}), le cui acque riempiono i canali incisi del Tagliamento che in magra sono quasi secchi;
-	\item in corrispondenza dell'isola di Cornino in sinistra idrografica il Ledra (\SI{75}{\kilo\m\tothe{2}}) riporta nel corso del Tagliamento le acque che si sono infiltrate nella piana di Osoppo;
+	\item qualche chilometro a monte del paese di Cornino~(UD) in destra idrografica c'è il Leale (\SI{100}{\kilo\m\tothe{2}}), che ha sempre acqua fluente poiché riceve lo scarico della centrale idroelettrica che sfrutta il lago di Cavazzo; questo raccoglie le acque della parte montana del Tagliamento attraverso opere idrauliche;
+	\item in corrispondenza dell'isola di Cornino in sinistra idrografica il Ledra (\SI{75}{\kilo\m\tothe{2}}) riporta nel corso del Tagliamento sia le acque che si sono infiltrate nella piana di Osoppo~(UD) \squarecite{Mosetti:1983} sia quelle intercettate dalla presa di Ospedaletto~(UD);
 	\item immediatamente a monte della stretta di Pinzano in destra idrografica si getta l'Arzino (\SI{123}{\kilo\m\tothe{2}});
 	\item infine, una decina di chilometri più a valle della stretta in destra idrografica si incontra il Cosa (\SI{160}{\kilo\m\tothe{2}}).
 \end{itemize}
@@ -124,35 +124,38 @@ Nel tratto di studio vi sono diversi affluenti (\vref{fig:affluenti}); vengono q
 	\label{fig:affluenti}
 \end{figure}
 %
-Il contributo di questi affluenti in termini di portata non è trascurabile; tuttavia è raro che eventi di piena abbiano luogo contemporaneamente in tutti i sottobacini tanto da incrementare sensibilmente il livello d'acqua nel Tagliamento a valle degli affluenti durante una piena.
-Si ritiene pertanto che conoscere il livello d'acqua in un punto del Tagliamento sia sufficientemente rappresentativo per descrivere l'entità di una piena in tutto il tratto di studio; inoltre si assume che la portata fluente sia proporzionale all'area drenante in ogni sezione del fiume.
+Il contributo di questi affluenti in termini di portata non è trascurabile; qualche decennio fa è stata evinta una relazione empirica tra l'area drenante di ogni bacino del Friuli Venezia Giulia \si{[\m\tothe{2}]} e la portata massima registrata in alcuni anni prima del 1950 \si{[\m\tothe{3}\per\s]} \squarecite{Mosetti:1983} che mostra l'evidente importanza degli affluenti:
+%
+\begin{equation}
+	\label{eq:area-portata-mosetti}
+	Q = 0.04598 \, A^{0.9546}	\quad	.
+\end{equation}
+%
+Il limite di tale formula risiede nella determinazione delle portate utilizzate per la sua taratura; tuttavia la relazione fornisce la chiara indicazione che la portata in una sezione è all'incirca proporzionale all'area drenante sottesa.
+\\
+Si ritiene pertanto che conoscere il livello d'acqua in un punto del Tagliamento sia sufficientemente rappresentativo per descrivere qualitativamente l'entità di una piena in tutto il tratto di studio; per ottenere informazioni quantitative sulla portata fluente durante eventi di piena si assume che questa sia proporzionale all'area drenante in ogni sezione del fiume.
 
 \paragraph{Dinamiche vegetazionali}
-Nel fiume sono presenti numerose isole, composte prevalentemente da ontani bianchi \emph{Alnus incana} nei tratti montani (oltre l'area di studio), pioppi \emph{Populus nigra} e numerose specie di salice\emph{Salix spp.} nei tratti intermedi e vallivi.
+Nel fiume sono presenti numerose isole, composte prevalentemente da ontani bianchi \emph{Alnus incana} nei tratti montani (oltre l'area di studio), pioppi \emph{Populus nigra} e numerose specie di salice \emph{Salix spp.} nei tratti intermedi e vallivi.
 Un'isola è un'area discreta e ben definita dell'alveo ricoperta da vegetazione e circondata da ghiaia o da canali (\vref{fig:esempio-isola}) \squarecites{Gurnell:2001-island-formation}{Bertoldi:2009-2m}.
 %
 \begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.37\textwidth}
 		\includegraphics[width=\textwidth]{files/esempio_isola_sat_1.jpg}
-		\caption{immagine da Google Earth di un isola in alveo.}
-		\label{fig:esempio-isola-sat-1}
 	\end{subfigure}
 	\quad
 	\begin{subfigure}[b]{0.57\textwidth}
 		\includegraphics[width=\textwidth]{files/esempio_isola_1.jpg}
-		\caption{foto di un isola molto vegetata presente nell'alveo del fiume.
-		Foto dell'autore.}
-		\label{fig:esempio-isola-1}
 	\end{subfigure}
-	\caption[immagine e foto di isole fluviali]{immagine e foto di isole fluviali; si noti la forte presenza di salici (\emph{Salix spp.}) e di pioppi (\emph{Populus nigra}); il luogo della foto è prossimo a quello dell'immagine.}
+	\caption[immagine e foto di isole fluviali]{immagine da Google Earth e foto di isole fluviali; si noti la forte presenza di salici (\emph{Salix spp.}) e di pioppi (\emph{Populus nigra}); il luogo della foto è prossimo a quello dell'immagine.}
 	\label{fig:esempio-isola}
 \end{figure}
 %
 \\
-Il meccanismo fondamentale di generazione di forme vegetate in alveo è la ricrescita vegetativa che caratterizza \emph{P. nigra} e \emph{Salix spp.}: i tronchi erosi e trasportati dalle piene e in seguito depositati sulla nuda ghiaia rigettano rami e foglie;
+Il meccanismo fondamentale di generazione di forme vegetate in alveo è la ricrescita vegetativa che caratterizza \emph{P. nigra} e \emph{Salix spp.}: i tronchi eradicati e trasportati dalle piene e in seguito depositati sulla nuda ghiaia rigettano rami e foglie;
 se vi è la contemporaneità di adeguate condizioni ambientali (non eccessiva velocità di abbassamento della falda in un substrato di pezzatura adeguata) ed idrologiche (frequenti piene di piccola-media entità, chiamate\emph{flow pulses}) allora i tronchi vivi crescono, intrappolano sedimenti e creano un buon ambiente per la successiva colonizzazione da parte di nuove piante (isole pioniere);
-le isole si aggradano e accrescono caratterizzandosi con piante di diversa età (\emph{building island} e isole complesse) \squarecite{Gurnell:2001-island-formation}.
+le isole si aggradano (fino a \SI{2}{\m} \squarecite{Gurnell:2006-omega}) e accrescono caratterizzandosi con piante di diversa età (\emph{building island} e isole complesse) \squarecite{Gurnell:2001-island-formation}.
 A loro volta la presenza delle isole influenza la posizione, grandezza, forma dei canali e le dinamiche del fondo.
 \\
 Si parla quindi di successione biogeomorfica nel corridoio fluviale attivo: l'ambiente fisico influenza la crescita delle piante coevolute con l'ambiente fluviale; queste a loro volta influenzano l'ambiente fisico e la sua evoluzione, tanto da essere state chiamate “ingegneri ecosistemici” \squarecite{Gurnell:2014-plants-eng}.
@@ -162,11 +165,10 @@ Possono formarsi isole anche da piante nate da seme, anche se queste sono più e
 Eventi a piene rive (\emph{bankfull}) o più intensi possono dividere parti di vegetazione riparia dalla piana alluvionale, dando origine ad isole composte da piante mature coetanee, strutturalmente ben diverse dalle isole disetanee formate a partire da frammenti vegetativi.
 
 Le isole sono distribuite disomogeneamente da monte verso valle: si può osservare che nei tratti con \emph{upwelling} il loro numero e la velocità di espansione crescono grazie all'acqua che risale dalla falda, mentre nei tratti con \emph{downwelling} la loro presenza diminuisce;
-inoltre, nelle zone più strette come nei tratti montani o presso la stretta di Pinzano l'intensità della corrente è tale da ridurre o inibire la crescita di vegetazione, come mostrato da un modello concettuale in letteratura \squarecite{Gurnell:2014-plants-eng}.
+inoltre, nelle zone particolarmente più strette come nei tratti montani o presso la stretta di Pinzano l'intensità della corrente è tale da ridurre o inibire la crescita di vegetazione, come mostrato da un modello concettuale in letteratura \squarecite{Gurnell:2014-plants-eng}.
 \\
 Temporalmente, le uniche isole che non vengono erose sono quelle che si fondono nella piana alluvionale; anche isole insediatesi da anni in alveo, aggradatesi fino a porsi a quote simili a quelle della \emph{floodplain}, possono essere completamente spazzate durante eventi \emph{bankfull} o maggiori.
-Il tempo medio di persistenza di un'isola è di \SIrange[range-phrase={-}]{15}{20}{\anni}.
-%TODO cita questo fatto!.
+Difatti è stato mostrato che la maggior parte delle isole nel tratto compreso tra il ponte autostradale di Braulins e la stretta di Pinzano persistono meno di \SI{24}{\anni} \squarecite{Zanoni:2008}; risultati simili sono stati presentati per un tratto nei pressi di San Paolo~(PN), corrispondente ai tratti più a valle nella presente tesi \squarecite{Bertoldi:2009-2m}.
 
 
 \section{Stato dell'arte}
@@ -184,12 +186,28 @@ Degli autori hanno inoltre formulato modelli concettuali sulle dinamiche vegetaz
 \\
 Generalmente, il tratto più frequentemente studiato è quello compreso tra il ponte autostradale di Braulins~(UD) e la stretta di Pinzano.
 
-Alcuni lavori hanno presentato risultati che questa tesi amplia e corrobora: tracciamento della traiettoria evolutiva della larghezza del fiume nel corso degli ultimi decenni o degli ultimi due secoli, osservazione della proporzione tra isole e alveo attivo \squarecites{Zanoni:2008}{Bertoldi:2011-ASTER}{Surian:2015}, ricerca di una relazione tra isole erose e portata \squarecite{Surian:2015}.
+Sono state tracciate traiettorie evolutive della larghezza: queste mostrano come 
+
+Di seguito vengono riportati risultati interessanti di alcuni lavori: 
+%
+\begin{itemize}
+	\item il tracciamento della traiettoria evolutiva della larghezza ha permesso di vedere come il tratto di Tagliamento a monte di Pinzano si sia ristretto negli ultimi due secoli di più del \SI{50}{\percent}, mentre a partire dalla fine del 1900 sembra che l'alveo abbia ripreso un processo di allargamento \squarecites{Zanoni:2008}{Surian:2015};
+	gli autori suggeriscono che il restringimento possa essere dovuto alla concomitanza di lievi cambiamenti naturali nel regime delle portate e per l'estrazione di ghiaia dall'alveo per scopi civili negli anni '70 e '80 del secolo scorso, come è avvenuto per altri fiumi simili \squarecite{Sitzia:2016-d50};
+	le cause dell'allargamento possono essere il veto all'estrazione della ghiaia congiuntamente ad un periodo caratterizzato da piene intense nei primi anni del 2000.
+	Sarebbe possibile validare queste ipotesi per il periodo di studio della tesi e osservare la più recente evoluzione della larghezza;
+	%
+	%
+	\item la proporzione tra isole e alveo attivo è stata considerata da più autori \squarecites{Zanoni:2008}{Bertoldi:2011-ASTER}{Henshaw:2013-LandSat}{Surian:2015}; 
+	mentre alcuni risultati sembrano mostrare un rapporto oscillante attorno ad un valore medio di \SI{8}{\percent} \squarecite{Zanoni:2008}, altri mostrano valori abbastanza diversi come ordine di grandezza \squarecite{Henshaw:2013-LandSat} (probabilmente dovuto all'utilizzo di immagini satellitari con celle di \SI{30}{\m}) o con un trend temporale opposto rispetto alla larghezza \squarecite{Surian:2015}.
+	Con i dati più recenti si potrebbe controllare questi risultati ed estenderli al periodo presente;
+	\item una relazione tra isole erose e portata è già stata formulata \squarecite{Surian:2015};
+	questa tuttavia è basata su una piccola quantità di dati e non tiene conto che dell'invecchiamento della vegetazione tra piene successiva, fattore interessante poiché si potrebbe osservare un'erosione differenziata tra isole appena formatesi e isole insediate in alveo da anni.
+\end{itemize}
 
 Infine, rispetto all'oggetto di ricerche precedenti e alle metodologie adottate questa tesi mira a:
 %
 \begin{itemize}
-	\item utilizzare immagini a risoluzione temporale relativamente elevata validando i risultati attraverso rilievi aerei, di campo e dati da letteratura;
+	\item utilizzare immagini a risoluzione temporale e spaziale relativamente elevata validando i risultati attraverso rilievi aerei, di campo e dati da letteratura;
 	\item analizzare un tratto di fiume più esteso rispetto a lavori simili;
 	\item formalizzare alcuni dei modelli concettuali precedentemente elaborati;	
 	\item mostrare che è possibile effettuare un monitoraggio delle dinamiche fluviali quasi in tempo reale. 
