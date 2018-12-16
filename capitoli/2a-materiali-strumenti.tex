@@ -75,51 +75,53 @@ Il DEM del~2009 proviene dal \href{http://irdat.regione.fvg.it/CTRN/ricerca-cart
 È bene evidenziare che le mappe non hanno tutte la medesima estensione e una piccola parte non comprende tutto il tratto oggetto di studio.
 Ciò limita minimamente le analisi che è possibile fare.
 \\
-La risoluzione temporale, inferiore ad~\SI{1}{\anno} con \num{25} immagini per un periodo di studio di quasi \SI{19}{\anni}, è sufficiente per interpretare i processi che hanno luogo nel Tagliamento; la risoluzione spaziale varia da~\SIrange[range-phrase={ a }]{15}{0.5}{\m}, adeguata per poter distinguere correttamente le caratteristiche del fiume (limite dell'alveo attivo, isole, canali nella \emph{floodplain}, canali attivi, \ldots).
+Avendo a disposizione 25 immagini per un periodo di studio di quasi \SI{19}{\anni},  si ritiene che la risoluzione temporale sia sufficiente per interpretare i processi che hanno luogo nel Tagliamento: la distanza temporale media tra le mappe è di \SI{274}{\giorni} (circa \SI{0.75}{\anni}), quella minima di \SI{25}{\giorni} e quella massima di \SI{480}{\giorni}.
 \\
-La \cref{tab:date-orto-sat} mostra le date e la dimensione delle celle delle immagini utilizzate nell'analisi.
+La risoluzione spaziale varia da~\SIrange[range-phrase={ a }]{15}{0.5}{\m}, adeguata per poter distinguere correttamente le caratteristiche del fiume (limite dell'alveo attivo, isole, canali nella \emph{floodplain}, canali attivi, \ldots).
+\\
+La \cref{tab:date-orto-sat} mostra le date, la dimensione delle celle delle immagini utilizzate nell'analisi e i tratti validi per ogni immagine.
 %%%
 \begin{table}[p]
 	\centering
-	\begin{tabular}{c c S[table-format=2.2]}
+	\begin{tabular}{c c S[table-format=2.2] S[range-phrase={$\div$}, list-separator={, }, list-final-separator={, }]}
 		\toprule
-		Data		&	Tipo		&	\multicolumn{1}{c}{Dimensione delle celle \si{[\m]}}	\\
+		Data		&	Tipo		&	\multicolumn{1}{c}{Dim. delle celle \si{[\m]}}	&	\multicolumn{1}{c}{Tratti validi}\\
 		\midrule	
-		2000-09-17		&	\AST{}		&	15	\\
-		2001-06-07		&	\AST{}		&	15	\\
-		2002-05-18		&	\AST{}		&	15	\\
-		2002-06-12		&	\AST{}		&	15	\\
-		2003-11-29		&	\AST{}		&	15	\\
-		2004-10-14		&	\AST{}		&	15	\\
-		2005-05			&	Rilievo aereo LiDAR	&	2	\\
-		2005-08-30		&	\AST{}		&	15	\\
-		2006-07-16		&	\AST{}		&	15	\\
-		2007-09-21		&	\AST{}		&	15	\\
-		2008-07-05		&	\AST{}		&	15	\\
-		2009			&	DEM			&	20	\\
-		2009-07-08		&	\AST{}		&	15	\\
-		2010-08			&	Rilievo aereo LiDAR	&	1	\\
-		2010-09-29		&	\AST{}		&	15	\\
-		2011-06-26/07-02	&	Ortofoto	&	1	\\
-		2011-10-02		&	\AST{}		&	15	\\
-		2012-08-01		&	\AST{}		&	15	\\
-		2013-09-05		&	\AST{}		&	15	\\
-		2013-10-22		&	Ortofoto	&	0.2	\\
-		2013-10-22		&	Rilievo aereo LiDAR	&	1	\\
-		2014-09-08		&	\AST{}		&	15	\\
-		2014-10-31		&	\Pl{}	&	0.5	\\
-		2015-08-13		&	\Pl{}	&	0.5	\\
-		2015-09-12		&	\Se{}	&	10	\\
-		2015-10-22		&	\Se{}	&	10	\\
-		2016-09-13		&	\Se{}	&	10	\\
-		2017-04-21		&	\Se{}	&	10	\\
-		2017-06-13		&	\Se{}	&	10	\\
-		2017-06-26/08-02	&	G-Earth	&	0.45	\\
-		2018-06-15		&	\WV{}	&	0.5	\\
-		2018-09-16		&	\Se{}	&	10	\\
+		2000-09-17		&	\AST{}		&	15	&	\numrange{1}{21}	\\
+		2001-06-07		&	\AST{}		&	15	&	\multicolumn{1}{c}{\numrange[range-phrase={$\div$}]{3}{8}, \numrange[range-phrase={$\div$}]{21}{23}}	\\
+		2002-05-18		&	\AST{}		&	15	&	\multicolumn{1}{c}{\numrange[range-phrase={$\div$}]{1}{2}, \numrange[range-phrase={$\div$}]{6}{14}}	\\
+		2002-06-12		&	\AST{}		&	15	&	\numrange{14}{23}	\\
+		2003-06-22		&	\AST{}		&	15	&	\multicolumn{1}{c}{\numrange[range-phrase={$\div$}]{1}{10}, \numrange[range-phrase={$\div$}]{13}{23}}	\\
+		2004-10-14		&	\AST{}		&	15	&	\numrange{2}{23}	\\
+		2005-05			&	Rilievo aereo LiDAR	&	2	&	\numrange{6}{14}	\\
+		2005-08-30		&	\AST{}		&	15	&	\numrange{1}{23}	\\
+		2006-07-16		&	\AST{}		&	15	&	\multicolumn{1}{c}{\numrange[range-phrase={$\div$}]{1}{20}, \numrange[range-phrase={$\div$}]{22}{23}}	\\
+		2007-09-21		&	\AST{}		&	15	&	\numrange{1}{23}	\\
+		2008-07-05		&	\AST{}		&	15	&	\numrange{1}{23}	\\
+		2009			&	DEM			&	20	&	\numrange{1}{23}	\\
+		2009-07-08		&	\AST{}		&	15	&	\numrange{3}{23}	\\
+		2010-08			&	Rilievo aereo LiDAR	&	1	&	\numlist{7;8;11}	\\
+		2010-09-29		&	\AST{}		&	15	&	\numrange{1}{23}	\\
+		2011-06-26/07-02	&	Ortofoto	&	1	&	\numrange{6}{12}	\\
+		2011-10-02		&	\AST{}		&	15	&	\numrange{1}{23}	\\
+		2012-08-01		&	\AST{}		&	15	&	\numrange{1}{23}	\\
+		2013-09-05		&	\AST{}		&	15	&	\numrange{1}{23}	\\
+		2013-10-22		&	Ortofoto	&	0.2	&	\numlist{7;8;11;12}	\\
+		2013-10-22		&	Rilievo aereo LiDAR	&	1	&	\numlist{7;8;11;12}	\\
+		2014-09-08		&	\AST{}		&	15	&	\numrange{1}{23}	\\
+		2014-10-31		&	\Pl{}	&	0.5	&	\numrange{6}{14}	\\
+		2015-08-13		&	\Pl{}	&	0.5	&	\numrange{6}{14}	\\
+		2015-09-12		&	\Se{}	&	10	&	\numrange{1}{23}	\\
+		2015-10-22		&	\Se{}	&	10	&	\numrange{1}{23}	\\
+		2016-09-13		&	\Se{}	&	10	&	\numrange{1}{23}	\\
+		2017-04-21		&	\Se{}	&	10	&	\numrange{1}{23}	\\
+		2017-06-13		&	\Se{}	&	10	&	\numrange{1}{23}	\\
+		2017-06-26/08-02	&	G-Earth	&	0.45	&	\numrange{6}{15}	\\
+		2018-06-15		&	\WV{}	&	0.5	&	\numrange{6}{14}	\\
+		2018-09-16		&	\Se{}	&	10	&	\numrange{1}{23}	\\
 		\bottomrule
 	\end{tabular}
-	\caption{data e risoluzione (dimensione delle celle) delle immagini satellitari, delle ortofoto, del DEM e dei rilievi aerei LiDAR utilizzati.}
+	\caption{data e dimensione delle celle delle immagini satellitari, delle ortofoto, del DEM e dei rilievi aerei LiDAR utilizzati.}
 	\label{tab:date-orto-sat}
 \end{table}
 
