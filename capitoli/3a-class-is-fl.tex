@@ -8,7 +8,7 @@ Per classificare il terreno occupato dall'alveo è stato seguito l'approccio di 
 	\item[Maschera computazionale] 
 	Dapprima è stata individuata manualmente una maschera di calcolo che comprendesse l'alveo attivo e la parte di piana alluvionale che è stata erosa quando coinvolta nelle piene; 
 	tale maschera si estende da Tolmezzo al ponte di Madrisio
-	(\vref{fig:esempio-maschera}). 
+	(\cref{fig:esempio-maschera}). 
 	Applicandola, il dominio computazionale è stato ridotto a comprendere l'inviluppo degli alvei attivi che si sono succeduti dall'immagine del~2000 a quella del~2018.
 	%
 	\begin{figure}[t]
@@ -39,7 +39,7 @@ Per classificare il terreno occupato dall'alveo è stato seguito l'approccio di 
 	%
 	%
 	\item[Aree campione]
-	\`{E} stata effettuata una digitalizzazione manuale di alcune aree campione per le immagini \AST{} del~2005-08-30 ($\sim 70$) e del~2012-08-01 ($\sim 100$), le immagini Plaiades del~2014-10-31 ($\sim 40$) e del~2015-06-13 ($\sim 40$), l'immagine \Se{} del~2017-04-21 ($\sim 45$) e l'immagine \WV{} del 2018-06-15 ($\sim 55$) (\vref{fig:esempio-aree-campione}).
+	\`{E} stata effettuata una digitalizzazione manuale di alcune aree campione per le immagini \AST{} del~2005-08-30 ($\sim 70$) e del~2012-08-01 ($\sim 100$), le immagini Plaiades del~2014-10-31 ($\sim 40$) e del~2015-06-13 ($\sim 40$), l'immagine \Se{} del~2017-04-21 ($\sim 45$) e l'immagine \WV{} del 2018-06-15 ($\sim 55$) (\cref{fig:esempio-aree-campione}).
 	Sono state selezionate immagini per ogni satellite poiché ciascuno è sensibile a bande leggermente diverse. 
 	\\
 	Queste aree campione sono state suddivise in tre classi: vegetazione, alveo attivo e canale.
@@ -53,7 +53,7 @@ Per classificare il terreno occupato dall'alveo è stato seguito l'approccio di 
 	%
 	%
 	\item[Percentili aree campione]
-	Per ogni immagine si è osservata la distribuzione dell'NDVI in ogni classe (\vref{graph:percentili}).
+	Per ogni immagine si è osservata la distribuzione dell'NDVI in ogni classe (\cref{graph:percentili}).
 	% 
 	\begin{figure}[ht]
 		\centering
@@ -64,7 +64,7 @@ Per classificare il terreno occupato dall'alveo è stato seguito l'approccio di 
 	%
 	%
 	\item[Soglie NDVI] 
-	Da tali grafici sono state ottenute delle soglie di NDVI per classificare le immagini satellitari (\vref{tab:ndvi-soglia}); per l'immagine \WV{} la soglia che distingue vegetazione da alveo attivo è maggiore. 
+	Da tali grafici sono state ottenute delle soglie di NDVI per classificare le immagini satellitari (\cref{tab:ndvi-soglia}); per l'immagine \WV{} la soglia che distingue vegetazione da alveo attivo è maggiore. 
 	Le soglie sono leggermente maggiori a quanto riportato in letteratura \squarecites{Bertoldi:2011-ASTER}{Henshaw:2013-LandSat} poiché in questo modo c'è una maggior corrispondenza con i dati utilizzati per validare il processo (riportati di seguito).
 	%
 	\begin{table}[ht]
@@ -109,7 +109,7 @@ Per classificare il terreno occupato dall'alveo è stato seguito l'approccio di 
 	Alla classificazione sono state aggiunte la classe delle nuvole e dei \texttt{nodata}.
 	%
 	%
-	\item[Classificazione finale dei tratti] La \vref{tab:class_tratti} mostra le classi in cui è stato classificato ognuno dei 23~tratti; la \vref{fig:class_is_fl} ne mostra un esempio.
+	\item[Classificazione finale dei tratti] La \cref{tab:class_tratti} mostra le classi in cui è stato classificato ognuno dei 23~tratti; la \cref{fig:class_is_fl} ne mostra un esempio.
 	%
 	\begin{table}[ht]
 		\centering
@@ -151,7 +151,7 @@ Al fine di validare la precedente procedura di controllo e correzione della dist
 	Si è verificato che la larghezza~$B$ rimanesse costante nel tempo, indice di una corretta classificazione tra isole e \emph{floodplain}. 
 	La~$B$ non rimane costante solo nel caso di distacco di isole o di fusione di isole nella piana. 
 	\\
-	La \vref{fig:b-media-7-e-15} mostra l'andamento temporale della~$B$ dei tratti~7 e~15: nel primo tratto, in cui non si osserva alcuna variazione sensibile dell'alveo, la~$B$ oscilla solo di qualche decina di metri; nel secondo si assiste alla progressiva fusione di una grande isola nella \emph{floodplain}, e questo lo si vede proprio nella diminuzione della~$B$. Ciò che conta non è quanto è largo l'alveo, ma quanto cambia la larghezza.
+	La \cref{fig:b-media-7-e-15} mostra l'andamento temporale della~$B$ dei tratti~7 e~15: nel primo tratto, in cui non si osserva alcuna variazione sensibile dell'alveo, la~$B$ oscilla solo di qualche decina di metri; nel secondo si assiste alla progressiva fusione di una grande isola nella \emph{floodplain}, e questo lo si vede proprio nella diminuzione della~$B$. Ciò che conta non è quanto è largo l'alveo, ma quanto cambia la larghezza.
 	%
 	\begin{figure}
 		\centering
@@ -164,13 +164,13 @@ Al fine di validare la precedente procedura di controllo e correzione della dist
 	%
 	%
 	\item[Ulteriore validazione] Si è confrontata la classificazione del 2011-10-02 con la classificazione eseguita manualmente da \squarecite{Surian:2015} nei tratti \numrange[range-phrase={$\div$}]{6}{12} (dal ponte autostradale di Braulins alla stretta di Pinzano).
-	Le mappe di classificazione del 2005-08-30, 2010-09-29, 2013-09-05 sono state confrontate con i CHM ricavati dai rilievi aerei LiDAR eseguiti nei corrispondenti anni sui tratti \numrange[range-phrase={$\div$}]{6}{12} (\vref{fig:validazione-class-is-fl}).
+	Le mappe di classificazione del 2005-08-30, 2010-09-29, 2013-09-05 sono state confrontate con i CHM ricavati dai rilievi aerei LiDAR eseguiti nei corrispondenti anni sui tratti \numrange[range-phrase={$\div$}]{6}{12} (\cref{fig:validazione-class-is-fl}).
 	Tra i rilievi LiDAR e le immagini \AST{} non hanno avuto luogo particolari eventi di piena.
 	%	
 	\begin{figure}
 		\centering
 		\includegraphics[width=\textwidth]{files/class_mia_vs_surian_chm.jpeg}
-		\caption[validazione della classificazione dell'alveo]{confronto tra le mappe di classificazione dell'alveo e i CHM dai rilievi aerei LiDAR e la classificazione manuale eseguita in \squarecite{Surian:2015}; le aree scure corrispondono alla vegetazione individuata nei CHM e dalla classificazione manuale; per la legenda delle mappe di classificazione dell'alveo vedere la \vref{fig:class_is_fl}.}
+		\caption[validazione della classificazione dell'alveo]{confronto tra le mappe di classificazione dell'alveo e i CHM dai rilievi aerei LiDAR e la classificazione manuale eseguita in \squarecite{Surian:2015}; le aree scure corrispondono alla vegetazione individuata nei CHM e dalla classificazione manuale; per la legenda delle mappe di classificazione dell'alveo vedere la \cref{fig:class_is_fl}.}
 		\label{fig:validazione-class-is-fl}
 	\end{figure}
 	%
@@ -194,7 +194,7 @@ Con la riclassificazione delle immagini dell'NDVI rispetto alle soglie proposte 
 Si ricorda, grazie alla maschera applicata, tale copertura include sia isole vegetate sia la parte di piana alluvionale che nel periodo di studio ha esperito fenomeni di erosione della vegetazione e quindi espansione dell'alveo attivo.
 Infine, per le immagini l'alveo parzialmente coperto da nuvole, la maschera è stata estesa per escludere tali zone coperte poiché queste presentano valori di NDVI non corretti.
 \\
-I risultati sono mostrati nel grafico in \vref{graph:class-sat-veg}.
+I risultati sono mostrati nel grafico in \cref{graph:class-sat-veg}.
 
 
 \begin{figure}[ht]
@@ -210,7 +210,7 @@ I risultati sono mostrati nel grafico in \vref{graph:class-sat-veg}.
 
 \subsection{Risultati: evoluzione della larghezza}
 Utilizzando le mappe di classificazione del terreno all'interno della maschera computazionale, si è ottenuta una larghezza media~$B$ secondo l'equazione~\eqref{eq:larghezza-tratto}.
-%TODO \vref{eq:larghezza-tratto}. 
+%TODO \cref{eq:larghezza-tratto}. 
 \\
 Osservando la variazione temporale di~$B$ è possibile evincere delle traiettorie evolutive sia a livello di singolo tratto, sia a scala più ampia.
 Inoltre, considerando la variazione spaziale (da monte verso valle) dell'areale delle isole, sono evidenti i pattern di \emph{upwelling} o \emph{downwelling} utilizzati durante la definizione dei 23~tratti.
