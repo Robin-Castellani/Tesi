@@ -1,0 +1,57 @@
+\tikzsetnextfilename{omega_area_pura}
+\begin{tikzpicture}
+	\begin{axis}[
+		width = \textwidth,
+		height = .5\textwidth,
+		%enlarge x limits = 0.01,
+		%enlarge y limits = 0.01,
+		ylabel = {$\Omega$ \si{[\newton\per\metre\tothe{4}]}},
+		xlabel = {Isole rispetto all'alveo attivo \si{[\percent]}},
+		xmode = log,
+		ymode = log,
+		grid = major,
+		legend entries = {1,2,3,4,5,6,7,8,10,11,12,13,14,15,16,17,18,19,20,21,22,23},
+		legend columns = 15,
+		legend style = {
+			anchor = south,
+			at = {(0.5, 1.01)},
+		},
+		]
+		\foreach \tratto in {1,2,...,23}
+			{
+			\addplot+[only marks]
+				table [y = om_tr_\tratto, x = area_tr_\tratto]
+				{graphics/data/omega_area_pura.txt};
+			}
+		
+		\addplot [color = green, % T1
+			 line width = 2 pt,
+			 domain = 1e3:1e6,
+			 samples = 10,
+			 ] 
+			 {10^(-0.3741 - 0.1820 * log10(x))};
+		\node [fill = white, draw = cyan, anchor = east] % T1 
+        	at (axis description cs: 1,0.9) {$10^{-0.3741} \, x^{- 0.1820}$};
+        	
+		\addplot [color = orange, % T2
+			 line width = 2 pt,
+			 domain = 1e3:1e6,
+			 samples = 10,
+			 ]
+			 {10^(-0.0157 - 0.2366 * log10(x))};
+		\node [fill = white, draw = orange, anchor = east] % T2 
+        	at (axis description cs: 1,0.75) {$10^{-0.0157} \, x^{- 0.2366}$};
+        	
+		\addplot [color = cyan, % T3
+			 line width = 2 pt,
+			 domain = 1e3:1e6,
+			 samples = 10,
+			 ]
+			 {10^(0.1130 - 0.2507 * log10(x))};
+		\node [fill = white, draw = green, anchor = east] % T3 
+        	at (axis description cs: 1,0.6) {$10^{0.1130} \, x^{- 0.2507}$};
+        	
+        \node [fill = white, draw = black, anchor = south west] % T3 
+        	at (axis description cs: 0,0) {$R^2 \in [0.4, 0.8]$ $P_\mathrm{val} < 0.0001$};
+	\end{axis}
+\end{tikzpicture}

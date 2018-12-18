@@ -1,0 +1,16 @@
+\tikzsetnextfilename{omega_perc_50}
+\begin{tikzpicture}
+	\begin{axis}[
+		width = \textwidth,
+		height = .5\textwidth,
+		enlarge x limits = 0.01,
+		%enlarge y limits = 0.01,
+		xlabel = {Tratto},
+		ylabel = {Potenza della corrente \si{[\newton\per\metre\tothe{4}]}},
+		xtick = data,
+		grid = major,
+		]
+		\addplot[only marks, mark = *]
+        	table [x = tratto, y = omega,] {graphics/data/omega_perc_50.txt};
+	\end{axis}
+\end{tikzpicture}

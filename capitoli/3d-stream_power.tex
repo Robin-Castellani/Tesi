@@ -26,3 +26,68 @@ Inoltre le piante che crescono più rapidamente sembrano essere maggiormente fle
 È dunque lecito supporre che proprio nei tratti dove si osserva una ridotta potenza della corrente si possa trovare un'elevata quantità di isole nella maggior parte del periodo di studio.
 
 
+Per ottenere la \emph{stream power} si è prima ottenuta la pendenza media di ogni tratto grazie al DEM del 2009 nella seguente maniera:
+%
+\begin{aenumerate}
+	\item si è definita una coordinata curvilinea che segue il corso principale del fiume;
+	\item sono state considerate le quote in tutti i punti sopra i quali scorre la coordinata curvilinea;
+	\item è stata effettuata una regressione lineare tra la coordinata curvilinea e le quote raggruppando i tratti quattro a quattro (tranne per l'ultimo gruppo, formato dai tratti 21, 22 e 23);
+	\item il coefficiente angolare della retta rappresenta la pendenza del gruppo di 4 tratti.
+\end{aenumerate}
+%
+Il risultato è riportato nella \cref{tab:pendenza}.
+%
+\begin{table}
+	\centering
+	\begin{tabular}{
+		S[list-separator={, }, list-final-separator={ e }]
+		S[table-format=1.2]
+	}
+		\toprule
+		\multicolumn{1}{c}{Tratti}	&	\multicolumn{1}{c}{Pendenza \si{[\percent]}}	\\
+		\midrule
+		\numlist{1;2;3;4}	&	0.52	\\
+		\numlist{5;6;7;8}	&	0.48	\\
+		\numlist{9;10;11;12}	&	0.23	\\
+		\numlist{13;14;15;16}	&	0.40	\\
+		\numlist{17;18;19;20}	&	0.31	\\
+		\numlist{21;22;23}	&	0.25	\\
+		\bottomrule
+	\end{tabular}
+	\caption[pendenze dei tratti]{pendenze dei tratti.}
+	\label{tab:pendenza}
+\end{table}
+%
+\\
+In quanto modificazioni della pendenza avvengono in tempi scala elevati, si considera la pendenza ottenuta come rappresentativa e costante nel periodo di studio.
+
+Il grafico in \cref{graph:omega-perc-50} mostra la mediana temporale della potenza della corrente per ogni tratto; si rappresenta la mediana poiché la variazione di $\Omega$ nel tempo è trascurabile.
+%TODO scrivi che non hai considerato la portata per quanto esposto nell'introduzione → Omega fittizia con una portata unica
+%TODO scrivi che hai pesato con l'area drenante relativa a Villuzza in ogni tratto utilizzando i dati degli affluenti
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/omega_perc_50}
+	\caption[potenza della corrente in ogni tratto]{mediana temporale della potenza della corrente per ogni tratto pesata con la relativa area drenante.}
+	\label{graph:omega-perc-50}
+\end{figure}
+
+%TODO scrivi che si vede un trend spaziale di allargamento-restringimento
+
+Rappresentando questa potenza della corrente rispetto alle isole presenti in un grafico bilogaritmico (), è possibile osservare l'effetto di controllo sulla quantità massima di vegetazione che esercita $\Omega$.
+%TODO è stata escluso il tratto con l'isola di Cornino
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/omega_area_percentuale}
+	\caption[potenza della corrente rispetto alla proporzione di isole sull'alveo attivo]{potenza della corrente rispetto alla proporzione di isole sull'alveo attivo.}
+	\label{graph:omega-area-percentuale}
+\end{figure}
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/omega_area_pura}
+	\caption[potenza della corrente rispetto all'areale delle isole]{potenza della corrente rispetto all'areale delle isole.}
+	\label{graph:omega-area-pura}
+\end{figure}
+
