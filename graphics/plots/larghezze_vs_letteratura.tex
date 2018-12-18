@@ -1,0 +1,62 @@
+\tikzsetnextfilename{larghezze_vs_letteratura}
+\begin{tikzpicture}
+	\begin{groupplot}[
+		group style = {
+			group size = 2 by 1,
+			ylabels at = edge left,
+			x descriptions at = edge bottom,
+			horizontal sep = 0.8cm,
+			vertical sep = 0.1cm,
+		},
+		width = 0.5\textwidth,
+		height = 0.5\textwidth,
+		date coordinates in = x,
+		date ZERO = 1800-01-01,
+		xticklabel = {$\year-\month$},
+		xticklabel style = {
+			rotate = 80,
+			anchor = near xticklabel
+		},
+		%xtick distance = 366,
+		%enlarge x limits = 0.05,
+		%enlarge y limits = 0.01,
+		ylabel = {Larghezza \si{[\m]}},
+		grid = major,
+		]
+		\nextgroupplot[
+				legend columns = -1,
+				legend to name = legend_larghezze,
+			] % overview
+			\addplot[blue, mark = square*] % zanoni 2008
+	        	table [x = data, y = larghezza] {graphics/data/largh_zanoni.txt};
+	        	\addlegendentry{Zanoni et al. 2008}
+			\addplot[green!70!black, mark = triangle*] % surian 2015
+	        	table [x = data, y = larghezza] {graphics/data/largh_surian.txt};
+	        	\addlegendentry{Surian et al. 2015}
+			\addplot[red, mark = *] % mie
+	        	table [x = data, y = larghezza] {graphics/data/largh_mie.txt};
+	        	\addlegendentry{Tesi}
+	        \draw [red, dashed, thick] (1990-01-01,500) rectangle (2019-01-01,750);
+	    %
+		\nextgroupplot[
+			xmin = 1990-01-01,
+			ymin = 500,
+			ymax = 750,
+			yticklabel pos = right,
+		] % zoom
+			\addplot[blue, mark = square*] % zanoni 2008
+	        	table [x = data, y = larghezza] {graphics/data/largh_zanoni.txt};
+			\addplot[green!70!black, mark = triangle*] % surian 2015
+	        	table [x = data, y = larghezza] {graphics/data/largh_surian.txt};
+			\addplot[red, mark = *] % mie
+	        	table [x = data, y = larghezza] {graphics/data/largh_mie.txt};
+	        \node [fill = white, draw = black, anchor = south east] 
+        	at (axis description cs: 1,0) {Ingrandimento};
+	\end{groupplot}
+	%
+	\draw [thick, blue, ->, shorten >=2pt, shorten <=2pt]
+		(group c1r1.east) -- (group c2r1.west);
+    %\node at ($(group c1r1) + (3.5cm,3.3cm)$) {\pgfplotslegendfromname{legend_larghezze}};
+    \node at (group c1r1.north east) [anchor=south, xshift=.4cm] %.4cm è la metà della distanza orizzontale tra i plot
+    	{\pgfplotslegendfromname{legend_larghezze}};
+\end{tikzpicture}

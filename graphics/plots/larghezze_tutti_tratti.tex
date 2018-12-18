@@ -1,0 +1,28 @@
+\tikzsetnextfilename{larghezze_tutti_tratti}
+\begin{tikzpicture}
+	\begin{axis}[
+		width = .8\textwidth,
+		height = \textwidth,
+%		date coordinates in = y,
+%		date ZERO = 2000-08-01,
+%		yticklabel = {$\year-\month-\day$},
+		yticklabel style = {
+			rotate = 0,
+			anchor = near yticklabel,
+		},
+		symbolic y coords = {2000-09-17, 2001-06-07, 2002-05-18, 2002-06-12, 2003-06-22, 2004-10-14, 2005-08-30, 2006-07-16, 2007-09-21, 2008-07-05, 2009-07-08, 2010-09-29, 2011-10-02, 2012-08-01, 2013-09-05, 2014-09-08, 2014-10-31, 2015-08-13, 2015-09-12, 2015-10-22, 2016-09-13, 2017-04-21, 2017-06-13, 2018-06-15, 2018-09-16},
+		ytick distance = 1.5,
+		xticklabel style = {font=\footnotesize},
+		xtick = data,
+		enlargelimits = 0,
+		xlabel = {Tratto},
+		colorbar right,
+		]
+		\addplot[
+			matrix plot*,
+			mesh/cols = 23,	% per fargli leggere colonne formate da 23 righe dal file di testo
+			shader = flat corner,	% per interpolare i colori
+		]
+        	table [x = tratto, y = data, point meta = \thisrow{larghezza}] {graphics/data/Larghezze_tutti_tratti.txt};
+	\end{axis}
+\end{tikzpicture}

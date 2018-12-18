@@ -1,0 +1,34 @@
+\tikzsetnextfilename{rapp_isl_vs_letteratura}
+\begin{tikzpicture}
+	\begin{axis}[
+		width = \textwidth,
+		height = 0.5\textwidth,
+		date coordinates in = x,
+		date ZERO = 1940-01-01,
+		xticklabel = {$\year$},
+		xticklabel style = {
+			rotate = 80,
+			anchor = near xticklabel
+		},
+		xtick distance = 3660,
+		enlarge x limits = 0.02,
+		ylabel = {Rapporto isole su alveo attivo},
+		grid = major,
+		legend style = {
+			anchor = north west,
+			at = {(0,1)},
+		},
+		scaled ticks = false,
+		%legend columns = -1,
+		]
+		\addplot[blue, mark = square*] % zanoni 2008
+	        table [x = data, y = rapp_isl] {graphics/data/rapp_isl_zanoni.txt};
+	        \addlegendentry{Zanoni et al. 2008}
+	    \addplot[green!70!black, mark = triangle*] % surian 2015
+	        table [x = data, y = rapp_isl] {graphics/data/rapp_isl_surian.txt};
+	     	\addlegendentry{Surian et al. 2015}
+		\addplot[red, mark = *] % mie
+	       	table [x = data, y = rapp_isl] {graphics/data/rapp_isl_mie.txt};
+	       	\addlegendentry{Tesi}
+	\end{axis}
+\end{tikzpicture}
