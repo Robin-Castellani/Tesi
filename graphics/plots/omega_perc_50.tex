@@ -9,6 +9,9 @@
 		ylabel = {Potenza della corrente \si{[\newton\per\metre\tothe{4}]}},
 		xtick = data,
 		grid = major,
+		yticklabel style = {
+			/pgf/number format/fixed
+		},
 		]
 		\addplot[only marks, mark = *]
         	table [x = tratto, y = omega,] {graphics/data/omega_perc_50.txt};

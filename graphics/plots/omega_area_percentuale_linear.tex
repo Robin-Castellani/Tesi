@@ -1,0 +1,63 @@
+\tikzsetnextfilename{omega_area_percentuale_linear}
+\begin{tikzpicture}
+	\begin{axis}[
+		width = \textwidth,
+		height = .7\textwidth,
+		enlarge x limits = 0.01,
+		%enlarge y limits = 0.01,
+		ylabel = {$\Omega$ \si{[\newton\per\metre\tothe{4}]}},
+		xlabel = {Isole rispetto all'alveo attivo},
+		grid = major,
+		legend columns = -1,
+		legend style = {
+			anchor = south,
+			at = {(0.5, 1.01)},
+		},
+		ticklabel style = {
+			/pgf/number format/.cd,fixed,
+		},
+		]
+		\foreach \tratto in {1,2,...,23}
+			{
+			\addplot[
+				only marks,
+				forget plot,
+			]
+				table [y = om_tr_\tratto, x = area_tr_\tratto]
+				{graphics/data/omega_area_percentuale.txt};
+			}
+		
+%		\addplot [color = green, % T1
+%			 line width = 2 pt,
+%			 domain = 1e-3:4e-1,
+%			 samples = 10,
+%			 ] 
+%			 {10^(-1.5184 - 0.1838 * log10(x))};
+%		\addlegendentry{Fit 1}
+%%		\node [fill = white, draw = green, anchor = east] % T1 
+%%        	at (axis description cs: 1,0.6) {$y = 10^{-1.5184} \, x^{- 0.1838}$};
+%        	
+%		\addplot [color = orange, % T2
+%			 line width = 2 pt,
+%			 domain = 1e-3:4e-1,
+%			 samples = 10,
+%			 ]
+%			 {10^(-1.5056 - 0.2516 * log10(x))};
+%		\addlegendentry{Fit 2}
+%%		\node [fill = white, draw = orange, anchor = east] % T2 
+%%        	at (axis description cs: 1,0.75) {$y = 10^{-1.5056} \, x^{- 0.2516}$};
+%        	
+%		\addplot [color = cyan, % T3
+%			 line width = 2 pt,
+%			 domain = 1e-3:4e-1,
+%			 samples = 10,
+%			 ]
+%			 {10^(-1.4085 - 0.2371 * log10(x))};
+%		\addlegendentry{Fit 3}
+%		\node [fill = white, draw = cyan, anchor = east] % T3 
+%        	at (axis description cs: 1,0.9) {$y = 10^{-1.4085} \, x^{- 0.2371}$};
+%        
+%		\node [fill = white, draw = black, anchor = south west] % T3 
+%        	at (axis description cs: 0,0) {$R^2 \in [0.3, 0.6]$ $P_\mathrm{val} < 0.0001$};
+	\end{axis}
+\end{tikzpicture}
