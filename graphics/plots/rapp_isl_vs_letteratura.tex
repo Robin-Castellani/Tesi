@@ -13,6 +13,9 @@
 		xtick distance = 3660,
 		enlarge x limits = 0.02,
 		ylabel = {Rapporto isole su alveo attivo},
+		yticklabel style = {
+			/pgf/number format/.cd,fixed,
+		},
 		grid = major,
 		legend style = {
 			anchor = north west,
@@ -21,14 +24,14 @@
 		scaled ticks = false,
 		%legend columns = -1,
 		]
-		\addplot[blue, mark = square*] % zanoni 2008
+		\addplot[green!70!black, mark = square*] % zanoni 2008
 	        table [x = data, y = rapp_isl] {graphics/data/rapp_isl_zanoni.txt};
 	        \addlegendentry{Zanoni et al. 2008}
-	    \addplot[green!70!black, mark = triangle*] % surian 2015
+	    \addplot[orange, mark = triangle*] % surian 2015
 	        table [x = data, y = rapp_isl] {graphics/data/rapp_isl_surian.txt};
 	     	\addlegendentry{Surian et al. 2015}
-		\addplot[red, mark = *] % mie
+		\addplot[blue, mark = *] % mie
 	       	table [x = data, y = rapp_isl] {graphics/data/rapp_isl_mie.txt};
-	       	\addlegendentry{Tesi}
+	       	\addlegendentry{Presente lavoro}
 	\end{axis}
 \end{tikzpicture}

@@ -145,7 +145,9 @@ Al fine di validare la precedente procedura di controllo e correzione della dist
 	\begin{equation}
 		\label{eq:larghezza-tratto}
 		B = \frac{\text{Area alveo}}{Lunghezza} 
-		\quad .
+		\quad 
+		\si{[\m]}
+		\quad.
 	\end{equation}
 	% 
 	Si è verificato che la larghezza~$B$ rimanesse costante nel tempo, indice di una corretta classificazione tra isole e \emph{floodplain}. 
@@ -187,29 +189,10 @@ Al fine di validare la precedente procedura di controllo e correzione della dist
 \end{description}
 
 
-\begin{comment}
-%TODO tenere questa parte? forse la si può togliere
-% e mostrare direttamente i risultati sul cambiamento
-Con la riclassificazione delle immagini dell'NDVI rispetto alle soglie proposte è stato possibile ottenere la percentuale di alveo coperta da vegetazione per ogni anno. 
-Si ricorda, grazie alla maschera applicata, tale copertura include sia isole vegetate sia la parte di piana alluvionale che nel periodo di studio ha esperito fenomeni di erosione della vegetazione e quindi espansione dell'alveo attivo.
-Infine, per le immagini l'alveo parzialmente coperto da nuvole, la maschera è stata estesa per escludere tali zone coperte poiché queste presentano valori di NDVI non corretti.
-\\
-I risultati sono mostrati nel grafico in \cref{graph:class-sat-veg}.
 
-
-\begin{figure}[ht]
-	\centering
-	\input{graphics/plots/class-sat-veg}
-	\caption[andamento dell'areale della vegetazione nelle isole  e nella floodplain]{andamento dell'areale della vegetazione nelle isole e nella floodplain (in rosso). I dati provengono dalla classificazione delle immagini satellitari (\AST{}, \Pl{}, \Se{} e \WV{}). In blu sono mostrati i livelli idrometrici medi giornalieri superiori a~\SI{2}{\m} registrati alla stazione di Villuzza.}
-	\label{graph:class-sat-veg}
-\end{figure}
-% grafico piene 2m+ - %veg tratti (nuovo file comprensivo di tutti i tratti)
-\end{comment}
-
-
-
+\FloatBarrier
 \subsection{Risultati: evoluzione della larghezza}
-Utilizzando le mappe di classificazione del terreno all'interno della maschera computazionale, si è ottenuta una larghezza media~$B$ secondo l'equazione~\eqref{eq:larghezza-tratto}.
+Utilizzando le mappe di classificazione del terreno, si è ottenuta una larghezza media~$B$ secondo l'equazione~\eqref{eq:larghezza-tratto}. Questa viene riportata nel grafico in \cref{graph:larghezze-tutti-tratti}, dove si vede la larghezza di ogni tratto valido per ogni immagine disponibile.
 %
 \begin{figure}
 	\centering
@@ -219,7 +202,19 @@ Utilizzando le mappe di classificazione del terreno all'interno della maschera c
 \end{figure}
 %
 \\
-Osservando la variazione temporale di~$B$ è possibile evincere delle traiettorie evolutive sia a livello di singolo tratto, sia a scala più ampia.
+Ogni “fetta” verticale del grafico corrisponde ad un'istantanea temporale: in quella specifica data, i tratti del Tagliamento avevano quella specifica larghezza.
+Già così si vede quanto era stato descritto nell'introduzione:
+i primi tratti sono quelli più stretti poiché confinati dalle montagne;
+si osserva un progressivo allargamento all'incirca dal ponte autostradale di Braulins (a monte del tratto~6), interrotto dalla stretta di Pinzano (a valle del tratto~12);
+infine, al successivo riallargamento dei tratti planiziali segue il cambio morfologico e il corrispondente restringimento (dal tratto~22).
+Questo trend è costante nel tempo.
+\\
+Considerando invece delle “fette” orizzontali, si può notare qualche specifico trend temporale (anche chiamato traiettoria evolutiva):
+alcuni tratti intermedi, come l'8, il~9 o il~12, si sono allargati di diverse decine di metri negli ultimi anni;
+i tratti~15, 16 e~17 hanno esperito la fusione di grandi isole nella piana alluvionale e quindi si sono ristretti di qualche centinaio di metri (si veda anche la \cref{fig:b-media-7-e-15}); sembra tuttavia che recentemente si siano riallargati.
+Complessivamente tuttavia non sembra che il fiume si stia particolarmente allargando o restringendo.
+
+È interessante confrontare alcuni risultati con quanto è stato svolto da altri autori: \squarecites{Zanoni:2008}{Surian:2015} riportano per i tratti dal~6 al~12 (dal ponte autostradale di Braulins alla stretta di Pinzano) la larghezza media ottenuta dalla classificazione manuale di ortofoto aeree del secolo scorso e del decennio passato e documenti catastali del 1800; è dunque possibile osservare traiettorie evolutive molto estese (\cref{graph:larghezze-vs-letteratura}).
 %
 \begin{figure}
 	\centering
@@ -228,10 +223,45 @@ Osservando la variazione temporale di~$B$ è possibile evincere delle traiettori
 	\label{graph:larghezze-vs-letteratura}
 \end{figure}
 %
+\\
+Si vede chiaramente come i tratti si siano ristretti nel corso degli ultimi due secoli, forse a causa di lievi cambiamenti naturali nel regime idrologico, ma molto più probabilmente per l'intervento antropico di prelievo di legname ed estrazione della ghiaia dall'alveo avvenuti con particolare intensità nella seconda metà del 1900, così come degli interventi di ingegneria fluviale attuati dal 1950 (argini, soglie e opere di presa).
+\\
+In seguito, la concomitanza della messa al bando dell'estrazione di ghiaia di fiume, della cessazione dell'utilizzo del legno presente in alveo per un cambiamento culturale e di piene importanti ha indotto un graduale riallargamento di qualche centinaio di metri.
+\\
+I risultati da letteratura sono generalmente in accordo tra loro, così come non si discostano dai risultati della presente tesi.
+Questi ultimi mostrano delle oscillazioni tra lievi allargamenti e restringimenti; sembra comunque che anche negli ultimi \SI{20}{\anni} circa questo tratto di fiume si stia ancora allargando, anche se ad un tasso sicuramente inferiore rispetto al decennio precedente.
+Osservando proprio gli ultimi punti, si può quasi leggere un leggero restringimento; questo potrebbe reale, così come dovuto agli errori nella classificazione data la modesta entità del cambiamento.
+\\
+Si nota una certa differenza tra le tre curve: alcuni punti degli altri lavori, punti che chiaramente provengono dalla classificazione delle medesime immagini, hanno valori di larghezza che differiscono di diverse decine di metri.
+Questo può dipendere dal metodo di digitalizzazione dell'alveo e dalla definizione di isole, in particolare di quelle originatesi dal distacco di parte di piana alluvionale o quelle in procinto di fondersi nella stessa.
+Tuttavia, è la traiettoria evolutiva ciò che è importante evincere da questi risultati.
 
 
-Considerando la variazione spaziale (da monte verso valle) dell'areale delle isole, sono evidenti i pattern di \emph{upwelling} o \emph{downwelling} utilizzati durante la definizione dei 23~tratti.
+\subsection{Risultati: la percentuale di isole rispetto all'alveo attivo}
+Grazie alle mappe di classificazione dell'alveo è possibile ottenere informazioni riguardo la quantità di isole presenti nei tratti rispetto all'alveo attivo.
+Questa proporzione è utile per delineare zone in cui la vegetazione riesce a prosperare, o per individuare momenti in cui le isole si sono espanse, così come per verificare come la connessione con la falda nel materasso alluvionale influenzi la crescita delle piante.
+\\
+Il grafico in \cref{graph:rapp-isl-tutti-tratti} mostra il rapporto tra l'area delle isole presenti in ogni tratto valido in ogni immagine e il relativo areale di alveo attivo.
+La sua lettura è analoga al grafico in \cref{graph:larghezze-tutti-tratti}: le “strisce” verticali sono delle fotografie di un preciso momento in cui l'alveo presentava quella specifica proporzione di isole; le “strisce” orizzontali sono le traiettorie evolutive dei singoli tratti.
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/rapp_isl_tutti_tratti}
+	\caption[rapporto delle isole sull'alveo attivo in ogni tratto per ogni immagine]{rapporto delle isole sull'alveo attivo in ogni tratto per ogni immagine; i quadrati bianchi indicano assenza di dati (a causa della presenza di nuvole o limitata estensione dell'immagine).}
+	\label{graph:rapp-isl-tutti-tratti}
+\end{figure}
+%
+\\
+Da monte verso valle, si vede come alcuni tratti siano più adatti di altri ad ospitare delle isole, come i tratti dal~7 all'11 o quelli planiziali;
+i tratti montani e quelli più vallivi sono i meno vegetati, sicuramente poiché sono stretti e il disturbo indotto dalle piene è frequente ed intenso.
+È da ricordare che nel tratto~9 è presente l'isola di Cornino, che a differenza delle altre isole si fonda su roccia anziché su ghiaia.
+\\
+Si osserva inoltre l'effetto della risalita e dello sprofondamento della falda:
+i tratti con \emph{upwelling}, come quelli tra il~7 e l'11 e quelli tra il~19 e il~22, sono quelli che possono essere colonizzati da molte isole se le altre condizioni ambientali sono favorevoli; i tratti con \emph{downwelling} sono invece generalmente meno vegetati, a meno di grandi isole che si sono in seguito fuse con le sponde. Queste isole si sono formate negli ultimi due decenni del 1900, quando le condizioni erano molto probabilmente favorevoli per la crescita, l'espansione e la coalescenza di più isole.
 
+Si è proceduto confrontando parte dei dati ottenuti con i risultati riportati in due lavori \squarecites{Zanoni:2008}{Surian:2015} (\cref{graph:rapp-isl-vs-letteratura}).
+Non sono presenti dati antecedenti al 1940, come invece erano stati riportati per la larghezza, poiché gli autori non hanno considerato affidabili le mappe del catasto austriaco nel definire i limiti delle isole.
+Questi risultati sono limitati ai tratti compresi tra il ponte autostradale presso Braulins (tratto~6) e la stretta di Pinzano (tratto~12).
 %
 \begin{figure}
 	\centering
@@ -240,6 +270,20 @@ Considerando la variazione spaziale (da monte verso valle) dell'areale delle iso
 	\label{graph:rapp-isl-vs-letteratura}
 \end{figure}
 %
+\\
+Mentre \squarecite{Zanoni:2008} suggerisce che la percentuale di vegetazione in alveo oscilla attorno al valore di \SI{8}{\percent}, \squarecite{Surian:2015} mostra che la traiettoria evolutiva è assai simile a quella della larghezza.
+I risultati di questa tesi sembrano seguire entrambe le ipotesi: ad un primo periodo di crescita del rapporto isole su alveo seguono oscillazioni continue attorno ad un valore compreso tra \numrange[range-phrase={ e }]{0.12}{0.13}.
+\\
+Si vede chiaramente come punti temporalmente molto vicini tra loro mostrino rapporti molto diversi, come nel~1954, nel~2000, nel~2005, nel~2009 e nel~2011.
+I dati della tesi si discostano abbastanza rapidamente dai dati da letteratura, in particolare dagli anni 2005-2006 quando in un periodo privo di piene intense la vegetazione ha potuto prosperare.
+\\
+Queste discordanze sono con tutta probabilità dovute ai differenti metodi che ogni autore ha utilizzato per delimitare le isole e l'alveo attivo, così come le mappe utilizzate:
+nelle ortofoto ad alta risoluzione (celle di dimensione di poche decine di centimetri) è spesso possibile riconoscere la chioma di ogni pianta, mentre nelle immagini satellitari si può solo distinguere le forme vegetate dall'alveo;
+\squarecite{Surian:2015} ha considerato come isole solamente le piante che vi crescono, senza tenere conto delle zone parzialmente o molto poco vegetate che possono esservi all'interno, ed ha escluso le piante “intermedie” e “alte” dall'areale dell'alveo attivo;
+la presente tesi ha invece incluso le isole nel definire l'alveo attivo e la risoluzione minore della maggior parte delle immagini ha permesso di delineare le isole come zone compatte di vegetazione, che raramente presentavano nel mezzo celle classificate come alveo o come canale.
+\\
+Le diversità non permettono un confronto dei risultati al fine di evincere un qualche trend temporale.
+Dai risultati della tesi sembra comunque certo che nei tratti in questione (dal~6 al~12) l'alveo si sia vegetato, ma generalmente non oltre il \SI{15}{\percent}.
 
 
 

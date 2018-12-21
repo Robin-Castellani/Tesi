@@ -1,4 +1,4 @@
-\tikzsetnextfilename{larghezze_tutti_tratti}
+\tikzsetnextfilename{rapp_isl_tutti_tratti}
 \begin{tikzpicture}
 	\begin{axis}[
 		width = \textwidth,
@@ -18,13 +18,17 @@
 		ylabel = {Tratto},
 		y dir = reverse,
 		colorbar horizontal,
-		colorbar style = {xlabel = {Larghezza}, x unit = m,},
+		colorbar style = {
+			xlabel = {Proporzione di isole sull'alveo attivo},
+			xticklabel style = {/pgf/number format/.cd,fixed},
+			xtick distance = 0.04,
+		},
 		]
 		\addplot[
 			matrix plot*,
 			mesh/cols = 23,	% per fargli leggere colonne formate da 23 righe dal file di testo
 			shader = flat corner,	% per interpolare i colori
 		]
-        	table [y = tratto, x = data, point meta = \thisrow{larghezza}] {graphics/data/larghezze_tutti_tratti.txt};
+        	table [y = tratto, x = data, point meta = \thisrow{rapp_isl}] {graphics/data/rapp_isl_tutti_tratti.txt};
 	\end{axis}
 \end{tikzpicture}

@@ -12,45 +12,44 @@
 		height = 0.5\textwidth,
 		date coordinates in = x,
 		date ZERO = 1800-01-01,
-		xticklabel = {$\year-\month$},
+		xticklabel = {$\year$},
 		xticklabel style = {
 			rotate = 80,
 			anchor = near xticklabel
 		},
-		%xtick distance = 366,
-		%enlarge x limits = 0.05,
-		%enlarge y limits = 0.01,
 		ylabel = {Larghezza \si{[\m]}},
 		grid = major,
 		]
 		\nextgroupplot[
 				legend columns = -1,
 				legend to name = legend_larghezze,
+				xtick distance = 18270,
 			] % overview
-			\addplot[blue, mark = square*] % zanoni 2008
+			\addplot[green!70!black, mark = square*] % zanoni 2008
 	        	table [x = data, y = larghezza] {graphics/data/largh_zanoni.txt};
 	        	\addlegendentry{Zanoni et al. 2008}
-			\addplot[green!70!black, mark = triangle*] % surian 2015
+			\addplot[orange, mark = triangle*] % surian 2015
 	        	table [x = data, y = larghezza] {graphics/data/largh_surian.txt};
 	        	\addlegendentry{Surian et al. 2015}
-			\addplot[red, mark = *] % mie
+			\addplot[blue, mark = *] % mie
 	        	table [x = data, y = larghezza] {graphics/data/largh_mie.txt};
-	        	\addlegendentry{Tesi}
-	        \draw [red, dashed, thick] (1990-01-01,500) rectangle (2019-01-01,750);
+	        	\addlegendentry{Presente lavoro}
+	        \draw [black, dashed, very thick] (1990-01-01,500) rectangle (2019-01-01,750);
 	    %
 		\nextgroupplot[
 			xmin = 1990-01-01,
 			ymin = 500,
 			ymax = 750,
 			yticklabel pos = right,
+			xtick distance = 1827,
 		] % zoom
-			\addplot[blue, mark = square*] % zanoni 2008
+			\addplot[green!70!black, mark = square*] % zanoni 2008
 	        	table [x = data, y = larghezza] {graphics/data/largh_zanoni.txt};
-			\addplot[green!70!black, mark = triangle*] % surian 2015
+			\addplot[orange, mark = triangle*] % surian 2015
 	        	table [x = data, y = larghezza] {graphics/data/largh_surian.txt};
-			\addplot[red, mark = *] % mie
+			\addplot[blue, mark = *] % mie
 	        	table [x = data, y = larghezza] {graphics/data/largh_mie.txt};
-	        \node [fill = white, draw = black, anchor = south east] 
+	        \node [fill = white, draw = black, dashed, anchor = south east] 
         	at (axis description cs: 1,0) {Ingrandimento};
 	\end{groupplot}
 	%
