@@ -1,0 +1,27 @@
+\tikzsetnextfilename{tr_picchi}
+\begin{tikzpicture}
+	\begin{semilogxaxis}[
+		width = \textwidth,
+		height = 0.4\textwidth,
+%		enlarge x limits = 0.05,
+%		enlarge y limits = 0.01,
+%		ytick distance = 0.5,
+		ylabel = {Livello idrometrico \si{[\m]}},
+		xlabel = {Tempo di ritorno \si{[\anni]}},
+		grid = major,
+        log ticks with fixed point,		
+		]
+		\addplot
+        	[blue, no markers]
+        	table [x=tr_anni, y=picchi] {graphics/data/tr_picchi.txt};
+        
+        \draw[<->] (0.1,3) -- (0.5,3);
+        \node [at = {(0.23,3)}, anchor = north] {\emph{Flow pulses}};
+        
+        \draw[<->] (0.5,1) -- (3,1);
+        \node [at = {(1.3,1)}, anchor = south] {\emph{Flood pulses}};
+        
+        \draw[<->] (3,1) -- (20,1);
+        \node [at = {(7,1)}, anchor = south] {\emph{Bankfull}};
+	\end{semilogxaxis}
+\end{tikzpicture}

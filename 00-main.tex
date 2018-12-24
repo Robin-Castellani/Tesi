@@ -57,6 +57,8 @@ biblatex}       % per la bib
 }
 \DeclareSIUnit\anni{anni}
 \DeclareSIUnit\anno{anno}
+\DeclareSIUnit\mesi{mesi}
+\DeclareSIUnit\mese{mese}
 \DeclareSIUnit\minuti{minuti}
 \DeclareSIUnit\minuto{minuto}
 \DeclareSIUnit\ore{ore}
@@ -88,6 +90,7 @@ biblatex}       % per la bib
 \usepgfplotslibrary{groupplots}	% per fare grafici a gruppi
 \usepgfplotslibrary{units}	% to add units easily to axis
 \usepgfplotslibrary{colormaps}	% to create colormaps
+\usetikzlibrary{intersections}	% to compute intersections
 \usetikzlibrary{patterns}	% to use patterns
 \usetikzlibrary{plotmarks}	% to use more markers
 \pgfdeclarehorizontalshading{visiblelight}{50bp}{
@@ -180,11 +183,8 @@ color(50.00000000000000bp)=(red)
 
 
 \chapter{Relazioni tra piene e isole erose}
-\section{Parametri considerati}
-\subsection{Integrale dei livelli}
-% qui metterai anche il grafico con il tempo di ritorno
-\subsection{Isole erose}
-\section{Risultati}
+\input{capitoli/4a-materiali_relazioni}
+\input{capitoli/4b-risultati_relazioni}
 %----------------------------------------------------------
 
 

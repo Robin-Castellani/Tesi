@@ -1,0 +1,127 @@
+\tikzsetnextfilename{esempio_integrale_livelli}
+\begin{tikzpicture}
+	\begin{groupplot}[
+		group style = {
+			group size = 2 by 2,
+			y descriptions at = edge left,
+			xlabels at = edge top,
+			horizontal sep = 0.5cm,
+			vertical sep = 0.5cm,
+		},
+		width = 0.5\textwidth,
+		height = 0.5\textwidth,
+%		ymin = 0.5,
+%		ymax = 3.5,
+		enlarge y limits = 0.05,
+		enlarge x limits = 0.05,
+		ylabel = {Livello idrometrico \si{[\m]}},
+		xlabel = {Tempo di ritorno \si{[\anni]}},
+		grid = major,		
+		]
+	
+	\nextgroupplot[
+			xmode = log,
+        	log ticks with fixed point,
+        ]
+		\addplot[
+			blue,
+			no markers,
+			]
+        	table [x = tr_anni, y = picchi] {graphics/data/tr_picchi.txt};
+        	
+        \draw[->, orange, very thick] (0.2,1) -- (0.2,1.5) -- (0.1,1.5);
+		
+		\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left] {TR \SIrange[range-phrase={-}, range-units = single]{2}{3}{\mesi} \\ Livello \SI{1.5}{\m}};
+	
+	\nextgroupplot[
+			xmode = log,
+        	log ticks with fixed point,
+        ]
+		\addplot[
+			blue,
+			no markers,
+			]
+        	table [x = tr_anni, y = picchi] {graphics/data/tr_picchi.txt};
+        	
+        \draw[->, green!70!black, very thick] (0.45,1) -- (0.45,2) -- (0.1,2);
+		
+		\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left] {TR \SIrange[range-phrase={-}, range-units = single]{4}{5}{\mesi} \\ Livello \SI{2}{\m}};
+    
+	\nextgroupplot[
+			date coordinates in = x,
+			xticklabel = {$\year-\month-\day$},
+			xticklabel style = {
+				rotate = 80,
+				anchor = near xticklabel,
+				font = \footnotesize,
+			},
+			xmin = 2002-05-18 00:00,
+			xmax = 2002-06-12 23:30,
+		]
+		\addplot[
+			blue,
+			no markers,
+			name path = livelli,
+			]
+        	table [x = data, y = livello, col sep = comma] {graphics/data/Idro_primo_intervallo.txt};
+        	
+        \addplot[
+        	dashed,
+        	very thick,
+        	orange,
+        	name path = soglia,
+        	]
+        	coordinates {(2002-05-18 00:00, 1.5) (2002-06-12 23:30, 1.5)};
+        	
+		\addplot fill between [
+			of = soglia and livelli,
+			split,
+			every segment no 0/.style = {transparent},
+			every segment no 1/.style = {orange},
+			every segment no 2/.style = {transparent},
+			every segment no 3/.style = {orange},
+			every segment no 4/.style = {transparent},
+			every segment no 5/.style = {transparent},
+		];
+		
+		\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west,] {$Int = \SI{0.90}{\m\giorno}$};
+    
+	\nextgroupplot[
+			date coordinates in = x,
+			xticklabel = {$\year-\month-\day$},
+			xticklabel style = {
+				rotate = 80,
+				anchor = near xticklabel,
+				font = \footnotesize,
+			},
+			xmin = 2002-05-18 00:00,
+			xmax = 2002-06-12 23:30,
+		]
+		\addplot[
+			blue,
+			no markers,
+			name path = livelli,
+			]
+        	table [x = data, y = livello, col sep = comma] {graphics/data/Idro_primo_intervallo.txt};
+        	
+        \addplot[
+        	dashed,
+        	very thick,
+        	green!70!black,
+        	name path = soglia,
+        	]
+        	coordinates {(2002-05-18 00:00, 2) (2002-06-12 23:30, 2)};
+        	
+		\addplot fill between [
+			of = soglia and livelli,
+			split,
+			every segment no 0/.style = {transparent},
+			every segment no 1/.style = {green!70!black},
+			every segment no 2/.style = {green!70!black},
+			every segment no 3/.style = {transparent},
+			every segment no 4/.style = {transparent},
+		];
+		
+		\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west,] {$Int = \SI{0.12}{\m\giorno}$};
+	\end{groupplot}
+\end{tikzpicture}
