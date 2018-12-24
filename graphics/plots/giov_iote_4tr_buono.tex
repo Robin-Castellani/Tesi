@@ -1,0 +1,93 @@
+\tikzsetnextfilename{giov_iote_4tr_buono}
+\begin{tikzpicture}
+	\begin{groupplot}[
+		group style = {
+			group size = 3 by 2,
+			y descriptions at = edge left,
+			x descriptions at = edge bottom,
+			horizontal sep = 0.1cm,
+			vertical sep = 0.1cm,
+		},
+		width = 0.4\textwidth,
+		height = 0.4\textwidth,
+		ymin = 0,
+		ymax = 0.65,
+		enlarge y limits = 0.05,
+		enlarge x limits = 0.05,
+		ylabel = {Erosione / isole},
+		xlabel = {Int livelli \si{[\m\giorno]}},
+		grid = major,		
+		]
+		
+	\nextgroupplot[] % gruppo 1
+			\addplot[only marks]
+	        	table [x = integrale_piene, y = gr_1] {graphics/data/giov_iote_4tr_buono.txt};
+	        
+	        \addplot[
+	        	line width = 2pt,
+	        	domain = 0:2,
+	        	samples = 3,
+				green,
+	        	]
+	        	{0.1852 * x + 0.1032};
+			
+			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left] {1$\div$4};
+	
+	\nextgroupplot[] % gruppo 2
+			\addplot[only marks]
+	        	table [x = integrale_piene, y = gr_2] {graphics/data/giov_iote_4tr_buono.txt};
+	        
+	        \addplot[
+	        	line width = 2pt,
+	        	domain = 0:2,
+	        	samples = 3,
+				green,
+	        	]
+	        	{0.1700 * x + 0.0669};
+			
+			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left] {5$\div$8};
+	
+	\nextgroupplot[] % gruppo 3
+			\addplot[only marks]
+	        	table [x = integrale_piene, y = gr_3] {graphics/data/giov_iote_4tr_buono.txt};
+	        
+	        \addplot[
+	        	line width = 2pt,
+	        	domain = 0:2,
+	        	samples = 3,
+				green,
+	        	]
+	        	{0.1392 * x + 0.0775};
+			
+			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left] {10$\div$12};
+	
+	\nextgroupplot[] % gruppo 4
+			\addplot[only marks]
+	        	table [x = integrale_piene, y = gr_4] {graphics/data/giov_iote_4tr_buono.txt};
+	        
+	        \addplot[
+	        	line width = 2pt,
+	        	domain = 0:2,
+	        	samples = 3,
+				green,
+	        	]
+	        	{0.2126 * x + 0.1189};
+			
+			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left] {13$\div$16};
+	
+	\nextgroupplot[] % gruppo 5
+			\addplot[only marks]
+	        	table [x = integrale_piene, y = gr_5] {graphics/data/giov_iote_4tr_buono.txt};
+	        
+	        \addplot[
+	        	line width = 2pt,
+	        	domain = 0:2,
+	        	samples = 3,
+				green,
+	        	]
+	        	{0.2553 * x + 0.1076};
+			
+			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left] {17$\div$20};
+	
+	\end{groupplot}
+\end{tikzpicture}

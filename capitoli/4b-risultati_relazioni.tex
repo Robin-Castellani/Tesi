@@ -1,12 +1,72 @@
-\section{Risultati}
-
-Per ricercare delle relazioni si è effettuata più volte una regressione lineare dei punti nei grafici utilizzando due numeri come indicatori della bontà della relazione: l'$R^2$ e il $P_\mathbb{value}$ ottenuto dal test di Pearson.
-Questi valori indicano una buona e forte relazione lineare quando $R^2 = 1$ e $P_\mathbb{value} < 0.05$, mentre se $R^2 \ll 1$ e/o $P_\mathbb{value} > 0.05$ allora i punti graficati non hanno una tendenza lineare.
+\section{Risultati: (im)prevedibilità dell'erosione delle isole}
+Per ricercare delle relazioni si è effettuata più volte una regressione lineare dei punti nei grafici utilizzando due numeri come indicatori della bontà della relazione: l'$R^2$ e il $P_\mathrm{value}$ ottenuto dal test di Pearson.
+Questi valori indicano una buona e forte relazione lineare quando $R^2 = 1$ e $P_\mathrm{value} < 0.05$, mentre se $R^2 \ll 1$ e/o $P_\mathrm{value} > 0.05$ allora i punti graficati non hanno una tendenza lineare.
 \\
-Al fine di migliorare questi valori si è cercato il miglior modo di rappresentare i dati con i seguenti modi:
+Al fine di migliorare questi due valori si sono usate (non sempre contemporaneamente) queste metodologie:
 %
 \begin{itemize}
-	\item scalando un asse con il logaritmo in base 10;
-	\item dividendo la quantità rappresentata su un asse per un'altra quantità (ad esempio dividendo le isole erose per le isole presenti prima dell'erosione);
-	\item accorpando i dati di più tratti adiacenti.
+	\item scalare un asse con il logaritmo in base 10;
+	\item dividere la quantità rappresentata su un asse per un'altra quantità (ad esempio dividere le isole erose per le isole presenti prima dell'erosione);
+	\item accorpare i dati di più tratti adiacenti (ad esempio dei primi 4 tratti);
+	\item escludere dall'analisi alcuni tratti con caratteristiche peculari;
+	\item ignorare i punti che mostrano erosione anche per integrali nulli, in quanto gli areali di erosioni sono molto modesti e sono con tutta probabilità dovuti agli errori di correzione della georeferenziazione attuata nella fase di elaborazione del cambiamento
+	\item considerare un numero minimo di punti per effettuare le regressioni e ritenerle valide (per due punti passa una ed una sola retta, e in tal caso una regressione lineare darebbe ottimi risultati, ma poco validi; con un maggior numero di punti l'affidabilità dei risultati migliora);
+	\item limitare agli anni più recenti la suddivisioni in classi d'età, che è molto debolmente valida nei primi anni di osservazione (si veda la sezione~\ref{sec:eta}).
 \end{itemize}
+
+\subsection{Condizioni in cui si può formulare buone previsioni}
+Per la classe d'età giovane utilizzando un tempo di ritorno di \SIrange[range-phrase = {-}, range-units = single]{3}{4}{\mesi} (livello soglia pari a \SI{2}{\m} sono stati ottenuti risultati molto positivi applicando ai dati le seguenti trasformazioni:
+%
+\begin{itemize}
+	\item aggregando i dati in 5~gruppi di 4~tratti adiacenti a partire dal primo (1, \ldots, 4) e in 1~gruppo di 3~tratti (21, 22 e 23);
+		come è stato considerato nel calcolo della pendenza, i tratti che compongono ogni gruppo presentano caratteristiche comuni
+		(rispettivamente per i 6~gruppi: confinamento da parte delle montagne, allargamento con \emph{downwelling}, pronunciato \emph{upwelling} e restringimento, riallargamento con \emph{downwelling} nella zona valliva, scorrimento nella parte planiziale, restringimento con cambiamento di morfologia)
+	\item normalizzando gli areali delle isole erose con gli areali delle isole presenti nella prima immagine del cambiamento, ottenendo quindi la percentuale di isole erose;
+	\item escludendo il tratto~9 poiché vi è l'isola di Cornino, che si fonda su roccia, e il tratto~23, in quanto presenta una morfologia nettamente diversa rispetto agli altri tratti;
+	\item imponendo di avere un minimo di~5 punti per effettuare le regressioni
+	\item graficando solo i dati di erosione posteriori all'immagine del 2007-09-21 incluso;
+	\item mantenendo una scala lineare.
+\end{itemize}
+%
+I risultati con le regressioni lineari sono riportati nei grafici in \cref{graph:giov-iote-4tr-buono} e in \cref{tab:giov-iote-4tr-buono}.
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/giov_iote_4tr_buono}
+	\caption[dati e regressioni lineari per la vegetazione giovane]{dati e regressioni lineari per la vegetazione giovane con l'integrale calcolato sopra la soglia di \SI{2}{\m} e i tratti raggruppati quattro a quattro; le equazioni e i valori degli $R^2$ e $P_\mathrm{value}$ sono riportati nella \cref{tab:giov-iote-4tr-buono}.}
+	\label{graph:giov-iote-4tr-buono}
+\end{figure}
+%
+\begin{table}
+	\centering
+	\begin{tabular}{c c S[table-format = 0.2] S[table-format = 0.3, table-comparator = true]}
+		\toprule
+		\textbf{Tratti}			&	\textbf{Equazione}		&	\multicolumn{1}{c}{$\mathbf{R^2}$}	&	\multicolumn{1}{c}{$	\mathbf{P_\mathrm{value}}$}	\\
+		\textbf{di validità}	&	\textbf{della retta}	&	&	\\
+		\midrule
+		1$\div$4	&	$y = 0.1852 \, x + 0.1032$	&	0.49	&	<0.02	\\
+		5$\div$8	&	$y = 0.1700 \, x + 0.0669$	&	0.46	&	<0.006	\\
+		10$\div$12	&	$y = 0.1392 \, x + 0.0775$	&	0.48	&	<0.02	\\
+		13$\div$16	&	$y = 0.2126 \, x + 0.1189$	&	0.40	&	<0.009	\\
+		17$\div$20	&	$y = 0.2553 \, x + 0.1076$	&	0.59	&	<0.004	\\
+		\bottomrule
+	\end{tabular}
+	\caption[equazioni, $R^2$ e $P_\mathrm{value}$ delle regressioni per la vegetazione giovane]{equazioni, $R^2$ e $P_\mathrm{value}$ delle regressioni per la vegetazione giovane, mostrate nel grafico in \cref{graph:giov-iote-4tr-buono}.}
+	\label{tab:giov-iote-4tr-buono}
+\end{table}
+%
+\\
+Le regressioni vengono considerate valide grazie all'$R^2$ relativamente elevato, il $P_\mathrm{value}$ generalmente piccolo, l'elevato numero di punti (13 in media) e la validità spazialmente estesa di queste relazioni.
+
+Dato che si sono trovate relazioni con differenze spaziali non elevatissime, è naturale ricercare anche una relazione che valga graficando tutti i punti assieme.
+Il grafico in \cref{fig:giov-iote-4tr-buono-accorpato}
+mostra la regressione e i numeri $R^2$ e $P_\mathrm{value}$: sembra che esista una chiara tendenza lineare tra la percentuale di isole erose e l'integrale dei livelli sopra la soglia di \SI{2}{\m}.
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/giov_iote_4tr_buono_accorpato}
+	\caption[regressione per la vegetazione giovane considerando tutti i gruppi]{dati, equazione, $R^2$ e $P_\mathrm{value}$ della regressione per la vegetazione giovane considerando tutti i gruppi.}
+	\label{fig:giov-iote-4tr-buono-accorpato}
+\end{figure}
+
+

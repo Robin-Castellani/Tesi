@@ -1,0 +1,34 @@
+\tikzsetnextfilename{giov_iote_4tr_buono_accorpato}
+\begin{tikzpicture}
+	\begin{axis}[
+		width = \textwidth,
+		height = 0.5\textwidth,
+%		ymin = 0,
+%		ymax = 0.65,
+%		enlarge y limits = 0.05,
+%		enlarge x limits = 0.05,
+		ylabel = {Erosione / isole},
+		xlabel = {Int livelli \si{[\m\giorno]}},
+		grid = major,		
+		]
+		
+		\pgfplotsforeachungrouped \gr in {1,2,...,6} {
+		\addplot[only marks]
+			table [x = integrale_piene, y = gr_\gr] {graphics/data/giov_iote_4tr_buono.txt};
+		}
+	
+		\addplot[
+			line width = 2pt,
+			domain = 0:2,
+			samples = 3,
+			green,
+			]
+			{0.1859 * x + 0.0987};
+			
+		\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left, name = range] {1$\div$22};
+		\node at (range.south west) [draw = black, fill = white, anchor = north west, align = left] {$y = 0.1859 \, x + 0.0987$};
+		
+		\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east, align = left] {$R^2 = 0.42 \quad P_\mathrm{value} < 0.00001$};
+	
+	\end{axis}
+\end{tikzpicture}
