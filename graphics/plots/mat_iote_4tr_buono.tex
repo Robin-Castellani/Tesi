@@ -1,0 +1,102 @@
+\tikzsetnextfilename{mat_iote_4tr_buono}
+\begin{tikzpicture}
+	\begin{groupplot}[
+		group style = {
+			group size = 2 by 2,
+			y descriptions at = edge left,
+			xlabels at = edge bottom,
+			horizontal sep = 0.1cm,
+			vertical sep = 0.75cm,
+		},
+		width = 0.4\textwidth,
+		height = 0.4\textwidth,
+		ymin = 0,
+		ymax = 0.25,
+		enlargelimits = 0.05,
+		ylabel = {Erosione / isole},
+		xlabel = {Int livelli \si{[\m\giorno]}},
+		grid = major,		
+		]
+		
+	\nextgroupplot[ % gruppo 5 livello 1.5m
+%		xtick pos = right,
+%		xlabel = {Int livelli \si{[\m\giorno]}},
+		xmin = 0,
+		xmax = 7,
+		]
+			\addplot[only marks]
+	        	table [x = integrale_piene_tr_0.2, y = gr_5_tr_0.2] {graphics/data/mat_iote_4tr_buono.txt};
+	        
+	        \addplot[
+	        	line width = 2pt,
+	        	domain = 0:7,
+	        	samples = 3,
+				green,
+	        	]
+	        	{0.0220 * x + 0.0259};
+			
+			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left, name = gr_5_tr_02] {17$\div$20};
+			
+			\node at (gr_5_tr_02.south west) [draw = black, fill = white, anchor = north west, align = left] {TR \SIrange[range-phrase={-}, range-units=single]{2}{3}{\mesi}};
+			
+	\nextgroupplot[ % gruppo 6 livello 1.5m
+%		xtick pos = right,
+%		xlabel = {Int livelli \si{[\m\giorno]}},
+		xmin = 0,
+		xmax = 7,
+		]
+			\addplot[only marks]
+	        	table [x = integrale_piene_tr_0.2, y = gr_6_tr_0.2] {graphics/data/mat_iote_4tr_buono.txt};
+	        
+	        \addplot[
+	        	line width = 2pt,
+	        	domain = 0:7,
+	        	samples = 3,
+				green,
+	        	]
+	        	{0.0169 * x + 0.0161};
+			
+			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left, name = gr_6_tr_02] {21$\div$22};
+			
+			\node at (gr_6_tr_02.south west) [draw = black, fill = white, anchor = north west, align = left] {TR \SIrange[range-phrase={-}, range-units=single]{2}{3}{\mesi}};
+	
+	\nextgroupplot[ % gruppo 1 livello 2.4
+		xmin = 0,
+		xmax = 1,
+		]
+			\addplot[only marks]
+	        	table [x = integrale_piene_tr_1, y = gr_2_tr_1] {graphics/data/mat_iote_4tr_buono.txt};
+	        
+	        \addplot[
+	        	line width = 2pt,
+	        	domain = 0.1:1,
+	        	samples = 3,
+				green,
+	        	]
+	        	{0.2504 * x - 0.0326};
+			
+			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left, name = gr_1_tr_1] {1$\div$4};
+			
+			\node at (gr_1_tr_1.south west) [draw = black, fill = white, anchor = north west, align = left] {TR \SI{\sim 1}{\anno}};
+	
+	\nextgroupplot[ % gruppo 2 livello 2.4
+		xmin = 0,
+		xmax = 1,
+		]
+			\addplot[only marks]
+	        	table [x = integrale_piene_tr_1, y = gr_2_tr_1] {graphics/data/mat_iote_4tr_buono.txt};
+	        
+	        \addplot[
+	        	line width = 2pt,
+	        	domain = 0:1,
+	        	samples = 3,
+				green,
+	        	]
+	        	{0.1629 * x + 0.0119};
+			
+			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left, name = gr_2_tr_1] {5$\div$8};
+			
+			\node at (gr_2_tr_1.south west) [draw = black, fill = white, anchor = north west, align = left] {TR \SI{\sim 1}{\anno}};
+	
+	\end{groupplot}
+\end{tikzpicture}

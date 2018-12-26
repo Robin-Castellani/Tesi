@@ -65,8 +65,85 @@ mostra la regressione e i numeri $R^2$ e $P_\mathrm{value}$: sembra che esista u
 \begin{figure}
 	\centering
 	\input{graphics/plots/giov_iote_4tr_buono_accorpato}
-	\caption[regressione per la vegetazione giovane considerando tutti i gruppi]{dati, equazione, $R^2$ e $P_\mathrm{value}$ della regressione per la vegetazione giovane considerando tutti i gruppi.}
+	\caption[regressione per la vegetazione giovane considerando tutti i gruppi]{dati, equazione, $R^2$ e $P_\mathrm{value}$ della regressione per la vegetazione giovane considerando tutti i gruppi avendo utilizzato un livello soglia di \SI{2}{\m}.}
 	\label{fig:giov-iote-4tr-buono-accorpato}
 \end{figure}
+%
+
+Per la classe d'età intermedia, con le medesime trasformazioni applicate alle grandezze in gioco si ottengono relazioni valide per i gruppi di tratti finali ed iniziali utilizzando rispettivamente livelli soglia corrispondenti a tempi di ritorno di~\SIrange[range-phrase={-}, range-units=single]{2}{3}{\mesi} e di~\SI{\sim 1}{\anno}.
+\\
+Per la vegetazione matura si ottiene un risultato analogo alla vegetazione intermedia utilizzando gli stessi parametri.
+\\
+I risultati per la vegetazione intermedia sono riportati nella \cref{tab:interm-iote-4tr-buono} e nel grafico in \cref{graph:interm-iote-4tr-buono}; quelli per la classe d'età matura sono in \cref{tab:mat-iote-4tr-buono} e nel grafico in \cref{graph:mat-iote-4tr-buono}.
+%
+%	INTERMEDIA
+\begin{table}
+	\centering
+	\begin{tabular}{
+		S[table-format = 1.1]
+		c
+		c
+		S[table-format = 0.2]
+		S[table-format = 0.3, table-comparator = true]
+	}
+		\toprule
+		\multicolumn{1}{c}{\textbf{Livello soglia}}	&	\textbf{Tratti}			&	\textbf{Equazione}		&	\multicolumn{1}{c}{$\mathbf{R^2}$}	&	\multicolumn{1}{c}{$	\mathbf{P_\mathrm{value}}$}	\\
+		\multicolumn{1}{s}{[\m]}	&	\textbf{di validità}	&	\textbf{della retta}	&	&	\\
+		\midrule
+		1.5	&	17$\div$20	&	$y = 0.0293 \, x + 0.0809$	&	0.41	&	<0.02	\\
+		2.4	&	5$\div$8	&	$y = 0.2819 \, x + 0.0331$	&	0.62	&	<0.008	\\
+		2.4	&	10$\div$12	&	$y = 0.1335 \, x + 0.0109$	&	0.67	&	<0.03	\\
+		\bottomrule
+	\end{tabular}
+	\caption[equazioni, $R^2$ e $P_\mathrm{value}$ delle regressioni per la vegetazione intermedia]{equazioni, $R^2$ e $P_\mathrm{value}$ delle regressioni per la vegetazione intermedia, mostrate nel grafico in \cref{graph:interm-iote-4tr-buono}.}
+	\label{tab:interm-iote-4tr-buono}
+\end{table}
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/interm_iote_4tr_buono}
+	\caption[regressione per la vegetazione intermedia]{dati, equazione, $R^2$ e $P_\mathrm{value}$ della regressione per la vegetazione intermedia per gruppi di tratti raggruppati di~4 in~4, per due diversi livelli soglia.}
+	\label{graph:interm-iote-4tr-buono}
+\end{figure}
+%
+%	MATURA
+\begin{table}
+	\centering
+	\begin{tabular}{
+		S[table-format = 1.1]
+		c
+		c
+		S[table-format = 0.2]
+		S[table-format = 0.3, table-comparator = true]
+	}
+		\toprule
+		\multicolumn{1}{c}{\textbf{Livello soglia}}	&	\textbf{Tratti}			&	\textbf{Equazione}		&	\multicolumn{1}{c}{$\mathbf{R^2}$}	&	\multicolumn{1}{c}{$	\mathbf{P_\mathrm{value}}$}	\\
+		\multicolumn{1}{s}{[\m]}	&	\textbf{di validità}	&	\textbf{della retta}	&	&	\\
+		\midrule
+		1.5	&	17$\div$20	&	$y = 0.0220 \, x + 0.0259$	&	0.69	&	<0.0005	\\
+		1.5	&	21$\div$22	&	$y = 0.0169 \, x + 0.0161$	&	0.56	&	<0.004	\\
+		2.4	&	1$\div$4	&	$y = 0.2504 \, x - 0.0326$	&	0.54	&	<0.04	\\
+		2.4	&	5$\div$8	&	$y = 0.1629 \, x + 0.0119$	&	0.54	&	<0.02	\\
+		\bottomrule
+	\end{tabular}
+	\caption[equazioni, $R^2$ e $P_\mathrm{value}$ delle regressioni per la vegetazione matura]{equazioni, $R^2$ e $P_\mathrm{value}$ delle regressioni per la vegetazione matura, mostrate nel grafico in \cref{graph:mat-iote-4tr-buono}.}
+	\label{tab:mat-iote-4tr-buono}
+\end{table}
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/mat_iote_4tr_buono}
+	\caption[regressione per la vegetazione matura]{dati, equazione, $R^2$ e $P_\mathrm{value}$ della regressione per la vegetazione matura per gruppi di tratti raggruppati di~4 in~4, per due diversi livelli soglia.}
+	\label{graph:mat-iote-4tr-buono}
+\end{figure}
+%
+
+Nei tratti dove non sono state mostrate relazioni, queste mostravano valori di $R^2 < 0.3$ e/o $P_\mathrm{value} > 0.05$ e sono state considerate troppo deboli.
+
+
+\subsection{Condizioni in cui non è possibile formulare previsioni}
+Sono state effettuate numerose prove variando le trasformazioni dell'areale dell'erosione e dell'integrale dei livelli sopra soglia, così come cambiando il tempo di ritorno di riferimento per il calcolo dell'integrale.
+\\
+Mantenendo le trasformazioni delle relazioni precedentemente riportate e aumentando il livello soglia a \SI{2.8}{\m} (tempo di ritorno di \SI{2}{\anni}), non erano presenti tratti con buone relazioni, o erano molto pochi; la stessa situazione si presenta anche considerando altre trasformazioni.
 
 
