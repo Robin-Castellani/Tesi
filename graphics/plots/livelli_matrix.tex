@@ -1,0 +1,28 @@
+\tikzsetnextfilename{livelli_matrix}
+\begin{tikzpicture}
+	\begin{axis}[
+		width = \textwidth,
+		height = \textwidth,
+		enlargelimits = 0,
+		ytick distance = 1,
+		xtick = {1,31,59,90,120,151,181,212,243,273,304,334,365},
+		xticklabels = {{Gennaio}, {Febbraio}, {Marzo},  {Aprile}, {Maggio}, {Giugno}, {Luglio}, {Agosto}, {Settembre}, {Ottobre}, {Novembre}, {Dicembre}},
+		xticklabel style = {
+			rotate = 90,
+		},		
+		x tick label as interval,		
+		colormap/jet,
+		colorbar horizontal,
+		colorbar style = {
+			xlabel = {Media giornaliera del livello idrometrico},
+			x unit = m,
+		},	
+		]
+		\addplot[
+			matrix plot*,
+			mesh/cols = 365,
+			shader = flat corner,
+			] % ai dati è stato eliminato il 29 febbraio...! Qualcuno se ne accorgerà mai...?
+        	table [x = data, y = anno, point meta = \thisrow{media-gg}] {graphics/data/Dati_Villuzza_matrix.csv};
+    \end{axis}
+\end{tikzpicture}
