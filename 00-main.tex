@@ -37,8 +37,8 @@
 \includexmp{files/CC_Attribution-NonCommercial-ShareAlike_4.0_International}	% file della licenza
 
 % bibliografia
-\usepackage[autostyle,italian=guillemets]{csquotes}    % per citare con le virgolette giuste
-\usepackage[bibstyle=authoryear,citestyle=authoryear-ibid-brack,backend=biber]{
+\usepackage[autostyle, italian = guillemets]{csquotes}    % per citare con le virgolette giuste
+\usepackage[bibstyle = authoryear, citestyle = authoryear-ibid-brack, maxcitenames = 2, uniquelist = false, backend = biber]{
 biblatex}       % per la bib
 \addbibresource{materiale_iniziale_finale/bibliografia.bib}
 %\defbibheading{cartaceo}{\section*{Bibliografia cartacea}}
@@ -115,6 +115,11 @@ color(50.00000000000000bp)=(red)
 \usepgfplotslibrary{external}	% per creare pdf esterni dei grafici
 \tikzexternalize[prefix=graph_]
 
+% glossario
+\usepackage[translate=babel,nonumberlist]{glossaries}
+\makeglossaries
+\loadglsentries{materiale_iniziale_finale/voci-glossario}
+
 % per riferimenti
 \usepackage{hyperref}
 \hypersetup{
@@ -124,13 +129,8 @@ color(50.00000000000000bp)=(red)
 	pdfauthor	=	Castellani Robin,
 	%hidelinks,
 }
-\usepackage{varioref}	% per riferimenti con pagine
+%\usepackage{varioref}	% per riferimenti con pagine
 \usepackage[noabbrev]{cleveref}	% per riferimenti intelligenti
-
-% glossario
-\usepackage[translate=babel,nonumberlist]{glossaries}
-\makeglossaries
-\loadglsentries{materiale_iniziale_finale/voci-glossario}
 
 \newcommand{\AST}{ASTER}
 \newcommand{\Se}{Sentinel2}
