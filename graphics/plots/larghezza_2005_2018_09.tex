@@ -1,0 +1,32 @@
+\tikzsetnextfilename{larghezza_2005_2018_09}
+\begin{tikzpicture}
+	\begin{axis}[
+		width = \textwidth,
+		height = 0.5\textwidth,
+		xtick = data,
+		enlarge x limits = 0.01,
+		xlabel = {Tratto},
+		ylabel = {Larghezza \si{[\m]}},
+		grid = major,
+		legend style = {
+			at = {(0,1)},
+			anchor = north west,		
+		},
+		]
+		\addplot[
+			purple,
+			mark = star,
+			]
+        	table [x = tratto, y = larghezza_2005,] {graphics/data/larghezza_2005_2018_09.txt};
+        \addlegendentry{2005-08-30};
+        	
+        	
+		\addplot[
+			blue,
+			mark = star,
+			]
+        	table [x = tratto, y = larghezza_2018_09,] {graphics/data/larghezza_2005_2018_09.txt};
+        \addlegendentry{2018-09-16};
+        	
+	\end{axis}
+\end{tikzpicture}

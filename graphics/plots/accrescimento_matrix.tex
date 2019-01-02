@@ -1,4 +1,4 @@
-\tikzsetnextfilename{rapp_isl_tutti_tratti}
+\tikzsetnextfilename{accrescimento}
 \begin{tikzpicture}
 	\begin{axis}[
 		width = \textwidth,
@@ -15,17 +15,15 @@
 		y dir = reverse,
 		enlargelimits = 0.02,
 		colorbar horizontal,
-		colorbar style = {
-			xlabel = {Proporzione di isole sull'alveo attivo},
-			xticklabel style = {/pgf/number format/.cd,fixed},
-			xtick distance = 0.04,
-		},
+		colorbar style = {xlabel = {Accrescimento rispetto alle isole inizialmente presenti},},
+		colormap/bluered,
 		]
 		\addplot[
 			matrix plot*,
 			mesh/cols = 23,	% per fargli leggere colonne formate da 23 righe dal file di testo
 			shader = flat corner,	% per interpolare i colori
+			point meta max = 3,
 		]
-        	table [y = tratto, x = data, point meta = \thisrow{rapp_isl}] {graphics/data/rapp_isl_tutti_tratti.txt};
-	\end{axis}
+        	table [y = tratto, x = data, point meta = \thisrow{cambiamento}] {graphics/data/accrescimento_matrix.txt};
+    \end{axis}
 \end{tikzpicture}

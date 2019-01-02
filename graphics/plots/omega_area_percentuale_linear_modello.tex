@@ -1,0 +1,56 @@
+\tikzsetnextfilename{omega_area_percentuale_linear_modello}
+\begin{tikzpicture}
+	\begin{axis}[
+		width = \textwidth,
+		height = .7\textwidth,
+		enlarge x limits = 0.05,
+		%enlarge y limits = 0.01,
+		ylabel = {$\Omega$ \si{[\newton\per\metre\tothe{4}]}},
+		xlabel = {Isole rispetto all'alveo attivo},
+		xtick distance = 0.04,
+		xmax = 0.44,
+		grid = major,
+		legend columns = -1,
+		legend style = {
+			anchor = south,
+			at = {(0.5, 1.01)},
+		},
+		ticklabel style = {
+			/pgf/number format/.cd,fixed,
+		},
+		]
+		\foreach \tratto in {1,2,...,23}
+			{
+			\addplot[
+				only marks,
+				forget plot,
+				gray,
+			]
+				table [y = om_tr_\tratto, x = area_tr_\tratto]
+				{graphics/data/omega_area_percentuale.txt};
+			}
+		
+		\addplot [color = purple, % limite superiore
+			 line width = 2 pt,
+			 ] 
+			 coordinates {(-0.01,0.13) (0.02,0.13)};
+		\node [fill = white, draw = purple, anchor = west] 
+        	at (0.04,0.13) {$\Omega_\mathrm{max} \simeq 0.13$};
+		
+		\addplot [color = red, % iperbole
+			 line width = 2 pt,
+			 samples at = {0.018,0.019,...,0.325},
+			 ] 
+			 {10 ^ (-1.6806) * x ^ (-0.4476)};
+		\node [fill = white, draw = red, anchor = south west] 
+        	at (0.08,0.08) {$y = 0.021 \, x ^ {-0.4476}$};
+		
+		\addplot [color = teal, % limite superiore
+			 line width = 2 pt,
+			 dashed,
+			 ] 
+			 coordinates {(0.35,0.02) (0.35,0.035)};
+		\node [fill = white, draw = teal, anchor = east] 
+        	at (0.42,0.06) {\si{\percent} max di isole $\simeq 0.35$};
+	\end{axis}
+\end{tikzpicture}

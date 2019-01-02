@@ -1,0 +1,51 @@
+\tikzsetnextfilename{omega_area_percentuale_linear_regressioni}
+\begin{tikzpicture}
+	\begin{axis}[
+		width = \textwidth,
+		height = .7\textwidth,
+		enlarge x limits = 0.01,
+		%enlarge y limits = 0.01,
+		ylabel = {$\Omega$ \si{[\newton\per\metre\tothe{4}]}},
+		xlabel = {Isole rispetto all'alveo attivo},
+		xtick distance = 0.04,
+		grid = major,
+		legend columns = -1,
+		legend style = {
+			anchor = south,
+			at = {(0.5, 1.01)},
+		},
+		ticklabel style = {
+			/pgf/number format/.cd,fixed,
+		},
+		]
+		\foreach \tratto in {1,2,...,23}
+			{
+			\addplot[
+				only marks,
+				forget plot,
+			]
+				table [y = om_tr_\tratto, x = area_tr_\tratto]
+				{graphics/data/omega_area_percentuale.txt};
+			}
+		
+		\addplot [color = cyan, % modello
+			 line width = 2 pt,
+			 samples at = {0.01,0.012,...,0.32},
+			 %domain y = 0.5:0.125,
+			 %samples = 10,
+			 ] 
+			 {10 ^ (-1.4085) * x ^ (-0.2371)};
+		%\addlegendentry{Fit 3}
+%		\node [fill = white, draw = green, anchor = east] % T1 
+%        	at (axis description cs: 1,0.6) {$y = 10^{-1.5184} \, x^{- 0.1838}$};
+		
+		\addplot [color = red, % modello
+			 line width = 2 pt,
+			 samples at = {0.01,0.012,...,0.32},
+			 %domain y = 0.5:0.125,
+			 %samples = 10,
+			 ] 
+			 {10 ^ (-1.6806) * x ^ (-0.4476)};
+		%\addlegendentry{Max}
+	\end{axis}
+\end{tikzpicture}

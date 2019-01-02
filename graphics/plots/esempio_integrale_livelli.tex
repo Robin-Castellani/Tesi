@@ -31,7 +31,7 @@
         	
         \draw[->, orange, very thick] (0.2,1) -- (0.2,1.5) -- (0.1,1.5);
 		
-		\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left] {TR \SIrange[range-phrase={-}, range-units = single]{2}{3}{\mesi} \\ Livello \SI{1.5}{\m}};
+		\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east, align = left] {TR \SIrange[range-phrase={-}, range-units = single]{2}{3}{\mesi} \\ Livello \SI{1.5}{\m}};
 	
 	\nextgroupplot[
 			xmode = log,
@@ -45,7 +45,7 @@
         	
         \draw[->, green!70!black, very thick] (0.45,1) -- (0.45,2) -- (0.1,2);
 		
-		\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left] {TR \SIrange[range-phrase={-}, range-units = single]{4}{5}{\mesi} \\ Livello \SI{2}{\m}};
+		\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east, align = left] {TR \SIrange[range-phrase={-}, range-units = single]{4}{5}{\mesi} \\ Livello \SI{2}{\m}};
     
 	\nextgroupplot[
 			date coordinates in = x,
@@ -84,7 +84,7 @@
 			every segment no 5/.style = {transparent},
 		];
 		
-		\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west,] {$Int = \SI{0.90}{\m\giorno}$};
+		\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east,] {$Int = \SI{0.90}{\m\giorno}$};
     
 	\nextgroupplot[
 			date coordinates in = x,
@@ -122,6 +122,6 @@
 			every segment no 4/.style = {transparent},
 		];
 		
-		\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west,] {$Int = \SI{0.12}{\m\giorno}$};
+		\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east,] {$Int = \SI{0.12}{\m\giorno}$};
 	\end{groupplot}
 \end{tikzpicture}

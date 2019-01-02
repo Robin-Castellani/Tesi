@@ -1,0 +1,60 @@
+Con i dati a disposizione è possibile ricercare delle relazioni che leghino il regime delle piene con la dinamica delle isole.
+Poiché l'erosione delle isole è solamente legata agli effetti delle piene, mentre l'accrescimento è influenzato da più fattori (come è stato spiegato nella sezione~\ref{sec:descr-area-studio}), l'analisi esclude quest'ultimo.
+
+\section{Metodi: parametri considerati}
+
+\paragraph{Isole erose}
+Dallo studio dei cambiamenti delle isole tra un'immagine e quella successiva si sono ottenuti i dati di areale di isole erose (sezione~\ref{sec:cambiamento});
+questi dati sono stati suddivisi secondo tre classi di età della vegetazione: giovane, intermedia e matura (sezione~\ref{sec:eta}).
+Quindi è nota la quantità di isole erose a cavallo di ogni immagine, in ogni tratto e per ogni classe di età.
+
+\paragraph{Integrale dei livelli}
+Dai dati di livello dell'acqua presso la stazione idrometrica di Villuzza, alcuni autori hanno ottenuto una statistica dei tempi di ritorno dei picchi delle piene superiori ad \SI{1}{\m} \squarecite{Bertoldi:2009-2m}; questa è stata estesa utilizzando i dati di livello idrometrico dal~2000-01-01 al~2018-12-21 ed è riportata nel grafico in \cref{graph:tr-picchi}; in totale sono stati individuati poco più di~200 picchi.
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/tr_picchi}
+	\caption[tempi di ritorno dei picchi superiori ad \SI{1}{\m}]{tempi di ritorno dei picchi superiori ad \SI{1}{\m} ottenuti dall'individuazione di più di 200 picchi dai dati idrometrici.}
+	\label{graph:tr-picchi}
+\end{figure}
+%
+\\
+Non sono stati utilizzati i massimi annuali poiché piene con tempo di ritorno inferiore ad \SI{1}{\anno} hanno anch'esse importi effetti sulla morfologia del fondo e sulle isole.
+\\
+La statistica effettuata da \squarecite{Bertoldi:2009-2m} utilizzava i dati dal~1981 al~2007.
+Nel presente lavoro non sono stati utilizzati dati idrometrici anteriori al~1981 poiché precedentemente i livelli erano manualmente letti su un'asta graduata in un singolo momento della giornata; si capisce che questi dati sono molto meno affidabili di quelli rilevati con intervallo orario o semi orario, che sono in grado di descrivere dettagliatamente il passaggio di ogni piena.
+Sono stati utilizzati solo i dati dal~2000 poiché questa è la data di installazione del nuovo sensore idrometrico presso Villuzza; la differenza tra la statistica elaborata in letteratura e quella della tesi è trascurabile.
+
+Con questa statistica è possibile tenere conto di diversi tipi di eventi (in accordo con quanto riportato in letteratura \squarecites{Bertoldi:2009-2m}{Bertoldi:2010-d50}{Surian:2015}):
+%
+\begin{itemize}
+	\item \emph{flow pulses}, cioè piene di modesta entità, sono quelle con un livello inferiore ai \SI{2}{\m}, e con un tempo di ritorno di circa \SI{6}{\mesi}; questi periodi di morbida possono rimodellare il fondo, anche se generalmente non riescono a sommergere le isole insediatesi in alveo da anni;
+	\item \emph{flood pulses}, piene intense, superano il livello di \SI{2}{\m} e arrivano fino a \SI{3}{\m}, presentando quindi un tempo di ritorno dell'ordine di \SI{1}{\anno}; queste piene hanno effetti sulla vegetazione in quanto riescono ad erodere lateralmente le isole e a sommergere quelle a quote relative più basse;
+	\item eventi \emph{bankfull}, cioè piene di grande magnitudine, oltrepassano i \SI{3}{\m} di livello idrometrico e hanno un tempo di ritorno superiore a \SIrange[range-phrase={-}]{3}{4}{\anni}; l'alveo viene completamente sommerso dall'acqua, così come la stragrande maggioranza delle isole.
+\end{itemize}
+%
+
+Il \emph{natural flow regime} (regime naturale delle portate) è il pattern caratteristico che presentano le portate in fiume in base ad abbondanza, stagionalità e variabilità; di questo regime, sono state individuate cinque componenti principali: intensità, durata, stagionalità, frequenza e tasso di cambiamento delle portate \squarecite{Poff:1997}.
+\\
+Si ritiene che gli effetti di una piena sulle isole non dipendano soltanto dall'intensità (cioè dal livello raggiunto durante il picco) ma anche dalla durata: a parità di picco, un evento più lungo probabilmente eroderà un maggiore areale di isole rispetto ad un evento molto breve.
+La stagionalità e il tasso di cambiamento delle portate influenzano maggiormente lo stadio di crescita ed espansione della vegetazione, più che l'erosione. 
+\\
+Per tenere contemporaneamente conto dell'intensità, della durata e del tempo di ritorno delle piene, si è calcolato per ogni intervallo di tempo tra due immagini successive l'integrale temporale dei livelli sopra un livello soglia definito dal grafico in \cref{graph:tr-picchi}, scegliendo un tempo di ritorno.
+Si è scelto di misurare l'integrale in \si{[\m\giorno]}.
+L'integrale è equivalente ad un evento di piena; tale evento ha durata pari a~\SI{1}{\giorno} e intensità, in~\si{[\m]}, pari alla somma tra i valori del livello soglia in \si{[\m]} e dell'integrale in \si{[\m\giorno\per\giorno]}.
+Poiché non è disponibile un'affidabile scala di deflusso per convertire i valori di livelli in portata, l'integrale costituisce un sostituto rispetto alla somma delle portate sopra la soglia che fluiscono durante una piena.
+\\
+Un esempio di integrale per due livelli soglia è mostrato nei grafici in \cref{graph:esempio-integrale-livelli}.
+\\
+Se tra due immagini successive l'integrale è nullo, allora non ha avuto luogo alcun evento con picco superiore al livello soglia corrispondente al tempo di ritorno scelto;
+se l'integrale non è nullo, allora ci sono state piene sopra il livello soglia;
+se un'integrale è maggiore di altri, nell'intervallo tra le immagini sono avvenute piene particolarmente intense e/o durature, anche con un'alta frequenza.
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/esempio_integrale_livelli}	
+	\caption[esempio di integrale dei livelli]{esempio di integrale dei livelli per due tempi di ritorno considerando l'intervallo tra le immagini \AST{} del 2002-05-18 e del 2002-06-12; l'integrale è pari all'area colorata ed è riportato nei grafici in basso.}
+	\label{graph:esempio-integrale-livelli}
+\end{figure}
+%
+

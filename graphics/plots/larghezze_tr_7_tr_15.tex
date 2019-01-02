@@ -15,15 +15,13 @@
 		enlarge y limits = 0.01,
 		ylabel = {Larghezza media dell'alveo \si{[\m]}},
 		grid = major,
-		]
-		\addplot+
-        	[blue]
-        	table [x=data, y=tr_7] {graphics/data/Larghezze_medie_alveo.txt};
-        \addlegendentry{Tratto 7}
-        
-		\addplot+
-        	[orange]
-        	table [x=data, y=tr_15] {graphics/data/Larghezze_medie_alveo.txt};
+		]        
+		\addplot+[blue]
+        	table [x = data, y = tr_15] {graphics/data/Larghezze_medie_alveo.txt};
         \addlegendentry{Tratto 15}
+        
+		\addplot+[orange]
+        	table [x = data, y = tr_7] {graphics/data/Larghezze_medie_alveo.txt};
+        \addlegendentry{Tratto 7}
 	\end{axis}
 \end{tikzpicture}

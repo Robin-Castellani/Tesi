@@ -1,14 +1,13 @@
-\section{Cambiamento delle isole}
+\section{Metodi: ottenere mappe che mostrano il cambiamento}
 \label{sec:cambiamento}
-A partire dalle mappe di classificazione dell'alveo, sono state ottenute mappe sul cambiamento che le isole hanno, o non hanno, esperito: erosione, crescita, fusione nella \emph{floodplain} o permanenza (nessun cambiamento).
-Il risultato sono i dati di partenza per ricercare relazioni con gli eventi di piena.
+A partire dalle mappe di classificazione dell'alveo, si sono ottenute mappe che mostrano come le isole sono, o non sono, cambiate: erosione, crescita, fusione nella \emph{floodplain} o permanenza (nessun cambiamento).
 \\
 Per ottenere questi dati, ogni mappa è stata confrontata con quella temporalmente precedente.
 \\
 L'analisi si è focalizzata sulle isole, mentre si è esclusa la piana alluvionale.
 
-\subsection{Metodi: ottenere il cambiamento}
-\paragraph{Limitazioni} \label{par:camb-limiti}
+\subsection{Limiti}
+\label{subsec:camb-limiti}
 Alcune mappe hanno una estensione limitata oppure presentano zone con copertura nuvolosa: ciò riduce il numero di confronti possibili per alcuni tratti. 
 Dalle 23 immagini satellitari (si veda la \cref{tab:date-orto-sat}) si sono ottenute in media 20~immagini di confronto per tratto (\cref{tab:confronti}).
 
@@ -22,7 +21,7 @@ L'entità di questo errore è accettabile poiché quasi tutte le isole hanno est
 \\
 Le altre immagini sono invece correttamente georeferenziate.
 
-Infine, per poter confrontare immagini a diversa dimensione di cella, come le \AST{} a~\SI{15}{\m} con le \Pl{} a~\SI{0.5}{\m}, è stato necessario ricampionare le immagini con la dimensione minore (ad esempio le \Pl{}) alla risoluzione di quelle a dimensione maggiore (le \AST{} o le \Se{}).
+Infine, per poter confrontare immagini a diversa dimensione di cella, come le \AST{} a~\SI{15}{\m} con le \Pl{} a~\SI{0.5}{\m}, è stato necessario ricampionare le immagini con la dimensione minore (ad esempio le \Pl{}) riportandole alla risoluzione di quelle a dimensione maggiore (le \AST{} o le \Se{}).
 \\
 Nel ricampionamento l'areale delle isole subisce un incremento o una riduzione, così come l'areale della ghiaia e delle altre classi in quanto nelle celle a dimensione maggiore sono presenti numerose celle a dimensione minore, ognuna con un valore diverso (\cref{fig:ricamp-explanation}).
 %
@@ -45,11 +44,11 @@ dove
 \begin{itemize}
 	\item $cl$ è il numero di classi (\cref{tab:class_tratti});
 	\item $n$ indica la $n$-esima classe;
-	\item $area_{\mathrm{orig,n}}$ e $area_{\mathrm{perc,n}}$ sono rispettivamente l'area della $n$-esima classe nella mappa originale e in quella ricampionata ad un percentile;
-	\item $area_{\mathrm{orig,tot}}$ e $area_{\mathrm{perc,tot}}$ sono rispettivamente l'area totale della mappa originale e in quella ricampionata ad un percentile. 
+	\item $area_{\mathrm{orig,n}}$ e $area_{\mathrm{perc,n}}$ sono l'area della $n$-esima classe rispettivamente nella mappa originale e in quella ricampionata al $perc$-esimo percentile;
+	\item $area_{\mathrm{orig,tot}}$ e $area_{\mathrm{perc,tot}}$ sono l'area totale rispettivamente nella mappa originale e in quella ricampionata al $perc$-esimo percentile. 
 \end{itemize} 
 %
-Si è scelto di normalizzare l'area di ogni classe per l'area totale per lavorare con percentuali.
+Si è scelto di normalizzare l'area di ogni classe usando come fattore di normalizzazione l'area totale per poter lavorare con percentuali.
 \\
 Nei ricampionamenti da \SI{0.5}{\m} il $50_\mathrm{mo}$ percentile (mediana) è quello che mostra il minor RSQR ($<\SI{3}{\percent}$). Un esempio del risultato ottenuto è mostrato in \cref{fig:ricampionamento}.
 %
@@ -62,9 +61,9 @@ Nei ricampionamenti da \SI{0.5}{\m} il $50_\mathrm{mo}$ percentile (mediana) è 
 %
 
 
-\paragraph{Confronti validi}
+\subsection{Confronti validi}
 Dalle 23 immagini satellitari è stato possibile ottenere il numero di confronti mostrati in \cref{tab:confronti}. 
-I confronti effettuati hanno la massima risoluzione temporale possibile, cioè per ogni tratto si sono confrontate le immagini valide temporalmente più vicine in modo da poter osservare gli effetti cumulati del minor numero possibile di eventi di piena.
+I confronti effettuati hanno la massima risoluzione temporale possibile, cioè per ogni tratto si sono confrontate le immagini valide temporalmente più vicine, in modo da poter osservare gli effetti cumulati del minor numero possibile di eventi di piena.
 %
 \begin{table}
 	\centering
@@ -107,8 +106,8 @@ I confronti effettuati hanno la massima risoluzione temporale possibile, cioè p
 \end{table}
 %
 
-\paragraph{Classi del cambiamento}
-In ogni confronto ci si è concentrati sul ciò che è successo alle isole, definendo quindi le seguenti 4~classi (si veda anche la \cref{tab:class_tratti}):
+\subsection{Classi di cambiamento}
+In ogni confronto ci si è concentrati su ciò che è successo alle isole, definendo quindi le seguenti 4~classi (si veda anche la \cref{tab:class_tratti}):
 %
 \begin{itemize}
 	\item erosione (da isola ad alveo attivo);
@@ -123,46 +122,8 @@ Un esempio di questa classificazione è riportato nella \cref{fig:confr-class-is
 \begin{figure}
 	\centering
 	\includegraphics[width=.8\textwidth]{files/confr_class_is_fl.jpeg}
-	\caption[esempio di mappa di cambiamento]{esempio di mappa di cambiamento ottenuta con il confronto tra le immagini \AST{} 2008-07-05 e 2009-07-08. Si possono osservare tutti i cambiamenti possibili; la prima classe serve solamente a visualizzare l'area della maschera computazionale. Il tratto mostrato è posto qualche \si{\kilo\m} a monte del ponte di Madrisio.}
+	\caption[esempio di mappa di cambiamento]{esempio di mappa di cambiamento ottenuta con il confronto tra le immagini \AST{} 2008-07-05 e 2009-07-08. Si possono osservare tutti i cambiamenti possibili; la prima classe, colorata in azzurro, visualizza l'area dell'intera maschera computazionale, e comprende perciò sia l'alveo che la \emph{floodplain}. Il tratto mostrato è posto qualche \si{\kilo\m} a monte del ponte di Madrisio.}
 	\label{fig:confr-class-is-fl}
 \end{figure}
 %
-
-
-\subsection{Risultati: eventi eccezionali}
-\label{sec:camb-ris}
-Dall'osservazione dell'idrogramma in \cref{graph:livelli-matrix} e in \cref{graph:livelli-orto-sat} (riportato \cpageref{graph:tr-17-camb}) si può ipotizzare che le piene maggiori, come quelle avvenute verso la fine degli anni~2012 e~2014, siano quelle che abbiano asportato il maggior quantitativo di isole.
-\\
-I grafici in \cref{graph:tr-17-camb} mostrano alcuni risultati ottenuti dalle mappe di cambiamento per il tratto~17, posto nel tratto vallivo immediatamente a valle della confluenza con il torrente Cosa.
-I dati sono rappresentati con due simboli: il pallino rappresenta la data finale di ogni confronto, mentre la croce indica la data iniziale; 
-chiaramente il pallino di un confronto ha la stessa data della croce del confronto successivo. 
-La croce serve solamente a sapere quanto dura ogni confronto; il pallino è il dato vero e proprio.
-I dati sono normalizzati per l'areale delle isole nell'immagine \AST{} del 2000-09-17.
-\\
-Ciò che si vede è una spiccata crescita a cavallo degli anni~2006 e~2008, seguita da una erosione delle medesime proporzioni.
-Dall'altra parte, nonostante la maggior intensità e durata le piene del 2012 e del~2014 hanno eroso meno di quanto ci si aspettava.
-%
-\begin{figure}
-	\centering
-	\input{graphics/plots/livelli}
-	\\
-	\input{graphics/plots/tr_17_camb}
-	\caption[cambiamenti esperiti dalle isole nel tratto~17]{cambiamenti esperiti dalle isole nel tratto~17 rappresentati come percentuale rispetto all'areale delle isole nel 2000-09-17. 
-	Si nota il dato relativo al confronto 2008-07-05/2009-07-08, particolarmente elevato e di quasi pari entità tra crescita ed erosione.}
-	\label{graph:tr-17-camb}
-\end{figure}
-%
-Questa osservazione può trovare la seguente giustificazione: il periodo privo di piene con livello al disopra dei \SI{2}{\m} tra fine del 2004 e la fine del 2008 è stato favorevole per l'insediamento di nuova vegetazione;
-le macchie vegetate sono diventate visibili da satellite solamente quando le piante hanno sviluppato una chioma sufficientemente ampia, cioè dopo qualche anno, nell'immagine del 2008-07-05;
-questa più recente vegetazione si è espansa sulle barre e sulle forme morfologiche a quota minore rispetto alle isole più vecchie;
-con questi fatti, la prima piena che è giunta ha facilmente portato via tutte queste isole giovani e basse.
-\\
-Occorre quindi ragionare non solo in termini di singoli eventi di piena, ma estendere le proprie considerazioni all'intero idrogramma, al periodo di tempo tra piene oltre un certo livello, alla loro frequenza, poiché sono questi i fattori che possono determinare le dinamiche delle isole.
-Il periodo 2005-2008 privo di grandi piene può essere considerato un evento tanto importante quanto la piena lunga ed intensa del mese di Novembre, 2014.
-
-%TODO c'è un trend: i tratti con upwelling sono quelli che si vegetano di più
-
-
-Da queste osservazioni il passo successivo è naturale: trovare la composizione delle isole in termini di età e riflettere se è la vegetazione più giovane quella ad essere più facilmente erosa.
-
 

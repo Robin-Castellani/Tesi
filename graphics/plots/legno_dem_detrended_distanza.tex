@@ -1,0 +1,136 @@
+\tikzsetnextfilename{legno_dem_detrended_distanza}
+\begin{tikzpicture}
+	\begin{groupplot}[
+		group style = {
+			group size = 3 by 1,
+			y descriptions at = edge left,
+			x descriptions at = edge bottom,
+			horizontal sep = 0.1cm,
+		},
+		width = 0.38\textwidth,
+		height = 0.4\textwidth,
+		xlabel = {Distanza soglia \si{[\m]}},
+		%xticklabel style = {font=\tiny},
+		ylabel = {Quota relativa \si{[\m]}},
+		boxplot/draw direction = y,
+		ymax = 0.65,
+		ymin = -0.55,
+		%enlarge y limits = 0.05,
+		grid = major,
+	]
+	\nextgroupplot[
+		width = 0.3\textwidth,
+		title = {2010-08/2013-10-22},
+		xtick = {1, 2},
+		xticklabels = {$2$, $2.5$},
+		] % 2010/2013
+		\addplot [
+		        boxplot prepared = {
+		                lower whisker = -0.142529,
+		                lower quartile = -0.049205,
+		                median = 0.042889,
+		                upper quartile = 0.189542,
+		                upper whisker = 0.327826,
+		                },
+		        ]
+		        coordinates {};
+		\addplot [
+		        boxplot prepared = {
+		                lower whisker = -0.096515,
+		                lower quartile = 0.020497,
+		                median = 0.163037,
+		                upper quartile = 0.245633,
+		                upper whisker = 0.278409,
+		                },
+		        ]
+		        coordinates {};
+%		\node [fill = white, draw = black, anchor = north west] 
+%        	at (axis description cs: 0,1) {Gurnell et al. 2018};
+	\nextgroupplot[
+		width = 0.55\textwidth,
+		title = {2013-10-22/2014-10-31},
+		xtick = {1, 2, 3, 4, 5},
+		xticklabels = {$0.5$, $1$, $1.5$, $2$, $2.5$},
+		] % 2013/2014
+		\addplot [
+		        boxplot prepared = {
+		                lower whisker = 0.281042,
+		                lower quartile = 0.385799,
+		                median = 0.437347,
+		                upper quartile = 0.528038,
+		                upper whisker = 0.562563,
+		                },
+		        ]
+		        coordinates {};
+		\addplot [
+		        boxplot prepared = {
+		                lower whisker = -0.004163,
+		                lower quartile = 0.187134,
+		                median = 0.364044,
+		                upper quartile = 0.468307,
+		                upper whisker = 0.528088,
+		                },
+		        ]
+		        coordinates {};
+		\addplot [
+		        boxplot prepared = {
+		                lower whisker = -0.076253,
+		                lower quartile = 0.124092,
+		                median = 0.349297,
+		                upper quartile = 0.458878,
+		                upper whisker = 0.568133,
+		                },
+		        ]
+		        coordinates {};
+		\addplot [
+		        boxplot prepared = {
+		                lower whisker = -0.118472,
+		                lower quartile = 0.050575,
+		                median = 0.342194,
+		                upper quartile = 0.451180,
+		                upper whisker = 0.565715,
+		                },
+		        ]
+		        coordinates {};
+		\addplot [
+		        boxplot prepared = {
+		                lower whisker = -0.273404,
+		                lower quartile = -0.001945,
+		                median = 0.312073,
+		                upper quartile = 0.446487,
+		                upper whisker = 0.565771,
+		                },
+		        ]
+		        coordinates {};
+%		\node [fill = white, draw = black, anchor = north west] 
+%        	at (axis description cs: 0,1) {2010};
+	%------------------------------------------------------
+	\nextgroupplot[
+		width = 0.3\textwidth,
+		title = {Legno mobilitato},
+		xlabel = {Digitalizzazioni},
+		xtick = {1, 2},
+		xticklabels = {10/13, 13/14},
+		] % punti più distanti
+		\addplot [
+		        boxplot prepared = {
+		                lower whisker = -0.451044,
+		                lower quartile = -0.118087,
+		                median = 0.065396,
+		                upper quartile = 0.254933,
+		                upper whisker = 0.454207,
+		                },
+		        ]
+		        coordinates {};
+		\addplot [
+		        boxplot prepared = {
+		                lower whisker = -0.381036,
+		                lower quartile = -0.136173,
+		                median = 0.120033,
+		                upper quartile = 0.352123,
+		                upper whisker = 0.534039,
+		                },
+		        ]
+		        coordinates {};
+	\end{groupplot}
+\end{tikzpicture}

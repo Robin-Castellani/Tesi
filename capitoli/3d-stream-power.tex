@@ -1,0 +1,100 @@
+\section{Risultati: l'effetto della potenza della corrente sulle isole}
+Il grafico in \cref{graph:omega-perc-50} mostra la mediana temporale della potenza della corrente per ogni tratto; si rappresenta la mediana poiché la variazione di $\Omega$ nel tempo è trascurabile (pochi punti percentuali).
+Questo grafico riflette sia le caratteristiche morfologiche (pendenza e larghezza) che idrologiche (percentuale di area drenante).
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/omega_perc_50}
+	\caption[potenza della corrente in ogni tratto]{mediana temporale della potenza della corrente per ogni tratto pesata con la relativa area drenante.}
+	\label{graph:omega-perc-50}
+\end{figure}
+%
+\\
+È possibile osservare come i tratti più a monte abbiano una \emph{stream power} elevata grazie alla forte pendenza e alla ridotta larghezza; a monte del tratto~3 confluisce il Fella, il maggiore affluente del Tagliamento, e il suo contributo in termini di area drenante è evidente.
+Più a valle, dove l'alveo si allarga a la pendenza diminuisce, $\Omega$ cala; tuttavia a monte e a valle della stretta di Pinzano (tratti~12 e~13, rispettivamente) il brusco restringimento incrementa la potenza della corrente.
+Nei tratti planiziali $\Omega$ non varia particolarmente, mentre nell'ultimo tratto, dove la morfologia diventa di tipo transizionale e l'alveo si restringe sensibilmente, il valore di $\Omega$ quasi triplica.
+
+Rappresentando la potenza della corrente rispetto alla proporzione di isole sull'alveo attivo, si vede un andamento iperbolico: utilizzando per entrambi gli assi una scala logaritmica (\cref{graph:omega-area-percentuale}), è possibile osservare l'effetto di controllo sulla quantità massima di vegetazione esercitato da $\Omega$.
+\\
+Da queste analisi è stato escluso il tratto~9, dove è presente l'isola di Cornino, poiché quest'isola è fondata su roccia e non è soggetta alle stesse dinamiche delle altre isole.
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/omega_area_percentuale_linear}
+	\caption[potenza della corrente rispetto alla proporzione di isole sull'alveo attivo, grafico lineare]{potenza della corrente rispetto alla proporzione di isole sull'alveo attivo.}
+	\label{graph:omega-area-percentuale-linear}
+\end{figure}
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/omega_area_percentuale}
+	\caption[potenza della corrente rispetto alla proporzione di isole sull'alveo attivo, grafici bilogaritmico]{potenza della corrente rispetto alla proporzione di isole sull'alveo attivo con rette di regressione; nel grafico in alto ogni fit successivo considera solo i punti posti al di sopra del fit precedente; in quello in basso sono state utilizzate solo le massime percentuali di isole di ogni tratto nelle regressioni lineari.}
+	\label{graph:omega-area-percentuale}
+\end{figure}
+%
+%\begin{figure}
+%	\centering
+%	\input{graphics/plots/omega_area_pura}
+%	\caption[potenza della corrente rispetto all'areale delle isole]{potenza della corrente rispetto all'areale delle isole.}
+%	\label{graph:omega-area-pura}
+%\end{figure}
+%
+\\
+Per ottenere delle relazioni che indichino quale sia il limite massimo di isole sono state fatte due distinte regressioni lineari.
+\\
+Nella prima si è proceduto tramite regressioni lineari in successione: da una prima regressione su tutti i punti si sono selezionati solo i punti al di sopra della retta; si è eseguita una nuova regressione; con i punti posti superiormente alla seconda retta, si è ottenuta la retta finale di regressione.
+Questa terza retta mostra un $R^2 \simeq 0.6$ ed un $P_\mathrm{value}$ ottenuto tramite il test statistico di Pearson minore di \num{0.0001} (valori di $R^2$ quanto più vicini all'unità e maggiori di~\num{0} indicano una buona regressione lineare; valori di $P_\mathrm{value}$ inferiori a~\num{0.05} mostrano che la regressione è affidabile nel risultato, sia che $R^2$ sia prossimo ad~\num{1} o sia quasi nullo).
+\\
+Nella seconda regressione sono state approssimate le mediane su tutte le immagini di $\Omega$ di ogni tratto rispetto alle massime percentuali di isole di ogni tratto. Tenendo conto che si è escluso il tratto~9, si effettua la regressione su~22 punti: un valore di $\Omega$ e un valore di percentuale massima di isola per ognuno dei~22 tratti rimanenti.
+Questa regressione è caratterizzata da $R^2 = 0.74$ e da $P_\mathrm{val} < 0.0001$.
+\\
+Data la discreta bontà di queste regressioni, le si accetta come valide.
+
+\section{Discussione: formalizzazione di un modello concettuale}
+In letteratura sono stati proposti modelli concettuali che relazionano la potenza della corrente con la quantità di vegetazione e il tipo di forma vegetata presente:
+a bassi livelli di $\Omega$, il disturbo indotto dalla corrente è modesto e si possono formare numerose isole sulle barre nude in alveo;
+se la potenza della corrente, cioè il disturbo, è maggiore, si potranno formare meno isole e le forme fluviali rimarranno prevalentemente nude \squarecite{Gurnell:2014-plants-eng}.
+\\
+Difatti l'espansione maggiore della vegetazione e l'erosione minore hanno luogo dove il tasso di crescita della vegetazione è elevato e dove l'energia della corrente è ridotta \squarecite{Gurnell:2006-omega}.
+\\
+Inoltre le piante che crescono più rapidamente sembrano essere maggiormente flessibili \squarecite{Bertoldi:2011-ASTER}: la ricrescita vegetativa da tronchi vivi, la quale permette un rapido sviluppo, è proprio la caratteristica fondamentale delle piante che abitano questo ambiente, come già esposto nella sezione~\ref{sec:descr-area-studio}.
+È dunque lecito supporre che proprio nei tratti dove si osserva una ridotta potenza della corrente si possa trovare un'elevata quantità di isole nella maggior parte del periodo di studio.
+
+Le due regressioni ottenute ricalcano bene il profilo iperbolico che mostravano i punti quando posti in un grafico in scala lineare (\cref{graph:omega-area-percentuale-linear-modello}); il terzo fit si pone al di sopra dei punti per percentuali di isole superiori al~\SI{5}{\percent}, mentre si adatta poco ai punti nel caso di percentuali inferiori; la regressioni sulle massime percentuali sembra avere un comportamento generalmente migliore.
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/omega_area_percentuale_linear_regressioni}
+	\caption[relazioni iperboliche tra potenza della corrente e percentuale di isole]{relazioni iperboliche tra potenza della corrente e percentuale di isole; in rosso la regressione sulle massime percentuali di isole rispetto all'alveo attivo, in azzurro la regressione sul terzo gruppo di punti.}
+	\label{graph:omega-area-percentuale-linear-regressioni}
+\end{figure}
+%
+\\
+Si sceglie quindi quest'ultima come rappresentativa del limite superiore di isole che l'alveo può supportare data una potenza della corrente (cioè una pendenza, una larghezza e un'area drenante del bacino secondo la sua definizione).
+
+In un precedente lavoro è stato definito un unico valore limite di \emph{stream power} oltre il quale le isole non riescono più ad insediarsi a causa dell'intenso disturbo \squarecite{Gurnell:2006-omega}.
+Tuttavia, questo valore è stato calcolato utilizzando l'equazione \eqref{eq:area-portata-mosetti}; per quanto già esposto, si è preferito non utilizzare tale relazione.
+\\
+I grafici mostravano un andamento iperbolico, il quale regola la percentuale massima di isole che riesce a stabilirsi con una data potenza;
+questo andamento sembra fermarsi superiormente, attorno ad un valore di $\Omega$ di~\SIrange[range-phrase={-}, range-units = single]{0.12}{0.13}{\newton\per\metre\tothe{4}}, oltre il quale non è più presente vegetazione.
+Si vede inoltre che l'alveo non ospita percentuali di vegetazione superiori al \SIrange[range-phrase={-}, range-units = single]{30}{35}{\percent}.
+
+La relazione ottenuta presenta un limite implicito: $\Omega$ non tiene conto della connessione con la falda, dell'\emph{upwelling} e del \emph{downwelling}, che influenzano notevolmente la crescita delle piante.
+Anzi, è stato mostrato che le isole complesse sono confinate nei tratti dove la crescita delle piante da seme può essere sufficientemente rapida (\SIrange[range-phrase={-}]{1}{3}{\m} in \SI{10}{\anni}; si ricorda che tramite al riproduzione vegetativa la crescita è più rapida di un ordine di grandezza); questi tratti sono quelli relativamente più stretti, dove c'è disponibilità d'acqua durante i periodi di magra grazie alla falda non troppo profonda, come i tratti pochi chilometri a monte della stretta di Pinzano o quelli a monte della zona di cambiamento di morfologia fluviale \squarecite{Gurnell:2006-omega}.
+Dall'altra parte, come gli autori osservano e come è verificato dai risultati appena mostrati, dove i tratti si restringono maggiormente la potenza della corrente è tanto grande che nemmeno l'incrementato tasso di crescita delle piante è tale da permettere alle isole di insediarsi prima di essere portate via.
+Gli autori suggeriscono quindi l'esistenza di un equilibrio tra processi idrologici, piante riparie e sviluppo delle isole, che si concretizza nei seguenti aspetti (grafico in \cref{graph:omega-area-percentuale-linear-modello}).
+%
+\begin{itemize}
+	\item un valore massimo di $\Omega$ pari a \SIrange[range-phrase={-}]{0.12}{0.13}{\newton\per\metre\tothe{4}}, oltre il quale non sono presenti isole;
+	\item un range di $\Omega$ in cui è possibile lo stabilirsi di isole, ma caratterizzato da un limite in cui il disturbo delle piene è predominante anche nelle zone relativamente più elevate dell'alveo;
+	\item un limite massimo di isole, \numrange[range-phrase={-}]{0.30}{0.35}, che possono essere presenti anche con $\Omega$ molto bassi, in quanto l'insediamento di isole oltre queste limite avrebbe luogo sulle zone dell'alveo poste a quote relativamente minori, che sono le più disturbate dalle piene, mentre la zone situate a quote relativamente maggiori (creste delle barre, altre isole) sono tutte già vegetate.
+\end{itemize}
+%
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/omega_area_percentuale_linear_modello}
+	\caption[modello che lega la potenza della corrente con la percentuale massima di isole]{modello che lega la potenza della corrente con la percentuale massima di isole.}
+	\label{graph:omega-area-percentuale-linear-modello}
+\end{figure}
+%

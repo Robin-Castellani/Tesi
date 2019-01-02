@@ -1,0 +1,28 @@
+\tikzsetnextfilename{validazione_class_is_fl}
+\begin{tikzpicture}
+	\begin{axis}[
+		width = 0.5\textwidth,
+		height = 0.5\textwidth,
+		xlabel = {Isole da NDVI \si{[\kilo\m\tothe{2}]}},
+		ylabel = {Isole da CHM e class. manuale \si{[\kilo\m\tothe{2}]}},
+		grid = major,
+		]        
+		\addplot[
+			scatter,
+			green!75!black,
+			only marks,
+			nodes near coords,
+			%point meta = explicit symbolic,
+			]
+        	table [x expr = \thisrow{mie} / 1000000, y expr = \thisrow{CHM_Surian} / 1000000, point meta = \thisrow{anno}] {graphics/data/validazione_class_is_fl.txt};
+        
+		\addplot[
+			blue,
+			dashed,
+			no markers,
+			domain = 0.5:1.1,
+			samples = 2,
+			]
+        	{x};
+	\end{axis}
+\end{tikzpicture}

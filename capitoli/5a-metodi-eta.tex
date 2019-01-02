@@ -1,0 +1,90 @@
+Utilizzando le mappe del cambiamento rilevato nelle isole si possono ottenere mappe che indicano un'età approssimativa della vegetazione che compone queste isole. 
+\\
+L'ipotesi che si vuole verificare è la seguente: la vegetazione più giovane, che può essere divelta più facilmente, è quella maggiormente erosa?
+Si suppone di osservare erosione anche di parti di isole con vegetazione matura, poiché le aree poste in corrispondenza dell'estradosso di un canale in curva sono soggette a scavo laterale.
+
+\section{Metodi: stimare l'età delle isole}
+\label{sec:eta}
+
+\subsection{Limiti}
+Con le immagini satellitari utilizzate non è possibile distinguere i singoli alberi che compongono le isole; se con le immagini a miglior risoluzione si distinguono gli arbusti isolati, non si può certo ottenere una stima dell'età tanto precisa quanto quella fornita da un carotaggio del tronco.
+In più, una cella è classificata come vegetazione solo quando le piante al suo interno presentano complessivamente una chioma sufficientemente grande da occupare gran parte della cella; pertanto le immagini con celle di \SI{10}{\m} o  \SI{15}{\m} non possono mostrare che grandi macchie di vegetazione.
+Prima dei \SI{3}{\anni} una pianta di salice generalmente non ha fronde molto estese.
+\\
+Occorre poi tenere in conto che le piante crescono differentemente in base alle condizioni ambientali: periodi di stress idrico o termico rallentano la crescita, così come il parziale seppellimento con ghiaia dovuto ad eventi di piena; una falda non troppo profonda la cui altezza varia lentamente, terreno di granulometria sottile con sabbia e buone temperature sono invece fattori favorevoli alla crescita \squarecite{Gurnell:2001-island-formation}.
+
+Si crede che ciò che possa generalmente accadere è che fino ad una certa età, circa \SI{3}{\anni}, la nuova vegetazione non sia visibile dal satellite; quindi si può definire come età della vegetazione presente in una cella la somma della persistenza (il periodo di tempo in cui si osserva che la cella rimane vegetata) con i \SI{3}{\anni} iniziali. 
+
+Le mappe del cambiamento sono state ottenute dalle mappe di classificazione; non essendo le seconde correttamente georeferenziate, neanche le prime lo sono. L'errore residuo nel processo di correzione è di 1~cella.
+
+Infine, per poter confrontare nel corso degli anni ogni cella, le mappe del cambiamento sono state ricampionate alla risoluzione più bassa, corrispondente a celle di~\SI{15}{\m} di lato. Si è proceduto come mostrato nella sottosezione \ref{subsec:camb-limiti} ottenendo sempre valori $RSQR < \SI{1.5}{\percent}$; i confronti a~\SI{10}{\m} sono stati ricampionati a~\SI{15}{\m} applicando il valore del $75_\mathrm{mo}$ percentile (terzo quartile).
+
+
+\subsection{Obiettivo ed approccio} 
+Date le precedenti premesse, bisogna riflettere su ciò che si vuole ottenere: dividere la vegetazione in classi di età.
+Si vuole sapere quanta vegetazione giovane è stata erosa; non conta se questa ha esattamente \SI{3}{\anni} o \SI{4}{\anni}, l'importante è che sia grosso modo classificata come giovane.
+
+Ogni mappa del cambiamento è formata dalle informazioni contenute in due mappe: quella più vecchia e quella più recente. La distanza temporale tra queste due mappe definisce il periodo di osservazione.
+\\
+Per la mappa del cambiamento più vecchia (la prima mappa di confronto in \cref{tab:confronti}), l'età della vegetazione delle isole è stata scelta essere pari al periodo di osservazione, cui si sono aggiunti \SI{3}{\anni}, che è ritenuto il periodo minimo affinché un insieme di piante diventi visibile per il satellite.
+\\
+Per le mappe via via più recenti, l'età nelle celle delle isole che non sono cambiate è pari al periodo di osservazione sommato all'età precedente; per le celle vegetate a partire dall'alveo, l'età è pari al periodo di osservazione con l'aggiunta di \SI{3}{\anni}.
+
+L'approccio che si basa sulla definizione dell'età in base al periodo di osservazione è limitato, in particolare per le mappe più vecchie, poiché non è possibile tener conto della vegetazione che era presente antecedentemente alla prima immagine valida;
+si ritiene che a partire dalla $4^a$ o $5^a$ mappa di età il metodo inizi ad essere affidabile (generalmente quindi dalla mappa di età del 2007-09-21) poiché da quel momento la vegetazione che non è stata erosa ha abbastanza anni da essere classificata come matura.
+Per gli scopi della ricerca questo approccio risulta essere sufficiente.
+
+\medskip
+Si osservino i grafici in \cref{graph:distrib-rapp-eros-eta}, i quali rappresentano quante isole sono state erose rispetto alle isole presenti in ogni tratto in base all'età delle prime.
+Si vede come le isole con età minore di \SI{5}{\anni} siano spesso erose; si evidenzia anche una dinamicità per le isole con età tra \SIrange[range-phrase={ e }]{5}{8}{\anni}. 
+\\
+Si definiscono quindi le seguenti classi di età:
+%
+\begin{itemize}
+	\item giovane, con meno di \SI{5}{\anni};
+	\item intermedia, con età compresa tra \SIrange[range-phrase={ e }]{5}{8}{\anni};
+	\item matura, con più di \SI{8}{\anni}.
+\end{itemize}
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/rapp_eros_eta}
+	\caption[distribuzione del rapporto tra isole erose e la somma delle isole presenti]{distribuzione del rapporto tra le isole erose e la sommatoria di tutte le isole presenti per ogni tratto nei tratti da \numrange[range-phrase={ a }, mode=text]{1}{23} in base all'età; le linee verticali rosse tratteggiate indicano l'età di \SIrange[range-phrase={ e }]{5}{8}{\anni}.}
+	\label{graph:distrib-rapp-eros-eta}
+\end{figure}
+
+\subsection{Validazione}
+Da un controllo visuale delle mappe di età, si vede una corrispondenza tra struttura dell'età in diversi tipi di isole e quanto osservato da rilievi e osservazioni in campo \squarecite{Gurnell:2001-island-formation}: le isole complesse hanno una struttura d'età a macchie, mentre quelle distaccate da \emph{floodplain} hanno una struttura uniforme (\cref{fig:struttura-eta}).
+%
+\begin{figure}
+	\centering
+	\includegraphics[width = \textwidth]{files/struttura_eta.jpeg}
+	\caption[mappe della struttura di età in due tratti]{mappe della struttura di età in due tratti; i colori più scuri indicano una maggiore età.
+		Nel tratto~7 (2017-06-13) si vede la struttura a macchie dell'età della vegetazione nelle isole complesse;
+		nel tratto~8 (2009-07-08) si osserva la distribuzione più unifome dell'età nell'isola in basso, che si è formata dalla \emph{floodplain}.
+		La maschera computazionale è mostrata in giallo; sullo sfondo sono mostrate le mappe NDVI.}
+	\label{fig:struttura-eta}
+\end{figure}
+%
+
+Il CHM (\emph{Canopy Height Model}) è il modello digitale della copertura arborea; similmente al DEM, mostra delle quote; queste sono tuttavia riferite all'altezza della vegetazione sopra il terreno.
+\\
+È generalmente sensato affermare che piante più mature abbiano un'altezza maggiore di piante giovani.
+Quindi si sono utilizzati i dati di altezza della copertura arborea contenuti nei CHM di agosto~2010 e del~2013-10-22 per verificare che nelle celle della mappa di età della vegetazione, rispettivamente del~2010-09-29 e del~2013-09-05, l'altezza fosse all'incirca proporzionale all'età.
+Tra le date di ottenimento dei CHM e delle immagini \AST{} non vi sono stati eventi idrologici rilevanti.
+I CHM sono stati ricampionati a \SI{15}{\m} (larghezza delle celle delle immagini \AST{}) applicando il valore del $75_{\mathrm{mo}}$ percentile, in quanto rappresenta l'altezza delle chiome più elevate ed espanse, le quali dovrebbero definire i valori di età nelle mappe, essendo maggiormente visibili da satellite.
+\\
+Si è scelto di validare la procedura solo sulle mappe di età del~2010 e del~2013 poiché sono più rappresentative della reale distribuzione d'età delle piante, mentre la mappa di età del 2005-08-30 potrebbe non essere affidabile per quanto precedentemente esposto.
+\\
+I \emph{boxplot} della distribuzione dell'altezza della vegetazione rispetto all'età sono presentati nel grafico in \cref{graph:altezza-chm-eta}.
+Il loro andamento crescente riflette sufficientemente quello dei dati da rilievi dendrometrici effettuati da \squarecite{Gurnell:2018-canopy-height} su isole pioniere nel Tagliamento localizzate nei medesimi tratti del CHM; pertanto ci si ritiene soddisfatti della procedura sviluppata in quanto riesce ad ottenere una stima dell'età delle piante nelle isole adeguata agli scopi della tesi.
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/percentili_CHM_eta}
+	\caption[distribuzione dell'altezza delle piante secondo l'età]{distribuzione dell'altezza delle piante (dal CHM) secondo l'età (dalle mappe di età) per il 2010 e il 2013 confrontati con rilievi dendrometrici presentati da \squarecite{Gurnell:2018-canopy-height}; i grafici si riferiscono a porzioni dei tratti 6-12, dove è presente il CHM e dove sono stati effettuati i rilievi dendrometrici.}
+	\label{graph:altezza-chm-eta}
+\end{figure}
+%
+
+

@@ -1,6 +1,12 @@
 \tikzsetnextfilename{omega_area_percentuale}
 \begin{tikzpicture}
-	\begin{axis}[
+	\begin{groupplot}[
+		group style = {
+			group size = 1 by 2,
+			ylabels at = edge left,
+			x descriptions at = edge bottom,
+			vertical sep = 0.1cm,
+		},
 		width = \textwidth,
 		height = .5\textwidth,
 		%enlarge x limits = 0.01,
@@ -13,6 +19,8 @@
 			anchor = south,
 			at = {(0.5, 1.01)},
 		},
+		legend entries = {{Fit 1}, {Fit 2}, {Fit 3}, {Massime \si{\percent} di isole}},
+		legend to name = legend_fit,
 		colormap = {fitting point colormap}{
 				color = (black)
 				color = (white!80!black)
@@ -26,6 +34,8 @@
         log basis x = 10,
         log basis y = 10,
 		]
+		
+		\nextgroupplot[] % 3 fit successivi
 		\foreach \tratto in {1,2,...,23}
 			{
 			\addplot[
@@ -46,9 +56,6 @@
 			 samples = 10,
 			 ] 
 			 {10^(-1.5184 - 0.1838 * log10(x))};
-		\addlegendentry{Fit 1}
-%		\node [fill = white, draw = green, anchor = east] % T1 
-%        	at (axis description cs: 1,0.6) {$y = 10^{-1.5184} \, x^{- 0.1838}$};
         	
 		\addplot [color = orange, % T2
 			 line width = 2 pt,
@@ -56,9 +63,6 @@
 			 samples = 10,
 			 ]
 			 {10^(-1.5056 - 0.2516 * log10(x))};
-		\addlegendentry{Fit 2}
-%		\node [fill = white, draw = orange, anchor = east] % T2 
-%        	at (axis description cs: 1,0.75) {$y = 10^{-1.5056} \, x^{- 0.2516}$};
         	
 		\addplot [color = cyan, % T3
 			 line width = 2 pt,
@@ -66,11 +70,46 @@
 			 samples = 10,
 			 ]
 			 {10^(-1.4085 - 0.2371 * log10(x))};
-		\addlegendentry{Fit 3}
 		\node [fill = white, draw = cyan, anchor = east] % T3 
         	at (axis description cs: 1,0.9) {$y = 10^{-1.4085} \, x^{- 0.2371}$};
         
 		\node [fill = white, draw = black, anchor = south west] % T3 
         	at (axis description cs: 0,0) {$R^2 \in [0.3, 0.6]$ $P_\mathrm{val} < 0.0001$};
-	\end{axis}
+        	
+        
+        \nextgroupplot[] % massimi di vegetazione
+        \foreach \tratto in {1,2,...,23}
+			{
+			\addplot[
+				%scatter,
+				only marks,
+				forget plot,
+			]
+				table [y = om_tr_\tratto, x = area_tr_\tratto]
+				{graphics/data/omega_area_percentuale.txt};
+			}
+		
+		% aggiunge le immagini di legenda per il precedente groupplot poiché questo verrebbe ignorato
+		\addlegendimage{green, no markers}
+		\addlegendimage{orange, no markers}
+		\addlegendimage{cyan, no markers}
+			
+		\addplot [color = red, % modello
+			 line width = 2 pt,
+			 samples at = {},
+			 domain = 6e-3:4e-1,
+			 samples = 10,
+			 ] 
+			 {10 ^ (-1.6806 - 0.4476 * log10(x))};
+
+
+		\node [fill = white, draw = red, anchor = east] 
+        	at (axis description cs: 1,0.9) {$y = 10^{-1.6806} \, x^{- 0.4476}$};		
+		
+		\node [fill = white, draw = black, anchor = south west]
+        	at (axis description cs: 0,0) {$R^2 = \num{0.74}$ $P_\mathrm{val} < 0.0001$};
+	\end{groupplot}
+	%
+	\node at (group c1r1.north) [anchor=south] 
+    	{\pgfplotslegendfromname{legend_fit}};
 \end{tikzpicture}

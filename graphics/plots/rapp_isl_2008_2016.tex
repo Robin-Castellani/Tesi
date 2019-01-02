@@ -1,0 +1,30 @@
+\tikzsetnextfilename{rapp_isl_2008_2016}
+\begin{tikzpicture}
+	\begin{axis}[
+		width = \textwidth,
+		height = 0.5\textwidth,
+		xtick = data,
+		enlarge x limits = 0.01,
+		xlabel = {Tratto},
+		ylabel = {Rapporto isole su alveo attivo},
+		grid = major,
+		legend style = {
+			at = {(0,1)},
+			anchor = north west,		
+		},
+		]
+		\addplot[
+			violet,
+			mark = triangle,
+			]
+        	table [x = tratto, y = rapp_isl_2008,] {graphics/data/rapp_isl_2008_2016.txt};
+        \addlegendentry{2008-07-05};
+        	
+		\addplot[
+			cyan,
+			mark = triangle,
+			]
+        	table [x = tratto, y = rapp_isl_2016,] {graphics/data/rapp_isl_2008_2016.txt};
+        \addlegendentry{2016-09-13};
+	\end{axis}
+\end{tikzpicture}

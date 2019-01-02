@@ -18,8 +18,8 @@
 			anchor = near xticklabel
 		},
 		xtick distance = 731,
-		ymax = 0.35,
-		ylabel = {Cambiamento/Isole iniziali \si{[\percent]}},%\si{[\m\tothe{2}]}},
+		%ymax = 0.35,
+		ylabel = {Cambiamento/Isole iniziali},
 		grid = major,
 		]
 	\nextgroupplot % tr_17_accrescimento
@@ -27,13 +27,13 @@
         	[only marks, blue]
         	table [
         		x=data_fine, 
-        		y expr=\thisrow{alv->is}/808650.0
+        		y = alv->is,
         		] {graphics/data/tr_17_camb_eros_accr.txt};
 		\addplot+
         	[only marks, mark=x, black]
         	table [
         		x=data_ini, 
-        		y expr=\thisrow{alv->is}/808650.0
+        		y = alv->is,
         		] {graphics/data/tr_17_camb_eros_accr.txt};
         \node [fill = white, draw = black, anchor = south west] 
         	at (axis description cs: 0.05,0.8) {Accr.};
@@ -42,13 +42,13 @@
         	[only marks, blue]
         	table [
         		x=data_fine, 
-        		y expr=\thisrow{is->alv}/808650.0,
+        		y = is->alv,
         		] {graphics/data/tr_17_camb_eros_accr.txt};
 		\addplot+
         	[only marks, mark=x, black]
         	table [
         		x=data_ini, 
-        		y expr=\thisrow{is->alv}/808650.0,
+        		y = is->alv,
         		] {graphics/data/tr_17_camb_eros_accr.txt};
         \node [fill = white, draw = black, anchor = south west] 
         	at (axis description cs: 0.05,0.8) {Eros.};
