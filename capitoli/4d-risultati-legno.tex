@@ -8,13 +8,14 @@ Tuttavia è possibile che un legno sia stato rimpiazzato da un altro: in questo 
 È possibile per le digitalizzazioni degli elementi legnosi del~2010-08 e~2013-10-22 osservare se i tronchi e gli accumuli che si sono spostati sotto una certa soglia si trovano sulle quote relative più elevate.
 La soglia può variare da \SIrange[range-phrase = { a }]{0.5}{2.5}{\m} ed è stata scelta valutando qualitativamente le digitalizzazione in anni successivi.
 \\
-I grafici in \cref{graph:legno-dem-detrended-distanza} mostrano i \emph{boxplot} dei punti che hanno il legno più vicino nella digitalizzazione successiva a distanza inferiore ad una serie di soglie; l'ultimo grafico mostra invece la quota dei punti che hanno il legno più lontano della soglia nella digitalizzazione seguente.
+I grafici in \cref{graph:elementi-dem-detrended-distanza} mostrano i \emph{boxplot} dei punti che hanno il legno più vicino nella digitalizzazione successiva a distanza inferiore ad una serie di soglie; l'ultimo grafico mostra invece la quota dei punti che hanno il legno più lontano della soglia nella digitalizzazione seguente.
 %
 \begin{figure}
 	\centering
-	\input{graphics/plots/legno_dem_detrended_distanza}
-	\caption[\emph{boxplot} delle quote relative dove si trova il legno mobilitato]{\emph{boxplot} delle quote relative dove si trova il legno mobilitato nelle digitalizzazioni 2010-08/2013-10-22 (per le quali non ci sono punti con distanza minore di \SI{2}{\m}) e 2013-10-22/2014-10-31; l'ultimo grafico mostra la quota relativa del legno non mobilitato, la quale è praticamente costante per ogni soglia di distanza.}
-	\label{graph:legno-dem-detrended-distanza}
+	\input{graphics/plots/elementi_dem_detrended_distanza}
+	\caption[\emph{boxplot} delle quote relative dove si trova il legno mobilitato]{\emph{boxplot} delle quote relative dove si trova il legno mobilitato nelle digitalizzazioni 2010-08/2013-10-22 (per le quali non ci sono punti con distanza minore di \SI{2}{\m}) e 2013-10-22/2014-10-31; l'ultimo grafico mostra la quota relativa del legno non mobilitato, la quale è praticamente costante per ogni soglia di distanza.
+	I numeri in rosso indicano il numero di punti che definisce ogni \emph{boxplot}; per l'ultimo grafico il numero di punti è superiore a~\num{600}.}
+	\label{graph:elementi-dem-detrended-distanza}
 \end{figure}
 %
 
@@ -24,12 +25,39 @@ Per le digitalizzazioni 2013-10-22/2014-10-31 ci sono~8 punti per la soglia più
 \\
 I legni che vengono mobilitati, cioè i punti che presentano distanza minima maggiore della soglia, mostrano tutti la stessa distribuzione per ogni soglia all'interno di ciascuna coppia di digitalizzazioni confrontate: praticamente a qualunque quota relativa un elemento legnoso può essere spostato oppure seppellito da depositi di ghiaia, così da non essere più visibile nella digitalizzazione successiva.
 \\
-Per il 2010-08/2013-10-22, i \emph{boxplot} dei punti con distanza superiore alla soglia si sovrappongono completamente a quelli con distanza inferiore alla soglia: non è possibile quindi avanzare altre ipotesi se non che al passaggio di un gran numero di piene e di eventi importanti il legno si sposta e che quelli che sembrano non essersi mobilitati in realtà sono stati rimpiazzati da altri elementi.
+Per il 2010-08/2013-10-22, i \emph{boxplot} dei punti con distanza superiore alla soglia si sovrappongono completamente a quelli con distanza inferiore alla soglia: non è possibile quindi avanzare altre ipotesi se non che, al passaggio di un gran numero di piene e di eventi importanti, il legno si sposta e che gli elementi che sembrano non essersi mobilitati in realtà sono stati rimpiazzati da altri elementi.
 \\
-Nelle mappe 2013-10-22/2014-10-31 al crescere della soglia di distanza massima i \emph{boxplot} si estendono verso quote minori, ma la mediana varia molto poco rimanendo circa costante ad una quota di~\SIrange[range-phrase = {-}, range-units = single]{3}{4}{\m}.
+Nelle mappe 2013-10-22/2014-10-31 al crescere della soglia di distanza massima i \emph{boxplot} si estendono verso quote minori, ma la mediana varia molto poco rimanendo circa costante ad una quota di~\SIrange[range-phrase = {-}, range-units = single]{0.3}{0.4}{\m}.
 Inoltre c'è una discreta separazione tra i \emph{boxplot} delle distanze inferiori di~\SIrange[range-phrase = { e }]{0.5}{1}{\m} e il \emph{boxplot} del legno mobilitato.
 Questi fatti fanno pensare che gli elementi legnosi individuati da quelle soglie siano i medesimi tra il~2013 e il~2014: le piccole piene avvenute ad inizio del~2014 possono aver spostato il legno a quote relative minori mentre il legno posto più in alto non è stato toccato.
 Quest'ultimo ha la possibilità concreta di riprodursi vegetativamente ed essere il nucleo di formazione di nuove isole.
+\\
+I \emph{boxplot} nel grafico in \cref{graph:legno-wj-dem-detrended-distanza} mostrano la distribuzione delle quote del DEM detrended del~2013-10-22 per diverse soglie di distanza; in più, sono suddivisi gli elementi legnosi in tronchi e accumuli e sono considerati solamente i punti che, dalla digitalizzazione del~2013-10-22 al~2014-10-31, non cambiano tipo di elemento legnoso (un tronco nel~2013 che ha come punto più vicino nel~2014 sotto la soglia un altro tronco, questo viene considerato; se è un accumulo, viene scartato; se il tipo di elemento non è riconoscibile, viene considerato).
+Inoltre, viene riportata la distribuzione per gli i tronchi e gli accumuli con punti nella digitalizzazione seguente dello stesso tipo e con distanza superiore alla soglia; poiché queste distribuzioni sono di fatto identiche per ogni soglia, ne viene riportata solo una.
+\\
+Non è riportata la soglia di~\SI{0.5}{\m} per i tronchi poiché sono presenti solo~2 punti.
+Non viene riportato un grafico per il~2010-08 poiché il numero di punti risultanti da questa suddivisione non è sufficiente per avere \emph{boxplot} significativi.
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/legno_wj_dem_detrended_distanza}
+	\caption[\emph{boxplot} delle quote relative distinte per tronchi e accumuli legnosi]{\emph{boxplot} delle quote relative dove si trovano tronchi (Tr.) e accumuli (Acc.) nelle digitalizzazioni 2013-10-22/2014-10-31; dopo aver calcolato la distanza dell'elemento della stessa tipologia più vicino da un'immagine all'altra, sono stati considerati gli elementi con distanza inferiore alla soglia; con la soglia~\SI{0.5}{\m} sono stati individuati solo~\num{2} tronchi, numero poco significativo e quindi scartato.
+	L'ultimo grafico mostra la distribuzione dei tronchi e degli accumuli con distanza tra le digitalizzazioni superiori alle soglie; dato che queste distribuzioni sostanzialmente non variano cambiando soglia, se ne riporta solo una.
+	I numeri in rosso indicano il numero di punti che definisce ogni \emph{boxplot}; per l'ultimo grafico il numero di punti è di diverse centinaia.}
+	\label{graph:legno-wj-dem-detrended-distanza}
+\end{figure}
+%
+\\
+Confrontando i numeri di punti che concorrono a formare ogni \emph{boxplot}, si vede come sia maggiore il numero di accumuli che non si mobilita rispetto ai tronchi: questi ultimi differiscono dagli accumuli in quanto a conformazione, modo in cui possono essere parzialmente sepolti, resistenza offerta alla corrente (\cref{fig:tronco-vs-accumulo}).
+%
+% foto di tronco bello nudo e disteso sulla ghiaia vs foto di accumulo bello ingrovigliato
+%
+\\
+La distribuzione degli accumuli, a differenza di quella dei tronchi, si allunga verso quote relative inferiori all'aumentare della distanza soglia; questo trend probabilmente è assente per i tronchi poiché questi possono resistere alle piene solo se sono stati depositate a quote elevate, mentre gli accumuli oppongono una resistenza minore.
+È comprensibile quindi il motivo per cui i tronchi possono essere mobilitati più facilmente rispetto agli accumuli.
+\\
+Sia i tronchi che gli accumuli mantengono la mediana pressoché invariata a~\SIrange[range-phrase = {-}, range-units = single]{0.3}{0.4}{\m} per ogni soglia.
+Il fatto che la mediana sia sempre superiore al terzo quartile dei \emph{boxplot} del legno mobilitato indica che gli elementi legnosi che non vengono spostati dalle piene sono quelli a quote relative più elevate, qualunque sia la tipologia di elemento.
 \\
 Questi risultati riflettono le numerosi osservazioni sul campo che sono state riportate da più articoli \squarecites{Gurnell:2001-island-formation}{Gurnell:2006-omega}{Bertoldi:2009-2m}{Gurnell:2014-plants-eng}.
 
@@ -49,5 +77,3 @@ Si può ipotizzare che queste isole abbiano occupato gran parte delle zone più 
 	\label{fig:crescita-2005-2010-2013}
 \end{figure}
 %
-
-I risultati mostrano che 

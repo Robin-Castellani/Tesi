@@ -1,4 +1,4 @@
-\tikzsetnextfilename{legno_dem_detrended_distanza}
+\tikzsetnextfilename{elementi_dem_detrended_distanza}
 \begin{tikzpicture}
 	\begin{groupplot}[
 		group style = {
@@ -18,12 +18,12 @@
 		%enlarge y limits = 0.05,
 		grid = major,
 	]
-	\nextgroupplot[
+	\nextgroupplot[ % 2010/2013 elementi fermi
 		width = 0.3\textwidth,
 		title = {2010-08/2013-10-22},
 		xtick = {1, 2},
 		xticklabels = {$2$, $2.5$},
-		] % 2010/2013
+		]
 		\addplot [
 		        boxplot prepared = {
 		                lower whisker = -0.142529,
@@ -33,7 +33,8 @@
 		                upper whisker = 0.327826,
 		                },
 		        ]
-		        coordinates {};
+		        coordinates {}
+				node[below, red!75!black] at (boxplot box cs: \boxplotvalue{lower whisker},0.5){\pgfmathprintnumber{7}};
 		\addplot [
 		        boxplot prepared = {
 		                lower whisker = -0.096515,
@@ -43,15 +44,15 @@
 		                upper whisker = 0.278409,
 		                },
 		        ]
-		        coordinates {};
-%		\node [fill = white, draw = black, anchor = north west] 
-%        	at (axis description cs: 0,1) {Gurnell et al. 2018};
-	\nextgroupplot[
+		        coordinates {}
+				node[below, red!75!black] at (boxplot box cs: \boxplotvalue{lower whisker},0.5){\pgfmathprintnumber{11}};	
+	%------------------------------------------------------
+	\nextgroupplot[ % 2013/2014 elementi fermi
 		width = 0.55\textwidth,
 		title = {2013-10-22/2014-10-31},
 		xtick = {1, 2, 3, 4, 5},
 		xticklabels = {$0.5$, $1$, $1.5$, $2$, $2.5$},
-		] % 2013/2014
+		]
 		\addplot [
 		        boxplot prepared = {
 		                lower whisker = 0.281042,
@@ -61,7 +62,8 @@
 		                upper whisker = 0.562563,
 		                },
 		        ]
-		        coordinates {};
+		        coordinates {}
+				node[below, red!75!black] at (boxplot box cs: \boxplotvalue{lower whisker},0.5){\pgfmathprintnumber{8}};
 		\addplot [
 		        boxplot prepared = {
 		                lower whisker = -0.004163,
@@ -71,7 +73,8 @@
 		                upper whisker = 0.528088,
 		                },
 		        ]
-		        coordinates {};
+		        coordinates {}
+				node[below, red!75!black] at (boxplot box cs: \boxplotvalue{lower whisker},0.5){\pgfmathprintnumber{33}};
 		\addplot [
 		        boxplot prepared = {
 		                lower whisker = -0.076253,
@@ -81,7 +84,8 @@
 		                upper whisker = 0.568133,
 		                },
 		        ]
-		        coordinates {};
+		        coordinates {}
+				node[below, red!75!black] at (boxplot box cs: \boxplotvalue{lower whisker},0.5){\pgfmathprintnumber{60}};
 		\addplot [
 		        boxplot prepared = {
 		                lower whisker = -0.118472,
@@ -91,7 +95,8 @@
 		                upper whisker = 0.565715,
 		                },
 		        ]
-		        coordinates {};
+		        coordinates {}
+				node[below, red!75!black] at (boxplot box cs: \boxplotvalue{lower whisker},0.5){\pgfmathprintnumber{90}};
 		\addplot [
 		        boxplot prepared = {
 		                lower whisker = -0.273404,
@@ -101,11 +106,10 @@
 		                upper whisker = 0.565771,
 		                },
 		        ]
-		        coordinates {};
-%		\node [fill = white, draw = black, anchor = north west] 
-%        	at (axis description cs: 0,1) {2010};
+		        coordinates {}
+				node[below, red!75!black] at (boxplot box cs: \boxplotvalue{lower whisker},0.5){\pgfmathprintnumber{119}};
 	%------------------------------------------------------
-	\nextgroupplot[
+	\nextgroupplot[ % elementi spostati
 		width = 0.3\textwidth,
 		title = {Legno mobilitato},
 		xlabel = {Digitalizzazioni},

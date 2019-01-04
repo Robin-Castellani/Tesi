@@ -1,0 +1,162 @@
+\tikzsetnextfilename{legno_wj_dem_detrended_distanza}
+\begin{tikzpicture}
+	\begin{groupplot}[
+		group style = {
+			group size = 3 by 1,
+			y descriptions at = edge left,
+			x descriptions at = edge bottom,
+			horizontal sep = 0.1cm,
+		},
+		width = 0.38\textwidth,
+		height = 0.4\textwidth,
+		xlabel = {Distanza soglia \si{[\m]}},
+		%xticklabel style = {font=\tiny},
+		ylabel = {Quota relativa \si{[\m]}},
+		boxplot/draw direction = y,
+		ymax = 0.65,
+		ymin = -0.55,
+		%enlarge y limits = 0.05,
+		grid = major,
+	]
+	\nextgroupplot[ % tronchi fermi
+		width = 0.4\textwidth,
+		title = {Tronchi fermi},
+		xtick = {1, 2, 3, 4},
+		xticklabels = {$1$, $1.5$, $2$, $2.5$},
+		]
+		\addplot [
+		        boxplot prepared = {
+		                lower whisker = -0.214108,
+		                lower quartile = 0.234276,
+		                median = 0.399475,
+		                upper quartile = 0.459583,
+		                upper whisker = 0.508607,
+		                },
+		        ]
+		        coordinates {}
+		node[below, red!75!black] at (boxplot box cs: \boxplotvalue{lower whisker},0.5){\pgfmathprintnumber{8}};
+		\addplot [
+		        boxplot prepared = {
+		                lower whisker = 0.006691,
+		                lower quartile = 0.325199,
+		                median = 0.411842,
+		                upper quartile = 0.508083,
+		                upper whisker = 0.563896,
+		                },
+		        ]
+		        coordinates {}
+		node[below, red!75!black] at (boxplot box cs: \boxplotvalue{lower whisker},0.5){\pgfmathprintnumber{16}};
+		\addplot [
+		        boxplot prepared = {
+		                lower whisker = 0.012381,
+		                lower quartile = 0.243774,
+		                median = 0.393280,
+		                upper quartile = 0.515945,
+		                upper whisker = 0.584189,
+		                },
+		        ]
+		        coordinates {}
+		node[below, red!75!black] at (boxplot box cs: \boxplotvalue{lower whisker},0.5){\pgfmathprintnumber{25}};
+		\addplot [
+		        boxplot prepared = {
+		                lower whisker = -0.025824,
+		                lower quartile = 0.243774,
+		                median = 0.393280,
+		                upper quartile = 0.505463,
+		                upper whisker = 0.571835,
+		                },
+		        ]
+		        coordinates {}
+		node[below, red!75!black] at (boxplot box cs: \boxplotvalue{lower whisker},0.5){\pgfmathprintnumber{29}};
+	%------------------------------------------------------
+	\nextgroupplot[ % accumuli fermi
+		width = 0.45\textwidth,
+		title = {Accumuli fermi},
+		xtick = {1, 2, 3, 4, 5},
+		xticklabels = {$0.5$, $1$, $1.5$, $2$, $2.5$},
+		]
+		\addplot [
+		        boxplot prepared = {
+		                lower whisker = 0.223950,
+		                lower quartile = 0.338135,
+		                median = 0.401688,
+		                upper quartile = 0.528015,
+		                upper whisker = 0.596982,
+		                },
+		        ]
+		        coordinates {}
+		node[below, red!75!black] at (boxplot box cs: \boxplotvalue{lower whisker},0.5){\pgfmathprintnumber{5}};
+		\addplot [
+		        boxplot prepared = {
+		                lower whisker = -0.002197,
+		                lower quartile = 0.187134,
+		                median = 0.338135,
+		                upper quartile = 0.468307,
+		                upper whisker = 0.585327,
+		                },
+		        ]
+		        coordinates {}
+		node[below, red!75!black] at (boxplot box cs: \boxplotvalue{lower whisker},0.5){\pgfmathprintnumber{21}};
+		\addplot [
+		        boxplot prepared = {
+		                lower whisker = -0.090182,
+		                lower quartile = 0.044922,
+		                median = 0.321091,
+		                upper quartile = 0.455734,
+		                upper whisker = 0.595441,
+		                },
+		        ]
+		        coordinates {}
+		node[below, red!75!black] at (boxplot box cs: \boxplotvalue{lower whisker},0.5){\pgfmathprintnumber{37}};
+		\addplot [
+		        boxplot prepared = {
+		                lower whisker = -0.273062,
+		                lower quartile = -0.004040,
+		                median = 0.317734,
+		                upper quartile = 0.448982,
+		                upper whisker = 0.557741,
+		                },
+		        ]
+		        coordinates {}
+		node[below, red!75!black] at (boxplot box cs: \boxplotvalue{lower whisker},0.5){\pgfmathprintnumber{54}};
+		\addplot [
+		        boxplot prepared = {
+		                lower whisker = -0.325058,
+		                lower quartile = -0.062695,
+		                median = 0.265747,
+		                upper quartile = 0.438202,
+		                upper whisker = 0.554756,
+		                },
+		        ]
+		        coordinates {}
+		node[below, red!75!black] at (boxplot box cs: \boxplotvalue{lower whisker},0.5){\pgfmathprintnumber{72}};
+	%------------------------------------------------------
+	\nextgroupplot[ % elementi spostati
+		width = 0.3\textwidth,
+		title = {Legno mobilitato},
+		xtick = {1, 2},
+		xlabel = {},
+		xticklabels = {Tr., Acc.},
+		] 
+		\addplot [ % 400+ punti
+		        boxplot prepared = {
+		                lower whisker = -0.400027,
+		                lower quartile = -0.152180,
+		                median = 0.138489,
+		                upper quartile = 0.345379,
+		                upper whisker = 0.508168,
+		                },
+		        ]
+		        coordinates {};
+		\addplot [ % 300+ punti
+		        boxplot prepared = {
+		                lower whisker = -0.431021,
+		                lower quartile = -0.199493,
+		                median = 0.098511,
+		                upper quartile = 0.353210,
+		                upper whisker = 0.569949,
+		                },
+		        ]
+		        coordinates {};
+	\end{groupplot}
+\end{tikzpicture}
