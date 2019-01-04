@@ -14,12 +14,14 @@
 		ymax = 0.4,
 		enlarge y limits = 0.05,
 		enlarge x limits = 0.05,
-		ylabel = {Erosione / isole},
+		ylabel = {Erosione / Vegetazione},
 		xlabel = {Int livelli \si{[\m\giorno]}},
 		grid = major,		
 		]
 		
-	\nextgroupplot[] % gruppo 5 livello 1.5m
+	\nextgroupplot[
+		title = {TR \SIrange[range-phrase={-}, range-units=single]{2}{3}{\mesi}},
+		] % gruppo 5 livello 1.5m
 			\addplot[only marks]
 	        	table [x = integrale_piene_tr_0.2, y = gr_5_tr_0.2] {graphics/data/interm_iote_4tr_buono.txt};
 	        
@@ -33,11 +35,12 @@
 			
 			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left, name = gr_5_tr_02] {17$\div$20};
 			
-			\node at (gr_5_tr_02.south west) [draw = black, fill = white, anchor = north west, align = left] {TR \SIrange[range-phrase={-}, range-units=single]{2}{3}{\mesi}};
+			\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east] {$R^2 = 0.41$};
 	
 	\nextgroupplot[ % gruppo 2 livello 2.4
 		xmin = 0,
 		xmax = 1,
+		title = {TR \SI{\sim 1}{\anno}},
 		]
 			\addplot[only marks]
 	        	table [x = integrale_piene_tr_1, y = gr_2_tr_1] {graphics/data/interm_iote_4tr_buono.txt};
@@ -52,11 +55,12 @@
 			
 			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left, name = gr_2_tr_1] {5$\div$8};
 			
-			\node at (gr_2_tr_1.south west) [draw = black, fill = white, anchor = north west, align = left] {TR \SI{\sim 1}{\anno}};
+			\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east] {$R^2 = 0.62$};
 	
 	\nextgroupplot[ % gruppo 3 livello 2.4
 		xmin = 0,
 		xmax = 1,
+		title = {TR \SI{\sim 1}{\anno}},
 		]
 			\addplot[only marks]
 	        	table [x = integrale_piene_tr_1, y = gr_3_tr_1] {graphics/data/interm_iote_4tr_buono.txt};
@@ -71,7 +75,7 @@
 			
 			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left, name = gr_3_tr_1] {10$\div$12};
 			
-			\node at (gr_3_tr_1.south west) [draw = black, fill = white, anchor = north west, align = left] {TR \SI{\sim 1}{\anno}};
+			\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east] {$R^2 = 0.67$};
 	
 	\end{groupplot}
 \end{tikzpicture}
