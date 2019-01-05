@@ -35,8 +35,9 @@
         		x=data_ini, 
         		y = alv->is,
         		] {graphics/data/tr_17_camb_eros_accr.txt};
-        \node [fill = white, draw = black, anchor = south west] 
-        	at (axis description cs: 0.05,0.8) {Accr.};
+        \node [fill = white, draw = black, anchor = north east] 
+        	at (axis description cs: 1,1) {Accrescimento};
+        	
 	\nextgroupplot % tr_17_erosione
 		\addplot+
         	[only marks, blue]
@@ -50,7 +51,7 @@
         		x=data_ini, 
         		y = is->alv,
         		] {graphics/data/tr_17_camb_eros_accr.txt};
-        \node [fill = white, draw = black, anchor = south west] 
-        	at (axis description cs: 0.05,0.8) {Eros.};
+        \node [fill = white, draw = black, anchor = north east] 
+        	at (axis description cs: 1,1) {Erosione};
 	\end{groupplot}
 \end{tikzpicture}

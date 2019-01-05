@@ -48,7 +48,7 @@ In questa area è stato calcolato il \emph{Normalized Difference Vegetation Inde
 	\begin{figure}[ht]
 		\centering
 		\includegraphics[width=\textwidth]{files/esempio_aree_campione_2014_10_31.jpeg}
-		\caption[esempio di aree campione per calcolare la distribuzione dell'NDVI]{esempio di digitalizzazione di alcune aree campione per l'immagine \Pl{} del~2014-10-31; sullo sfondo la mappa dell'NDVI.}
+		\caption[esempio di aree campione per calcolare la distribuzione dell'NDVI]{esempio di digitalizzazione di alcune aree campione per l'immagine \Pl{} del~2014-10-31 al fine di calcolare la distribuzione dell'NDVI caratteristica di tre diverse superfici; sullo sfondo la mappa dell'NDVI.}
 		\label{fig:esempio-aree-campione}
 	\end{figure}
 	%
@@ -60,7 +60,7 @@ Ad esempio nella mappa dell'NDVI della \Pl{}~2014-10-31 il valore~\num{0.4} è s
 \begin{figure}[ht]
 	\centering
 	\input{graphics/plots/percentili}
-	\caption[\emph{boxplot} dell'NDVI nelle aree campione in quattro immagini satellitari]{\emph{boxplot} dell'NDVI nelle aree campione in quattro immagini satellitari; i baffi indicano il $10_\mathrm{mo}$ e il $90_\mathrm{mo}$ percentile, gli estremi della scatola rappresentano il $25_\mathrm{mo}$ e il $75_\mathrm{mo}$ percentile, la linea nella scatola è la mediana.}
+	\caption[\emph{boxplot} dell'NDVI nelle aree campione in quattro immagini satellitari]{\emph{boxplot} dell'NDVI nelle aree campione in quattro immagini satellitari per tre distinte superfici (di cui un esempio è riportato in \cref{fig:esempio-aree-campione}); i baffi indicano il $10_\mathrm{mo}$ e il $90_\mathrm{mo}$ percentile, gli estremi della scatola rappresentano il $25_\mathrm{mo}$ e il $75_\mathrm{mo}$ percentile, la linea nella scatola è la mediana.}
 	\label{graph:percentili}
 \end{figure}
 %
@@ -91,7 +91,7 @@ Le soglie sono leggermente maggiori rispetto a quanto riportato in letteratura \
 		Canale			&		&			&	NDVI	&	$<$		&	0.00	&		&			&	NDVI	&	$<$		&	0.00	\\
 		\bottomrule
 	\end{tabular}
-	\caption[soglie NDVI]{soglie di NDVI per la classificazione delle immagini satellitari.}
+	\caption[soglie NDVI]{soglie di NDVI per la classificazione delle immagini satellitari \AST{} (AST), \Pl{} (PL), \Se{} (S2) e \WV{} (WV2).}
 	\label{tab:ndvi-soglia}
 \end{table}
 %
@@ -109,7 +109,7 @@ Le classi delle isole, delle sponde e delle celle corrette sono state aggiunte a
 \begin{figure}
 	\centering
 	\includegraphics[width = \textwidth]{files/isola_divisa_floodplain.jpeg}
-	\caption[esempio di correzione per dividere un'isola dalla sponda]{a sinistra si vede sull'ortofoto un'isola divisa dalla sponda tramite un canale (in giallo è mostrato il limite della maschera computazionale); a destra si vede la stessa isola (verde chiaro) nell'immagine \AST{} temporalmente più vicina che è stata corretta (fucsia) per distinguerla dalla \emph{floodplain} (verde scuro); l'isola è circondata da ghiaia (giallo) e da acqua (azzurro).}
+	\caption[esempio di correzione per dividere un'isola dalla sponda]{esempio di correzione per dividere un'isola dalla sponda; a sinistra si vede sull'ortofoto un'isola separata dalla \emph{floodplain} tramite un canale (in giallo è mostrato il limite della maschera computazionale); a destra si vede la stessa isola (verde chiaro) nell'immagine \AST{} temporalmente più vicina che è stata corretta (fucsia) per distinguerla dalla \emph{floodplain} (verde scuro); l'isola è circondata da ghiaia (giallo) e da acqua (azzurro).}
 	\label{fig:isola-divisa-floodplain}
 \end{figure}
 %
@@ -124,7 +124,7 @@ Alla classificazione sono state aggiunte la classe delle nuvole e dei \texttt{no
 %
 %
 \paragraph{Classificazione finale dei tratti}
-La \cref{tab:class_tratti} mostra le classi in cui è stato classificato ognuno dei 23~tratti; la \cref{fig:class_is_fl} ne mostra un esempio.
+La \cref{tab:class-tratti} mostra le classi in cui è stato classificato ognuno dei 23~tratti; la \cref{fig:class-is-fl} ne mostra un esempio.
 %
 \begin{table}[ht]
 	\centering
@@ -137,22 +137,24 @@ La \cref{tab:class_tratti} mostra le classi in cui è stato classificato ognuno 
 		\midrule
 		Vegetazione		&	Isola	\\
 						&	Floodplain	\\
+		\midrule
 		Alveo attivo	&	Cella corretta	\\
 						&	Ghiaia	\\
 						&	Canale	\\
+		\midrule
 		Altro			&	Nuvola	\\
 						&	Nodata	\\
 		\bottomrule
 	\end{tabular}
-	\caption[classificazione dell'area dei tratti]{classificazione finale dell'area di ogni tratto all'interno della maschera computazionale.}
-	\label{tab:class_tratti}
+	\caption[classi della classificazione dei tratti]{classi della classificazione di ogni tratto all'interno della maschera computazionale.}
+	\label{tab:class-tratti}
 \end{table}
 %
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=\textwidth]{files/esempio_class_is_fl.jpeg}
-	\caption[esempio della classificazione dell'area dei tratti]{esempio della classificazione dell'area dei tratti; le zone raffigurate sono rispettivamente a monte dell'isola di Cornino (in corrispondenza del monte Prat) e in corrispondenza della confluenza del Fella.}
-	\label{fig:class_is_fl}
+	\caption[esempio della classificazione dei tratti]{esempio della classificazione dei tratti; le zone raffigurate sono rispettivamente a monte dell'isola di Cornino (in corrispondenza del monte Prat) e in corrispondenza della confluenza del Fella.}
+	\label{fig:class-is-fl}
 \end{figure}
 %
 %
@@ -189,7 +191,7 @@ Nel grafico in \cref{graph:validazione-class-is-fl} si vede l'areale delle isole
 \begin{figure}
 	\centering
 	\input{graphics/plots/validazione_class_is_fl}
-	\caption[validazione della classificazione considerando le aree delle isole]{areale delle isole secondo la classificazione semi-automatica messa a confronto con quella secondo tre rilievi LiDAR e con una classificazione manuale \squarecite{Surian:2015}; la retta tratteggiata indica la situazione ideale in cui l'area delle isole ottenuta dalle immagini satellitari corrisponde a quella ottenuta con gli altri metodi; si rammenta che in ogni anno è stato considerato il tratto coperto dai CHM e dalla classificazione manuale.}
+	\caption[validazione della classificazione considerando le aree delle isole]{areale delle isole secondo la classificazione semi-automatica messa a confronto con quella secondo tre rilievi LiDAR e con una classificazione manuale \squarecite{Surian:2015}; la retta tratteggiata indica la situazione ideale in cui l'area delle isole ottenuta dalle immagini satellitari corrisponde a quella ottenuta con gli altri metodi; in ogni anno è stata considerata l'area delle isole nel tratto coperto dai CHM e dalla classificazione manuale.}
 	\label{graph:validazione-class-is-fl}
 \end{figure}
 %
