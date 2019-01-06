@@ -1,0 +1,76 @@
+\tikzsetnextfilename{eros_accr_4tr_matrix}
+\begin{tikzpicture}
+	\begin{axis}[
+		width = \textwidth,
+		height = 0.45\textwidth,
+		name = erosione,
+		symbolic x coords = {2000-09-17, 2001-06-07, 2002-05-18, 2002-06-12, 2003-06-22, 2004-10-14, 2005-08-30, 2006-07-16, 2007-09-21, 2008-07-05, 2009-07-08, 2010-09-29, 2011-10-02, 2012-08-01, 2013-09-05, 2014-09-08, 2014-10-31, 2015-08-13, 2015-09-12, 2015-10-22, 2016-09-13, 2017-04-21, 2017-06-13, 2018-06-15, 2018-09-16},
+		xticklabel style = {
+			rotate = 90,
+		},
+		xtick distance = 1,
+		symbolic y coords = {1-4, 5-8, 10-12, 13-16, 17-20, 21-23},
+		ymin = {1-4},
+		ymax = {21-23},
+		ytick distance = 1,
+		ytick = data,
+		ylabel = {Tratto},
+		y dir = reverse,
+		enlargelimits = 0.04,
+		colorbar horizontal,
+		colorbar style = {
+			at = {(0.5, 1.03)},
+			anchor = south,
+			xticklabel pos = upper,
+			xlabel = {Tasso d'erosione rispetto alle isole presenti},
+%			xlabel style = {
+%				rotate = 180,
+%			},
+		},
+		]
+		\addplot[
+			matrix plot*,
+			mesh/cols = 6,	% per fargli leggere colonne formate da 23 righe dal file di testo
+			shader = flat corner,	% per interpolare i colori
+			point meta max = 1,
+		]
+        	table [y = tratto, x = data, point meta = \thisrow{cambiamento}] {graphics/data/erosione_4tr_matrix.txt};
+    \end{axis}
+    
+    
+	\begin{axis}[
+		width = \textwidth,
+		height = 0.45\textwidth,
+		at = {($(erosione.south) + (0cm, -2.3cm)$)},
+		anchor = north,
+		symbolic x coords = {2000-09-17, 2001-06-07, 2002-05-18, 2002-06-12, 2003-06-22, 2004-10-14, 2005-08-30, 2006-07-16, 2007-09-21, 2008-07-05, 2009-07-08, 2010-09-29, 2011-10-02, 2012-08-01, 2013-09-05, 2014-09-08, 2014-10-31, 2015-08-13, 2015-09-12, 2015-10-22, 2016-09-13, 2017-04-21, 2017-06-13, 2018-06-15, 2018-09-16},
+		xticklabels = {,,},
+		xtick distance = 1,
+		symbolic y coords = {1-4, 5-8, 10-12, 13-16, 17-20, 21-23},
+		ymin = {1-4},
+		ymax = {21-23},
+		ytick distance = 1,
+		ytick = data,
+		ylabel = {Tratto},
+		y dir = reverse,
+		enlargelimits = 0.04,
+		colormap/bluered,
+		colorbar horizontal,
+		colorbar style = {
+			at = {(0.5, -0.03)},
+			anchor = north,
+			xlabel = {Tasso di accrescimento rispetto alle isole presenti},
+%			xlabel style = {
+%				rotate = 180,
+%			},
+		},
+		]
+		\addplot[
+			matrix plot*,
+			mesh/cols = 6,	% per fargli leggere colonne formate da 23 righe dal file di testo
+			shader = flat corner,	% per interpolare i colori
+			point meta max = 3,
+		]
+        	table [y = tratto, x = data, point meta = \thisrow{cambiamento}] {graphics/data/accrescimento_4tr_matrix.txt};
+    \end{axis}
+\end{tikzpicture}

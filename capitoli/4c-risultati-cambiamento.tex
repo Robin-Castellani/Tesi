@@ -39,21 +39,85 @@ Osservando le altre righe si vede che si alternano confronti con poca crescita a
 \\
 Alcuni tratti, ad esempio quelli montani, il~6, il~10, il~12 o il~20, presentano generalmente accrescimenti maggiori di altri, come il~7 e il~15, dove l'espansione rispetto alle isole presenti è bassa.
 
+I grafici in \cref{graph:eros-accr-4tr-matrix} mostrano i tassi di erosione e di accrescimento considerando gruppi di~4 tratti: l'areale del cambiamento è stata sommata sui tratti di ogni gruppo, è stata in seguito divisa per la somma delle isole presenti nei~4 tratti alla prima immagine di ogni confronto.
+Il tratto~9 è stato escluso per gli stessi motivi riportati precedentemente.
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/eros_accr_4tr_matrix}
+	\caption[tassi di erosione e di accrescimento unendo i tratti 4 a 4]{tassi di erosione e di accrescimento rispetto all'area delle isole presenti nella data iniziale di ogni confronto tra immagini successive; i tratti sono stati uniti in gruppi di 3 o 4.
+	Ogni confronto termina in una cella colorata e comincia nella cella colorata immediatamente precedente; le mappe inizialmente valide sono il~2000-09-17 per i tratti 1-21 e~2001-06-07 per i tratti~22 e~23; il tratto~9 contiene l'isola di Cornino, che fonda su roccia, e quindi viene scartato.
+	Le altre celle bianche indicano totale assenza di dati per tutti i tratti in ogni gruppo a causa della limitata estensione delle immagini o della presenza di nuvole.}
+	\label{graph:eros-accr-4tr-matrix}
+\end{figure}
+%
+\\
+L'accorpamento dei tratti agisce come filtro spaziale che omogenizza le differenze più marcate che possono esserci tra tratti adiacenti; la scelta di unire i tratti di~4 in~4, come già svolto nel calcolo della pendenza, preserva le maggiori diversità spaziali che caratterizzano ogni gruppo di tratti (nel primo gruppo ci sono i tratti montani, il quarto presenta complessivamente \emph{downwelling}, e così via.
+\\
+È possibile osservare dei marcati trend temporali di alternanza di momenti con alti tassi d'erosione con momenti con alti tassi di crescita.
+Inoltre, nei confronti dove c'è una forte erosione si vede un basso accrescimento, e viceversa.
+
+La \cref{tab:varianza-eros-accr} mostra la varianza spaziale dei tassi di crescita ed erosione nei tratti uniti 4 a~4 (cioè calcolata su ogni colonna dei grafici in \cref{graph:eros-accr-4tr-matrix}).
+La varianza è indice della dispersione dei punti: minore la varianza, più i punti hanno valori simili.
+%
+\begin{table}
+	\centering
+	\begin{tabular}{c *{2}{S[table-format = 1.3, table-comparator = true]}}
+		\toprule
+		{\textbf{Ultima data confronto}}	&	{\textbf{Erosione}}	&	{\textbf{Accrescimento}}	\\
+		\midrule
+		2001-06-17	&	0.011	&	<0.001	\\	
+		2002-05-18	&	0.014	&	8.211	\\	
+		2002-06-12	&	0.009	&	0.003	\\	
+		2003-06-22	&	0.030	&	0.002	\\	
+		2004-10-14	&	0.144	&	0.002	\\	
+		2005-08-30	&	0.002	&	0.094	\\	
+		2006-07-16	&	0.006	&	0.009	\\	
+		2007-09-21	&	0.007	&	0.160	\\	
+		2008-07-05	&	0.001	&	0.100	\\	
+		2009-07-08	&	0.031	&	0.001	\\	
+		2010-09-29	&	0.017	&	0.029	\\	
+		2011-10-02	&	0.015	&	0.002	\\	
+		2012-08-01	&	<0.001	&	0.084	\\	
+		2013-09-05	&	0.018	&	<0.001	\\	
+		2014-09-08	&	0.007	&	0.081	\\	
+		2014-10-31	&	0.006	&	<0.001	\\	
+		2015-08-13	&	0.003	&	0.011	\\	
+		2015-09-12	&	0.006	&	0.005	\\
+		2015-10-22	&	0.006	&	<0.001	\\
+		2016-09-13	&	0.003	&	0.030	\\	
+		2017-04-21	&	0.001	&	0.017	\\	
+		2017-06-13	&	0.013	&	0.002	\\	
+		2018-06-15	&	0.003	&	0.038	\\	
+		2018-09-16	&	0.024	&	0.042	\\
+		\bottomrule
+	\end{tabular}
+	\caption{varianza spaziale dei tassi di erosione e accrescimento per ogni confronto tra immagini successive calcolata sui dati dei tratti uniti 4 a~4; i grafici dei tassi sono mostrati in \cref{graph:eros-accr-4tr-matrix}; la data indica l'immagine finale del confronto, pertanto il 2000-09-17 non è riportato.}
+	\label{tab:varianza-eros-accr}
+\end{table}
+%
+
 
 \section{Discussione: eventi eccezionali}
 I dati relativi ai tratti più stretti, come quelli montani, il~12 (stretta di Pinzano) e il~23 (cambio morfologico), mostrano spesso alti tassi di erosione e accrescimento poiché l'areale delle isole presenti è generalmente basso (poche celle nelle immagini satellitari) e anche piccoli cambiamenti possono portare ad alte percentuali.
+La soluzione di unire gruppi di~4 tratti filtra efficacemente questi casi.
 \\
-Dalla comparazioni dei grafici di erosione e accrescimento delle isole si può vedere che quando si assiste a molta erosione, la crescita è bassa, e viceversa.
-Inoltre, i periodi di forte crescita sono quasi sempre seguiti da confronti che mostrano alti tassi di erosione: molto probabilmente gli anni in cui le piene sono state deboli o in cui si sono susseguite più morbide (\emph{flow pulses}) hanno incentivato la crescita delle piante e la colonizzazione di nuove aree; successivamente, gli eventi intensi di piena hanno trovato molta vegetazione in zone facilmente inondabili e l'hanno asportata.
-Infine, si vede come i tratti con \emph{upwelling} più o meno pronunciato siano quelli con i maggiori tassi di crescita (come i tratti 7-11 e i tratti 17-22), mentre quelli dove la falda è in gran parte sprofondata nel materasso alluvionale, come i tratti~15 e~16, mostrano accrescimenti minori rispetto agli altri;
+Dalla comparazione dei grafici di erosione e accrescimento delle isole si può vedere che quando si assiste a molta erosione, la crescita è bassa, e viceversa.
+Ad esempio nel confronto 2007-09-21/2008-07-05 la crescita è alta per molti tratti e contemporaneamente l'erosione è decisamente bassa, con una varianza spaziale molto piccola (\num{0.001}); nel confronto successivo 2008-07-05/2009-07-08 si assiste ad una erosione generalizzata nel tratto di studio e, allo stesso tempo, ad un tasso di crescita ovunque bassa (varianza \num{0.001}).
+La stessa situazione si ripete tra il 2011-10-02 e il 2013-09-05 e tra il 2013-09-05 e il 2014-10-31.
+\\
+I periodi di forte crescita sono quasi sempre seguiti da confronti che mostrano alti tassi di erosione: molto probabilmente gli anni in cui le piene sono state deboli o in cui si sono susseguite più morbide (\emph{flow pulses}) hanno incentivato la crescita delle piante e la colonizzazione di nuove aree; successivamente, gli eventi intensi di piena hanno trovato molta vegetazione in zone facilmente inondabili e l'hanno asportata.
+\\
+Si vede come i tratti con \emph{upwelling} più o meno pronunciato siano quelli con i maggiori tassi di crescita (come i tratti 7-11 e i tratti 17-22), mentre quelli dove la falda è in gran parte sprofondata nel materasso alluvionale, come i tratti~15 e~16, mostrano accrescimenti minori rispetto agli altri;
 i tratti~4, 5 e~6, in \emph{downwelling}, è probabile che si comportino come i tratti~12 e~23: possono supportare poche isole (grafico in \cref{graph:rapp-isl-tutti-tratti}) e quando queste si espandono si moltiplicano considerevolmente, sebbene il loro areale sia particolarmente inferiore a quello di altri tratti e la loro proporzione rispetto all'alveo attivo sia bassa.
+Gli effetti dell'innalzamento e dello sprofondamento della falda sono abbastanza evidenti, anche se non particolarmente marcati, nei grafici in cui si sono accorpati i tratti in gruppi da~4.
 \\
 Sembra che il sistema riesca efficacemente a riprendersi dopo ogni periodo di erosione intensa: nell'arco di una stagione vegetativa è possibile osservare una espansione delle isole non trascurabile.
-Non ci sono tratti che si riprendono in maniera spiccatamente maggiore di altri; la ricrescita ha luogo in maniera generalizzata in tutto il fiume, come l'erosione dovuta alle piene importanti, anche se, tratto a tratto, altri fattori ambientali inducono crescite spazialmente differenziate.
+Non ci sono tratti che si riprendono in maniera spiccatamente maggiore di altri; la ricrescita ha luogo in maniera generalizzata in tutto il fiume, come l'erosione dovuta alle piene importanti, anche se, tratto a tratto, altri fattori ambientali inducono crescite spazialmente differenziate; ciò è evidente anche dalla varianza maggiore dell'accrescimento rispetto all'erosione.
 \\
 Probabilmente esiste un limite dinamico di proporzione di isole che possono colonizzare l'alveo dipendente dal regime delle piene: si suppone che non esiste un'unica percentuale massima ammissibile di isole, ma che questa possa variare spazialmente e temporalmente in base agli eventi di piena e alle altre condizioni ambientali che regolano l'erosione e, più ampiamente, la crescita.
 
-Da queste considerazione, osservando l'idrogramma in \cref{graph:livelli-matrix} e in \cref{graph:livelli-orto-sat} (riportato a \cpageref{graph:tr-17-camb}) si può ipotizzare che le piene maggiori, come quelle avvenute verso la fine degli anni~2012 e~2014, siano quelle che abbiano asportato il maggior quantitativo di isole.
+Da queste considerazioni, osservando l'idrogramma in \cref{graph:livelli-matrix} e in \cref{graph:livelli-orto-sat} (riportato a \cpageref{graph:tr-17-camb}) si può ipotizzare che le piene maggiori, come quelle avvenute verso la fine degli anni~2012 e~2014, siano quelle che abbiano asportato il maggior quantitativo di isole.
 \\
 I grafici in \cref{graph:tr-17-camb} mostrano alcuni risultati ottenuti dalle mappe di cambiamento per il tratto~17, posto nel tratto vallivo immediatamente a valle della confluenza con il torrente Cosa.
 I dati sono rappresentati con due simboli: il pallino rappresenta la data finale di ogni confronto, mentre la croce indica la data iniziale; il pallino di un confronto ha la stessa data della croce del confronto successivo. 
