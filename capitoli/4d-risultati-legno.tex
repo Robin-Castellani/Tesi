@@ -3,7 +3,7 @@
 \\
 Ogni elemento è stato individuato tramite un pallino sulla mappa; se l'elemento è esteso su più celle delle immagini, come succede nella stragrande maggioranza dei casi per i tronchi lunghi metri e gli accumuli di legno, il medesimo elemento può essere mappato in punti diversi su immagini successive.
 Questo può far sembrare che il legno si sia spostato, anche se questo deriva dalla digitalizzazione manuale (ad esempio un albero depositato su una barra può essere mappato a metà del tronco o sull'apparato radicale; se viene parzialmente sepolto da un anno all'altro la mappatura può essere diversa).
-Tuttavia è possibile che un legno sia stato rimpiazzato da un altro: in questo caso considerare che l'elemento sia il medesimo non è corretto; tuttavia l'approccio consente di elaborare molti punti in poco tempo.
+Dall'altra parte, è possibile che un legno sia stato rimpiazzato da un altro: in questo caso considerare che l'elemento sia il medesimo non è corretto; tuttavia l'approccio consente di elaborare molti punti in poco tempo.
 \\
 È possibile per le digitalizzazioni degli elementi legnosi del~2010-08 e~2013-10-22 osservare se i tronchi e gli accumuli che si sono spostati sotto una certa soglia si trovano sulle quote relative più elevate.
 La soglia può variare da \SIrange[range-phrase = { a }]{0.5}{2.5}{\m} ed è stata scelta valutando qualitativamente le digitalizzazione in anni successivi.
@@ -32,7 +32,7 @@ Inoltre c'è una discreta separazione tra i \emph{boxplot} delle distanze inferi
 Questi fatti fanno pensare che gli elementi legnosi individuati da quelle soglie siano i medesimi tra il~2013 e il~2014: le piccole piene avvenute ad inizio del~2014 possono aver spostato il legno a quote relative minori mentre il legno posto più in alto non è stato toccato.
 Quest'ultimo ha la possibilità concreta di riprodursi vegetativamente ed essere il nucleo di formazione di nuove isole.
 \\
-I \emph{boxplot} nel grafico in \cref{graph:legno-wj-dem-detrended-distanza} mostrano la distribuzione delle quote del DEM detrended del~2013-10-22 per diverse soglie di distanza; in più, sono suddivisi gli elementi legnosi in tronchi e accumuli e sono considerati solamente i punti che, dalla digitalizzazione del~2013-10-22 al~2014-10-31, non cambiano tipo di elemento legnoso (un tronco nel~2013 che ha come punto più vicino nel~2014 sotto la soglia un altro tronco, questo viene considerato; se è un accumulo, viene scartato; se il tipo di elemento non è riconoscibile, viene considerato).
+I \emph{boxplot} nel grafico in \cref{graph:legno-wj-dem-detrended-distanza} mostrano la distribuzione delle quote del DEM detrended del~2013-10-22 per diverse soglie di distanza; in più, sono suddivisi gli elementi legnosi in tronchi e accumuli; infine, dalla digitalizzazione del~2013-10-22 sono considerati i tronchi che al~2014-10-31 hanno come punto più vicino un tronco, un accumulo (che potrebbe essersi formato con le piene tra le digitalizzazioni) o un elemento non riconoscibile (che potrebbe essere il tronco in parte sepolto), e gli accumuli che hanno come punto più prossimo un accumulo o un elemento non riconoscibile.
 Inoltre, viene riportata la distribuzione per gli i tronchi e gli accumuli con punti nella digitalizzazione seguente dello stesso tipo e con distanza superiore alla soglia; poiché queste distribuzioni sono di fatto identiche per ogni soglia, ne viene riportata solo una.
 \\
 Non è riportata la soglia di~\SI{0.5}{\m} per i tronchi poiché sono presenti solo~2 punti.

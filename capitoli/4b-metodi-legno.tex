@@ -20,7 +20,8 @@ La \cref{fig:digitalizzazione-legno} mostra l'area dove si è effettuata la digi
 	\label{fig:digitalizzazione-legno}
 \end{figure}
 %
-\\
+
 In seguito per ogni digitalizzazione si è calcolata la distanza tra ogni punto e quello più vicino nella digitalizzazione successiva. Ad esempio, per ogni elemento legnoso nella mappa del~2014-10-31 è stato ottenuta la distanza dall'elemento legnoso più prossimo nella mappa del~2015-08-13.
+Se la distanza è sufficientemente bassa, si considera l'elemento legnoso nella prima digitalizzazione come non mobilitato; se la distanza è elevata, il legno mappato nelle due digitalizzazioni non è il medesimo.
 \\
 Infine per le ortofoto associate ad un rilievo LiDAR (il~2010-08 e il~2013-10-22) si è ottenuta la quota di ogni punto rispetto al DEM privo dell'effetto della pendenza (questo viene calcolato sottraendo al DEM la quota media in quella zona, cioè eliminando l'effetto della pendenza; in questo modo le quote sono riferite ad uno zero locale e mostrano chiaramente zone incise, come i canali, e zone elevate, come le barre).

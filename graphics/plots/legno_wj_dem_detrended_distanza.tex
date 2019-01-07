@@ -26,48 +26,48 @@
 		]
 		\addplot [
 		        boxplot prepared = {
-		                lower whisker = -0.214108,
-		                lower quartile = 0.234276,
-		                median = 0.399475,
+		                lower whisker = -0.122345,
+		                lower quartile = 0.167450,
+		                median = 0.364044,
+		                upper quartile = 0.437347,
+		                upper whisker = 0.505463,
+		                },
+		        ]
+		        coordinates {}
+		node[below, red!75!black] at (boxplot box cs: \boxplotvalue{lower whisker},0.5){\pgfmathprintnumber{11}};
+		\addplot [
+		        boxplot prepared = {
+		                lower whisker = 0.009230,
+		                lower quartile = 0.206680,
+		                median = 0.366295,
 		                upper quartile = 0.459583,
-		                upper whisker = 0.508607,
+		                upper whisker = 0.562486,
 		                },
 		        ]
 		        coordinates {}
-		node[below, red!75!black] at (boxplot box cs: \boxplotvalue{lower whisker},0.5){\pgfmathprintnumber{8}};
+		node[below, red!75!black] at (boxplot box cs: \boxplotvalue{lower whisker},0.5){\pgfmathprintnumber{20}};
 		\addplot [
 		        boxplot prepared = {
-		                lower whisker = 0.006691,
-		                lower quartile = 0.325199,
-		                median = 0.411842,
-		                upper quartile = 0.508083,
-		                upper whisker = 0.563896,
+		                lower whisker = 0.023849,
+		                lower quartile = 0.180000,
+		                median = 0.368546,
+		                upper quartile = 0.477074,
+		                upper whisker = 0.565659,
 		                },
 		        ]
 		        coordinates {}
-		node[below, red!75!black] at (boxplot box cs: \boxplotvalue{lower whisker},0.5){\pgfmathprintnumber{16}};
+		node[below, red!75!black] at (boxplot box cs: \boxplotvalue{lower whisker},0.5){\pgfmathprintnumber{31}};
 		\addplot [
 		        boxplot prepared = {
-		                lower whisker = 0.012381,
-		                lower quartile = 0.243774,
-		                median = 0.393280,
-		                upper quartile = 0.515945,
-		                upper whisker = 0.584189,
+		                lower whisker = -0.002211,
+		                lower quartile = 0.127937,
+		                median = 0.366295,
+		                upper quartile = 0.489052,
+		                upper whisker = 0.598705,
 		                },
 		        ]
 		        coordinates {}
-		node[below, red!75!black] at (boxplot box cs: \boxplotvalue{lower whisker},0.5){\pgfmathprintnumber{25}};
-		\addplot [
-		        boxplot prepared = {
-		                lower whisker = -0.025824,
-		                lower quartile = 0.243774,
-		                median = 0.393280,
-		                upper quartile = 0.505463,
-		                upper whisker = 0.571835,
-		                },
-		        ]
-		        coordinates {}
-		node[below, red!75!black] at (boxplot box cs: \boxplotvalue{lower whisker},0.5){\pgfmathprintnumber{29}};
+		node[below, red!75!black] at (boxplot box cs: \boxplotvalue{lower whisker},0.5){\pgfmathprintnumber{40}};
 	%------------------------------------------------------
 	\nextgroupplot[ % accumuli fermi
 		width = 0.45\textwidth,
@@ -137,13 +137,13 @@
 		xtick = {1, 2},
 		xlabel = {},
 		xticklabels = {Tr., Acc.},
-		] 
-		\addplot [ % 400+ punti
+		]
+		\addplot [ % 500+ punti
 		        boxplot prepared = {
-		                lower whisker = -0.400027,
-		                lower quartile = -0.152180,
-		                median = 0.138489,
-		                upper quartile = 0.345379,
+		                lower whisker = -0.362068,
+		                lower quartile = -0.118015,
+		                median = 0.153465,
+		                upper quartile = 0.357452,
 		                upper whisker = 0.508168,
 		                },
 		        ]
