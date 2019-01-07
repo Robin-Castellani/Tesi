@@ -6,7 +6,7 @@ Si suppone di osservare erosione anche di parti di isole con vegetazione matura,
 \section{Metodi: stimare l'età delle isole}
 \label{sec:eta}
 
-\subsection{Limiti}
+\subsection{Considerazioni e preparazione dei dati}
 Con le immagini satellitari utilizzate non è possibile distinguere i singoli alberi che compongono le isole; se con le immagini a miglior risoluzione si distinguono gli arbusti isolati, non si può certo ottenere una stima dell'età tanto precisa quanto quella fornita da un carotaggio del tronco.
 In più, una cella è classificata come vegetazione solo quando le piante al suo interno presentano complessivamente una chioma sufficientemente grande da occupare gran parte della cella; pertanto le immagini con celle di \SI{10}{\m} o  \SI{15}{\m} non possono mostrare che grandi macchie di vegetazione.
 Prima dei \SI{3}{\anni} una pianta di salice generalmente non ha fronde molto estese.
@@ -17,7 +17,7 @@ Si crede che ciò che possa generalmente accadere è che fino ad una certa età,
 
 Le mappe del cambiamento sono state ottenute dalle mappe di classificazione; non essendo le seconde correttamente georeferenziate, neanche le prime lo sono. L'errore residuo nel processo di correzione è di 1~cella.
 
-Infine, per poter confrontare nel corso degli anni ogni cella, le mappe del cambiamento sono state ricampionate alla risoluzione più bassa, corrispondente a celle di~\SI{15}{\m} di lato. Si è proceduto come mostrato nella sottosezione \ref{subsec:camb-limiti} ottenendo sempre valori $RSQR < \SI{1.5}{\percent}$; i confronti a~\SI{10}{\m} sono stati ricampionati a~\SI{15}{\m} applicando il valore del $75_\mathrm{mo}$ percentile (terzo quartile).
+Infine, per poter confrontare nel corso degli anni ogni cella, le mappe del cambiamento sono state ricampionate alla risoluzione più bassa, corrispondente a celle di~\SI{15}{\m} di lato. Si è proceduto come mostrato nella sottosezione \ref{subsec:camb-approccio} ottenendo sempre valori $RSQR < \SI{1.5}{\percent}$; i confronti a~\SI{10}{\m} sono stati ricampionati a~\SI{15}{\m} applicando il valore del $75_\mathrm{mo}$ percentile (terzo quartile).
 
 
 \subsection{Obiettivo ed approccio} 

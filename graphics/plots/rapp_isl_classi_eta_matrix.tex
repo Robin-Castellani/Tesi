@@ -1,8 +1,8 @@
-\tikzsetnextfilename{erosione_classe_eta}
+\tikzsetnextfilename{rapp_isl_classe_eta_matrix}
 \begin{tikzpicture}
 	\begin{axis}[
 		width = 0.49\textwidth,
-		height = 0.9\textwidth,
+		height = 0.85\textwidth,
 		name = giovane,
 		title = {Giovane},
 		symbolic x coords = {2007-09-21, 2008-07-05, 2009-07-08, 2010-09-29, 2011-10-02, 2012-08-01, 2013-09-05, 2014-09-08, 2014-10-31, 2015-08-13, 2015-09-12, 2015-10-22, 2016-09-13, 2017-04-21, 2017-06-13, 2018-06-15, 2018-09-16},
@@ -17,20 +17,19 @@
 		enlargelimits = 0.02,
 		ylabel = {Tratto},
 		y dir = reverse,
-		colormap/bluered,
 		]
 		\addplot[
 			matrix plot*,
 			mesh/cols = 23,	% per fargli leggere colonne formate da 23 righe dal file di testo
 			shader = flat corner,	% per interpolare i colori
-			point meta max = 1,
+			point meta max = 0.3,
 		]
-        	table [y = tratto, x = data, point meta = \thisrow{cambiamento}] {graphics/data/eros_giov_matrix.txt}; 	
+        	table [y = tratto, x = data, point meta = \thisrow{cambiamento}] {graphics/data/rapp_isl_giov_matrix.txt}; 	
     \end{axis}
     
     \begin{axis}[
 		width = 0.49\textwidth,
-		height = 0.9\textwidth,
+		height = 0.85\textwidth,
 		name = intermedia,
 		title = {Intermedia},
 		at = {($(giovane.east) + (0.2cm, 0cm)$)},
@@ -47,20 +46,19 @@
 		yticklabels = {,,},
 		enlargelimits = 0.02,
 		y dir = reverse,
-		colormap/bluered,
 		]
 		\addplot[
 			matrix plot*,
 			mesh/cols = 23,	% per fargli leggere colonne formate da 23 righe dal file di testo
 			shader = flat corner,	% per interpolare i colori
-			point meta max = 1,
+			point meta max = 0.3,
 		]
-        	table [y = tratto, x = data, point meta = \thisrow{cambiamento}] {graphics/data/eros_int_matrix.txt};
+        	table [y = tratto, x = data, point meta = \thisrow{cambiamento}] {graphics/data/rapp_isl_int_matrix.txt};
     \end{axis}
     
     \begin{axis}[
 		width = 0.49\textwidth,
-		height = 0.9\textwidth,
+		height = 0.85\textwidth,
 		name = matura,
 		title = {Matura},
 		at = {($(intermedia.east) + (0.2cm, 0cm)$)},
@@ -79,19 +77,21 @@
 		y dir = reverse,
 		colorbar right,
 		colorbar style = {
-			ylabel = {Vegetazione erosa rapportata alla vegetazione presente},
+			ylabel = {Isole rispetto all'alveo attivo},
 			ylabel style = {
 				rotate = 180,
 			},
+			yticklabel style = {
+				/pgf/number format/.cd,fixed,
+			},
 		},
-		colormap/bluered,
 		]
 		\addplot[
 			matrix plot*,
 			mesh/cols = 23,	% per fargli leggere colonne formate da 23 righe dal file di testo
 			shader = flat corner,	% per interpolare i colori
-			point meta max = 1,
+			point meta max = 0.3,
 		]
-        	table [y = tratto, x = data, point meta = \thisrow{cambiamento}] {graphics/data/eros_mat_matrix.txt};
+        	table [y = tratto, x = data, point meta = \thisrow{cambiamento}] {graphics/data/rapp_isl_mat_matrix.txt};
     \end{axis}
 \end{tikzpicture}
