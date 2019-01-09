@@ -21,6 +21,10 @@ I tratti~12 e~23 possono mostrare alte percentuali di erosione, dovute alla pres
 
 I grafici in \cref{graph:erosione-classi-eta-4tr-matrix} presentano i medesimi dati con i tratti accorpati in gruppi di~4.
 I trend temporali sono ancora più evidenti: in alcuni momenti c'è stata una forte erosione in ogni classe, anche se di entità decrescente secondo l'età; in generale, nessun tratto mostra tassi d'erosione superiori agli altri.
+\\
+La \cref{tab:varianza-eros-per-eta} mostra la varianza calcolata su tutti i gruppi di tratti per ogni immagine, divisa secondo le classi d'età.
+I valori della vegetazione giovane sono maggiori di quelli della vegetazione intermedia, che a sua volta presenta varianza in genere più alta della vegetazione matura.
+In ogni caso, le varianze non superano le poche unità percentuali (\num{\sim 0.01}).
 %
 \begin{landscape}
 \begin{figure}
@@ -55,15 +59,54 @@ I trend temporali sono ancora più evidenti: in alcuni momenti c'è stata una fo
 	\label{graph:erosione-classi-eta-4tr-matrix}
 \end{figure}
 %
+%
+\begin{table}
+	\centering
+	\begin{tabular}{c *{3}{S[table-format = 1.4, table-comparator = true]}}
+		\toprule
+		{\textbf{Ultima data confronto}}	&	{\textbf{Giovane}}	&	{\textbf{Intermedia}}	&	{\textbf{Matura}}	\\
+		\midrule
+		2007-09-21	&	0.003	&	0.008	&	<0.001	\\
+		2008-07-05	&	0.001	&	<0.001	&	<0.001	\\
+		2009-07-08	&	0.019	&	0.017	&	0.007	\\
+		2010-09-29	&	0.004	&	0.001	&	0.001	\\
+		2011-10-02	&	0.023	&	0.013	&	0.005	\\
+		2012-08-01	&	<0.001	&	<0.001	&	<0.001	\\
+		2013-09-05	&	0.017	&	0.010	&	0.007	\\
+		2014-09-08	&	0.008	&	0.010	&	0.007	\\
+		2014-10-31	&	0.038	&	0.014	&	<0.001	\\
+		2015-08-13	&	0.003	&	0.004	&	0.002	\\
+		2015-09-12	&	0.005	&	0.005	&	0.001	\\
+		2015-10-22	&	0.006	&	0.005	&	0.014	\\
+		2016-09-13	&	0.003	&	0.005	&	0.001	\\
+		2017-04-21	&	0.005	&	<0.001	&	<0.001	\\
+		2017-06-13	&	0.011	&	0.004	&	0.001	\\
+		2018-06-15	&	<0.001	&	0.002	&	<0.001	\\
+		2018-09-16	&	0.030	&	0.016	&	<0.001	\\
+		\bottomrule
+	\end{tabular}
+	\caption[varianza spaziale dei tassi d'erosione per le tre classi d'età]{varianza spaziale dei tassi di erosione divisi secondo le classi d'età per ogni confronto tra immagini successive calcolata sui dati dei tratti uniti 4 a~4; i grafici dei tassi sono mostrati in \cref{graph:erosione-classi-eta-4tr-matrix}.
+	La data indica l'immagine finale del confronto; sono riportati solo i confronti con data finale a partire dal~2007-09-21 poiché prima di questa immagine la suddivisione in classi d'età non è affidabile.}
+	\label{tab:varianza-eros-per-eta}
+\end{table}
+%
 
 \section{Discussione: un trend per la vegetazione erosa}
+La varianza in genere più elevata della vegetazione giovane mostra che questa viene erosa non uniformemente nel tratto di studio: i tassi di erosione sono spazialmente differenziati probabilmente a causa delle diverse condizioni ambientali che possono favorire la crescita in maniera diversificata.
+Bisogna comunque ricordare che elevati tassi di erosione si hanno anche quando è presente poca vegetazione di una classe d'età e questa viene portata via.
+\\
+La classe d'età intermedia mostra varianze elevate negli stessi confronti in cui queste sono alte nella classe giovane; questo può essere dovuto alla quota relativa dove queste isole si stanno insediando, che potrebbe non essere ancora sufficiente elevata da proteggere le isole dalle piene intermedie.
+\\
+La vegetazione matura mostra varianze in genere minori del punto percentuale: è possibile affermare che la sua erosione avviene in tutto il tratto di studio con tassi molto simili, sebbene contenuti.
+
 Il periodo con assenza di piene intense tra il~2005 e il~2008 ha portato ad un forte incremento della vegetazione, che in seguito è stata erosa durante gli eventi successivi di piena.
 La maggior parte della vegetazione erosa è stata quella giovane cresciuta negli anni precedenti, mentre la percentuale di erosione nelle altre classi d'età è stata molto minore, sebbene presente.
 Dinamiche simili hanno avuto luogo tra il~2011 e il~2013: un periodo favorevole per la crescita ha sperimentato una forte erosione a causa delle intense piene che sono succedute.
+In entrambi questi momenti, gli anni in cui c'è stata molta crescita e contemporaneamente sono stati rilevati bassi tassi d'erosione mostrano di avere varianze spaziali di fatto trascurabili: nel~2008-07-05 e nel~2012-08-01 l'erosione è stata praticamente nulla in ogni tratto e per ogni classe.
 \\
-Nel periodo 2011-10-02/2012-08-01 si è rilevata una non trascurabile espansione delle isole e ci sono state poche piene rilevanti; l'erosione è stata molto debole, quasi assente in ogni classe. Forse le piene avvenute prima di questo periodo hanno asportato gran parte della vegetazione e le poche piene oltre i \SI{2}{\m} che sono arrivate tra il~2011 e il~2012 non hanno trovato piante in zone facilmente inondabili.
+Nel periodo 2011-10-02/2012-08-01 si sono rilevate una non trascurabile espansione delle isole e poche piene rilevanti; l'erosione è stata molto debole, quasi assente in ogni classe. Forse le piene avvenute prima di questo periodo hanno asportato gran parte della vegetazione e le poche piene oltre i~\SI{2}{\m} che sono arrivate tra il~2011 e il~2012 non hanno trovato piante in zone facilmente inondabili.
 \\
-A seguito dell'evento \emph{bankfull} della fine del~2012 e dei \emph{flood pulses} tra il~2013 e il~2014 molte isole mature sono state erose nei tratti vallivi; il loro tasso di erosione è paragonabile a quello rilevato nelle isole giovani ed intermedie. Queste piene sono riuscite ad avere un effetto di cui non se ne osservano pari; i periodi di crescita che hanno preceduto questo evento potrebbero aver favorito la crescita di isole in zone relativamente più protette dalle piene, quali le zone a quota relativa più alta, mentre molte altre piante giovani ed intermedie sono state travolte; la piena più importanta e rara di fine~2012 è riuscita ad erodere molta della vegetazione sopravvissuta ormai matura perché ne era presente una grande quantità e in aree non ancora aggradatesi particolarmente.
+A seguito dell'evento \emph{bankfull} della fine del~2012 e dei \emph{flood pulses} tra il~2013 e il~2014 molte isole mature sono state erose nei tratti vallivi; il loro tasso di erosione è paragonabile a quello rilevato nelle isole giovani ed intermedie. Queste piene sono riuscite ad avere un effetto di cui non se ne osservano pari; i periodi di crescita che hanno preceduto questo evento potrebbero aver favorito l'espansione delle isole in zone relativamente più protette dalle piene, quali le zone a quota relativa più alta, mentre molte altre piante giovani ed intermedie sono state travolte; la piena più importante e rara di fine~2012 è riuscita ad erodere molta della vegetazione sopravvissuta ormai matura perché ne era presente una grande quantità e in aree non ancora particolarmente aggradate.
 C'è comunque da ricordare che anche piene poco importanti possono erodere isole insediatesi in alveo da tempo, come mostrano le celle con tassi considerevoli di erosione della componente matura sparse nel grafico, poiché, se queste si trovano all'estradosso di canali in curva, possono crollare per scalzamento al piede dell'isola.
 \\
 Riassumendo, sembra che le possibilità di erosione in una classe dipendano sia dalla disponibilità di isole da erodere, sia dal regime delle piene che ha preceduto il momento che si sta osservando.
