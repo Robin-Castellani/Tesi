@@ -1,0 +1,257 @@
+\tikzsetnextfilename{relazioni_piene_erosione_vs_surian}
+\begin{tikzpicture}
+	\begin{groupplot}[
+		group style = {
+			group size = 3 by 3,
+			y descriptions at = edge left,
+			horizontal sep = 0.1cm,
+			vertical sep = 1.9cm,
+		},
+		width = 0.4\textwidth,
+		height = 0.4\textwidth,
+		grid = major,
+		title style = {yshift = -0.25cm},
+	]
+	\nextgroupplot[ % TR < 1 anno
+		ylabel = {Erosione annuale \si{[\percent\per\anno]}},
+		title = {TR \SI{<1}{\anno}},
+		xlabel = {},
+		ymax = 16,
+		]
+		\addplot [
+			only marks,
+			blue,			
+			]
+			table[x = {RI<1yr_x}, y = RI<1yr_y] {graphics/data/relazioni_piene_erosione_surian_2014.txt};
+			
+		\addplot [
+			no markers,
+			red,
+			smooth,
+			ultra thick,		
+			]
+			table[x = {Eq_RI<1yr_x}, y = Eq_RI<1yr_y] {graphics/data/relazioni_piene_erosione_surian_2014.txt};
+			
+		\node at (axis description cs: 1,0) [anchor = south east, draw = black, fill = white] {$R^2 = 0.28$};
+		
+	%--------------------------------------------------	
+		
+	\nextgroupplot[ % TR = 1.2 anni
+		title = {TR \SI{1.2}{\anni}},
+		xlabel = {Portata cumulata annuale \SI[retain-unity-mantissa = false]{1e9}{[\m\tothe{3}\per\anno]}},
+		ymax = 16,
+		]
+		\addplot [
+			only marks,
+			blue,			
+			]
+			table[x = {RI=1.2yr_x}, y = {RI=1.2yr_y}] {graphics/data/relazioni_piene_erosione_surian_2014.txt};
+			
+		\addplot [
+			no markers,
+			red,
+			smooth,
+			ultra thick,		
+			]
+			table[x = {Eq_RI=1.2yr_x}, y = {Eq_RI=1.2yr_y}] {graphics/data/relazioni_piene_erosione_surian_2014.txt};
+			
+		\node at (axis description cs: 1,0) [anchor = south east, draw = black, fill = white] {$R^2 = 0.37$};
+		
+	%--------------------------------------------------	
+		
+	\nextgroupplot[ % TR = 2.5 anni
+		title = {TR \SI{2.5}{\anni}},
+		xlabel = {},
+		ymax = 16,
+		]
+		\addplot [
+			only marks,
+			blue,			
+			]
+			table[x = {RI=2.5yr_x}, y = {RI=2.5yr_y}] {graphics/data/relazioni_piene_erosione_surian_2014.txt};
+			
+		\addplot [
+			no markers,
+			red,
+			smooth,
+			ultra thick,		
+			]
+			table[x = {Eq_RI=2.5yr_x}, y = {Eq_RI=2.5yr_y}] {graphics/data/relazioni_piene_erosione_surian_2014.txt};
+			
+		\node at (axis description cs: 1,0) [anchor = south east, draw = black, fill = white] {$R^2 = 0.79$};
+		
+	%€€€€€€€€ SOLO TRATTI 6-, RELAZIONI ESPONENZIALI €€€€€€€€€
+		
+	\nextgroupplot[ % mia TR = 0.5 anni (liv = 2m)
+%		xlabel = {Int livelli \si{[\m\giorno]}},
+		ylabel = {Erosione/Isole \si{[\percent]}},
+		grid = major,
+		title = {TR \SIrange[range-phrase={-}, range-units = single]{4}{5}{\mesi}},		
+		ymax = 100,	
+		]
+		
+		\pgfplotsforeachungrouped \tr in {6,7,...,12} {
+		\addplot[
+			only marks,
+			mark size = 1pt,
+			blue,
+			]
+			table [x = integrale_piene, y expr = \thisrow{tr_\tr} * 100] {graphics/data/iote_tr_0.5_vs_surian.txt};
+		};
+	
+		\addplot[
+			ultra thick,
+			domain = 0:2,
+			samples = 20,
+			red,
+			]
+			{10^(0.3467 * x - 1.1774) * 100};
+			
+		%\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left, name = range] {1$\div$22};
+		
+		\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east, align = left] {$R^2 = 0.24$};
+		
+	%--------------------------------------------------	
+		
+	\nextgroupplot[ % mia TR = 1.2 anni (liv = 2.5m)
+		xlabel = {Integrale dei livelli sopra soglia \si{[\m\giorno]}},
+		grid = major,
+		title = {TR \SI{1.2}{\anni}},
+		ymax = 100,	
+		]
+		
+		\pgfplotsforeachungrouped \tr in {6,7,...,12} {
+		\addplot[
+			only marks,
+			mark size = 1pt,
+			blue,
+			]
+			table [x = integrale_piene, y expr = \thisrow{tr_\tr} * 100] {graphics/data/iote_tr_1.2_vs_surian.txt};
+		};
+	
+		\addplot[
+			ultra thick,
+			domain = 0:0.75,
+			samples = 20,
+			red,
+			]
+			{10^(0.6533 * x - 0.9201) * 100};
+		
+		\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east, align = left] {$R^2 = 0.12$};
+		
+	%--------------------------------------------------	
+		
+	\nextgroupplot[ % mia TR = 2.5 anni (liv = 2.9m)
+		grid = major,
+		title = {TR \SI{2.5}{\anni}},
+		ymax = 100,	
+		]
+		
+		\pgfplotsforeachungrouped \tr in {6,7,...,12} {
+		\addplot[
+			only marks,
+			mark size = 1pt,
+			blue,
+			]
+			table [x = integrale_piene, y expr = \thisrow{tr_\tr} * 100] {graphics/data/iote_tr_2.5_vs_surian.txt};
+		};
+	
+		\addplot[
+			ultra thick,
+			domain = 0:0.27,
+			samples = 20,
+			red,
+			]
+			{10^(0.9813 * x -0.7358) * 100};
+		
+		\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east, align = left] {$R^2 = 0.07$};
+		
+	%€€€€€€€€ TUTTI TRATTI, RELAZIONI LINEARI €€€€€€€€€
+		
+	\nextgroupplot[ % mia TR = 0.5 anni (liv = 2m)
+%		xlabel = {Int livelli \si{[\m\giorno]}},
+		ylabel = {Erosione/Isole \si{[\percent]}},
+		grid = major,
+		title = {TR \SIrange[range-phrase={-}, range-units = single]{4}{5}{\mesi}},		
+		ymax = 100,	
+		]
+		
+		\pgfplotsforeachungrouped \tr in {1,2,...,23} {
+		\addplot[
+			only marks,
+			mark size = 1pt,
+			blue,
+			]
+			table [x = integrale_piene, y expr = \thisrow{tr_\tr} * 100] {graphics/data/iote_tr_0.5_vs_surian.txt};
+		};
+	
+		\addplot[
+			ultra thick,
+			domain = 0:2,
+			samples = 3,
+			red,
+			]
+			{(0.1343 * x + 0.0989) * 100};
+			
+		%\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left, name = range] {1$\div$22};
+		
+		\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east, align = left] {$R^2 = 0.26$};
+		
+	%--------------------------------------------------	
+		
+	\nextgroupplot[ % mia TR = 1.2 anni (liv = 2.5m)
+		xlabel = {Integrale dei livelli sopra soglia \si{[\m\giorno]}},
+		grid = major,
+		title = {TR \SI{1.2}{\anni}},
+		ymax = 100,	
+		]
+		
+		\pgfplotsforeachungrouped \tr in {1,2,...,23} {
+		\addplot[
+			only marks,
+			mark size = 1pt,
+			blue,
+			]
+			table [x = integrale_piene, y expr = \thisrow{tr_\tr} * 100] {graphics/data/iote_tr_1.2_vs_surian.txt};
+		};
+	
+		\addplot[
+			ultra thick,
+			domain = 0:0.75,
+			samples = 3,
+			red,
+			]
+			{(0.2867 * x + 0.1724) * 100};
+		
+		\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east, align = left] {$R^2 = 0.10$};
+		
+	%--------------------------------------------------	
+		
+	\nextgroupplot[ % mia TR = 2.5 anni (liv = 2.9m)
+		grid = major,
+		title = {TR \SI{2.5}{\anni}},
+		ymax = 100,	
+		]
+		
+		\pgfplotsforeachungrouped \tr in {1,2,...,23} {
+		\addplot[
+			only marks,
+			mark size = 1pt,
+			blue,
+			]
+			table [x = integrale_piene, y expr = \thisrow{tr_\tr} * 100] {graphics/data/iote_tr_2.5_vs_surian.txt};
+		};
+	
+		\addplot[
+			ultra thick,
+			domain = 0:0.27,
+			samples = 3,
+			red,
+			]
+			{(0.7014 * x + 0.2004) * 100};
+		
+		\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east, align = left] {$R^2 = 0.11$};
+		
+		
+	\end{groupplot}
+\end{tikzpicture}

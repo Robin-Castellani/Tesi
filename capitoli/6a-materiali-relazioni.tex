@@ -3,12 +3,12 @@ Poiché l'erosione delle isole è solamente legata agli effetti delle piene, men
 
 \section{Metodi: parametri considerati}
 
-\paragraph{Isole erose}
+\subsection{Isole erose}
 Dallo studio dei cambiamenti delle isole tra un'immagine e quella successiva si sono ottenuti i dati di areale di isole erose (sezione~\ref{sec:cambiamento});
 questi dati sono stati suddivisi secondo tre classi di età della vegetazione: giovane, intermedia e matura (sezione~\ref{sec:eta}).
 Quindi è nota la quantità di isole erose a cavallo di ogni immagine, in ogni tratto e per ogni classe di età.
 
-\paragraph{Integrale dei livelli}
+\subsection{Integrale dei livelli}
 Dai dati di livello dell'acqua presso la stazione idrometrica di Villuzza, alcuni autori hanno ottenuto una statistica dei tempi di ritorno dei picchi delle piene superiori ad \SI{1}{\m} \squarecite{Bertoldi:2009-2m}; questa è stata estesa utilizzando i dati di livello idrometrico dal~2000-01-01 al~2018-12-21 ed è riportata nel grafico in \cref{graph:tr-picchi}; in totale sono stati individuati poco più di~200 picchi.
 %
 \begin{figure}
@@ -58,3 +58,17 @@ se un'integrale è maggiore di altri, nell'intervallo tra le immagini sono avven
 \end{figure}
 %
 
+\subsection{Metodologia}
+Al fine di ottenere relazioni significative si sono usate (non sempre contemporaneamente) queste metodologie:
+%
+\begin{itemize}
+	\item tenere conto dei tempi di ritorno di \SIrange[range-phrase = {-}, range-units = single]{2}{3}{\mesi}, \SIrange[range-phrase = {-}, range-units = single]{4}{5}{\mesi}, \SI{1}{\anno} e \SI{2}{\anni}, cui corrispondono rispettivamente livelli soglia di \SI{1.5}{\m}, \SI{2}{\m}, \SI{2.4}{\m} e \SI{2.8}{\m};
+	\item dividere la quantità rappresentata su un asse per un'altra quantità (ad esempio dividere le isole erose per le isole presenti prima dell'erosione);
+	\item accorpare i dati di più tratti adiacenti (ad esempio dei primi 4 tratti);
+	\item escludere dall'analisi alcuni tratti con caratteristiche peculiari, come il tratto~9, dove è presente l'isola su roccia di Cornino, e il tratto~23, in quanto presenta una morfologia nettamente diversa rispetto agli altri tratti;
+	\item ignorare i punti che mostrano erosione anche per integrali nulli, in quanto gli areali di erosione sono molto modesti e sono con tutta probabilità dovuti agli errori di correzione della georeferenziazione attuata nella fase di elaborazione del cambiamento;
+	\item scalare un asse con il logaritmo in base~\num{10} per utilizzare leggi di potenza nelle regressioni;
+	\item considerare un numero minimo di~5 punti per effettuare e ritenere valide le regressioni (per due punti passa una ed una sola retta, e in tal caso una regressione lineare darebbe ottimi risultati, ma poco validi; con un maggior numero di punti l'affidabilità dei risultati migliora);
+	\item considerare come valide le regressioni che mostrano $R^2 \num{> 0.3}$ e $P_\mathrm{value} \num{< 0.05}$;
+	\item limitare agli anni più recenti la suddivisione in classi d'età (dall'immagine del~2007-09-21), che è debolmente valida nei primi anni di osservazione (si veda la sezione~\ref{sec:eta}).
+\end{itemize}

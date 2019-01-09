@@ -1,35 +1,306 @@
-\section{Risultati: (im)prevedibilità dell'erosione delle isole}
-Per ricercare delle relazioni si è effettuata più volte una regressione lineare dei punti nei grafici utilizzando due numeri come indicatori della bontà della relazione: l'$R^2$ e il $P_\mathrm{value}$ ottenuto dal test di Pearson.
-Questi valori indicano una buona e forte relazione lineare quando $R^2 = 1$ e $P_\mathrm{value} < 0.05$, mentre se $R^2 \ll 1$ e/o $P_\mathrm{value} > 0.05$ allora i punti graficati non hanno una tendenza lineare.
+\section{Risultati e discussione: relazioni tra piene ed isole erose}
+\subsection{Un confronto con dati da letteratura}
+In letteratura è presente un lavoro che ha già ottenuto delle relazioni tra il regime delle piene e la proporzione di isole erose per tre tempi di ritorno (TR~\SI{<1}{\anno}, TR~\SI{1.2}{\anni}, TR~\SI{2.5}{\anni}) \squarecite{Surian:2015}:
+gli autori hanno confrontato~8 ortofoto (1986, 1993, 1997, 1999, 2003, 2005, 2009, 2011) che comprendono i tratti 6$\div$12;
+hanno utilizzato una scala di deflusso sviluppata su una sezione presso Venzone, dove è presente una stazione idrometrica, e grazie a questa hanno ottenuto le portate cumulate annualmente tra ogni coppia di immagini successive sopra una portata soglia definita secondo un tempo di ritorno;
+infine, hanno eseguito delle regressioni utilizzando leggi di potenza.
 \\
-Al fine di migliorare questi due valori si sono usate (non sempre contemporaneamente) queste metodologie:
+I grafici in \cref{graph:relazioni-piene-erosione-vs-surian} mostrano le relazioni ottenute da \squarecite{Surian:2015} (grafici nella prima riga), confrontandole con le percentuali di isole erose rispetto a quelle presenti in funzione dell'integrale dei livelli sopra soglia per gli stessi tempi di ritorno di cui sopra; sono stati inizialmente considerati i tratti dal~6 al~12 (tranne il~9) e leggi esponenziali per le regressioni (grafici nella seconda riga); in seguito sono stati utilizzati tutti i tratti (tranne il~9 e il~23) e sono state applicate regressioni lineari.
 %
-\begin{itemize}
-	\item scalare un asse con il logaritmo in base 10;
-	\item dividere la quantità rappresentata su un asse per un'altra quantità (ad esempio dividere le isole erose per le isole presenti prima dell'erosione);
-	\item accorpare i dati di più tratti adiacenti (ad esempio dei primi 4 tratti);
-	\item escludere dall'analisi alcuni tratti con caratteristiche peculari;
-	\item ignorare i punti che mostrano erosione anche per integrali nulli, in quanto gli areali di erosioni sono molto modesti e sono con tutta probabilità dovuti agli errori di correzione della georeferenziazione attuata nella fase di elaborazione del cambiamento
-	\item considerare un numero minimo di punti per effettuare le regressioni e ritenerle valide (per due punti passa una ed una sola retta, e in tal caso una regressione lineare darebbe ottimi risultati, ma poco validi; con un maggior numero di punti l'affidabilità dei risultati migliora);
-	\item limitare agli anni più recenti la suddivisioni in classi d'età, che è molto debolmente valida nei primi anni di osservazione (si veda la sezione~\ref{sec:eta}).
-\end{itemize}
+\begin{figure}
+	\centering
+	\input{graphics/plots/relazioni_piene_erosione_vs_surian}
+	\vspace*{-0.7cm}
+	\caption[relazioni tra proporzione di isole erose e livello cumulato sopra soglia confrontato con dati da \squarecite{Surian:2015}]{relazioni tra proporzione di isole erose e livello cumulato sopra soglia per tre diversi tempi di ritorno confrontato con dati da \squarecite{Surian:2015} (in alto).
+	Questi hanno usato~8 mappe (dal~1986 al~2011) che si estendono dal tratto~6 al tratto~12 compresi; per ottenere le portate cumulate hanno usato una scala di deflusso applicata ai dati idrometrici del sensore presso Venzone; le regressioni (curve in rosso) sono leggi di potenza.
+	Nella seconda riga sono mostrate le proporzioni di isole erose in funzione dell'integrale dei livelli sopra soglia della presente tesi considerando i tratti dal~6 al~12 (escluso il~9, dove è presente l'isola di Cornino) eseguendo regressioni con leggi esponenziali (curve rosse); l'ultima riga mostra tutti i tratti (escluso il~9) e regressioni lineari (rette rosse).}
+	\label{graph:relazioni-piene-erosione-vs-surian}
+\end{figure}
+%
+\\
+Questo confronto serve a mostrare come i dati della presente tesi siano in numero molto maggiore rispetto a quelli da letteratura e questo possa portare a relazioni più deboli;
+come relazioni lineari e a legge di potenza diano in questo caso risultati simili;
+come il numero di confronti si riduce in maniera considerevole quando si utilizzano livelli soglia riferiti a tempi di ritorno via via maggiori;
+come ci siano percentuali di erosione molto più alte rispetto ai dati di \squarecite{Surian:2015};
+come siano presenti delle forti differenze spaziali, evidenziate anche nelle discussioni sui grafici che mostravano i tassi di accrescimento e di erosione (sezione~\ref{sec:camb-ris}), che portano ad avere alte percentuali di isole erose nei tratti dove sono presenti poche isole.
+\\
+Si ritiene che la fonte principale delle differenze presentate risieda nel metodo con cui sono state digitalizzate le isole, come è stato discusso nella sezione~\ref{sec:perc-isole-in-alveo} e nel maggior numero di immagini nel presente lavoro, che permette di osservare cambiamenti anche importanti ad una scala temporale minore (difatti se si avessero avuto poche immagini, gli integrali dei livelli avrebbero avuto significato a scala di periodi di anni; avendo più di un'immagine all'anno, è possibile osservare gli effetti quasi del singolo evento di piena).
 
-\subsection{Condizioni in cui si può formulare buone previsioni}
-Per la classe d'età giovane utilizzando un tempo di ritorno di \SIrange[range-phrase = {-}, range-units = single]{3}{4}{\mesi} (livello soglia pari a \SI{2}{\m} sono stati ottenuti risultati molto positivi applicando ai dati le seguenti trasformazioni:
+
+
+\subsection{Esplorare altre metodologie}
+Al fine di filtrare le differenze spaziali più marcate, si sono aggregati i dati dei tratti in~6 gruppi di~4 tratti adiacenti (a meno dei tratti esclusi), come è stato fatto nel calcolo della pendenza e nelle considerazioni sui tassi di erosione e crescita.
+Inoltre si è suddivisa la vegetazione nelle classi d'età giovane, intermedia e matura (sezione~\ref{sec:eta}).
+Si è mantenuta la rappresentazione dell'erosione come tassi rispetto alle isole della stessa fascia d'età presenti e si sono effettuate regressioni lineari.
+\\
+Con riferimento ai criteri per considerare significative le relazioni ottenute, nella \cref{tab:iote-4tr-lin-ntr-r2-pval} sono riportate per le tre classi d'età e per i quattro tempi di ritorno il numero di tratti con relazioni valide, la mediana dell'$R^2$ e del $P_\mathrm{value}$ in questi tratti.
+%
+\begin{table}
+	\centering
+	\begin{tabular}{c c *{3}{S[table-format = 2.3, table-comparator = true]}}
+		\toprule
+		\multicolumn{5}{p{0.7\textwidth}}{Relazioni lineari in gruppi di~4 tratti tra proporzioni di isole erose rispetto alle isole presenti della stessa età in funzione degli integrali dei livelli sopra soglia}	\\
+		\midrule
+			&	&	{\textbf{Giovane}}	&	{\textbf{Intermedia}}	&	{\textbf{Matura}}	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SIrange[range-phrase = {-}, range-units = single]{2}{3}{\mesi}\end{sideways}}	&	\# tratti	&	11	&	4	&	6	\\
+			&	Mediana $R^2$	&	0.41	&	0.41	&	0.69	\\
+			&	Mediana $P_\mathrm{value}$	&	0.008	&	0.019	&	<0.001	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SIrange[range-phrase = {-}, range-units = single]{4}{5}{\mesi}\end{sideways}}	&	\# tratti	&	19	&	{-}	&	2	\\
+			&	Mediana $R^2$	&	0.51	&	{-}	&	0.37	\\
+			&	Mediana $P_\mathrm{value}$	&	0.005	&	{-}	&	0.036	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SI{1}{\anno}\end{sideways}}	&	\# tratti	&	4	&	7	&	8	\\
+			&	Mediana $R^2$	&	0.48	&	0.65	&	0.54	\\
+			&	Mediana $P_\mathrm{value}$	&	0.026	&	0.015	&	0.027	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SI{2}{\anni}\end{sideways}}	&	\# tratti	&	4	&	4	&	{-}	\\
+			&	Mediana $R^2$	&	0.57	&	0.46	&	{-}	\\
+			&	Mediana $P_\mathrm{value}$	&	0.012	&	0.032	&	{-}	\\
+		\bottomrule
+	\end{tabular}
+	\caption[numero di tratti nei gruppi di~4 tratti con relazioni significative dividendo la vegetazione in classi d'età]{numero di tratti con relazioni significative tra tassi di erosione della vegetazione suddivisa in fasce d'età e integrale dei livelli sopra soglia secondo quattro tempi di ritorno; sono riportate le mediane degli $R^2$ e $P_\mathrm{value}$ in questi tratti; “-” indica che non ci sono tratti con relazioni valide; i tratti sono stati uniti 4 a~4.}
+	\label{tab:iote-4tr-lin-ntr-r2-pval}
+\end{table}
+%
+\\
+Queste relazioni mostrano per la classe giovane una buona validità su molti tratti per TR~\SI{< 1}{\anno};
+ci sono discreti risultati anche per le classi di vegetazione intermedia e matura per TR di \SIrange[range-phrase = {-}, range-units = single]{2}{3}{\mesi} e di \SI{1}{\anno};
+per il TR \SI{2}{\anni} le relazioni sono valide su pochi tratti e quindi non vengono considerate.
+
+Le tabelle seguenti riportano risultati in forma simile a quelli mostrati in \cref{tab:iote-4tr-lin-ntr-r2-pval}, ma dove sono state applicate delle trasformazioni ai parametri considerati oppure sono state applicate regressioni esponenziali.
+
+Nella tabella \cref{tab:iote-lin-ntr-r2-pval} sono presenti i risultati che si ottengono non accorpando i tratti in gruppi di~4.
+%
+\begin{table}
+	\centering
+	\begin{tabular}{c c *{3}{S[table-format = 2.3, table-comparator = true]}}
+		\toprule
+		\multicolumn{5}{p{0.7\textwidth}}{Relazioni lineari per tutti i tratti tra proporzioni di isole erose rispetto alle isole presenti della stessa età in funzione degli integrali dei livelli sopra soglia}	\\
+		\midrule
+			&	&	{\textbf{Giovane}}	&	{\textbf{Intermedia}}	&	{\textbf{Matura}}	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SIrange[range-phrase = {-}, range-units = single]{2}{3}{\mesi}\end{sideways}}	&	\# tratti	&	8	&	5	&	6	\\
+			&	Mediana $R^2$	&	0.53	&	0.40	&	0.40	\\
+			&	Mediana $P_\mathrm{value}$	&	0.006	&	0.028	&	0.023	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SIrange[range-phrase = {-}, range-units = single]{4}{5}{\mesi}\end{sideways}}	&	\# tratti	&	13	&	{-}	&	2	\\
+			&	Mediana $R^2$	&	0.57	&	{-}	&	0.46	\\
+			&	Mediana $P_\mathrm{value}$	&	0.007	&	{-}	&	0.039	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SI{1}{\anno}\end{sideways}}	&	\# tratti	&	3	&	6	&	7	\\
+			&	Mediana $R^2$	&	0.62	&	0.67	&	0.84	\\
+			&	Mediana $P_\mathrm{value}$	&	0.037	&	0.030	&	0.003	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SI{2}{\anni}\end{sideways}}	&	\# tratti	&	3	&	2	&	6	\\
+			&	Mediana $R^2$	&	0.65	&	0.74	&	0.85	\\
+			&	Mediana $P_\mathrm{value}$	&	0.028	&	0.021	&	0.003	\\
+		\bottomrule
+	\end{tabular}
+	\caption[numero di tratti con relazioni significative dividendo la vegetazione in classi d'età]{numero di tratti con relazioni significative tra tassi di erosione della vegetazione suddivisa in fasce d'età e integrale dei livelli sopra soglia secondo quattro tempi di ritorno; sono riportate le mediane degli $R^2$ e $P_\mathrm{value}$ in questi tratti; “-” indica che non ci sono tratti con relazioni valide.}
+	\label{tab:iote-lin-ntr-r2-pval}
+\end{table}
+%
+\\
+Ci sono diversi casi con un cospicuo numero di tratti con relazioni valide, anche se in numero minore rispetto ai gruppi di~4 tratti.
+Inoltre, per i tempi di ritorno di \SI{1}{\anno} e \SI{2}{\anni} i tratti con buone relazioni non sono adiacenti o vicini, ma sono distribuiti casualmente nel tratto di studio; questo può fare supporre che le relazioni siano quasi frutto del caso anziché di una regolarità naturale; questo non avviene per i tempi di ritorno minori.
+\\
+Per TR \SI{< 1}{\anno}, le relazioni della classe giovane sono positive su molti tratti e presentano valori di $R^2$ e $P_\mathrm{value}$ soddisfacenti.
+
+
+La \cref{tab:iote-4tr-log-ntr-r2-pval} mostra i risultati per regressioni a legge di potenza unendo i tratti 4 a~4, considerando i tassi di erosione in funzione degli integrali sopra soglia.
+%
+\begin{table}
+	\centering
+	\begin{tabular}{c c *{3}{S[table-format = 2.3, table-comparator = true]}}
+		\toprule
+		\multicolumn{5}{p{0.7\textwidth}}{Relazioni a legge di potenza per i gruppi di~4 tratti tra proporzioni di isole erose rispetto alle isole presenti della stessa età in funzione degli integrali dei livelli sopra soglia}	\\
+		\midrule
+			&	&	{\textbf{Giovane}}	&	{\textbf{Intermedia}}	&	{\textbf{Matura}}	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SIrange[range-phrase = {-}, range-units = single]{2}{3}{\mesi}\end{sideways}}	&	\# tratti	&	4	&	{-}	&	6	\\
+			&	Mediana $R^2$	&	0.40	&	{-}	&	0.58	\\
+			&	Mediana $P_\mathrm{value}$	&	0.021	&	{-}	&	0.002	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SIrange[range-phrase = {-}, range-units = single]{4}{5}{\mesi}\end{sideways}}	&	\# tratti	&	19	&	{-}	&	4	\\
+			&	Mediana $R^2$	&	0.41	&	{-}	&	0.39	\\
+			&	Mediana $P_\mathrm{value}$	&	0.016	&	{-}	&	0.031	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SI{1}{\anno}\end{sideways}}	&	\# tratti	&	{-}	&	4	&	{-}	\\
+			&	Mediana $R^2$	&	{-}	&	0.51	&	{-}	\\
+			&	Mediana $P_\mathrm{value}$	&	{-}	&	0.030	&	{-}	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SI{2}{\anni}\end{sideways}}	&	\# tratti	&	{-}	&	{-}	&	{-}	\\
+			&	Mediana $R^2$	&	{-}	&	{-}	&	{-}	\\
+			&	Mediana $P_\mathrm{value}$	&	{-}	&	{-}	&	{-}	\\
+		\bottomrule
+	\end{tabular}
+	\caption[numero di tratti in gruppi di~4 con relazioni esponenziali significative dividendo la vegetazione in classi d'età]{numero di tratti con relazioni esponenziali significative tra tassi di erosione della vegetazione suddivisa in fasce d'età e integrale dei livelli sopra soglia secondo quattro tempi di ritorno; sono riportate le mediane degli $R^2$ e $P_\mathrm{value}$ in questi tratti; “-” indica che non ci sono tratti con relazioni valide; i tratti sono stati accorpati in gruppi di~4.}
+	\label{tab:iote-4tr-log-ntr-r2-pval}
+\end{table}
+%
+\\
+Solamente la vegetazione giovane per TR \SIrange[range-phrase = {-}, range-units = single]{4}{5}{\mesi} presenta buone relazioni esponenziali, mentre in quasi tutti gli altri casi questa combinazione fornisce poche o nessuna relazione.
+Solo la vegetazione matura per il minimo TR considerato mostra di avere qualche tratto con buone relazioni.
+
+
+La \cref{tab:nc-4tr-lin-ntr-r2-pval} mostra i risultati che si ottengono se al posto del tasso di erosione si rappresenta l'areale in \si{[\m\tothe{2}]} delle isole erose in funzione dell'integrale dei livelli sopra soglia, cercando delle relazioni lineari nei gruppi di~4 tratti.
+%
+\begin{table}
+	\centering
+	\begin{tabular}{c c *{3}{S[table-format = 2.3, table-comparator = true]}}
+		\toprule
+		\multicolumn{5}{p{0.7\textwidth}}{Relazioni lineari in gruppi di~4 tratti tra areale delle isole erose in funzione degli integrali dei livelli sopra soglia}	\\
+		\midrule
+			&	&	{\textbf{Giovane}}	&	{\textbf{Intermedia}}	&	{\textbf{Matura}}	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SIrange[range-phrase = {-}, range-units = single]{2}{3}{\mesi}\end{sideways}}	&	\# tratti	&	{-}	&	4	&	6	\\
+			&	Mediana $R^2$	&	{-}	&	0.69	&	0.32	\\
+			&	Mediana $P_\mathrm{value}$	&	{-}	&	<0.001	&	0.044	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SIrange[range-phrase = {-}, range-units = single]{4}{5}{\mesi}\end{sideways}}	&	\# tratti	&	4	&	11	&	{-}	\\
+			&	Mediana $R^2$	&	0.35	&	0.38	&	{-}	\\
+			&	Mediana $P_\mathrm{value}$	&	0.021	&	0.043	&	{-}	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SI{1}{\anno}\end{sideways}}	&	\# tratti	&	4	&	7	&	{-}	\\
+			&	Mediana $R^2$	&	0.53	&	0.64	&	{-}	\\
+			&	Mediana $P_\mathrm{value}$	&	0.017	&	0.013	&	{-}	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SI{2}{\anni}\end{sideways}}	&	\# tratti	&	4	&	4	&	{-}	\\
+			&	Mediana $R^2$	&	0.73	&	0.38	&	{-}	\\
+			&	Mediana $P_\mathrm{value}$	&	0.002	&	0.043	&	{-}	\\
+		\bottomrule
+	\end{tabular}
+	\caption[numero di tratti nei gruppi di~4 tratti con relazioni significative dividendo la vegetazione in classi d'età e considerando gli areali anziché i tassi di erosione]{numero di tratti con relazioni significative tra areali di erosione della vegetazione suddivisa in fasce d'età e integrale dei livelli sopra soglia secondo quattro tempi di ritorno; sono riportate le mediane degli $R^2$ e $P_\mathrm{value}$ in questi tratti; “-” indica che non ci sono tratti con relazioni valide; i tratti sono stati uniti 4 a~4.}
+	\label{tab:nc-4tr-lin-ntr-r2-pval}
+\end{table}
+%
+\\
+La classe giovane presenta pochi tratti con relazioni valide, mentre la vegetazione intermedia mostra discrete relazioni per i TR intermedi; la fascia matura ha qualche relazione solo per TR \SIrange[range-phrase = {-}, range-units = single]{2}{3}{\mesi}, ma con $R^2$ e $P_\mathrm{value}$ appena all'interno delle soglie che erano state poste ($R^2 \num{> 0.3}$ e $P_\mathrm{value} \num{< 0.05}$).
+
+
+La \cref{tab:nc-4tr-log-ntr-r2-pval} si riferisce agli stessi dati precedenti (areale in \si{[\m\tothe{2}]} di erosione in funzione degli integrali delle piene sopra soglia) ma ricerca regressioni a legge di potenza.
+%
+\begin{table}
+	\centering
+	\begin{tabular}{c c *{3}{S[table-format = 2.3, table-comparator = true]}}
+		\toprule
+		\multicolumn{5}{p{0.7\textwidth}}{Relazioni a legge di potenza in gruppi di~4 tratti tra areale delle isole erose in funzione degli integrali dei livelli sopra soglia}	\\
+		\midrule
+			&	&	{\textbf{Giovane}}	&	{\textbf{Intermedia}}	&	{\textbf{Matura}}	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SIrange[range-phrase = {-}, range-units = single]{2}{3}{\mesi}\end{sideways}}	&	\# tratti	&	6	&	4	&	6	\\
+			&	Mediana $R^2$	&	0.38	&	0.61	&	0.37	\\
+			&	Mediana $P_\mathrm{value}$	&	0.024	&	<0.001	&	0.028	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SIrange[range-phrase = {-}, range-units = single]{4}{5}{\mesi}\end{sideways}}	&	\# tratti	&	6	&	4	&	{-}	\\
+			&	Mediana $R^2$	&	0.40	&	0.44	&	{-}	\\
+			&	Mediana $P_\mathrm{value}$	&	0.027	&	0.005	&	{-}	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SI{1}{\anno}\end{sideways}}	&	\# tratti	&	{-}	&	4	&	{-}	\\
+			&	Mediana $R^2$	&	{-}	&	0.45	&	{-}	\\
+			&	Mediana $P_\mathrm{value}$	&	{-}	&	0.023	&	{-}	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SI{2}{\anni}\end{sideways}}	&	\# tratti	&	{-}	&	{-}	&	{-}	\\
+			&	Mediana $R^2$	&	{-}	&	{-}	&	{-}	\\
+			&	Mediana $P_\mathrm{value}$	&	{-}	&	{-}	&	{-}	\\
+		\bottomrule
+	\end{tabular}
+	\caption[numero di tratti nei gruppi di~4 tratti con relazioni esponenziali significative dividendo la vegetazione in classi d'età e considerando gli areali anziché i tassi di erosione]{numero di tratti con relazioni esponenziali significative tra areali di erosione della vegetazione suddivisa in fasce d'età e integrale dei livelli sopra soglia secondo quattro tempi di ritorno; sono riportate le mediane degli $R^2$ e $P_\mathrm{value}$ in questi tratti; “-” indica che non ci sono tratti con relazioni valide; i tratti sono stati uniti 4 a~4.}
+	\label{tab:nc-4tr-log-ntr-r2-pval}
+\end{table}
+%
+Le regressioni esponenziali, per questo caso, portano a considerare come validi un minor numero di tratti rispetto a quelle lineari; in alcuni casi permettono di avere più tratti validi (fascia giovane e TR \SI{< 1}{\anno}, in altri diminuiscono drasticamente il numero di tratti validi (le altre fasce e TR).
+
+
+La \cref{tab:iote-4tr-lin-tuttep-ntr-r2-pval} mostra i parametri delle relazioni se si divide l'integrale delle piene per la somma della durata di tutte le piene sopra soglia che hanno luogo in ciascun intervallo; questo rapporto indica il livello medio costante sopra soglia che avrebbe una piena che durasse tanto quanto sono durate tutte le piene osservate.
+%
+\begin{table}
+	\centering
+	\begin{tabular}{c c *{3}{S[table-format = 2.3, table-comparator = true]}}
+		\toprule
+		\multicolumn{5}{p{0.7\textwidth}}{Relazioni lineari in gruppi di~4 tratti tra proporzioni di isole erose rispetto alle isole presenti della stessa età in funzione del rapporto tra gli integrali dei livelli sopra soglia e la durata complessiva delle piene in ogni confronto}	\\
+		\midrule
+			&	&	{\textbf{Giovane}}	&	{\textbf{Intermedia}}	&	{\textbf{Matura}}	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SIrange[range-phrase = {-}, range-units = single]{2}{3}{\mesi}\end{sideways}}	&	\# tratti	&	{-}	&	{-}	&	{-}	\\
+			&	Mediana $R^2$	&	{-}	&	{-}	&	{-}	\\
+			&	Mediana $P_\mathrm{value}$	&	{-}	&	{-}	&	{-}	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SIrange[range-phrase = {-}, range-units = single]{4}{5}{\mesi}\end{sideways}}	&	\# tratti	&	4	&	{-}	&	{-}	\\
+			&	Mediana $R^2$	&	0.36	&	{-}	&	{-}	\\
+			&	Mediana $P_\mathrm{value}$	&	0.040	&	{-}	&	{-}	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SI{1}{\anno}\end{sideways}}	&	\# tratti	&	{-}	&	{-}	&	{-}	\\
+			&	Mediana $R^2$	&	{-}	&	{-}	&	{-}	\\
+			&	Mediana $P_\mathrm{value}$	&	{-}	&	{-}	&	{-}	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SI{2}{\anni}\end{sideways}}	&	\# tratti	&	4	&	{-}	&	{-}	\\
+			&	Mediana $R^2$	&	0.55	&	{-}	&	{-}	\\
+			&	Mediana $P_\mathrm{value}$	&	0.015	&	{-}	&	{-}	\\
+		\bottomrule
+	\end{tabular}
+	\caption[numero di tratti nei gruppi di~4 tratti con relazioni significative considerando i tassi di erosione e i livelli medi sopra soglia durante le piene]{numero di tratti con relazioni significative tra tassi di erosione della vegetazione suddivisa in fasce d'età e rapporto tra integrale dei livelli sopra soglia e durata delle piene in ogni confronto secondo quattro tempi di ritorno; sono riportate le mediane degli $R^2$ e $P_\mathrm{value}$ in questi tratti; “-” indica che non ci sono tratti con relazioni valide; i tratti sono stati uniti 4 a~4.}
+	\label{tab:iote-4tr-lin-tuttep-ntr-r2-pval}
+\end{table}
+%
+\\
+Le poche relazioni valide sono probabilmente casuali, mentre la stragrande maggioranza di combinazioni senza regressioni lineari accettabili fa concludere che questi parametri non sono adatti per rappresentare questo fenomeno.
+
+
+Infine si riporta la \cref{tab:iote-4tr-lin-interv-ntr-r2-pval}, in cui per ottenere le regressioni si è diviso l'integrale dei livelli per la durata dei confronti: si ottiene il livello medio costante sopra soglia che avrebbe una piena di durata pari al confronto considerato.
+%
+\begin{table}
+	\centering
+	\begin{tabular}{c c *{3}{S[table-format = 2.3, table-comparator = true]}}
+		\toprule
+		\multicolumn{5}{p{0.7\textwidth}}{Relazioni lineari in gruppi di~4 tratti tra proporzioni di isole erose rispetto alle isole presenti della stessa età in funzione del rapporto tra gli integrali dei livelli sopra soglia e la durata di ogni confronto}	\\
+		\midrule
+			&	&	{\textbf{Giovane}}	&	{\textbf{Intermedia}}	&	{\textbf{Matura}}	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SIrange[range-phrase = {-}, range-units = single]{2}{3}{\mesi}\end{sideways}}	&	\# tratti	&	12	&	6	&	{-}	\\
+			&	Mediana $R^2$	&	0.46	&	0.35	&	{-}	\\
+			&	Mediana $P_\mathrm{value}$	&	0.010	&	0.033	&	{-}	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SIrange[range-phrase = {-}, range-units = single]{4}{5}{\mesi}\end{sideways}}	&	\# tratti	&	12	&	{-}	&	{-}	\\
+			&	Mediana $R^2$	&	0.49	&	{-}	&	{-}	\\
+			&	Mediana $P_\mathrm{value}$	&	0.011	&	{-}	&	{-}	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SI{1}{\anno}\end{sideways}}	&	\# tratti	&	8	&	{-}	&	{-}	\\
+			&	Mediana $R^2$	&	0.54	&	{-}	&	{-}	\\
+			&	Mediana $P_\mathrm{value}$	&	0.023	&	{-}	&	{-}	\\
+		\midrule
+		\multirow{3}*{\begin{sideways}\SI{2}{\anni}\end{sideways}}	&	\# tratti	&	4	&	4	&	{-}	\\
+			&	Mediana $R^2$	&	0.56	&	0.44	&	{-}	\\
+			&	Mediana $P_\mathrm{value}$	&	0.013	&	0.035	&	{-}	\\
+		\bottomrule
+	\end{tabular}
+	\caption[numero di tratti nei gruppi di~4 tratti con relazioni significative considerando i tassi di erosione e i livelli medi sopra soglia durante i confronti]{numero di tratti con relazioni significative tra tassi di erosione della vegetazione suddivisa in fasce d'età e rapporto tra integrale dei livelli sopra soglia e durata dei confronti secondo quattro tempi di ritorno; sono riportate le mediane degli $R^2$ e $P_\mathrm{value}$ in questi tratti; “-” indica che non ci sono tratti con relazioni valide; i tratti sono stati uniti 4 a~4.}
+	\label{tab:iote-4tr-lin-tuttep-ntr-r2-pval}
+\end{table}
+%
+\\
+Ci sono significativamente più tratti validi rispetto al precedente rapporto dell'integrale, soprattutto per la fascia giovane; le altre classe d'età hanno in genere relazioni deboli, tranne la classe intermedia per TR \SIrange[range-phrase = {-}, range-units = single]{2}{3}{\mesi}.
+
+
+
+\subsection{Le relazioni valide tra piene ed isole erose}
+L'obiettivo è di trovare un unico set di trasformazioni che permetta di prevedere il comportamento della vegetazione in molti tempi di ritorno diversi; con la suddivisione in classi d'età, si ricerca similmente il set che dia il maggior numero di relazioni valide su più classi.
+\\
+A fronte dei risultati presentati, si ritiene che per ottenere il quante più regressioni valide su più tratti adiacenti e in più fasce d'età occorra:
 %
 \begin{itemize}
-	\item aggregando i dati in 5~gruppi di 4~tratti adiacenti a partire dal primo (1, \ldots, 4) e in 1~gruppo di 3~tratti (21, 22 e 23);
-		come è stato considerato nel calcolo della pendenza, i tratti che compongono ogni gruppo presentano caratteristiche comuni
-		(rispettivamente per i 6~gruppi: confinamento da parte delle montagne, allargamento con \emph{downwelling}, pronunciato \emph{upwelling} e restringimento, riallargamento con \emph{downwelling} nella zona valliva, scorrimento nella parte planiziale, restringimento con cambiamento di morfologia)
-	\item normalizzando gli areali delle isole erose con gli areali delle isole presenti nella prima immagine del cambiamento, ottenendo quindi la percentuale di isole erose;
-	\item escludendo il tratto~9 poiché vi è l'isola di Cornino, che si fonda su roccia, e il tratto~23, in quanto presenta una morfologia nettamente diversa rispetto agli altri tratti;
-	\item imponendo di avere un minimo di~5 punti per effettuare le regressioni
-	\item graficando solo i dati di erosione posteriori all'immagine del 2007-09-21 incluso;
-	\item mantenendo una scala lineare.
+	\item considerare i tassi di erosione in funzione degli integrali dei livelli sopra soglia;
+	\item accorpare i tratti in gruppi di~4;
+	\item cercare regressioni lineari.
 \end{itemize}
 %
-I risultati con le regressioni lineari sono riportati nei grafici in \cref{graph:giov-iote-4tr-buono} e in \cref{tab:giov-iote-4tr-buono}.
-%
+Il numero di tratti validi per ogni TR e ogni classe d'età sono stati mostrati in \cref{tab:iote-4tr-lin-ntr-r2-pval}.
+I grafici in \cref{graph:giov-iote-4tr-buono}, \cref{graph:interm-iote-4tr-buono} e \cref{graph:mat-iote-4tr-buono} mostrano i dati e le regressioni considerate valide rispettivamente per le fasce d'età giovane, intermedia e matura, con l'unione dei tratti 4 a~4;
+i valori delle regressioni lineare e le equazioni delle rette sono riportate per le tre classi d'età nella \cref{tab:giov-iote-4tr-buono}, nella \cref{tab:interm-iote-4tr-buono} e nella \cref{tab:mat-iote-4tr-buono}.
+
+% GIOVANE
 \begin{figure}
 	\centering
 	\input{graphics/plots/giov_iote_4tr_buono}
@@ -42,7 +313,7 @@ I risultati con le regressioni lineari sono riportati nei grafici in \cref{graph
 	\begin{tabular}{c c S[table-format = 0.2] S[table-format = 0.3, table-comparator = true]}
 		\toprule
 		\textbf{Tratti}			&	\textbf{Equazione}		&	\multicolumn{1}{c}{$\mathbf{R^2}$}	&	\multicolumn{1}{c}{$	\mathbf{P_\mathrm{value}}$}	\\
-		\textbf{di validità}	&	\textbf{della retta}	&	&	\\
+		\textbf{di validità}	&	\textbf{della retta}	&	\\
 		\midrule
 		1$\div$4	&	$y = 0.1852 \, x + 0.1032$	&	0.49	&	<0.02	\\
 		5$\div$8	&	$y = 0.1700 \, x + 0.0669$	&	0.46	&	<0.006	\\
@@ -55,28 +326,14 @@ I risultati con le regressioni lineari sono riportati nei grafici in \cref{graph
 	\label{tab:giov-iote-4tr-buono}
 \end{table}
 %
-\\
-Le regressioni vengono considerate valide grazie all'$R^2$ relativamente elevato, il $P_\mathrm{value}$ generalmente piccolo, l'elevato numero di punti (in media 13) e la validità spazialmente estesa di queste relazioni.
-
-Dato che si sono trovate relazioni con differenze spaziali non elevatissime, è naturale ricercare anche una relazione che valga graficando tutti i punti assieme.
-Il grafico in \cref{fig:giov-iote-4tr-buono-accorpato}
-mostra la regressione e i numeri $R^2$ e $P_\mathrm{value}$: sembra che esista una chiara tendenza lineare tra la percentuale di isole erose e l'integrale dei livelli sopra la soglia di \SI{2}{\m}.
-%
+%	INTERMEDIA
 \begin{figure}
 	\centering
-	\input{graphics/plots/giov_iote_4tr_buono_accorpato}
-	\caption[proporzione di vegetazione giovane erosa in funzione dell'integrale dei livelli sopra la soglia di \SI{2}{\m}; tutti i tratti]{proporzione di vegetazione giovane erosa rispetto alla vegetazione giovane presente in funzione dell'integrale dei livelli (Int livelli) sopra la soglia di \SI{2}{\m}; vengono considerati tutti i tratti; la retta verde rappresenta la regressione lineare dei punti.}	
-	\label{fig:giov-iote-4tr-buono-accorpato}
+	\input{graphics/plots/interm_iote_4tr_buono}
+	\caption[proporzione di vegetazione intermedia erosa in funzione dell'integrale dei livelli sopra due soglie; tratti uniti quattro a quattro]{proporzione di vegetazione intermedia erosa rispetto alla vegetazione intermedia presente in funzione dell'integrale dei livelli (Int livelli) sopra la soglia di \SI{1.5}{\m} per i tratti 17$\div$20, sopra la soglia di \SI{2.4}{\m} per i tratti 5$\div$8 e 10$\div$12; le rette verdi sono le regressioni lineari, le cui equazioni e valori di $P_\mathrm{value}$ sono riportati nella \cref{tab:interm-iote-4tr-buono}.}
+	\label{graph:interm-iote-4tr-buono}
 \end{figure}
 %
-
-Per la classe d'età intermedia, con le medesime trasformazioni applicate alle grandezze in gioco si ottengono relazioni valide per i gruppi di tratti finali ed iniziali utilizzando rispettivamente livelli soglia corrispondenti a tempi di ritorno di~\SIrange[range-phrase={-}, range-units=single]{2}{3}{\mesi} e di~\SI{\sim 1}{\anno}.
-\\
-Per la vegetazione matura si ottiene un risultato analogo alla vegetazione intermedia utilizzando gli stessi parametri.
-\\
-I risultati per la vegetazione intermedia sono riportati nella \cref{tab:interm-iote-4tr-buono} e nel grafico in \cref{graph:interm-iote-4tr-buono}; quelli per la classe d'età matura sono in \cref{tab:mat-iote-4tr-buono} e nel grafico in \cref{graph:mat-iote-4tr-buono}.
-%
-%	INTERMEDIA
 \begin{table}
 	\centering
 	\begin{tabular}{
@@ -88,7 +345,7 @@ I risultati per la vegetazione intermedia sono riportati nella \cref{tab:interm-
 	}
 		\toprule
 		\multicolumn{1}{c}{\textbf{Livello soglia}}	&	\textbf{Tratti}			&	\textbf{Equazione}		&	\multicolumn{1}{c}{$\mathbf{R^2}$}	&	\multicolumn{1}{c}{$	\mathbf{P_\mathrm{value}}$}	\\
-		\multicolumn{1}{s}{[\m]}	&	\textbf{di validità}	&	\textbf{della retta}	&	&	\\
+		\multicolumn{1}{s}{[\m]}	&	\textbf{di validità}	&	\textbf{della retta}	&	\\
 		\midrule
 		1.5	&	17$\div$20	&	$y = 0.0293 \, x + 0.0809$	&	0.41	&	<0.02	\\
 		2.4	&	5$\div$8	&	$y = 0.2819 \, x + 0.0331$	&	0.62	&	<0.008	\\
@@ -99,14 +356,14 @@ I risultati per la vegetazione intermedia sono riportati nella \cref{tab:interm-
 	\label{tab:interm-iote-4tr-buono}
 \end{table}
 %
+%	MATURA
 \begin{figure}
 	\centering
-	\input{graphics/plots/interm_iote_4tr_buono}
-	\caption[proporzione di vegetazione intermedia erosa in funzione dell'integrale dei livelli sopra due soglie; tratti uniti quattro a quattro]{proporzione di vegetazione intermedia erosa rispetto alla vegetazione intermedia presente in funzione dell'integrale dei livelli (Int livelli) sopra la soglia di \SI{1.5}{\m} per i tratti 17$\div$20, sopra la soglia di \SI{2.4}{\m} per i tratti 5$\div$8 e 10$\div$12; le rette verdi sono le regressioni lineari, le cui equazioni e valori di $P_\mathrm{value}$ sono riportati nella \cref{tab:interm-iote-4tr-buono}.}
-	\label{graph:interm-iote-4tr-buono}
+	\input{graphics/plots/mat_iote_4tr_buono}
+	\caption[proporzione di vegetazione matura erosa in funzione dell'integrale dei livelli sopra due soglie; tratti uniti quattro a quattro]{proporzione di vegetazione matura erosa rispetto alla vegetazione matura presente in funzione dell'integrale dei livelli (Int livelli) sopra la soglia di \SI{1.5}{\m} per i tratti 17$\div$22, sopra la soglia di \SI{2.4}{\m} per i tratti 1$\div$8; le rette verdi sono le regressioni lineari, le cui equazioni e valori di $P_\mathrm{value}$ sono riportati nella \cref{tab:mat-iote-4tr-buono}.}
+	\label{graph:mat-iote-4tr-buono}
 \end{figure}
 %
-%	MATURA
 \begin{table}
 	\centering
 	\begin{tabular}{
@@ -118,7 +375,7 @@ I risultati per la vegetazione intermedia sono riportati nella \cref{tab:interm-
 	}
 		\toprule
 		\multicolumn{1}{c}{\textbf{Livello soglia}}	&	\textbf{Tratti}			&	\textbf{Equazione}		&	\multicolumn{1}{c}{$\mathbf{R^2}$}	&	\multicolumn{1}{c}{$	\mathbf{P_\mathrm{value}}$}	\\
-		\multicolumn{1}{s}{[\m]}	&	\textbf{di validità}	&	\textbf{della retta}	&	&	\\
+		\multicolumn{1}{s}{[\m]}	&	\textbf{di validità}	&	\textbf{della retta}	&	\\
 		\midrule
 		1.5	&	17$\div$20	&	$y = 0.0220 \, x + 0.0259$	&	0.69	&	<0.0005	\\
 		1.5	&	21$\div$22	&	$y = 0.0169 \, x + 0.0161$	&	0.56	&	<0.004	\\
@@ -130,20 +387,17 @@ I risultati per la vegetazione intermedia sono riportati nella \cref{tab:interm-
 	\label{tab:mat-iote-4tr-buono}
 \end{table}
 %
+
+Per la classe giovane, considerare tutti i gruppi di~4 tratti assieme porta ad una regressione lineare con $R^2 \num{> 0.4}$ e $P_\mathrm{value} \num{\ll 0.05}$, come è mostrato nel grafico in \cref{graph:giov-iote-4tr-buono-accorpato}.
+%
 \begin{figure}
 	\centering
-	\input{graphics/plots/mat_iote_4tr_buono}
-	\caption[proporzione di vegetazione matura erosa in funzione dell'integrale dei livelli sopra due soglie; tratti uniti quattro a quattro]{proporzione di vegetazione matura erosa rispetto alla vegetazione matura presente in funzione dell'integrale dei livelli (Int livelli) sopra la soglia di \SI{1.5}{\m} per i tratti 17$\div$22, sopra la soglia di \SI{2.4}{\m} per i tratti 1$\div$8; le rette verdi sono le regressioni lineari, le cui equazioni e valori di $P_\mathrm{value}$ sono riportati nella \cref{tab:mat-iote-4tr-buono}.}
-	\label{graph:mat-iote-4tr-buono}
+	\input{graphics/plots/giov_iote_4tr_buono_accorpato}
+	\caption[proporzione di vegetazione giovane erosa in funzione dell'integrale dei livelli sopra la soglia di \SI{2}{\m}; tutti i tratti]{proporzione di vegetazione giovane erosa rispetto alla vegetazione giovane presente in funzione dell'integrale dei livelli (Int livelli) sopra la soglia di \SI{2}{\m}; vengono considerati tutti i tratti tranne il~9 e il~23; la retta verde rappresenta la regressione lineare dei punti.}	
+	\label{graph:giov-iote-4tr-buono-accorpato}
 \end{figure}
 %
 
-Nei tratti dove non sono state mostrate relazioni, queste mostravano valori di $R^2 < 0.3$ e/o $P_\mathrm{value} > 0.05$ e sono state considerate troppo deboli.
 
-
-\subsection{Condizioni in cui non è possibile formulare previsioni}
-Sono state effettuate numerose prove variando le trasformazioni dell'areale dell'erosione e dell'integrale dei livelli sopra soglia, così come cambiando il tempo di ritorno di riferimento per il calcolo dell'integrale.
-\\
-Mantenendo le trasformazioni delle relazioni precedentemente riportate e aumentando il livello soglia a \SI{2.8}{\m} (tempo di ritorno di \SI{2}{\anni}), non erano presenti tratti con buone relazioni, o erano molto pochi; la stessa situazione si presenta anche considerando altre trasformazioni.
 
 
