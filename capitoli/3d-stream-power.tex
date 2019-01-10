@@ -5,7 +5,7 @@ Questo grafico riflette sia le caratteristiche morfologiche (pendenza e larghezz
 \begin{figure}
 	\centering
 	\input{graphics/plots/omega_perc_50}
-	\caption[potenza della corrente in ogni tratto]{mediana temporale per ogni tratto della potenza della corrente pesata con la relativa area drenante.}
+	\caption[potenza della corrente in ogni tratto]{mediana temporale su tutte le immagini della potenza della corrente pesata con la relativa area drenante mostrata per ogni tratto.}
 	\label{graph:omega-perc-50}
 \end{figure}
 %
@@ -40,12 +40,12 @@ Da queste analisi è stato escluso il tratto~9, dove è presente l'isola di Corn
 %\end{figure}
 %
 \\
-Per ottenere delle relazioni che indichino quale sia il limite massimo di isole sono state fatte due distinte regressioni lineari.
+Per ottenere relazioni che indichino quale sia il limite massimo di isole, sono state fatte due distinte regressioni lineari.
 \\
 Nella prima si è proceduto tramite regressioni lineari in successione: da una prima regressione su tutti i punti si sono selezionati solo i punti al di sopra della retta; si è eseguita una nuova regressione; con i punti posti superiormente alla seconda retta, si è ottenuta la retta finale di regressione.
 Questa terza retta mostra un $R^2 \simeq 0.6$ ed un $P_\mathrm{value}$ ottenuto tramite il test statistico di Pearson minore di \num{0.0001} (valori di $R^2$ quanto più vicini all'unità e maggiori di~\num{0} indicano una buona regressione lineare; valori di $P_\mathrm{value}$ inferiori a~\num{0.05} mostrano che la regressione è affidabile nel risultato, sia che $R^2$ sia prossimo ad~\num{1} o sia quasi nullo).
 \\
-Nella seconda regressione sono state approssimate le mediane su tutte le immagini di $\Omega$ di ogni tratto rispetto alle massime percentuali di isole di ogni tratto. Tenendo conto che si è escluso il tratto~9, si effettua la regressione su~22 punti: un valore di $\Omega$ e un valore di percentuale massima di isola per ognuno dei~22 tratti rimanenti.
+Nella seconda regressione sono state approssimate le mediane su tutte le immagini di $\Omega$ di ogni tratto rispetto alle massime percentuali di isole di ogni tratto. Tenendo conto che si è escluso il tratto~9, si effettua la regressione su~22 punti: in ascissa è rappresentato il valore di percentuale massima di isole per ognuno dei~22 tratti rimanenti e in ordinata il valore di $\Omega$.
 Questa regressione è caratterizzata da $R^2 = 0.74$ e da $P_\mathrm{val} < 0.0001$.
 \\
 Data la discreta bontà di queste regressioni, le si accetta come valide.
@@ -60,7 +60,7 @@ Difatti l'espansione maggiore della vegetazione e l'erosione minore hanno luogo 
 Inoltre le piante che crescono più rapidamente sembrano essere maggiormente flessibili \squarecite{Bertoldi:2011-ASTER}: la ricrescita vegetativa da tronchi vivi, la quale permette un rapido sviluppo, è proprio la caratteristica fondamentale delle piante che abitano questo ambiente, come già esposto nella sezione~\ref{sec:descr-area-studio}.
 È dunque lecito supporre che proprio nei tratti dove si osserva una ridotta potenza della corrente si possa trovare un'elevata quantità di isole nella maggior parte del periodo di studio.
 
-Le due regressioni ottenute ricalcano bene il profilo iperbolico che mostravano i punti quando posti in un grafico in scala lineare (\cref{graph:omega-area-percentuale-linear-modello}); il terzo fit si pone al di sopra dei punti per percentuali di isole superiori al~\SI{5}{\percent}, mentre si adatta poco ai punti nel caso di percentuali inferiori; la regressioni sulle massime percentuali sembra avere un comportamento generalmente migliore.
+Le due regressioni ottenute ricalcano bene il profilo iperbolico che mostravano i punti quando posti in un grafico in scala lineare (\cref{graph:omega-area-percentuale-linear-modello}); il terzo fit si pone al di sopra dei punti per percentuali di isole superiori al~\SI{5}{\percent}, mentre si adatta poco ai punti nel caso di percentuali inferiori; la regressione sulle massime percentuali sembra avere un comportamento generalmente migliore.
 %
 \begin{figure}
 	\centering
@@ -80,7 +80,7 @@ questo andamento sembra fermarsi superiormente, attorno ad un valore di $\Omega$
 Si vede inoltre che l'alveo non ospita percentuali di vegetazione superiori al \SIrange[range-phrase={-}, range-units = single]{30}{35}{\percent}.
 
 La relazione ottenuta presenta un limite implicito: $\Omega$ non tiene conto della connessione con la falda, dell'\emph{upwelling} e del \emph{downwelling}, che influenzano notevolmente la crescita delle piante.
-Anzi, è stato mostrato che le isole complesse sono confinate nei tratti dove la crescita delle piante da seme può essere sufficientemente rapida (\SIrange[range-phrase={-}]{1}{3}{\m} in \SI{10}{\anni}; si ricorda che tramite al riproduzione vegetativa la crescita è più rapida di un ordine di grandezza); questi tratti sono quelli relativamente più stretti, dove c'è disponibilità d'acqua durante i periodi di magra grazie alla falda non troppo profonda, come i tratti pochi chilometri a monte della stretta di Pinzano o quelli a monte della zona di cambiamento di morfologia fluviale \squarecite{Gurnell:2006-omega}.
+Anzi, è stato mostrato che le isole complesse sono confinate nei tratti dove la crescita delle piante da seme può essere sufficientemente rapida (\SIrange[range-phrase={-}, range-units = single]{1}{3}{\m} in \SI{10}{\anni}; si ricorda che tramite la riproduzione vegetativa la crescita è più rapida di un ordine di grandezza); questi tratti sono quelli relativamente più stretti, dove c'è disponibilità d'acqua durante i periodi di magra grazie alla falda non troppo profonda, come i tratti pochi chilometri a monte della stretta di Pinzano o quelli a monte della zona di cambiamento di morfologia fluviale \squarecite{Gurnell:2006-omega}.
 Dall'altra parte, come gli autori osservano e come è verificato dai risultati appena mostrati, dove i tratti si restringono maggiormente la potenza della corrente è tanto grande che nemmeno l'incrementato tasso di crescita delle piante è tale da permettere alle isole di insediarsi prima di essere portate via.
 Gli autori suggeriscono quindi l'esistenza di un equilibrio tra processi idrologici, piante riparie e sviluppo delle isole, che si concretizza nei seguenti aspetti (grafico in \cref{graph:omega-area-percentuale-linear-modello}).
 %
