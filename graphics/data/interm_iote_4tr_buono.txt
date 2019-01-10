@@ -1,4 +1,5 @@
 integrale_piene_tr_0.2	integrale_piene_tr_1	gr_5_tr_0.2	gr_2_tr_1	gr_3_tr_1
+0.8489464	nan	nan	0.020862	0.0223597
 0.8489464	nan	0.00895129	nan	nan
 4.8531016	0.2539931	nan	0.154039	0.0364849
 4.8531016	0.2539931	0.204682	nan	nan

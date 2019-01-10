@@ -1,12 +1,12 @@
 \tikzsetnextfilename{giov_iote_4tr_buono}
-\begin{tikzpicture}
+\begin{tikzpicture}	
 	\begin{groupplot}[
 		group style = {
-			group size = 3 by 2,
+			group size = 3 by 3,
 			y descriptions at = edge left,
-			x descriptions at = edge bottom,
+			xlabels at = edge bottom,
 			horizontal sep = 0.1cm,
-			vertical sep = 0.1cm,
+			vertical sep = 1.3cm,
 		},
 		width = 0.4\textwidth,
 		height = 0.4\textwidth,
@@ -16,12 +16,75 @@
 		enlarge x limits = 0.05,
 		ylabel = {Erosione / Isole},
 		xlabel = {Int livelli \si{[\m\giorno]}},
-		grid = major,		
+		grid = major,
+		title style = {
+			yshift = {-0.2cm},
+		},		
 		]
 		
-	\nextgroupplot[] % gruppo 1
+	\nextgroupplot[
+		title = {TR \SIrange[range-phrase={-}, range-units = single]{2}{3}{\mesi}},
+		] % tr 0.2 gruppo 2
 			\addplot[only marks]
-	        	table [x = integrale_piene, y = gr_1] {graphics/data/giov_iote_4tr_buono.txt};
+	        	table [x = integrale_piene_tr_0.2, y = gr_2_tr_0.2] {graphics/data/giov_iote_4tr_buono.txt};
+	        
+	        \addplot[
+	        	line width = 2pt,
+	        	domain = 0:8,
+	        	samples = 3,
+				green,
+	        	]
+	        	{0.0348 * x + 0.0812};
+			
+			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left] {5$\div$8};
+			
+			\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east] {$R^2 = 0.32$};
+	
+	\nextgroupplot[
+		title = {TR \SIrange[range-phrase={-}, range-units = single]{2}{3}{\mesi}},
+		] % tr 0.2 gruppo 3
+			\addplot[only marks]
+	        	table [x = integrale_piene_tr_0.2, y = gr_4_tr_0.2] {graphics/data/giov_iote_4tr_buono.txt};
+	        
+	        \addplot[
+	        	line width = 2pt,
+	        	domain = 0:8,
+	        	samples = 3,
+				green,
+	        	]
+	        	{0.0516 * x + 0.1127};
+			
+			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left] {13$\div$16};
+			
+			\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east] {$R^2 = 0.41$};
+	
+	\nextgroupplot[
+		title = {TR \SIrange[range-phrase={-}, range-units = single]{2}{3}{\mesi}},
+		] % tr 0.2 gruppo 5
+			\addplot[only marks]
+	        	table [x = integrale_piene_tr_0.2, y = gr_5_tr_0.2] {graphics/data/giov_iote_4tr_buono.txt};
+	        
+	        \addplot[
+	        	line width = 2pt,
+	        	domain = 0:8,
+	        	samples = 3,
+				green,
+	        	]
+	        	{0.0564 * x + 0.1184};
+			
+			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left] {17$\div$20};
+			
+			\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east] {$R^2 = 0.39$};
+
+
+
+
+
+	\nextgroupplot[
+		title = {TR \SIrange[range-phrase={-}, range-units = single]{4}{5}{\mesi}},
+		] % tr 0.5 gruppo 1
+			\addplot[only marks]
+	        	table [x = integrale_piene_tr_0.5, y = gr_1_tr_0.5] {graphics/data/giov_iote_4tr_buono.txt};
 	        
 	        \addplot[
 	        	line width = 2pt,
@@ -29,17 +92,35 @@
 	        	samples = 3,
 				green,
 	        	]
-	        	{0.1852 * x + 0.1032};
+	        	{0.1837 * x + 0.1052};
 			
 			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left] {1$\div$4};
+			
+			\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east] {$R^2 = 0.51$};
+	
+	\nextgroupplot[
+		title = {TR \SIrange[range-phrase={-}, range-units = single]{4}{5}{\mesi}},
+		] % tr 0.5 gruppo 2
+			\addplot[only marks]
+	        	table [x = integrale_piene_tr_0.5, y = gr_2_tr_0.5] {graphics/data/giov_iote_4tr_buono.txt};
+	        
+	        \addplot[
+	        	line width = 2pt,
+	        	domain = 0:2,
+	        	samples = 3,
+				green,
+	        	]
+	        	{0.1762 * x + 0.06};
+			
+			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left] {5$\div$8};
 			
 			\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east] {$R^2 = 0.49$};
 	
 	\nextgroupplot[
 		title = {TR \SIrange[range-phrase={-}, range-units = single]{4}{5}{\mesi}},
-		] % gruppo 2
+		] % tr 0.5 gruppo 3
 			\addplot[only marks]
-	        	table [x = integrale_piene, y = gr_2] {graphics/data/giov_iote_4tr_buono.txt};
+	        	table [x = integrale_piene_tr_0.5, y = gr_3_tr_0.5] {graphics/data/giov_iote_4tr_buono.txt};
 	        
 	        \addplot[
 	        	line width = 2pt,
@@ -47,31 +128,17 @@
 	        	samples = 3,
 				green,
 	        	]
-	        	{0.1700 * x + 0.0669};
-			
-			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left] {5$\div$8};
-			
-			\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east] {$R^2 = 0.46$};
-	
-	\nextgroupplot[] % gruppo 3
-			\addplot[only marks]
-	        	table [x = integrale_piene, y = gr_3] {graphics/data/giov_iote_4tr_buono.txt};
-	        
-	        \addplot[
-	        	line width = 2pt,
-	        	domain = 0:2,
-	        	samples = 3,
-				green,
-	        	]
-	        	{0.1392 * x + 0.0775};
+	        	{0.147 * x + 0.0679};
 			
 			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left] {10$\div$12};
 			
-			\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east] {$R^2 = 0.48$};
+			\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east] {$R^2 = 0.53$};
 	
-	\nextgroupplot[] % gruppo 4
+	\nextgroupplot[
+		title = {TR \SIrange[range-phrase={-}, range-units = single]{4}{5}{\mesi}},
+		] % tr 0.5 gruppo 4
 			\addplot[only marks]
-	        	table [x = integrale_piene, y = gr_4] {graphics/data/giov_iote_4tr_buono.txt};
+	        	table [x = integrale_piene_tr_0.5, y = gr_4_tr_0.5] {graphics/data/giov_iote_4tr_buono.txt};
 	        
 	        \addplot[
 	        	line width = 2pt,
@@ -79,15 +146,17 @@
 	        	samples = 3,
 				green,
 	        	]
-	        	{0.2126 * x + 0.1189};
+	        	{0.2149 * x + 0.1164};
 			
 			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left] {13$\div$16};
 			
-			\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east] {$R^2 = 0.40$};
+			\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east] {$R^2 = 0.43$};
 	
-	\nextgroupplot[] % gruppo 5
+	\nextgroupplot[
+		title = {TR \SIrange[range-phrase={-}, range-units = single]{4}{5}{\mesi}},
+		] % tr 0.5 gruppo 5
 			\addplot[only marks]
-	        	table [x = integrale_piene, y = gr_5] {graphics/data/giov_iote_4tr_buono.txt};
+	        	table [x = integrale_piene_tr_0.5, y = gr_5_tr_0.5] {graphics/data/giov_iote_4tr_buono.txt};
 	        
 	        \addplot[
 	        	line width = 2pt,
@@ -100,6 +169,27 @@
 			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left] {17$\div$20};
 			
 			\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east] {$R^2 = 0.59$};
+
+
+
+
+	\nextgroupplot[
+		title = {TR \SI{1}{\anno}},	
+		] % tr 1 gruppo 2
+			\addplot[only marks]
+	        	table [x = integrale_piene_tr_1, y = gr_2_tr_1] {graphics/data/giov_iote_4tr_buono.txt};
+	        
+	        \addplot[
+	        	line width = 2pt,
+	        	domain = 0:06,
+	        	samples = 3,
+				green,
+	        	]
+	        	{0.4425 * x + 0.09};
+			
+			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west, align = left] {5$\div$8};
+			
+			\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east] {$R^2 = 0.48$};
 	
 	\end{groupplot}
 \end{tikzpicture}

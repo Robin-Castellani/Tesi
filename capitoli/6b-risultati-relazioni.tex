@@ -29,6 +29,7 @@ Si ritiene che la fonte principale delle differenze presentate risieda nel metod
 
 
 \subsection{Esplorare altre metodologie}
+\label{sec:metodologie-piene-erosione}
 Al fine di filtrare le differenze spaziali più marcate, si sono aggregati i dati dei tratti in~6 gruppi di~4 tratti adiacenti (a meno dei tratti esclusi), come è stato fatto nel calcolo della pendenza e nelle considerazioni sui tassi di erosione e crescita.
 Inoltre si è suddivisa la vegetazione nelle classi d'età giovane, intermedia e matura (sezione~\ref{sec:eta}).
 Si è mantenuta la rappresentazione dell'erosione come tassi rispetto alle isole della stessa fascia d'età presenti e si sono effettuate regressioni lineari.
@@ -43,9 +44,9 @@ Con riferimento ai criteri per considerare significative le relazioni ottenute, 
 		\midrule
 			&	&	{\textbf{Giovane}}	&	{\textbf{Intermedia}}	&	{\textbf{Matura}}	\\
 		\midrule
-		\multirow{3}*{\begin{sideways}\SIrange[range-phrase = {-}, range-units = single]{2}{3}{\mesi}\end{sideways}}	&	\# tratti	&	11	&	4	&	6	\\
-			&	Mediana $R^2$	&	0.41	&	0.41	&	0.69	\\
-			&	Mediana $P_\mathrm{value}$	&	0.008	&	0.019	&	<0.001	\\
+		\multirow{3}*{\begin{sideways}\SIrange[range-phrase = {-}, range-units = single]{2}{3}{\mesi}\end{sideways}}	&	\# tratti	&	12	&	4	&	6	\\
+			&	Mediana $R^2$	&	0.51	&	0.41	&	0.69	\\
+			&	Mediana $P_\mathrm{value}$	&	0.005	&	0.019	&	<0.001	\\
 		\midrule
 		\multirow{3}*{\begin{sideways}\SIrange[range-phrase = {-}, range-units = single]{4}{5}{\mesi}\end{sideways}}	&	\# tratti	&	19	&	{-}	&	2	\\
 			&	Mediana $R^2$	&	0.51	&	{-}	&	0.37	\\
@@ -277,7 +278,7 @@ Infine si riporta la \cref{tab:iote-4tr-lin-interv-ntr-r2-pval}, in cui per otte
 		\bottomrule
 	\end{tabular}
 	\caption[numero di tratti nei gruppi di~4 tratti con relazioni significative considerando i tassi di erosione e i livelli medi sopra soglia durante i confronti]{numero di tratti con relazioni significative tra tassi di erosione della vegetazione suddivisa in fasce d'età e rapporto tra integrale dei livelli sopra soglia e durata dei confronti secondo quattro tempi di ritorno; sono riportate le mediane degli $R^2$ e $P_\mathrm{value}$ in questi tratti; “-” indica che non ci sono tratti con relazioni valide; i tratti sono stati uniti 4 a~4.}
-	\label{tab:iote-4tr-lin-tuttep-ntr-r2-pval}
+	\label{tab:iote-4tr-lin-interv-ntr-r2-pval}
 \end{table}
 %
 \\
@@ -286,6 +287,7 @@ Ci sono significativamente più tratti validi rispetto al precedente rapporto de
 
 
 \subsection{Le relazioni valide tra piene ed isole erose}
+\label{sec:migliori-tratti-piene-erosione}
 L'obiettivo è di trovare un unico set di trasformazioni che permetta di prevedere il comportamento della vegetazione in molti tempi di ritorno diversi; con la suddivisione in classi d'età, si ricerca similmente il set che dia il maggior numero di relazioni valide su più classi.
 \\
 A fronte dei risultati presentati, si ritiene che per ottenere il quante più regressioni valide su più tratti adiacenti e in più fasce d'età occorra:
@@ -296,30 +298,44 @@ A fronte dei risultati presentati, si ritiene che per ottenere il quante più re
 	\item cercare regressioni lineari.
 \end{itemize}
 %
+Sebbene alcune classi d'età non abbiano abbastanza tratti validi per alcuni tempi di ritorno (come la fascia intermedia per il TR minimo), questo set ha un gran numero di tratti validi per molte classi e TR.
+Nel caso in cui non si accorpano i tratti 4 a~4 ci sono molte relazioni valide, ma queste si riferiscono a tratti distanti tra loro e con caratteristiche diverse; si sono preferiti i casi in cui i tratti con buone regressioni fossero adiacenti poiché si ritiene che questo rifletta la naturale regolarità presente nei fenomeni che si stanno osservando.
+\\
+Si ritengono significative le relazioni trovate per ogni classe nel TR~\SIrange[range-phrase = {-}, range-units = single]{2}{3}{\mesi}, per la classe giovane nel TR~\SIrange[range-phrase = {-}, range-units = single]{4}{5}{\mesi} e nel TR~\SI{1}{\anno} e per le classi di vegetazione intermedia e matura nel TR~\SI{1}{\anno}.
+Ogni relazione ha un discreto numero di punti (da un massimo di~17 punti ad un minimo di~7 punti, in media più di~12 punti)
+\\
 Il numero di tratti validi per ogni TR e ogni classe d'età sono stati mostrati in \cref{tab:iote-4tr-lin-ntr-r2-pval}.
 I grafici in \cref{graph:giov-iote-4tr-buono}, \cref{graph:interm-iote-4tr-buono} e \cref{graph:mat-iote-4tr-buono} mostrano i dati e le regressioni considerate valide rispettivamente per le fasce d'età giovane, intermedia e matura, con l'unione dei tratti 4 a~4;
 i valori delle regressioni lineare e le equazioni delle rette sono riportate per le tre classi d'età nella \cref{tab:giov-iote-4tr-buono}, nella \cref{tab:interm-iote-4tr-buono} e nella \cref{tab:mat-iote-4tr-buono}.
+
+Dati gli ottimi risultati ottenuti per la classe giovane e TR~\SIrange[range-phrase = {-}, range-units = single]{4}{5}{\mesi}, sono stati unitamente considerati tutti i gruppi di~4 tratti con relazioni valide: mettendo tutti i dati in un grafico unico (\cref{graph:giov-iote-4tr-buono-accorpato}), si ottiene una regressione lineare discretamente buona ($R^2 \num{> 0.4}$ e $P_\mathrm{value} \num{\ll 0.05}$).
 
 % GIOVANE
 \begin{figure}
 	\centering
 	\input{graphics/plots/giov_iote_4tr_buono}
-	\caption[proporzione di vegetazione giovane erosa in funzione dell'integrale dei livelli sopra la soglia di \SI{2}{\m}; tratti uniti quattro a quattro]{proporzione di vegetazione giovane erosa rispetto alla vegetazione giovane presente in funzione dell'integrale dei livelli (Int livelli) sopra la soglia di \SI{2}{\m}; i tratti sono raggruppati quattro a quattro; le rette verdi sono le regressioni lineari, le cui equazioni e valori di $P_\mathrm{value}$ sono riportati nella \cref{tab:giov-iote-4tr-buono}.}
+	\caption[proporzione di vegetazione giovane erosa in funzione dell'integrale dei livelli sopra la soglia di \SI{2}{\m}; tratti uniti quattro a quattro]{proporzione di vegetazione giovane erosa rispetto alla vegetazione giovane presente in funzione dell'integrale dei livelli (Int livelli) sopra la soglia di \SI{1.5}{\m}, di \SI{2}{\m} e di \SI{2.4}{\m}; i tratti sono raggruppati quattro a quattro; le rette verdi sono le regressioni lineari, le cui equazioni e valori di $P_\mathrm{value}$ sono riportati nella \cref{tab:giov-iote-4tr-buono}.}
 	\label{graph:giov-iote-4tr-buono}
 \end{figure}
 %
 \begin{table}
 	\centering
-	\begin{tabular}{c c S[table-format = 0.2] S[table-format = 0.3, table-comparator = true]}
+	\begin{tabular}{c c c S[table-format = 0.2] S[table-format = 0.3, table-comparator = true]}
 		\toprule
-		\textbf{Tratti}			&	\textbf{Equazione}		&	\multicolumn{1}{c}{$\mathbf{R^2}$}	&	\multicolumn{1}{c}{$	\mathbf{P_\mathrm{value}}$}	\\
-		\textbf{di validità}	&	\textbf{della retta}	&	\\
+		{\textbf{Tempo di}}	&	\textbf{Tratti}			&	\textbf{Equazione}		&	\multicolumn{1}{c}{$\mathbf{R^2}$}	&	\multicolumn{1}{c}{$	\mathbf{P_\mathrm{value}}$}	\\
+		{\textbf{ritorno}}	&	\textbf{di validità}	&	\textbf{della retta}	&	\\
 		\midrule
-		1$\div$4	&	$y = 0.1852 \, x + 0.1032$	&	0.49	&	<0.02	\\
-		5$\div$8	&	$y = 0.1700 \, x + 0.0669$	&	0.46	&	<0.006	\\
-		10$\div$12	&	$y = 0.1392 \, x + 0.0775$	&	0.48	&	<0.02	\\
-		13$\div$16	&	$y = 0.2126 \, x + 0.1189$	&	0.40	&	<0.009	\\
-		17$\div$20	&	$y = 0.2553 \, x + 0.1076$	&	0.59	&	<0.004	\\
+		\multirow{3}*{\SIrange[range-phrase = {-}, range-units = single]{2}{3}{\mesi}}	&	5$\div$8	&	$y = 0.0348 \, x + 0.0812$	&	0.32	&	<0.02	\\
+			&	13$\div$16	&	$y = 0.0516 \, x + 0.1127$	&	0.41	&	<0.005	\\
+			&	17$\div$20	&	$y = 0.0564 \, x + 0.1184$	&	0.39	&	<0.008	\\
+		\midrule
+		\multirow{5}*{\SIrange[range-phrase = {-}, range-units = single]{4}{5}{\mesi}}	&	1$\div$4	&	$y = 0.1837 \, x + 0.1052$	&	0.51	&	<0.006	\\
+			&	5$\div$8	&	$y = 0.1762 \, x + 0.0600$	&	0.49	&	<0.003	\\
+			&	10$\div$12	&	$y = 0.1470 \, x + 0.0679$	&	0.53	&	<0.008	\\
+			&	13$\div$16	&	$y = 0.2149 \, x + 0.1164$	&	0.43	&	<0.005	\\
+			&	17$\div$20	&	$y = 0.2553 \, x + 0.1076$	&	0.59	&	<0.004	\\
+		\midrule
+		\SI{1}{\anno}	&	5$\div$8	&	$y = 0.4425 \, x + 0.0900$	&	0.48	&	<0.003	\\
 		\bottomrule
 	\end{tabular}
 	\caption[equazioni, $R^2$ e $P_\mathrm{value}$ delle regressioni per la vegetazione giovane]{equazioni, $R^2$ e $P_\mathrm{value}$ delle regressioni per la vegetazione giovane, mostrate nel grafico in \cref{graph:giov-iote-4tr-buono}.}
@@ -337,6 +353,7 @@ i valori delle regressioni lineare e le equazioni delle rette sono riportate per
 \begin{table}
 	\centering
 	\begin{tabular}{
+		c
 		S[table-format = 1.1]
 		c
 		c
@@ -344,12 +361,12 @@ i valori delle regressioni lineare e le equazioni delle rette sono riportate per
 		S[table-format = 0.3, table-comparator = true]
 	}
 		\toprule
-		\multicolumn{1}{c}{\textbf{Livello soglia}}	&	\textbf{Tratti}			&	\textbf{Equazione}		&	\multicolumn{1}{c}{$\mathbf{R^2}$}	&	\multicolumn{1}{c}{$	\mathbf{P_\mathrm{value}}$}	\\
-		\multicolumn{1}{s}{[\m]}	&	\textbf{di validità}	&	\textbf{della retta}	&	\\
+		{\textbf{Tempo di}}	&	{\textbf{Livello soglia}}	&	\textbf{Tratti}			&	\textbf{Equazione}		&	\multicolumn{1}{c}{$\mathbf{R^2}$}	&	{$\mathbf{P_\mathrm{value}}$}	\\
+		{\textbf{ritorno}}	&	\multicolumn{1}{s}{[\m]}	&	\textbf{di validità}	&	\textbf{della retta}	&	\\
 		\midrule
-		1.5	&	17$\div$20	&	$y = 0.0293 \, x + 0.0809$	&	0.41	&	<0.02	\\
-		2.4	&	5$\div$8	&	$y = 0.2819 \, x + 0.0331$	&	0.62	&	<0.008	\\
-		2.4	&	10$\div$12	&	$y = 0.1335 \, x + 0.0109$	&	0.67	&	<0.03	\\
+		\SIrange[range-phrase = {-}, range-units = single]{2}{3}{\mesi}	&	1.5	&	17$\div$20	&	$y = 0.0293 \, x + 0.0809$	&	0.41	&	<0.02	\\
+		\SI{1}{\anno}	&	2.4	&	5$\div$8	&	$y = 0.2819 \, x + 0.0331$	&	0.62	&	<0.008	\\
+		\SI{1}{\anno}	&	2.4	&	10$\div$12	&	$y = 0.1335 \, x + 0.0109$	&	0.67	&	<0.03	\\
 		\bottomrule
 	\end{tabular}
 	\caption[equazioni, $R^2$ e $P_\mathrm{value}$ delle regressioni per la vegetazione intermedia]{equazioni, $R^2$ e $P_\mathrm{value}$ delle regressioni per la vegetazione intermedia, mostrate nel grafico in \cref{graph:interm-iote-4tr-buono}.}
@@ -367,6 +384,7 @@ i valori delle regressioni lineare e le equazioni delle rette sono riportate per
 \begin{table}
 	\centering
 	\begin{tabular}{
+		c		
 		S[table-format = 1.1]
 		c
 		c
@@ -374,21 +392,19 @@ i valori delle regressioni lineare e le equazioni delle rette sono riportate per
 		S[table-format = 0.3, table-comparator = true]
 	}
 		\toprule
-		\multicolumn{1}{c}{\textbf{Livello soglia}}	&	\textbf{Tratti}			&	\textbf{Equazione}		&	\multicolumn{1}{c}{$\mathbf{R^2}$}	&	\multicolumn{1}{c}{$	\mathbf{P_\mathrm{value}}$}	\\
-		\multicolumn{1}{s}{[\m]}	&	\textbf{di validità}	&	\textbf{della retta}	&	\\
+		{\textbf{Tempo di}}	&	{\textbf{Livello soglia}}	&	\textbf{Tratti}			&	\textbf{Equazione}		&	\multicolumn{1}{c}{$\mathbf{R^2}$}	&	\multicolumn{1}{c}{$	\mathbf{P_\mathrm{value}}$}	\\
+		{\textbf{ritorno}}	&	\multicolumn{1}{s}{[\m]}	&	\textbf{di validità}	&	\textbf{della retta}	&	\\
 		\midrule
-		1.5	&	17$\div$20	&	$y = 0.0220 \, x + 0.0259$	&	0.69	&	<0.0005	\\
-		1.5	&	21$\div$22	&	$y = 0.0169 \, x + 0.0161$	&	0.56	&	<0.004	\\
-		2.4	&	1$\div$4	&	$y = 0.2504 \, x - 0.0326$	&	0.54	&	<0.04	\\
-		2.4	&	5$\div$8	&	$y = 0.1629 \, x + 0.0119$	&	0.54	&	<0.02	\\
+		\SIrange[range-phrase = {-}, range-units = single]{2}{3}{\mesi}	&	1.5	&	17$\div$20	&	$y = 0.0220 \, x + 0.0259$	&	0.69	&	<0.0005	\\
+		\SIrange[range-phrase = {-}, range-units = single]{2}{3}{\mesi}	&	1.5	&	21$\div$22	&	$y = 0.0169 \, x + 0.0161$	&	0.56	&	<0.004	\\
+		\SI{1}{\anno}	&	2.4	&	1$\div$4	&	$y = 0.2504 \, x - 0.0326$	&	0.54	&	<0.04	\\
+		\SI{1}{\anno}	&	2.4	&	5$\div$8	&	$y = 0.1629 \, x + 0.0119$	&	0.54	&	<0.02	\\
 		\bottomrule
 	\end{tabular}
 	\caption[equazioni, $R^2$ e $P_\mathrm{value}$ delle regressioni per la vegetazione matura]{equazioni, $R^2$ e $P_\mathrm{value}$ delle regressioni per la vegetazione matura, mostrate nel grafico in \cref{graph:mat-iote-4tr-buono}.}
 	\label{tab:mat-iote-4tr-buono}
 \end{table}
 %
-
-Per la classe giovane, considerare tutti i gruppi di~4 tratti assieme porta ad una regressione lineare con $R^2 \num{> 0.4}$ e $P_\mathrm{value} \num{\ll 0.05}$, come è mostrato nel grafico in \cref{graph:giov-iote-4tr-buono-accorpato}.
 %
 \begin{figure}
 	\centering
@@ -398,6 +414,35 @@ Per la classe giovane, considerare tutti i gruppi di~4 tratti assieme porta ad u
 \end{figure}
 %
 
+\subsection{Considerazioni sulle relazioni piene - erosione}
+Le seguenti considerazioni si basano sull'osservazione dei risultati ottenuti con le diverse trasformazioni dei parametri (sezione~\ref{sec:metodologie-piene-erosione}).
+ 
+Esiste un trend lineare abbastanza forte che lega l'erosione della vegetazione giovane con le piene che avvengono frequentemente (TR \SI{< 1}{\anno}), come è mostrato dal considerevole numero di tratti con relazioni valide.
+Questi sono spesso quelli intermedi e vallivi, a volte anche quelli montani.
+\\
+Per la vegetazione intermedia, si sono trovati trend positivi per TR~\SIrange[range-phrase = {-}, range-units = single]{2}{3}{\mesi} e TR~\SI{1}{\anno}, in un caso anche per TR~\SIrange[range-phrase = {-}, range-units = single]{4}{5}{\mesi}; per tutti i set di trasformazioni, i tratti validi adiacenti sono sempre quelli intermedi e vallivi.
+\\
+I trend migliori che si sono ottenuti per la fascia matura della vegetazione sono per TR~\SIrange[range-phrase = {-}, range-units = single]{2}{3}{\mesi} e TR~\SI{1}{\anno}; i tratti che presentano queste buone relazioni sono quelli montani e quelli vallivi, quasi mai quelli intermedi.
 
+Osservando le equazioni delle relazioni provenienti dal set selezionato come migliore (\cref{tab:giov-iote-4tr-buono}, \cref{tab:interm-iote-4tr-buono}, \cref{tab:mat-iote-4tr-buono}), è possibile notare che:
+%
+\begin{itemize}
+	\item il coefficiente angolare aumenta sempre all'incrementare del tempo di ritorno considerato;
+	questo significa che, a parità di integrale dei livelli, il tasso di erosione è maggiore considerando eventi di piena via via più intensi;
+	il fattore dell'incremento della percentuale di erosione può arrivare a superare l'ordine di grandezza ($10\times$ confrontando per la fascia intermedia il TR minore di~\SIrange[range-phrase = {-}, range-units = single]{2}{3}{\mesi} con coefficiente~\num{0.0293} e il TR maggiore di~\SI{1}{\anno} con coefficiente~\num{0.2819});
+	\item a parità di tempo di ritorno, il coefficiente angolare diminuisce considerando classi d'età più vecchie; ad esempio nei i tratti 17$\div$20 per TR~\SIrange[range-phrase = {-}, range-units = single]{2}{3}{\mesi} il coefficiente della fascia giovane è~\num{0.0564}, della fascia intermedia è~\num{0.0293}, della fascia matura è~\num{0.0220};
+	si ricorda che considerare gruppi diversi può portare a confronti non corretti poiché ogni gruppo ha caratteristiche peculiari;
+	il fattore del decremento del tasso di vegetazione erosa è circa $2 \times$.
+\end{itemize}
+%
+Queste osservazioni sono in linea con ciò che si poteva pensare dalla statistica dei tempi di ritorno dei picchi superiori ad \SI{1}{\m} (grafico in \cref{graph:tr-picchi}) e dall'analisi dei tassi di erosione nelle tre classi d'età (grafici in \cref{graph:erosione-classi-eta-matrix}), sebbene ora sia possibile fornire dati quantitativi:
+le piene più intense hanno effetti maggiori sulle isole rispetto a piene meno intense di circa un ordine di grandezza per tempi di ritorno inferiori o pari ad~\SI{1}{\anno};
+la vegetazione matura è molto più resistente rispetto a quella giovane, dato che i tassi di erosione sono circa dimezzati a parità di piena, mentre rispetto alla fascia intermedia la classe matura mostra una resistenza lievemente maggiore.
 
-
+La normalizzazione dell'integrale dei livelli rispetto ad una quantità temporale (durata delle piene sopra soglia in un confronto o durata di un confronto) ha mostrato di non fornire risultati particolarmente buoni per il basso numero di tratti con relazioni valide. Questo può trovare una spiegazione nell'aver utilizzato dati idrometrici di livello, che sono una misura rispetto ad un riferimento locale che si presta meno a subire trasformazioni rispetto alla portata, la quale, d'altra parte, è più difficile da quantificare.
+\\
+L'utilizzo di tassi di erosione rispetto alle isole della stessa fascia d'età presenti all'inizio di ogni confronto anziché considerare gli areali rende i risultati di gruppi diversi di tratti e di diverse classi d'età più confrontabili tra di loro; mostra inoltre di restituire risultati migliori.
+\\
+Ricercare relazioni esponenziali non porta a risultati migliori rispetto alle regressioni lineari; nei grafici mostrati nella sezione~\ref{sec:migliori-tratti-piene-erosione} i punti non sembrano avere tendenze diverse da quella lineare (logaritmica, iperbolica, etc.).
+\\
+Per tempi di ritorno superiori ad~\SI{1}{\anno} non sono presenti trasformazioni dei parametri che diano risultati positivi; il motivo può risiedere nel fatto di avere pochi eventi che superano i~\SI{2.8}{\m} di livello e questo porta a non avere sufficienti punti nelle regressioni.
