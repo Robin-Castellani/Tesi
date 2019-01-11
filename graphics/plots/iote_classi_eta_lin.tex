@@ -1,0 +1,76 @@
+\tikzsetnextfilename{iote_classi_eta_lin}
+\begin{tikzpicture}	
+	\begin{groupplot}[
+		group style = {
+			group size = 1 by 3,
+			y descriptions at = edge left,
+			x descriptions at = edge bottom,
+			horizontal sep = 0.1cm,
+			vertical sep = 1cm,
+		},
+		width = \textwidth,
+		height = 0.5\textwidth,
+		ymin = 0,
+		ymax = 1,
+		enlarge y limits = 0.05,
+		ylabel = {Erosione / Isole},
+		xlabel = {Integrale dei livelli \si{[\m\giorno]}},
+		grid = major,		
+		]
+		
+	\nextgroupplot[] % giovane
+		\pgfplotsforeachungrouped \tr in {1,2,...,23} {
+		\addplot[only marks]
+			table [x = integrale_piene, y = giov_tr_\tr] {graphics/data/iote_classi_eta_lin.txt};
+		}
+			
+	        \addplot[
+	        	line width = 2pt,
+	        	domain = 0:2,
+	        	samples = 3,
+				green,
+	        	]
+	        	{0.1979 * x + 0.1009};
+			
+			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west] {Giovane};
+			
+			\node at (axis description cs: 1,1) [draw = black, fill = white, anchor = north east] {$R^2 = 0.40$ $P_\mathrm{value} < 0.00001$};
+		
+	\nextgroupplot[] % intermedia
+		\pgfplotsforeachungrouped \tr in {1,2,...,23} {
+		\addplot[only marks]
+			table [x = integrale_piene, y = int_tr_\tr] {graphics/data/iote_classi_eta_lin.txt};
+		}
+			
+	        \addplot[
+	        	line width = 2pt,
+	        	domain = 0:2,
+	        	samples = 3,
+				green,
+	        	]
+	        	{0.0667 * x + 0.1022};
+			
+			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west] {Intermedia};
+			
+			\node at (axis description cs: 1,1) [draw = black, fill = white, anchor = north east] {$R^2 = 0.07$ $P_\mathrm{value} < 0.00002$};
+		
+	\nextgroupplot[] % matura
+		\pgfplotsforeachungrouped \tr in {1,2,...,23} {
+		\addplot[only marks]
+			table [x = integrale_piene, y = mat_tr_\tr] {graphics/data/iote_classi_eta_lin.txt};
+		}
+			
+	        \addplot[
+	        	line width = 2pt,
+	        	domain = 0:2,
+	        	samples = 3,
+				green,
+	        	]
+	        	{0.0521 * x + 0.0599};
+			
+			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west] {Matura};
+			
+			\node at (axis description cs: 1,1) [draw = black, fill = white, anchor = north east] {$R^2 = 0.06$ $P_\mathrm{value} < 0.0003$};
+	
+	\end{groupplot}
+\end{tikzpicture}
