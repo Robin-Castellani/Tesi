@@ -29,25 +29,42 @@ Si ritiene che la fonte principale delle differenze presentate risieda nel metod
 
 
 
-
+%\FloatBarrier
 \subsection{Suddividere la vegetazione in classi d'età}
-Si considerano i tassi di erosione della vegetazione, divisa secondo le tre fasce d'età di cui alla sezione~\ref{sec:eta}, in funzione degli integrali dei livelli sopra il livello di \SI{2}{\m}, definito con un TR~\SIrange[range-phrase = {-}, range-units = single]{4}{5}{\mesi}; si considerano tutti i tratti tranne il~9 e il~23.
-I grafici in \cref{graph:iote-classi-eta-lin} mostrano i dati e i risultati delle regressioni lineari.
+Si considerano i grafici precedenti con le regressioni lineari, in cui si dividono i tassi di erosione secondo le tre classi d'età della vegetazione (sezione~\ref{sec:eta}); si considerano tutti i tratti tranne il~9 e il~23.
+I grafici in \cref{graph:tr-05-iote-classi-eta-lin}, in \cref{graph:tr-12-iote-classi-eta-lin} e in \cref{graph:tr-25-iote-classi-eta-lin} mostrano i dati e i risultati delle regressioni lineari.
+\\
+Si vede come la suddivisione in classi d'età mostra come queste abbiano comportamenti differenti, e come alcune classi mostrino buone relazioni.
+I risultati possono essere molto positivi procedendo nella ricerca delle relazioni con il nuovo approccio di considerare le isole divise in fasce d'età.
 %
 \begin{figure}
 	\centering
-	\input{graphics/plots/iote_classi_eta_lin}
-	\caption[suddivisione in classi d'età nella ricerca di relazioni tra erosione e piene]{esempio di suddivisione della vegetazione in classi d'età nella ricerca di relazioni lineari tra i tassi di erosione e l'integrale dei livelli sopra la soglia di \SI{2}{\m} (TR~\SIrange[range-phrase = {-}, range-units = single]{4}{5}{\mesi}); le rette in verde rappresentano le regressioni lineari.}
-	\label{graph:iote-classi-eta-lin}
+	\input{graphics/plots/tr_0.5_iote_classi_eta_lin}
+	\caption[suddivisione in classi d'età ricercando relazioni tra erosione e piene con livello maggiore di \SI{2}{\m}]{esempio di suddivisione della vegetazione in classi d'età nella ricerca di relazioni lineari tra i tassi di erosione e l'integrale dei livelli sopra la soglia di \SI{2}{\m} (TR~\SIrange[range-phrase = {-}, range-units = single]{4}{5}{\mesi}); le rette in verde rappresentano le regressioni lineari.}
+	\label{graph:tr-05-iote-classi-eta-lin}
 \end{figure}
 %
-\\
-Si vede come la suddivisione in classi d'età mostra come queste abbiano comportamenti differenti.
-I risultati possono essere molto positivi procedendo nella ricerca delle relazioni con il nuovo approccio di considerare le isole divise in fasce d'età.
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/tr_1.2_iote_classi_eta_lin}
+	\caption[suddivisione in classi d'età ricercando relazioni tra erosione e piene con con livello maggiore di \SI{2.5}{\m}]{esempio di suddivisione della vegetazione in classi d'età nella ricerca di relazioni lineari tra i tassi di erosione e l'integrale dei livelli sopra la soglia di \SI{1.2}{\anni}); le rette in verde rappresentano le regressioni lineari.}
+	\label{graph:tr-12-iote-classi-eta-lin}
+\end{figure}
+%
+%
+\begin{figure}
+	\centering
+	\input{graphics/plots/tr_2.5_iote_classi_eta_lin}
+	\caption[suddivisione in classi d'età ricercando relazioni tra erosione e piene con con livello maggiore di \SI{2.9}{\m}]{esempio di suddivisione della vegetazione in classi d'età nella ricerca di relazioni lineari tra i tassi di erosione e l'integrale dei livelli sopra la soglia di \SI{2.5}{\anni}); le rette in verde rappresentano le regressioni lineari.}
+	\label{graph:tr-25-iote-classi-eta-lin}
+\end{figure}
+%
 
 
 
 
+%\FloatBarrier
 \subsection{Esplorare altre metodologie}
 \label{sec:metodologie-piene-erosione}
 Al fine di filtrare le differenze spaziali più marcate, si sono aggregati i dati dei tratti in~6 gruppi di~4 tratti adiacenti (a meno dei tratti esclusi), come è stato fatto nel calcolo della pendenza e nelle considerazioni sui tassi di erosione e crescita.

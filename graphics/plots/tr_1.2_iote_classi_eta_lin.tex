@@ -1,4 +1,4 @@
-\tikzsetnextfilename{tr_0.5_iote_classi_eta_lin}
+\tikzsetnextfilename{tr_1.2_iote_classi_eta_lin}
 \begin{tikzpicture}	
 	\begin{groupplot}[
 		group style = {
@@ -19,60 +19,60 @@
 		]
 		
 	\nextgroupplot[
-		title = {TR \SIrange[range-phrase = {-}, range-units = single]{4}{5}{\mesi}},		
+		title = {TR \SI{1.2}{\anni}},		
 		] % giovane
 		\pgfplotsforeachungrouped \tr in {1,2,...,23} {
 		\addplot[only marks]
-			table [x = integrale_piene, y = giov_tr_\tr] {graphics/data/tr_0.5_iote_classi_eta_lin.txt};
+			table [x = integrale_piene, y = giov_tr_\tr] {graphics/data/tr_1.2_iote_classi_eta_lin.txt};
 		}
 			
 	        \addplot[
 	        	line width = 2pt,
-	        	domain = 0:2,
+	        	domain = 0:0.8,
 	        	samples = 3,
 				green,
 	        	]
-	        	{0.1979 * x + 0.1009};
+	        	{0.345 * x + 0.2385};
 			
 			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west] {Giovane};
 			
-			\node at (axis description cs: 1,1) [draw = black, fill = white, anchor = north east] {$R^2 = 0.40$ $P_\mathrm{value} < 0.00001$};
+			\node at (axis description cs: 1,1) [draw = black, fill = white, anchor = north east] {$R^2 = 0.16$ $P_\mathrm{value} < 0.00001$};
 		
 	\nextgroupplot[] % intermedia
 		\pgfplotsforeachungrouped \tr in {1,2,...,23} {
 		\addplot[only marks]
-			table [x = integrale_piene, y = int_tr_\tr] {graphics/data/tr_0.5_iote_classi_eta_lin.txt};
+			table [x = integrale_piene, y = int_tr_\tr] {graphics/data/tr_1.2_iote_classi_eta_lin.txt};
 		}
 			
 	        \addplot[
 	        	line width = 2pt,
-	        	domain = 0:2,
+	        	domain = 0:0.8,
 	        	samples = 3,
 				green,
 	        	]
-	        	{0.0667 * x + 0.1022};
+	        	{0.2167 * x + 0.1074};
 			
 			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west] {Intermedia};
 			
-			\node at (axis description cs: 1,1) [draw = black, fill = white, anchor = north east] {$R^2 = 0.07$ $P_\mathrm{value} < 0.00002$};
+			\node at (axis description cs: 1,1) [draw = black, fill = white, anchor = north east] {$R^2 = 0.08$ $P_\mathrm{value} < 0.0008$};
 		
 	\nextgroupplot[] % matura
 		\pgfplotsforeachungrouped \tr in {1,2,...,23} {
 		\addplot[only marks]
-			table [x = integrale_piene, y = mat_tr_\tr] {graphics/data/tr_0.5_iote_classi_eta_lin.txt};
+			table [x = integrale_piene, y = mat_tr_\tr] {graphics/data/tr_1.2_iote_classi_eta_lin.txt};
 		}
 			
 	        \addplot[
 	        	line width = 2pt,
-	        	domain = 0:2,
+	        	domain = 0:0.8,
 	        	samples = 3,
 				green,
 	        	]
-	        	{0.0521 * x + 0.0599};
+	        	{0.1706 * x + 0.0638};
 			
 			\node at (axis description cs: 0,1) [draw = black, fill = white, anchor = north west] {Matura};
 			
-			\node at (axis description cs: 1,1) [draw = black, fill = white, anchor = north east] {$R^2 = 0.06$ $P_\mathrm{value} < 0.0003$};
+			\node at (axis description cs: 1,1) [draw = black, fill = white, anchor = north east] {$R^2 = 0.06$ $P_\mathrm{value} < 0.004$};
 	
 	\end{groupplot}
 \end{tikzpicture}
