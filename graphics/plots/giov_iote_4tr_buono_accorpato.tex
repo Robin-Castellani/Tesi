@@ -13,9 +13,9 @@
 		title = {TR \SIrange[range-phrase={-}, range-units = single]{4}{5}{\mesi}},		
 		]
 		
-		\pgfplotsforeachungrouped \gr in {1,2,...,6} {
+		\pgfplotsforeachungrouped \gr in {1,2,...,5} {
 		\addplot[only marks]
-			table [x = integrale_piene, y = gr_\gr] {graphics/data/giov_iote_4tr_buono.txt};
+			table [x = integrale_piene_tr_0.5, y = gr_\gr_tr_0.5] {graphics/data/giov_iote_4tr_buono.txt};
 		}
 	
 		\addplot[

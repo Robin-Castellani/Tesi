@@ -16,12 +16,12 @@
 		enlarge x limits = 0.05,
 		ylabel = {Livello idrometrico \si{[\m]}},
 		xlabel = {Tempo di ritorno \si{[\anni]}},
-		grid = major,		
 		]
 	
 	\nextgroupplot[
 			xmode = log,
         	log ticks with fixed point,
+			grid = major,
         ]
 		\addplot[
 			blue,
@@ -36,6 +36,7 @@
 	\nextgroupplot[
 			xmode = log,
         	log ticks with fixed point,
+			grid = major,
         ]
 		\addplot[
 			blue,
@@ -76,12 +77,12 @@
 		\addplot fill between [
 			of = soglia and livelli,
 			split,
-			every segment no 0/.style = {transparent},
+			every segment no 0/.style = {white},
 			every segment no 1/.style = {orange},
-			every segment no 2/.style = {transparent},
+			every segment no 2/.style = {white},
 			every segment no 3/.style = {orange},
-			every segment no 4/.style = {transparent},
-			every segment no 5/.style = {transparent},
+			every segment no 4/.style = {white},
+			every segment no 5/.style = {white},
 		];
 		
 		\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east,] {$Int = \SI{0.90}{\m\giorno}$};
@@ -115,11 +116,11 @@
 		\addplot fill between [
 			of = soglia and livelli,
 			split,
-			every segment no 0/.style = {transparent},
+			every segment no 0/.style = {white},
 			every segment no 1/.style = {green!70!black},
 			every segment no 2/.style = {green!70!black},
-			every segment no 3/.style = {transparent},
-			every segment no 4/.style = {transparent},
+			every segment no 3/.style = {white},
+			every segment no 4/.style = {white},
 		];
 		
 		\node at (axis description cs: 1,0) [draw = black, fill = white, anchor = south east,] {$Int = \SI{0.12}{\m\giorno}$};

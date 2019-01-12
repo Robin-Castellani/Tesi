@@ -1,20 +1,14 @@
 \documentclass[12pt,a4paper,english,italian,twoside]{scrbook}
-\usepackage[T1]{fontenc}
+\usepackage{pdflscape}	% per ruotare le pagine di 90 gradi
+\usepackage[a-1b]{pdfx}	% per creare pdf di tipo A.1b
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{babel}
-\usepackage[beramono,pdfspacing,
-	eulerchapternumbers,eulermath,floatperchapter]
-	{classicthesis} % per uno stile bello
+\usepackage[rgb]{xcolor}	% per caricare i colori
+\usepackage[beramono,pdfspacing,	eulerchapternumbers,eulermath,floatperchapter]{classicthesis} % per uno stile bello
 \usepackage{arsclassica}	% per uno stile ancora più bello
-\usepackage{amsmath,amsfonts}
-\usepackage{amssymb}
-\usepackage{mathtools}
+\usepackage{amsmath}	%  per fare riferimento alle equazioni
 \usepackage{multicol}
-\usepackage{array}
-\usepackage{pdflscape}
-\usepackage[dvipsnames]{xcolor}
-\usepackage{colortbl}
-\usepackage{graphicx}
 \usepackage{wrapfig}	% per didascalie avvolte nel testo
 \usepackage{booktabs}
 \usepackage{multirow}
@@ -31,11 +25,6 @@
 \usepackage{verbatim}	% per usare l'ambiente comment
 \usepackage[section]{placeins}	% per usare \FloatBarrier; l'opzione lo include in \section{}
 \usepackage[swapnames,norules,nouppercase]{frontespizio_unitn}%[onlyinclude,nowrite]{frontespizio}	% usato per includere il frontespizio
-\usepackage[a-1b]{pdfx}	% per creare pdf di tipo A.1b
-
-% licenza
-\usepackage{xmpincl}	% permette di includere licenze in formato XMP
-\includexmp{files/CC_Attribution-NonCommercial-ShareAlike_4.0_International}	% file della licenza
 
 % bibliografia
 \usepackage[autostyle, italian = guillemets]{csquotes}    % per citare con le virgolette giuste
@@ -68,17 +57,6 @@ biblatex}       % per la bib
 \DeclareSIUnit\giorno{giorno}
 \DeclareSIUnit\none{-}
 \DeclareSIUnit\e{\euro}
-
-% per personalizzare le caption
-\begin{comment}
-\usepackage{caption}
-\captionsetup{
-	labelformat=simple, % simple senza parentesi, parens con le parentesi
-	font={it},
-	labelfont=bf,
-	justification=centerlast
-}
-\end{comment}
 
 % grafici e disegni
 \usepackage{tikz}
@@ -121,14 +99,10 @@ color(50.00000000000000bp)=(red)
 \makeglossaries
 \loadglsentries{materiale_iniziale_finale/voci-glossario}
 
-% per riferimenti
-\usepackage{hyperref}
+%% per riferimenti (hyperref è caricato da pdfx con opzione pdfa e anche da arsclassica con varie opzioni di colori)
 \hypersetup{
-	colorlinks	=	true,	% attiva il colore per i link, altrimenti sono inscatolati
-	%linkcolor	=	black,	% il colore dei link è nero
-	pdftitle	=	Tesi: Dinamiche della vegetazione riparia nel fiume Tagliamento: traiettorie evolutive e relazioni piene - vegetazione,
-	pdfauthor	=	Castellani Robin,
-	%hidelinks,
+	colorlinks, % attiva il colore per i link, altrimenti sono inscatolati
+	allcolors = black, % il colore di tutti i  link è nero
 }
 %\usepackage{varioref}	% per riferimenti con pagine
 \usepackage[noabbrev]{cleveref}	% per riferimenti intelligenti
