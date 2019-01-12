@@ -1,5 +1,5 @@
-Con i dati a disposizione è possibile ricercare delle relazioni che leghino il regime delle piene con la dinamica delle isole.
-Poiché l'erosione delle isole è legata solamente agli effetti delle piene, mentre l'accrescimento è influenzato da più fattori (come è stato spiegato nella sezione~\ref{sec:descr-area-studio}), si esclude quest'ultimo dall'analisi.
+Con i dati a disposizione è possibile ricercare le relazioni che leghino il regime delle piene con la dinamica delle isole.
+Poiché l'erosione delle isole è legata solamente agli effetti delle piene, mentre, come è stato già osservato nei capitoli precedenti, l'accrescimento è influenzato da più fattori, si esclude quest'ultimo dall'analisi.
 
 \section{Metodi: parametri considerati}
 
@@ -37,7 +37,7 @@ Questa statistica permette di distinguere diversi tipi di eventi (in accordo con
 Il \emph{natural flow regime} (regime naturale delle portate) è il pattern caratteristico che presentano le portate in fiume in base ad abbondanza, stagionalità e variabilità; di questo regime, sono state individuate cinque componenti principali: intensità, durata, stagionalità, frequenza e tasso di cambiamento delle portate \squarecite{Poff:1997}.
 \\
 Si ritiene che gli effetti di una piena sulle isole non dipendano soltanto dall'intensità (cioè dal livello raggiunto durante il picco) ma anche dalla durata: a parità di picco, un evento più lungo probabilmente eroderà un maggiore areale di isole rispetto ad un evento molto breve.
-La stagionalità e il tasso di cambiamento delle portate influenzano maggiormente lo stadio di crescita ed espansione della vegetazione, più che l'erosione. 
+La stagionalità e il tasso di cambiamento delle portate sono fattori che esercitano un'influenza maggiore sulla crescita ed espansione della vegetazione, più che sull'erosione. 
 \\
 Per tenere contemporaneamente conto dell'intensità, della durata e del tempo di ritorno delle piene, si è calcolato per ogni intervallo di tempo tra due immagini successive l'integrale temporale dei livelli sopra un livello soglia definito dal grafico in \cref{graph:tr-picchi}, scegliendo un tempo di ritorno.
 Si è scelto di misurare l'integrale in \si{[\m\giorno]}.
@@ -67,8 +67,8 @@ Al fine di ottenere relazioni significative si sono usate (non sempre contempora
 	\item accorpare i dati di più tratti adiacenti (ad esempio dei primi 4 tratti);
 	\item escludere dall'analisi alcuni tratti con caratteristiche peculiari, come il tratto~9, dove è presente l'isola su roccia di Cornino, e il tratto~23, in quanto presenta una morfologia nettamente diversa rispetto agli altri tratti;
 	\item ignorare i punti che mostrano erosione anche per integrali nulli, in quanto gli areali di erosione sono molto modesti e sono con tutta probabilità dovuti agli errori di correzione della georeferenziazione attuata nella fase di elaborazione del cambiamento;
-	\item scalare un asse con il logaritmo in base~\num{10} per utilizzare leggi di potenza nelle regressioni;
+	\item applicare ad un asse una scala logaritmica in base~\num{10} per utilizzare leggi di potenza nelle regressioni;
 	\item considerare un numero minimo di~5 punti per effettuare e ritenere valide le regressioni (per due punti passa una ed una sola retta, e in tal caso una regressione lineare darebbe ottimi risultati, ma poco validi; con un maggior numero di punti l'affidabilità dei risultati migliora);
 	\item considerare come valide le regressioni che mostrano $R^2 \num{> 0.3}$ e $P_\mathrm{value} \num{< 0.05}$;
-	\item limitare agli anni più recenti la suddivisione in classi d'età (dall'immagine del~2007-09-21), che è debolmente valida nei primi anni di osservazione (si veda la sezione~\ref{sec:eta}).
+	\item limitare agli anni più recenti la suddivisione in classi d'età (dall'immagine del~2007-09-21), poiché tale divisione è debolmente valida nei primi anni di osservazione (si veda la sezione~\ref{sec:eta}).
 \end{itemize}
