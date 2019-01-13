@@ -1,38 +1,27 @@
-\documentclass[12pt,a4paper,english,italian,twoside]{scrbook}
-\usepackage{pdflscape}	% per ruotare le pagine di 90 gradi
+\documentclass[12pt, english, italian, twoside, headinclude, footinclude]{scrbook}
 \usepackage[a-1b]{pdfx}	% per creare pdf di tipo A.1b
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{babel}
 \usepackage[rgb]{xcolor}	% per caricare i colori
-\usepackage[beramono,pdfspacing,	eulerchapternumbers,eulermath,floatperchapter]{classicthesis} % per uno stile bello
+\usepackage[beramono, pdfspacing, eulerchapternumbers, eulermath, floatperchapter]{classicthesis} % per uno stile bello
 \usepackage{arsclassica}	% per uno stile ancora più bello
 \usepackage{amsmath}	%  per fare riferimento alle equazioni
-\usepackage{multicol}
-\usepackage{wrapfig}	% per didascalie avvolte nel testo
-\usepackage{booktabs}
-\usepackage{multirow}
-%\usepackage{parskip}	% pacchetto per la non indentazione del paragrafo, sconsigliato con scrbook
-\usepackage{enumitem}	% per elenchi con label
+\usepackage{booktabs}	% per fare (ta)belle con top-mid-bottomrule
+\usepackage{multirow}	% per fare scritte nelle tabelle che spaziano su più righe
 \usepackage{subcaption}	% più performante rispetto subfigure
-\usepackage{geometry}	% cambiare la geometria del decumento
-\usepackage{tabularx}	% per stabilire autonomamente la larghezza delle tabelle
+%\usepackage{geometry}	% cambiare la geometria del decumento
 \usepackage{rotating}   % per ruotare le scritte all'interno delle tabelle
-\usepackage{sidecap}	% per le didascalie laterali
-\usepackage{longtable}	% per fare tabelle più lunghe di una pagina
-\usepackage{eurosym}    % per mettere il simbolo dell'euro
-\usepackage{adjustbox}  % per rendere le tabelle più piccole
 \usepackage{verbatim}	% per usare l'ambiente comment
 \usepackage[section]{placeins}	% per usare \FloatBarrier; l'opzione lo include in \section{}
 \usepackage[swapnames,norules,nouppercase]{frontespizio_unitn}%[onlyinclude,nowrite]{frontespizio}	% usato per includere il frontespizio
+\usepackage[]{sidecap}
 
 % bibliografia
 \usepackage[autostyle, italian = guillemets]{csquotes}    % per citare con le virgolette giuste
 \usepackage[bibstyle = authoryear, citestyle = authoryear-square, maxcitenames = 2, uniquelist = false, backend = biber]{
 biblatex}       % per la bib
 \addbibresource{materiale_iniziale_finale/bibliografia.bib}
-%\defbibheading{cartaceo}{\section*{Bibliografia cartacea}}
-%\defbibheading{web}{\section*{Sitografia}}
 
 % per scrivere bene le unità di misura
 \usepackage{siunitx}
@@ -103,6 +92,7 @@ color(50.00000000000000bp)=(red)
 \hypersetup{
 	colorlinks, % attiva il colore per i link, altrimenti sono inscatolati
 	allcolors = black, % il colore di tutti i  link è nero
+	pdfencoding = auto,
 }
 %\usepackage{varioref}	% per riferimenti con pagine
 \usepackage[noabbrev]{cleveref}	% per riferimenti intelligenti
@@ -111,9 +101,11 @@ color(50.00000000000000bp)=(red)
 \newcommand{\Se}{Sentinel2}
 \newcommand{\Pl}{Pleiades}
 \newcommand{\WV}{WorldView2}
+\newcommand{\bankfull}{\emph{\foreignlanguage{english}{bankfull}}}
 
 \hyphenation{NDVI}
 
+%\overfullrule = 1cm
 
 \begin{document}
 %**********************************************************
@@ -175,7 +167,7 @@ color(50.00000000000000bp)=(red)
 
 
 
-\chapter{Quali relazioni tra piene e dinamiche delle isole?}
+\chapter{Quali sono le relazioni tra piene e dinamiche delle isole?}
 \input{capitoli/6a-materiali-relazioni}
 \input{capitoli/6b-risultati-relazioni}
 %----------------------------------------------------------

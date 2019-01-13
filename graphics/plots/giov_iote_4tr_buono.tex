@@ -15,7 +15,7 @@
 		enlarge y limits = 0.05,
 		enlarge x limits = 0.05,
 		ylabel = {Erosione / Isole},
-		xlabel = {Int livelli \si{[\m\giorno]}},
+		%xlabel = {Int livelli \si{[\m\giorno]}},
 		grid = major,
 		title style = {
 			yshift = {-0.2cm},
@@ -154,6 +154,7 @@
 	
 	\nextgroupplot[
 		title = {TR \SIrange[range-phrase={-}, range-units = single]{4}{5}{\mesi}},
+		xlabel = {Integrale dei livelli sopra soglia \si{[\m\giorno]}},
 		] % tr 0.5 gruppo 5
 			\addplot[only marks]
 	        	table [x = integrale_piene_tr_0.5, y = gr_5_tr_0.5] {graphics/data/giov_iote_4tr_buono.txt};

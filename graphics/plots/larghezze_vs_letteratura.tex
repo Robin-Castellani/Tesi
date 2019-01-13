@@ -5,10 +5,10 @@
 			group size = 2 by 1,
 			ylabels at = edge left,
 			x descriptions at = edge bottom,
-			horizontal sep = 0.8cm,
+			horizontal sep = 0.5cm,
 			vertical sep = 0.1cm,
 		},
-		width = 0.5\textwidth,
+		width = 0.48\textwidth,
 		height = 0.5\textwidth,
 		date coordinates in = x,
 		date ZERO = 1800-01-01,
@@ -33,7 +33,7 @@
 	        	\addlegendentry{Surian et al. 2015}
 			\addplot[blue, mark = *] % mie
 	        	table [x = data, y = larghezza] {graphics/data/largh_mie.txt};
-	        	\addlegendentry{Presente lavoro}
+	        	\addlegendentry{Presente tesi}
 	        \draw [black, dashed, very thick] (1990-01-01,500) rectangle (2019-01-01,750);
 	    %
 		\nextgroupplot[

@@ -1,8 +1,8 @@
 \tikzsetnextfilename{erosione_classe_eta_matrix}
-\begin{tikzpicture}
+\begin{tikzpicture}[rotate=270]
 	\begin{axis}[
-		width = 0.49\textwidth,
-		height = 0.9\textwidth,
+		width = 0.6\textwidth,
+		height = 0.89\textwidth,
 		name = giovane,
 		title = {Giovane},
 		symbolic x coords = {2007-09-21, 2008-07-05, 2009-07-08, 2010-09-29, 2011-10-02, 2012-08-01, 2013-09-05, 2014-09-08, 2014-10-31, 2015-08-13, 2015-09-12, 2015-10-22, 2016-09-13, 2017-04-21, 2017-06-13, 2018-06-15, 2018-09-16},
@@ -14,6 +14,10 @@
 		ymin = 1,
 		ymax = 23,
 		ytick = data,
+		yticklabel style = {
+			rotate = 90,
+			font = \footnotesize,
+		},
 		enlargelimits = 0.02,
 		ylabel = {Tratto},
 		y dir = reverse,
@@ -29,8 +33,8 @@
     \end{axis}
     
     \begin{axis}[
-		width = 0.49\textwidth,
-		height = 0.9\textwidth,
+		width = 0.6\textwidth,
+		height = 0.89\textwidth,
 		name = intermedia,
 		title = {Intermedia},
 		at = {($(giovane.east) + (0.2cm, 0cm)$)},
@@ -59,8 +63,8 @@
     \end{axis}
     
     \begin{axis}[
-		width = 0.49\textwidth,
-		height = 0.9\textwidth,
+		width = 0.6\textwidth,
+		height = 0.89\textwidth,
 		name = matura,
 		title = {Matura},
 		at = {($(intermedia.east) + (0.2cm, 0cm)$)},
@@ -80,8 +84,8 @@
 		colorbar right,
 		colorbar style = {
 			ylabel = {Vegetazione erosa rapportata alla vegetazione presente},
-			ylabel style = {
-				rotate = 180,
+			yticklabel style = {
+				rotate = 90,
 			},
 		},
 		colormap/bluered,

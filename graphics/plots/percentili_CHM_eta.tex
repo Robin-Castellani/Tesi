@@ -5,11 +5,11 @@
 			group size = 3 by 1,
 			y descriptions at = edge left,
 			x descriptions at = edge bottom,
-			horizontal sep = 0.3cm,
+			horizontal sep = 0.1cm,
 			vertical sep = 0.1cm,
 		},
-		width = 0.38\textwidth,
-		height = 0.4\textwidth,
+		width = 0.41\textwidth,
+		height = 0.41\textwidth,
 		xlabel = {Età \si{[\anni]}},
 		xticklabel style = {font=\tiny},
 		ylabel = {Altezza della chioma \si{[\m]}},
@@ -22,6 +22,7 @@
 	\nextgroupplot[
 		xtick = {1, 2, 3, 4, 5, 6},
 		xticklabels = {$4$, $5$, $6$, $7$, $9$, $13$},
+		title = {2010},
 		] % CSM età 2010
 		\addplot [
 			boxplot prepared = {
@@ -83,12 +84,13 @@
 				}
 			]
 			coordinates{};
-		\node [fill = white, draw = black, anchor = north west] 
-        	at (axis description cs: 0,1) {2010};
+%		\node [fill = white, draw = black, anchor = north west] 
+%        	at (axis description cs: 0,1) {2010};
 	%------------------------------------------------------
 	\nextgroupplot[
 		xtick = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
 		xticklabels = {$4$, $6$, $7$, $8$, $9$, $10$, $11$, $12$, $14$, $16$},
+		title = {2013},
 		] % CSM età 2013
 		\addplot [
 			boxplot prepared = {
@@ -190,12 +192,13 @@
 				}
 			]
 			coordinates {};
-		\node [fill = white, draw = black, anchor = north west] 
-        	at (axis description cs: 0,1) {2013};
+%		\node [fill = white, draw = black, anchor = north west] 
+%        	at (axis description cs: 0,1) {2013};
 	%------------------------------------------------------
 	\nextgroupplot[
 		xtick = {1, 2, 3, 4},
 		xticklabels = {$5$, $10$, $13$, $16$},
+		title = {Gurnell et al. 2018},
 		]
 		\addplot [
 			boxplot prepared = {
@@ -237,7 +240,7 @@
 				}
 			]
 			coordinates {};
-		\node [fill = white, draw = black, anchor = north west] 
-        	at (axis description cs: 0,1) {Gurnell et al. 2018};
+%		\node [fill = white, draw = black, anchor = north west] 
+%        	at (axis description cs: 0,1) {Gurnell et al. 2018};
 	\end{groupplot}
 \end{tikzpicture}

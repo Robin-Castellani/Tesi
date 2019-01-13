@@ -1,0 +1,5 @@
+# Nuovi contenuti:
+- ora il file di output è conforme alle norme PDF/A; è possibile comporre anche un file `.PDF` non conforme;
+
+# Nel prossimo futuro...
+- ottimizzare la posizione delle figure, dei grafici e delle tabelle.

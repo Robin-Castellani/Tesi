@@ -1,18 +1,18 @@
 \section{Metodi: caratterizzare l'alveo}
 Si è quantificato l'areale delle isole presenti in alveo avendo l'accortezza di distinguerlo chiaramente dall'areale della \emph{floodplain}, il quale è soggetto a dinamiche diverse rispetto alle isole.
 \\
-Per classificare il terreno occupato dall'alveo è stato seguito l'approccio di altri autori in analisi simili eseguite su immagini \AST{} e LandSat~TM \squarecites{Bertoldi:2011-ASTER}{Henshaw:2013-LandSat}.
+Per classificare il terreno occupato dall'alveo è stato seguito l'approccio di altri autori in analisi simili eseguite su immagini satellitari \AST{} e LandSat~TM \squarecites{Bertoldi:2011-ASTER}{Henshaw:2013-LandSat}.
 \\
 Sono stati ottenuti in seguito la larghezza media dell'alveo e la potenza della corrente di ogni tratto.
 
 \subsection{Classificazione dell'alveo}
 \paragraph{Maschera computazionale}
-Dapprima è stata individuata manualmente una maschera di calcolo che comprendesse l'alveo attivo e la parte di piana alluvionale che è stata erosa quando coinvolta nelle piene; 
+Come prima operazione, è stata individuata manualmente una maschera di calcolo che comprendesse l'alveo attivo e la parte di piana alluvionale che è stata erosa quando coinvolta nelle piene; 
 tale maschera si estende da Tolmezzo al ponte di Madrisio
 (\cref{fig:esempio-maschera}). 
 Applicandola, il dominio computazionale è stato ridotto, in modo tale da comprendere l'inviluppo degli alvei attivi che si sono succeduti dall'immagine del~2000 a quella del~2018.
 %
-\begin{figure}[t]
+\begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.4\textwidth}
 		\includegraphics[width=\textwidth]{files/esempio_mask_2002_06_12.jpeg}
@@ -30,7 +30,7 @@ Applicandola, il dominio computazionale è stato ridotto, in modo tale da compre
 %
 %
 \paragraph{NDVI} 
-In questa area è stato calcolato il \emph{Normalized Difference Vegetation Index} (NDVI) grazie alle bande del \emph{Near Infrared} (NIR) e del \emph{Red} (R)
+In questa area è stato calcolato il \emph{\foreignlanguage{english}{Normalized Difference Vegetation Index}} (NDVI) grazie alle bande del \emph{Near Infrared}~(NIR) e del \emph{Red}~(R)
 %
 \begin{equation}
 	%\notag
@@ -45,7 +45,7 @@ In questa area è stato calcolato il \emph{Normalized Difference Vegetation Inde
 	\\
 	Queste aree campione sono state suddivise in tre classi: vegetazione, alveo attivo e canale.
 	%
-	\begin{figure}[ht]
+	\begin{figure}
 		\centering
 		\includegraphics[width=\textwidth]{files/esempio_aree_campione_2014_10_31.jpeg}
 		\caption[esempio di aree campione per calcolare la distribuzione dell'NDVI]{esempio di digitalizzazione di alcune aree campione per l'immagine \Pl{} del~2014-10-31 al fine di calcolare la distribuzione dell'NDVI caratteristica di tre diverse superfici; sullo sfondo la mappa dell'NDVI.}
@@ -57,7 +57,7 @@ In questa area è stato calcolato il \emph{Normalized Difference Vegetation Inde
 Per ciascuna immagine si è osservata la distribuzione dell'NDVI in ogni classe tramite dei \emph{boxplot} (\cref{graph:percentili}): i \emph{boxplot} risultano essere nettamente separati gli uni dagli altri sia tra le scatole che tra i baffi; questo indica che le tre classi hanno distribuzioni di NDVI ben separate tra loro.
 Ad esempio nella mappa dell'NDVI della \Pl{}~2014-10-31 il valore~\num{0.4} è sicuramente caratteristico della vegetazione e non dell'acqua; analogamente, valori superiori a~\num{0.2} sono certamente associati alla vegetazione, mentre valori inferiori sono associati a ghiaia o ad acqua.
 % 
-\begin{figure}[ht]
+\begin{figure}
 	\centering
 	\input{graphics/plots/percentili}
 	\caption[\emph{boxplot} dell'NDVI nelle aree campione in quattro immagini satellitari]{\emph{boxplot} dell'NDVI nelle aree campione in quattro immagini satellitari per tre distinte superfici (di cui un esempio è riportato in \cref{fig:esempio-aree-campione}); i baffi indicano il $10_\mathrm{mo}$ e il $90_\mathrm{mo}$ percentile, gli estremi della scatola rappresentano il $25_\mathrm{mo}$ e il $75_\mathrm{mo}$ percentile, la linea nella scatola è la mediana.}
@@ -68,7 +68,7 @@ Ad esempio nella mappa dell'NDVI della \Pl{}~2014-10-31 il valore~\num{0.4} è s
 Da tali grafici sono state ottenute delle soglie di NDVI per classificare le immagini satellitari (\cref{tab:ndvi-soglia}); per l'immagine \WV{} la soglia che distingue vegetazione da alveo attivo è maggiore. 
 Le soglie sono leggermente maggiori rispetto a quanto riportato in letteratura \squarecites{Bertoldi:2011-ASTER}{Henshaw:2013-LandSat} poiché in questo modo c'è una maggior corrispondenza con i dati utilizzati per validare il processo (riportati di seguito).
 %
-\begin{table}[ht]
+\begin{table}
 	\centering
 	\begin{tabular}{
 		c 
@@ -126,7 +126,7 @@ Alla classificazione sono state aggiunte la classe delle nuvole e dei \texttt{no
 \paragraph{Classificazione finale dei tratti}
 La \cref{tab:class-tratti} mostra le classi in cui è stato classificato ognuno dei 23~tratti; la \cref{fig:class-is-fl} ne mostra un esempio.
 %
-\begin{table}[ht]
+\begin{table}
 	\centering
 	\begin{tabular}{
 		c 
@@ -150,7 +150,7 @@ La \cref{tab:class-tratti} mostra le classi in cui è stato classificato ognuno 
 	\label{tab:class-tratti}
 \end{table}
 %
-\begin{figure}[ht]
+\begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{files/esempio_class_is_fl.jpeg}
 	\caption[esempio della classificazione dei tratti]{esempio della classificazione dei tratti; le zone raffigurate sono rispettivamente a monte dell'isola di Cornino (in corrispondenza del monte Prat) e in corrispondenza della confluenza del Fella.}
@@ -160,7 +160,7 @@ La \cref{tab:class-tratti} mostra le classi in cui è stato classificato ognuno 
 %
 %
 \paragraph{Validazione}
-Per controllare che la procedura restituisse risultati veritieri, si è confrontata la classificazione semi-automatica del 2011-10-02 con la classificazione eseguita manualmente da \squarecite{Surian:2015} nei tratti \numrange[range-phrase={$\div$}]{6}{12} (dal ponte autostradale di Braulins alla stretta di Pinzano).
+Per controllare che la procedura restituisse risultati veritieri, la classificazione semi-automatica del 2011-10-02 è stata confrontata con la classificazione eseguita manualmente da \squarecite{Surian:2015} nei tratti \numrange[range-phrase={$\div$}]{6}{12} (dal ponte autostradale di Braulins alla stretta di Pinzano).
 Le mappe di classificazione del 2005-08-30, 2010-09-29, 2013-09-05 sono state confrontate con i CHM ricavati dai rilievi aerei LiDAR (che sono mappe digitali dell'altezza della vegetazione rispetto al terreno) eseguiti nei corrispondenti anni su alcune porzioni dei tratti \numrange[range-phrase={$\div$}]{6}{12}.
 Le immagini in \cref{fig:validazione-class-is-fl} mostrano alcuni confronti visuali tra classificazione semi-automatica e immagini usate per la validazione.
 Tra i rilievi LiDAR e le immagini \AST{} non hanno avuto luogo particolari eventi di piena, così come tra l'ortofoto del~2011 e la corrispondente immagine \AST{}.
