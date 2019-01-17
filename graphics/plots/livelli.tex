@@ -13,10 +13,15 @@
 		xtick distance = 366,
 		enlarge x limits = 0.02,
 		enlarge y limits = 0.01,
-		%ymax = 3.7,
-		%ymin = -0.1,
 		ytick distance = 0.5,
 		ylabel = {Livello idrometrico \si{[\m]}},
+		y tick label style = {
+			/pgf/number format/.cd,
+			fixed,
+			fixed zerofill,
+			precision = 1,
+			/tikz/.cd,
+		},
 		grid = major,
 		]
 		\addplot+

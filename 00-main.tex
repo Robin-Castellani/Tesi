@@ -15,7 +15,6 @@
 \usepackage{verbatim}	% per usare l'ambiente comment
 \usepackage[section]{placeins}	% per usare \FloatBarrier; l'opzione lo include in \section{}
 \usepackage[swapnames,norules,nouppercase]{frontespizio_unitn}%[onlyinclude,nowrite]{frontespizio}	% usato per includere il frontespizio
-\usepackage[]{sidecap}
 
 % bibliografia
 \usepackage[autostyle, italian = guillemets]{csquotes}    % per citare con le virgolette giuste
@@ -119,7 +118,9 @@ color(50.00000000000000bp)=(red)
 %----------------------------------------------------------
 \tableofcontents
 \listoffigures
+\addcontentsline{toc}{chapter}{\tocEntry{Elenco delle figure}}
 \listoftables
+\addcontentsline{toc}{chapter}{\tocEntry{Elenco delle tabelle}}
 %----------------------------------------------------------
 \chapter{Prefazione}
 \input{materiale_iniziale_finale/prefazione}
@@ -151,7 +152,7 @@ color(50.00000000000000bp)=(red)
 
 
 
-\chapter{In quali condizioni e in quale misura le isole variano?}
+\chapter{In quali condizioni e in quale misura le isole cambiano?}
 \input{capitoli/4a-metodi-cambiamento}
 \input{capitoli/4b-metodi-legno}
 \input{capitoli/4c-risultati-cambiamento}
@@ -184,6 +185,8 @@ color(50.00000000000000bp)=(red)
 %----------------------------------------------------------
 % ringraziamenti
 \chapter*{Ringraziamenti}
+\phantomsection
+\addcontentsline{toc}{chapter}{\tocEntry{Ringraziamenti}}
 \input{materiale_iniziale_finale/ringraziamenti}
 
 % aggiunge tutte le voci del glossario

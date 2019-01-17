@@ -10,7 +10,7 @@ questi dati sono stati suddivisi secondo tre classi di età della vegetazione: g
 Quindi è nota la quantità di isole erose per ogni confronto tra le immagini, in ogni tratto e per ogni classe di età.
 
 \subsection{Integrale dei livelli}
-Dai dati di livello dell'acqua presso la stazione idrometrica di Villuzza, alcuni autori hanno ottenuto una statistica dei tempi di ritorno dei picchi delle piene superiori ad \SI{1}{\m} \squarecite{Bertoldi:2009-2m}; questa è stata estesa utilizzando i dati di livello idrometrico dal~2000-01-01 al~2018-12-21 ed è riportata nel grafico in \cref{graph:tr-picchi}; in totale sono stati individuati poco più di~200 picchi.
+Dai dati di livello dell'acqua presso la stazione idrometrica di Villuzza, alcuni autori hanno ottenuto una statistica dei tempi di ritorno dei picchi delle piene superiori ad \SI{1}{\m} \squarecite{Bertoldi:2009-2m}; questa è stata estesa utilizzando i dati di livello idrometrico dal~2000-01-01 al~2018-12-31 ed è riportata nel grafico in \cref{graph:tr-picchi}; in totale sono stati individuati poco più di~200 picchi.
 %
 \begin{figure}
 	\centering
@@ -38,14 +38,16 @@ Questa statistica permette di distinguere diversi tipi di eventi (in accordo con
 Il \emph{natural flow regime} (regime naturale delle portate) è il pattern caratteristico che presentano le portate in fiume in base ad abbondanza, stagionalità e variabilità; di questo regime, sono state individuate cinque componenti principali: intensità, durata, stagionalità, frequenza e tasso di cambiamento delle portate \squarecite{Poff:1997}.
 \\
 Si ritiene che gli effetti di una piena sulle isole non dipendano soltanto dall'intensità (cioè dal livello raggiunto durante il picco) ma anche dalla durata: a parità di picco, un evento più lungo probabilmente eroderà un maggiore areale di isole rispetto ad un evento molto breve.
-La stagionalità e il tasso di cambiamento delle portate sono fattori che esercitano un'influenza maggiore sulla crescita ed espansione della vegetazione, più che sull'erosione. 
+La stagionalità e il tasso di cambiamento delle portate sono fattori che esercitano un'influenza maggiore sulla crescita ed espansione della vegetazione, più che sull'erosione (tuttavia, la stagionalità diventa rilevante quando si considerano gli effetti secondari di resistenza che le piante esercitano alla corrente grazie alla presenza, o meno, delle foglie). 
 \\
 Per tenere contemporaneamente conto dell'intensità, della durata e del tempo di ritorno delle piene, si è calcolato per ogni intervallo di tempo tra due immagini successive l'integrale temporale dei livelli sopra un livello soglia definito dal grafico in \cref{graph:tr-picchi}, scegliendo un tempo di ritorno.
 Si è scelto di misurare l'integrale in \si{[\m\giorno]}.
 L'integrale è equivalente ad un evento di piena; tale evento ha durata pari a~\SI{1}{\giorno} e intensità, in~\si{[\m]}, pari alla somma tra i valori del livello soglia in \si{[\m]} e dell'integrale in \si{[\m\giorno\per\giorno]}.
-Poiché non è disponibile un'affidabile scala di deflusso per convertire i valori di livelli in portata, l'integrale costituisce un sostituto rispetto alla somma delle portate sopra la soglia che fluiscono durante una piena.
+Ad esempio, si consideri un livello soglia di~\SI{2}{\m} e si supponga di aver calcolato, in un periodo di tempo, un integrale dei livelli sopra soglia pari a~\SI{1}{\m\giorno}; questo integrale è equivalente ad una piena con livello costante di~$\SI{2}{\m} + \SI{1}{\m} = \SI{3}{\m}$.
 \\
-Un esempio di integrale per due livelli soglia è mostrato nei grafici in \cref{graph:esempio-integrale-livelli}.
+Poiché non è disponibile un'affidabile scala di deflusso per convertire i valori di livello in portata, l'integrale costituisce un sostituto rispetto alla somma delle portate sopra la soglia che fluiscono durante una piena.
+\\
+Un esempio visuale di integrale per due livelli soglia è mostrato nei grafici in \cref{graph:esempio-integrale-livelli}.
 \\
 Se tra due immagini successive l'integrale è nullo, allora non ha avuto luogo alcun evento con picco superiore al livello soglia corrispondente al tempo di ritorno scelto;
 se l'integrale non è nullo, allora ci sono state piene sopra il livello soglia;

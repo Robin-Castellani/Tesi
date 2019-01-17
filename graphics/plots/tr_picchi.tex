@@ -8,6 +8,13 @@
 %		ytick distance = 0.5,
 		ylabel = {Livello idrometrico \si{[\m]}},
 		xlabel = {Tempo di ritorno \si{[\anni]}},
+		y tick label style = {
+			/pgf/number format/.cd,
+			fixed,
+			fixed zerofill,
+			precision = 1,
+			/tikz/.cd,
+		},
 		grid = major,
         log ticks with fixed point,		
 		]

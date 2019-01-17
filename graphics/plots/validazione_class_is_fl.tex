@@ -5,6 +5,13 @@
 		height = 0.7\textwidth,
 		xlabel = {Isole da NDVI \si{[\kilo\m\tothe{2}]}},
 		ylabel = {Isole da CHM e class. manuale \si{[\kilo\m\tothe{2}]}},
+		every tick label/.append style  = {
+			/pgf/number format/.cd,
+			fixed,
+			fixed zerofill,
+			precision = 1,
+			/tikz/.cd,
+		},
 		grid = major,
 		]        
 		\addplot[

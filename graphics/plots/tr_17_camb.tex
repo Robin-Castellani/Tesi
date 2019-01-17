@@ -5,7 +5,7 @@
 			group size = 2 by 1,
 			ylabels at = edge left,
 			x descriptions at = edge bottom,
-			horizontal sep = 1cm,
+			horizontal sep = 0.9cm,
 			vertical sep = 0.1cm,
 		},
 		width = 0.52\textwidth,
@@ -20,9 +20,18 @@
 		xtick distance = 731,
 		%ymax = 0.35,
 		ylabel = {Cambiamento/Isole iniziali},
+		y tick label style = {
+			/pgf/number format/.cd,
+			fixed,
+			fixed zerofill,
+			precision = 1,
+			/tikz/.cd,
+		},
 		grid = major,
 		]
-	\nextgroupplot % tr_17_accrescimento
+	\nextgroupplot[
+		title = {Accrescimento},
+		] % tr_17_accrescimento
 		\addplot+
         	[only marks, blue]
         	table [
@@ -35,10 +44,12 @@
         		x=data_ini, 
         		y = alv->is,
         		] {graphics/data/tr_17_camb_eros_accr.txt};
-        \node [fill = white, draw = black, anchor = north east] 
-        	at (axis description cs: 1,1) {Accrescimento};
+%        \node [fill = white, draw = black, anchor = north east] 
+%        	at (axis description cs: 1,1) {Accrescimento};
         	
-	\nextgroupplot % tr_17_erosione
+	\nextgroupplot[
+		title = {Erosione},
+		] % tr_17_erosione
 		\addplot+
         	[only marks, blue]
         	table [
@@ -51,7 +62,7 @@
         		x=data_ini, 
         		y = is->alv,
         		] {graphics/data/tr_17_camb_eros_accr.txt};
-        \node [fill = white, draw = black, anchor = north east] 
-        	at (axis description cs: 1,1) {Erosione};
+%        \node [fill = white, draw = black, anchor = north east] 
+%        	at (axis description cs: 1,1) {Erosione};
 	\end{groupplot}
 \end{tikzpicture}

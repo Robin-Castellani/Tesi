@@ -15,8 +15,19 @@
 		enlarge y limits = 0.05,
 		ylabel = {Erosione / Isole},
 		xlabel = {Integrale dei livelli \si{[\m\giorno]}},
-		xticklabel style = {
-			/pgf/number format/.cd,fixed,
+		x tick label style = {
+			/pgf/number format/.cd,
+			fixed,
+			fixed zerofill,
+			precision = 2,
+			/tikz/.cd,
+		},
+		y tick label style = {
+			/pgf/number format/.cd,
+			fixed,
+			fixed zerofill,
+			precision = 1,
+			/tikz/.cd,
 		},
 		grid = major,	
 		]

@@ -14,7 +14,11 @@
 		enlarge x limits = 0.02,
 		ylabel = {Rapporto isole su alveo attivo},
 		yticklabel style = {
-			/pgf/number format/.cd,fixed,
+			/pgf/number format/.cd,
+			fixed,
+			fixed zerofill,
+			precision = 2,
+			/tikz/.cd,
 		},
 		grid = major,
 		legend style = {

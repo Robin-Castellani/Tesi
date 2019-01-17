@@ -5,7 +5,7 @@
 			group size = 3 by 3,
 			y descriptions at = edge left,
 			xlabels at = edge bottom,
-			horizontal sep = 0.1cm,
+			horizontal sep = 0.2cm,
 			vertical sep = 1.3cm,
 		},
 		width = 0.4\textwidth,
@@ -15,6 +15,13 @@
 		enlarge y limits = 0.05,
 		enlarge x limits = 0.05,
 		ylabel = {Erosione / Isole},
+		tick label style = {
+			/pgf/number format/.cd,
+			fixed,
+			fixed zerofill,
+			precision = 1,
+			/tikz/.cd,
+		},
 		%xlabel = {Int livelli \si{[\m\giorno]}},
 		grid = major,
 		title style = {
@@ -24,6 +31,13 @@
 		
 	\nextgroupplot[
 		title = {TR \SIrange[range-phrase={-}, range-units = single]{2}{3}{\mesi}},
+		x tick label style = {
+			/pgf/number format/.cd,
+			fixed,
+			fixed zerofill,
+			precision = 0,
+			/tikz/.cd,
+		},
 		] % tr 0.2 gruppo 2
 			\addplot[only marks]
 	        	table [x = integrale_piene_tr_0.2, y = gr_2_tr_0.2] {graphics/data/giov_iote_4tr_buono.txt};
@@ -42,6 +56,13 @@
 	
 	\nextgroupplot[
 		title = {TR \SIrange[range-phrase={-}, range-units = single]{2}{3}{\mesi}},
+		x tick label style = {
+			/pgf/number format/.cd,
+			fixed,
+			fixed zerofill,
+			precision = 0,
+			/tikz/.cd,
+		},
 		] % tr 0.2 gruppo 3
 			\addplot[only marks]
 	        	table [x = integrale_piene_tr_0.2, y = gr_4_tr_0.2] {graphics/data/giov_iote_4tr_buono.txt};
@@ -60,6 +81,13 @@
 	
 	\nextgroupplot[
 		title = {TR \SIrange[range-phrase={-}, range-units = single]{2}{3}{\mesi}},
+		x tick label style = {
+			/pgf/number format/.cd,
+			fixed,
+			fixed zerofill,
+			precision = 0,
+			/tikz/.cd,
+		},
 		] % tr 0.2 gruppo 5
 			\addplot[only marks]
 	        	table [x = integrale_piene_tr_0.2, y = gr_5_tr_0.2] {graphics/data/giov_iote_4tr_buono.txt};

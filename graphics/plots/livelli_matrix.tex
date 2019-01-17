@@ -16,6 +16,14 @@
 		colorbar style = {
 			xlabel = {Media giornaliera del livello idrometrico},
 			x unit = m,
+			xtick distance = 0.3,
+			x tick label style = {
+				/pgf/number format/.cd,
+				fixed,
+				fixed zerofill,
+				precision = 1,
+				/tikz/.cd,
+			},
 		},	
 		]
 		\addplot[

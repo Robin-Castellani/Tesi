@@ -17,7 +17,13 @@
 		colorbar horizontal,
 		colorbar style = {
 			xlabel = {Proporzione di isole sull'alveo attivo},
-			xticklabel style = {/pgf/number format/.cd,fixed},
+			xticklabel style = {
+				/pgf/number format/.cd,
+				fixed,
+				fixed zerofill,
+				precision = 2,
+				/tikz/.cd,
+			},
 			xtick distance = 0.04,
 		},
 		]

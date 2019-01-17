@@ -1,11 +1,18 @@
 \tikzsetnextfilename{giov_iote_4tr_buono_accorpato}
 \begin{tikzpicture}
 	\begin{axis}[
-		width = \textwidth,
+		width = 0.98\textwidth,
 		height = 0.5\textwidth,
 		enlarge x limits = 0.02,
 		ylabel = {Erosione / Isole},
 		xlabel = {Integrale dei livelli sopra soglia \si{[\m\giorno]}},
+		tick label style = {
+			/pgf/number format/.cd,
+			fixed,
+			fixed zerofill,
+			precision = 1,
+			/tikz/.cd,
+		},
 		grid = major,
 		title = {TR \SIrange[range-phrase={-}, range-units = single]{4}{5}{\mesi}},		
 		]

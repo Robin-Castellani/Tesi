@@ -84,7 +84,11 @@
 			ylabel = {Isole rispetto all'alveo attivo},
 			yticklabel style = {
 				rotate = 90,
-				/pgf/number format/.cd,fixed,
+				/pgf/number format/.cd,
+				fixed,
+				fixed zerofill,
+				precision = 2,
+				/tikz/.cd,
 			},
 		},
 		]

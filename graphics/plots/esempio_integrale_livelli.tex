@@ -16,6 +16,13 @@
 		enlarge x limits = 0.05,
 		ylabel = {Livello idrometrico \si{[\m]}},
 		xlabel = {Tempo di ritorno \si{[\anni]}},
+		y tick label style = {
+			/pgf/number format/.cd,
+			fixed,
+			fixed zerofill,
+			precision = 1,
+			/tikz/.cd,
+		},
 		]
 	
 	\nextgroupplot[

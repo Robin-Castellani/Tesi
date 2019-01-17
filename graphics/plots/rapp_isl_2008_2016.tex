@@ -7,6 +7,13 @@
 		enlarge x limits = 0.01,
 		xlabel = {Tratto},
 		ylabel = {Rapporto isole su alveo attivo},
+		y tick label style = {
+			/pgf/number format/.cd,
+			fixed,
+			fixed zerofill,
+			precision = 1,
+			/tikz/.cd,
+		},
 		grid = major,
 		legend style = {
 			at = {(0,1)},

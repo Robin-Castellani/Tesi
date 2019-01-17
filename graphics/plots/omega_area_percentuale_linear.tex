@@ -15,8 +15,12 @@
 			anchor = south,
 			at = {(0.5, 1.01)},
 		},
-		ticklabel style = {
-			/pgf/number format/.cd,fixed,
+		every tick label/.append style  = {
+			/pgf/number format/.cd,
+			fixed,
+			fixed zerofill,
+			precision = 2,
+			/tikz/.cd,
 		},
 		]
 		\foreach \tratto in {1,2,...,23}

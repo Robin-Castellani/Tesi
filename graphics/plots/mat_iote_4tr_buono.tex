@@ -15,6 +15,13 @@
 		enlargelimits = 0.05,
 		ylabel = {Erosione / Isole},
 		xlabel = {I. livelli \si{[\m\giorno]}},
+		tick label style = {
+			/pgf/number format/.cd,
+			fixed,
+			fixed zerofill,
+			precision = 1,
+			/tikz/.cd,
+		},
 		grid = major,
 		title style = {
 			yshift = {-0.2cm},		
@@ -27,6 +34,13 @@
 		xmin = 0,
 		xmax = 7,
 		ymax = 0.25,
+		x tick label style = {
+			/pgf/number format/.cd,
+			fixed,
+			fixed zerofill,
+			precision = 0,
+			/tikz/.cd,
+		},
 		title = {TR \SIrange[range-phrase={-}, range-units=single]{2}{3}{\mesi}},
 		]
 			\addplot[only marks]
@@ -50,6 +64,13 @@
 		xmin = 0,
 		xmax = 7,
 		ymax = 0.25,
+		x tick label style = {
+			/pgf/number format/.cd,
+			fixed,
+			fixed zerofill,
+			precision = 0,
+			/tikz/.cd,
+		},
 		title = {TR \SIrange[range-phrase={-}, range-units=single]{2}{3}{\mesi}},
 		]
 			\addplot[only marks]
@@ -71,6 +92,7 @@
 		xmin = 0,
 		xmax = 1,
 		title = {TR \SI{\sim 1}{\anno}},
+		xtick distance = 0.4,
 		]
 			\addplot[only marks]
 	        	table [x = integrale_piene_tr_1, y = gr_1_tr_1] {graphics/data/mat_iote_4tr_buono.txt};
@@ -91,6 +113,7 @@
 		xmin = 0,
 		xmax = 1,
 		title = {TR \SI{\sim 1}{\anno}},
+		xtick distance = 0.4,
 		]
 			\addplot[only marks]
 	        	table [x = integrale_piene_tr_1, y = gr_2_tr_1] {graphics/data/mat_iote_4tr_buono.txt};

@@ -1,16 +1,15 @@
 \section{Metodi: caratterizzare l'alveo}
-Si è quantificato l'areale delle isole presenti in alveo avendo l'accortezza di distinguerlo chiaramente dall'areale della \emph{floodplain}, il quale è soggetto a dinamiche diverse rispetto alle isole.
-\\
 Per classificare il terreno occupato dall'alveo è stato seguito l'approccio di altri autori in analisi simili eseguite su immagini satellitari \AST{} e LandSat~TM \squarecites{Bertoldi:2011-ASTER}{Henshaw:2013-LandSat}.
 \\
-Sono stati ottenuti in seguito la larghezza media dell'alveo e la potenza della corrente di ogni tratto.
+Sono state definite tre principali tipi di terreno: vegetazione, ghiaia e canale.
+In seguito, si è quantificato l'areale delle isole presenti in alveo avendo l'accortezza di distinguerlo chiaramente dall'areale della \emph{floodplain}, il quale è soggetto a dinamiche diverse rispetto alle isole.
+\\
+Infine, sono stati ottenuti la larghezza media dell'alveo e la potenza della corrente di ogni tratto.
 
 \subsection{Classificazione dell'alveo}
 \paragraph{Maschera computazionale}
-Come prima operazione, è stata individuata manualmente una maschera di calcolo che comprendesse l'alveo attivo e la parte di piana alluvionale che è stata erosa quando coinvolta nelle piene; 
-tale maschera si estende da Tolmezzo al ponte di Madrisio
-(\cref{fig:esempio-maschera}). 
-Applicandola, il dominio computazionale è stato ridotto, in modo tale da comprendere l'inviluppo degli alvei attivi che si sono succeduti dall'immagine del~2000 a quella del~2018.
+Come prima operazione, il contorno dell'area di studio (presentato nella sezione~\ref{sec:descr-area-studio} nelle \cref{fig:overview-sat,fig:23-tratti}) è stato utilizzato come maschera di calcolo.
+Applicandola, il dominio computazionale è stato ridotto, in modo tale da comprendere l'inviluppo degli alvei attivi che si sono succeduti dall'immagine del~2000 a quella del~2018 (\cref{fig:esempio-maschera}).
 %
 \begin{figure}
 	\centering
@@ -24,26 +23,24 @@ Applicandola, il dominio computazionale è stato ridotto, in modo tale da compre
 		\caption{\Se{} 2015-09-12.}
 	\end{subfigure}
 	\caption[definizione della maschera per limitare il dominio computazionale]
-		{esempio in cui si vede come la maschera utilizzata per limitare il dominio computazionale (in giallo) sia il risultato dell'inviluppo degli alvei attivi che si sono modificati nel tempo; le immagini sono le mappe di NDVI.}
+		{esempio in cui si vede come la maschera utilizzata per limitare il dominio computazionale (in giallo) sia il risultato dell'inviluppo degli alvei attivi che si sono modificati nel tempo; le immagini sullo sfondo sono le mappe di NDVI.}
 	\label{fig:esempio-maschera}
 \end{figure}
 %
 %
 \paragraph{NDVI} 
-In questa area è stato calcolato il \emph{\foreignlanguage{english}{Normalized Difference Vegetation Index}} (NDVI) grazie alle bande del \emph{Near Infrared}~(NIR) e del \emph{Red}~(R)
+In questa area è stato calcolato il \emph{\foreignlanguage{english}{Normalized Difference Vegetation Index}} (NDVI) grazie alle bande del \emph{Near Infrared}~(NIR) e del \emph{Red}~(R) (equazione~\eqref{eq:ndvi}); questo indice facilita la classificazione dell'alveo poiché fa risaltare la differenza tra vegetazione, ghiaia e acqua.
 %
 \begin{equation}
 	%\notag
-	NDVI = \frac{NIR - R}{NIR + R} \quad .
+	NDVI = \frac{NIR - R}{NIR + R}	\quad	.
 	\label{eq:ndvi}
 \end{equation}
 %
 %
 \paragraph{Aree campione}
-\`{E} stata effettuata una digitalizzazione manuale di alcune aree campione per le immagini \AST{} del~2005-08-30 (\num{\sim 70}) e del~2012-08-01 (\num{\sim 100}), per le immagini \Pl{} del~2014-10-31 (\num{\sim 40}) e del~2015-06-13 (\num{\sim 40}), per l'immagine \Se{} del~2017-04-21 (\num{\sim 45}) e per l'immagine \WV{} del 2018-06-15 (\num{\sim 55}) (\cref{fig:esempio-aree-campione}).
+Per comprendere quali sono i valori di NDVI che caratterizzano le piante, l'alveo e l'acqua nei canali, è stata effettuata una digitalizzazione manuale di alcune aree campione per le immagini \AST{} del~2005-08-30 (\num{\sim 70}) e del~2012-08-01 (\num{\sim 100}), per le immagini \Pl{} del~2014-10-31 (\num{\sim 40}) e del~2015-06-13 (\num{\sim 40}), per l'immagine \Se{} del~2017-04-21 (\num{\sim 45}) e per l'immagine \WV{} del 2018-06-15 (\num{\sim 55}) (\cref{fig:esempio-aree-campione}).
 	Sono state selezionate immagini per ogni satellite poiché ciascuno è sensibile a bande leggermente diverse. 
-	\\
-	Queste aree campione sono state suddivise in tre classi: vegetazione, alveo attivo e canale.
 	%
 	\begin{figure}
 		\centering
@@ -54,7 +51,7 @@ In questa area è stato calcolato il \emph{\foreignlanguage{english}{Normalized 
 	%
 	%
 \paragraph{Soglie NDVI}
-Per ciascuna immagine si è osservata la distribuzione dell'NDVI in ogni classe tramite dei \emph{boxplot} (\cref{graph:percentili}): i \emph{boxplot} risultano essere nettamente separati gli uni dagli altri sia tra le scatole che tra i baffi; questo indica che le tre classi hanno distribuzioni di NDVI ben separate tra loro.
+Per ciascuna immagine si è osservata la distribuzione dell'NDVI in ogni classe tramite dei \emph{boxplot} (\cref{graph:percentili}): i \emph{boxplot} risultano essere nettamente separati gli uni dagli altri sia tra le scatole che tra i baffi; questo indica che le tre classi hanno distribuzioni di NDVI ben distinte tra loro.
 Ad esempio nella mappa dell'NDVI della \Pl{}~2014-10-31 il valore~\num{0.4} è sicuramente caratteristico della vegetazione e non dell'acqua; analogamente, valori superiori a~\num{0.2} sono certamente associati alla vegetazione, mentre valori inferiori sono associati a ghiaia o ad acqua.
 % 
 \begin{figure}
@@ -102,7 +99,7 @@ Il problema di questo approccio è che la copertura riparia delle isole non vien
 Inoltre, a causa della bassa risoluzione delle immagini satellitari, i canali che separano isole molto prossime alla \emph{floodplain} dalle sponde stesse non vengono individuati e tali isole sembrano far completamente parte della \emph{floodplain}.
 \\ 
 Come soluzione è stata ideata una procedura semi-automatica che, con il supporto di Google Earth, divida la classe della vegetazione in \emph{floodplain} e isole. 
-Tale procedura, sfruttando il fatto che le isole sono completamente circondate dalla ghiaia dell'alveo durante periodi di magra, classifica inizialmente la vegetazione più esterna come sponda;
+Tale procedura, sfruttando il fatto che le isole sono completamente circondate dalla ghiaia dell'alveo durante periodi di magra (si veda la \cref{fig:esempio-isola}), classifica inizialmente la vegetazione più esterna come sponda;
 poi corregge alcune celle della \emph{floodplain} convertendole in celle dell'alveo, separando nettamente le isole dalle sponde (\cref{fig:isola-divisa-floodplain}).
 Le classi delle isole, delle sponde e delle celle corrette sono state aggiunte alla classificazione.
 %
@@ -146,13 +143,13 @@ La \cref{tab:class-tratti} mostra le classi in cui è stato classificato ognuno 
 						&	\texttt{Nodata}	\\
 		\bottomrule
 	\end{tabular}
-	\caption[classi utilizzate per caratterizzare l'alveo dei tratti]{classi usate per caratterizzare l'alveo di ogni tratto.}
+	\caption[classi utilizzate per caratterizzare l'alveo di ogni tratto]{classi usate per caratterizzare l'alveo di ogni tratto.}
 	\label{tab:class-tratti}
 \end{table}
 %
 \begin{figure}
 	\centering
-	\includegraphics[width=\textwidth]{files/esempio_class_is_fl.jpeg}
+	\includegraphics[width=\textwidth]{files/class_is_fl.jpeg}
 	\caption[esempio della classificazione dei tratti]{esempio della classificazione dei tratti; le zone raffigurate sono rispettivamente a monte dell'isola di Cornino (in corrispondenza del monte Prat) e in corrispondenza della confluenza del Fella.}
 	\label{fig:class-is-fl}
 \end{figure}
@@ -161,9 +158,9 @@ La \cref{tab:class-tratti} mostra le classi in cui è stato classificato ognuno 
 %
 \paragraph{Validazione}
 Per controllare che la procedura restituisse risultati veritieri, la classificazione semi-automatica del 2011-10-02 è stata confrontata con la classificazione eseguita manualmente da \squarecite{Surian:2015} nei tratti \numrange[range-phrase={$\div$}]{6}{12} (dal ponte autostradale di Braulins alla stretta di Pinzano).
-Le mappe di classificazione del 2005-08-30, 2010-09-29, 2013-09-05 sono state confrontate con i CHM ricavati dai rilievi aerei LiDAR (che sono mappe digitali dell'altezza della vegetazione rispetto al terreno) eseguiti nei corrispondenti anni su alcune porzioni dei tratti \numrange[range-phrase={$\div$}]{6}{12}.
+Le mappe di classificazione del 2005-08-30, 2010-09-29, 2013-09-05 sono state confrontate con i CHM (mappe digitali dell'altezza della vegetazione rispetto al terreno) ricavati dai rilievi aerei LiDAR eseguiti nei corrispondenti anni su alcune porzioni dei tratti \numrange[range-phrase={$\div$}]{6}{12}.
 Le immagini in \cref{fig:validazione-class-is-fl} mostrano alcuni confronti visuali tra classificazione semi-automatica e immagini usate per la validazione.
-Tra i rilievi LiDAR e le immagini \AST{} non hanno avuto luogo particolari eventi di piena, così come tra l'ortofoto del~2011 e la corrispondente immagine \AST{}.
+Tra i rilievi LiDAR e le immagini \AST{} non sono avvenuti particolari eventi di piena, così come tra l'ortofoto del~2011 e la corrispondente immagine \AST{}.
 %	
 \begin{figure}
 	\centering
@@ -174,9 +171,9 @@ Tra i rilievi LiDAR e le immagini \AST{} non hanno avuto luogo particolari event
 %
 \begin{aenumerate}
 	\item La classificazione manuale \squarecite{Surian:2015} distingue la copertura arborea in tre tipi: alta, media e bassa.
-	All'interno di questo tipo di classificazione, le isole sono definite come zone con alberi con un'area di \SI{\sim 100}{\m\tothe{2}}; nella presente tesi invece le isole sono definite come zone più o meno vegetate separate dalle sponde e circondate completamente da ghiaia e acqua, e questo porta a considerare come isole aree più ampie.
+	All'interno di questo tipo di classificazione, le isole sono definite come zone con alberi con un'area di almeno \SI{\sim 100}{\m\tothe{2}}; nella presente tesi, invece, le isole sono definite come zone più o meno vegetate separate dalle sponde e circondate completamente da ghiaia e acqua (si veda la \cref{fig:esempio-isola}); questo porta a considerare aree più ampie come isole.
 	\\
-	La risoluzione minore delle immagini satellitari (principalmente a~\SI{10}{\m} o~\SI{15}{\m}) rispetto all'ortofoto (\SI{0.1}{\m}) permette di osservare macchie di vegetazione anziché singoli alberi, delineando più nettamente solo il contorno delle isole maggiori; tuttavia le isole più piccole (con estensione minore di una cella) non sono individuate.
+	La risoluzione minore delle immagini satellitari (principalmente~\SI{10}{\m} o~\SI{15}{\m}) rispetto all'ortofoto (\SI{0.1}{\m}) permette di osservare macchie di vegetazione anziché singoli alberi, delineando nettamente solo il contorno delle isole maggiori; tuttavia, le isole più piccole (con estensione minore di una cella) non sono individuate.
 	\\
 	Questa differenza nei metodi e nella definizione di isola porta ad una differenza del~\SI{-14}{\percent} dell'areale delle isole nella classificazione manuale rispetto a quella semi-automatica.
 	%
@@ -186,12 +183,12 @@ Tra i rilievi LiDAR e le immagini \AST{} non hanno avuto luogo particolari event
 	La somma delle aree con altezza della vegetazione non nulla nell'alveo costituisce l'area delle isole individuata per ogni CHM; rispetto alla classificazione semi-automatica, le differenze sono del \SIlist[list-separator = {, }, list-final-separator = { e }, retain-explicit-plus]{+22;+9;-3}{\percent} per i CHM del~2005, 2010 e~2013 rispettivamente.
 \end{aenumerate}
 %
-Nel grafico in \cref{graph:validazione-class-is-fl} si vede l'areale delle isole nelle mappe di classificazione dell'alveo del~2005, 2010, 2011 e~2013 rispetto all'areale dalle mappe usate come validazione.
+Nel grafico in \cref{graph:validazione-class-is-fl} si vede l'areale delle isole nelle mappe di classificazione dell'alveo del~2005, 2010, 2011 e~2013 in funzione dell'areale dalle mappe usate come validazione.
 %
 \begin{figure}
 	\centering
 	\input{graphics/plots/validazione_class_is_fl}
-	\caption[validazione della classificazione considerando le aree delle isole]{areale delle isole secondo la classificazione semi-automatica messa a confronto con quella secondo tre rilievi LiDAR e con una classificazione manuale \squarecite{Surian:2015}; la retta tratteggiata indica la situazione ideale in cui l'area delle isole ottenuta dalle immagini satellitari corrisponde a quella ottenuta con gli altri metodi; in ogni anno è stata considerata l'area delle isole nel tratto coperto dai CHM e dalla classificazione manuale.}
+	\caption[validazione della classificazione considerando le aree delle isole]{areale delle isole secondo la classificazione semi-automatica (Isole da NDVI) messa a confronto con quella secondo tre rilievi LiDAR e con una classificazione manuale \squarecite{Surian:2015}; la retta tratteggiata indica la situazione ideale in cui l'area delle isole ottenuta dalle immagini satellitari corrisponde a quella ottenuta con gli altri metodi; in ogni anno è stata considerata l'area delle isole nel tratto coperto dai CHM e dalla classificazione manuale.}
 	\label{graph:validazione-class-is-fl}
 \end{figure}
 %
@@ -277,12 +274,12 @@ Il risultato è riportato nella \cref{tab:pendenza}.
 Poiché i cambiamenti nel valore della pendenza avvengono in periodi di tempo di anni, soprattutto in seguito ad eventi, naturali e non, di apporto o asporto di sedimenti (che non sono avvenuti in maniera diffusa ed intensa durante gli ultimi due decenni), si considera la pendenza ottenuta come rappresentativa e costante nel periodo di studio.
 In più, questi valori sono in accordo con quanto presente in letteratura \squarecites{Arscott:2002-habitat-dynamics}{Gurnell:2006-omega}{Bertoldi:2010-d50}{Sitzia:2016-d50}.
 
-Mentre la larghezza $B$ è nota per quasi ogni tratto in ogni immagine, la portata $Q$ non è nota.
-Secondo quanto descritto nella sezione \ref{sec:descr-area-studio}, la percentuale di area di bacino drenante in ogni tratto può fornire un'informazione sulla portata fluente, in quanto quest'ultima è approssimativamente proporzionale all'area drenante.
+Mentre la larghezza $B$ è nota per ogni tratto in ogni immagine, la portata $Q$ non è nota.
+Secondo quanto descritto nella sezione~\ref{sec:descr-area-studio}, la percentuale di area di bacino drenante in ogni tratto può fornire un'informazione sulla portata fluente, in quanto quest'ultima è approssimativamente proporzionale all'area drenante (equazione~\eqref{eq:area-portata-mosetti}).
 \\
-Poiché i dati di livello alla stazione idrometrica di Villuzza sono rappresentativi in modo affidabile dell'entità delle piene, si è deciso di riferire rispetto a quella del tratto~12 l'area drenante di ogni bacino in ogni tratto, posto immediatamente a monte del sensore idrometrico (si veda la \cref{fig:overview-sat} e la \cref{fig:23-tratti}).
-In questo modo si suppone che, durante le piene, in ogni tratto scorra una portata che è proporzionale alla percentuale di bacino drenante rispetto al bacino sotteso alla stazione idrometrica; tale percentuale è minore dell’unità a monte della stazione, mentre è maggiore all’unità a valle della stazione.
-Per definire l’area drenante in ogni tratto sono stati utilizzati i dati degli affluenti mostrati nell’introduzione.
+Poiché i dati di livello alla stazione idrometrica di Villuzza sono rappresentativi in modo affidabile dell'entità delle piene, si è deciso di riferire l'area drenante in ogni tratto a quella del tratto~12, il quale è posto immediatamente a monte del sensore idrometrico (si veda le \cref{fig:overview-sat,fig:23-tratti}).
+In questo modo si suppone che, durante le piene, in ogni tratto scorra una portata che è proporzionale alla percentuale di bacino drenante rispetto al bacino sotteso alla stazione idrometrica; tale percentuale è minore dell'unità a monte della stazione, mentre è maggiore all'unità a valle della stazione.
+Per definire l'area drenante in ogni tratto sono stati utilizzati i dati degli affluenti mostrati nell'introduzione.
 \\
 L'equazione~\eqref{eq:omega-finta} definisce formalmente la potenza della corrente fittizia utilizzata nel presente lavoro.
 Per comodità e semplicità, la definizione e nomenclatura della potenza della corrente originale viene sostituita dalla potenza della corrente fittizia.
@@ -290,9 +287,10 @@ La nuova $\Omega$ si misura in \si{[\newton\per\m\tothe{4}]}.
 %
 \begin{equation}
 	\label{eq:omega-finta}
-	\Omega = \frac{A_\mathrm{tr}}{A_\mathrm{rif}} \, \frac{\rho \, g \, i_f}{B}	
+	\Omega
+	\frac{A_\mathrm{tr}}{A_\mathrm{rif}} \, \frac{\rho \, g \, i_f}{B}
 	\quad
-	\si{[\newton\per\m\tothe{4}]} 
+	\si{[\newton\per\m\tothe{4}]}
 \end{equation}
 %
 dove:
@@ -302,4 +300,4 @@ dove:
 	\item $A_\mathrm{rif}$ è l'area drenante del tratto~12, esattamente a monte del sensore idrometrico presso Villuzza, pari a \SI{2204}{\m\tothe{2}}.
 \end{itemize}
 %
-Si noti che se durante una piena si avesse una misura affidabile di portata, moltiplicandola per questa $\Omega$ si otterrebbe la potenza della corrente precedentemente definita.
+%Si noti che se durante una piena si avesse una misura affidabile di portata, moltiplicandola per questa $\Omega$ si otterrebbe la potenza della corrente precedentemente definita.

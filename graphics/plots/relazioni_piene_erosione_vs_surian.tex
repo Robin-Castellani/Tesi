@@ -11,6 +11,13 @@
 		height = 0.4\textwidth,
 		grid = major,
 		title style = {yshift = -0.25cm},
+		every tick label/.append style  = {
+			/pgf/number format/.cd,
+			fixed,
+			fixed zerofill,
+			precision = 1,
+			/tikz/.cd,
+		},
 	]
 	\nextgroupplot[ % TR < 1 anno
 		ylabel = {Erosione annuale \si{[\percent\per\anno]}},
@@ -118,6 +125,7 @@
 		grid = major,
 		title = {TR \SI{1.2}{\anni}},
 		ymax = 100,	
+		xtick distance = 0.25,
 		]
 		
 		\pgfplotsforeachungrouped \tr in {6,7,...,12} {
@@ -204,6 +212,7 @@
 		grid = major,
 		title = {TR \SI{1.2}{\anni}},
 		ymax = 100,	
+		xtick distance = 0.25,
 		]
 		
 		\pgfplotsforeachungrouped \tr in {1,2,...,23} {

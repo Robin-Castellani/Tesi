@@ -15,6 +15,13 @@
 		enlarge y limits = 0.05,
 		enlarge x limits = 0.05,
 		ylabel = {Erosione / Isole},
+		tick label style = {
+			/pgf/number format/.cd,
+			fixed,
+			fixed zerofill,
+			precision = 1,
+			/tikz/.cd,
+		},
 		%xlabel = {Int livelli \si{[\m\giorno]}},
 		grid = major,		
 		]
@@ -42,6 +49,7 @@
 		xmax = 1,
 		title = {TR \SI{\sim 1}{\anno}},
 		xlabel = {Integrale dei livelli sopra soglia \si{[\m\giorno]}},
+		xtick distance = 0.4,
 		]
 			\addplot[only marks]
 	        	table [x = integrale_piene_tr_1, y = gr_2_tr_1] {graphics/data/interm_iote_4tr_buono.txt};
@@ -62,6 +70,7 @@
 		xmin = 0,
 		xmax = 1,
 		title = {TR \SI{\sim 1}{\anno}},
+		xtick distance = 0.4,
 		]
 			\addplot[only marks]
 	        	table [x = integrale_piene_tr_1, y = gr_3_tr_1] {graphics/data/interm_iote_4tr_buono.txt};

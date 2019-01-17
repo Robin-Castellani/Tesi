@@ -1,19 +1,19 @@
 \bigskip
-\section{Metodi: ottenere mappe che mostrano il cambiamento}
+\section{Metodi: mappe che mostrano il cambiamento}
 \label{sec:cambiamento}
 A partire dalle mappe di classificazione dell'alveo, si sono ottenute mappe che mostrano come le isole sono, o non sono, cambiate: sono stati osservati infatti fenomeni di erosione, crescita, fusione nella \emph{floodplain} o permanenza (nessun cambiamento).
 \\
 Per ottenere questi dati, ogni mappa è stata confrontata con quella temporalmente precedente.
 \\
-L'analisi si è focalizzata sulle isole, mentre si è esclusa la piana alluvionale.
+L'analisi si è focalizzata sulle isole; si è esclusa la piana alluvionale.
 
 \subsection{Approccio}
 \label{subsec:camb-approccio}
 Alcune mappe hanno una estensione limitata oppure presentano zone con copertura nuvolosa: ciò riduce il numero di confronti possibili per alcuni tratti. 
-Dalle 23 immagini satellitari (si veda la \cref{tab:date-orto-sat}) si sono ottenute in media 20~immagini di confronto per tratto.
+Dalle 25 immagini satellitari (si veda la \cref{tab:date-orto-sat}), si sono ottenute per ogni tratto in media 20~immagini di confronto.
 
 Inoltre, le immagini \AST{} non sono correttamente georeferenziate e non sono perfettamente sovrapponibili; l'entità di questo scostamento è dell'ordine di qualche cella.
-Questo difetto è di grande importanza poiché per poter investigare l'evoluzione temporale delle isole occorre poter osservare nel tempo ogni cella; se questa si sposta da un'immagine alla successiva, il confronto non è più valido.
+Questo difetto è di grande importanza poiché, per poter investigare l'evoluzione temporale delle isole, occorre poter osservare nel tempo ogni cella; se questa si sposta da un'immagine alla successiva, il confronto non è più valido.
 \\
 La soluzione adottata è stata quella di traslare ogni mappa a nord, sud, est o ovest del numero di celle necessario per poterla sovrapporre alla mappa temporalmente precedente.
 L'operazione è stata ripetuta per ogni confronto, per ogni tratto, ed è stata verificata visivamente.
@@ -29,7 +29,7 @@ Nel ricampionamento l'areale delle isole subisce un incremento o una riduzione, 
 \begin{figure}
 	\centering
 	\includegraphics[width=.9\textwidth]{files/ricamp_griglia.jpeg}
-	\caption[celle a risoluzione diversa]{immagine \Pl{} 2015-08-13 a~\SI{0.5}{\m} sullo sfondo, con la griglia a~\SI{15}{\m} in primo piano; si vede come diverse celle più piccole siano contenute in una singola cella maggiore.}
+	\caption[esempio di celle a risoluzione diversa]{immagine \Pl{} 2015-08-13 a~\SI{0.5}{\m} sullo sfondo, con la griglia a~\SI{15}{\m} delle immagini \AST{} in primo piano; si vede come diverse celle più piccole siano contenute in una singola cella maggiore.}
 	\label{fig:ricamp-explanation}
 \end{figure}
 %
@@ -56,7 +56,7 @@ Nei ricampionamenti da \SI{0.5}{\m}, il $50_\mathrm{mo}$ percentile (mediana) è
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{files/ricamp_class_is_fl.jpeg}
-	\caption[confronto originale - ricampionamento]{a sinistra l'immagine \WV{} originale, poco a valle dell'isola di Cornino; a destra la stessa immagine ricampionata a~\SI{10}{\m} distribuendo i valori con la mediana.}
+	\caption[confronto tra una mappa originale e la stessa ricampionata]{a sinistra l'immagine \WV{} originale, poco a valle dell'isola di Cornino; a destra la stessa immagine ricampionata a~\SI{10}{\m} distribuendo i valori con la mediana.}
 	\label{fig:ricampionamento}
 \end{figure} 
 %
@@ -102,7 +102,7 @@ I confronti effettuati hanno la massima risoluzione temporale possibile, cioè p
 		23	&	19	&	2001-06-07/2002-06-12	&	2017-09-13/2018-09-16	\\
 		\bottomrule
 	\end{tabular}
-	\caption[confronti effettuati]{confronti effettuati con le 23 immagini satellitari a disposizione per ottenere dati sul cambiamento delle isole.}
+	\caption[informazioni sui confronti effettuati]{confronti effettuati con le 23 immagini satellitari a disposizione per ottenere dati sul cambiamento delle isole.}
 	\label{tab:confronti}
 \end{table}
 %
@@ -123,7 +123,7 @@ Un esempio di questa classificazione è riportato nella \cref{fig:confr-class-is
 \begin{figure}
 	\centering
 	\includegraphics[width=.8\textwidth]{files/confr_class_is_fl.jpeg}
-	\caption[esempio di mappa di cambiamento]{esempio di mappa di cambiamento ottenuta con il confronto tra le immagini \AST{} 2008-07-05 e 2009-07-08. Si possono osservare tutti i cambiamenti possibili; la prima classe, colorata in azzurro, visualizza l'area dell'intera maschera computazionale, e comprende perciò sia l'alveo che la \emph{floodplain}. Il tratto mostrato è posto qualche \si{\kilo\m} a monte del ponte di Madrisio.}
+	\caption[esempio di mappa di cambiamento]{esempio di mappa di cambiamento ottenuta con il confronto tra le immagini \AST{} 2008-07-05 e 2009-07-08. Si possono osservare tutti i cambiamenti possibili per le isole; la prima classe, colorata in azzurro, visualizza l'area dell'intera maschera computazionale, e comprende perciò sia l'alveo che la \emph{floodplain}. Il tratto mostrato è posto qualche \si{\kilo\m} a monte del ponte di Madrisio.}
 	\label{fig:confr-class-is-fl}
 \end{figure}
 %

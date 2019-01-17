@@ -19,7 +19,7 @@ Si crede che ciò che possa generalmente accadere è che fino ad una certa età,
 
 Le mappe del cambiamento sono state ottenute dalle mappe di classificazione; non essendo le seconde correttamente georeferenziate, neanche le prime lo sono. L'errore residuo nel processo di correzione è di 1~cella.
 
-Infine, per poter confrontare nel corso degli anni ogni cella, le mappe del cambiamento sono state ricampionate alla risoluzione più bassa, corrispondente a celle di~\SI{15}{\m} di lato. Si è proceduto come mostrato nella sottosezione \ref{subsec:camb-approccio} ottenendo sempre valori $RSQR < \SI{1.5}{\percent}$; i confronti a~\SI{10}{\m} sono stati ricampionati a~\SI{15}{\m} applicando il valore del $75_\mathrm{mo}$ percentile (terzo quartile).
+Infine, per poter confrontare nel corso degli anni ogni cella, le mappe del cambiamento sono state ricampionate alla risoluzione più bassa, corrispondente a celle di~\SI{15}{\m} di lato. Si è proceduto come mostrato nella sezione \ref{subsec:camb-approccio}; si sono ottenuti valori $RSQR < \SI{1.5}{\percent}$; i confronti a~\SI{10}{\m} sono stati ricampionati a~\SI{15}{\m} applicando il valore del $75_\mathrm{mo}$ percentile (terzo quartile).
 
 
 \subsection{Obiettivo ed approccio} 
@@ -32,11 +32,10 @@ Per la mappa del cambiamento più vecchia (la prima mappa di confronto in \cref{
 \\
 Per le mappe via via più recenti, l'età nelle celle delle isole che non sono cambiate è pari al periodo di osservazione sommato all'età precedente; per le celle vegetate a partire dall'alveo, l'età è pari al periodo di osservazione con l'aggiunta di \SI{3}{\anni}.
 
-L'approccio che si basa sulla definizione dell'età in base al periodo di osservazione è limitato, in particolare per le mappe più vecchie, poiché non è possibile tener conto della vegetazione che era presente antecedentemente alla prima immagine valida;
+L'approccio di definire l'età in base al periodo di osservazione è limitato, in particolare per le mappe più vecchie, poiché non è possibile tener conto della vegetazione che era presente antecedentemente alla prima immagine valida;
 si ritiene che a partire dalla $4^a$ o $5^a$ mappa di età il metodo inizi ad essere affidabile (generalmente quindi dalla mappa di età del 2007-09-21) poiché da quel momento la vegetazione che non è stata erosa ha abbastanza anni da essere classificata come matura.
 Per gli scopi della ricerca questo approccio risulta essere sufficiente.
 
-\medskip
 Si osservino i grafici in \cref{graph:distrib-rapp-eros-eta}, i quali rappresentano quante isole sono state erose rispetto alle isole presenti in ogni tratto in base all'età delle prime.
 Si vede come le isole con età minore di \SI{5}{\anni} siano spesso erose; si evidenzia anche una dinamicità per le isole con età tra \SIrange[range-phrase={ e }]{5}{8}{\anni}. 
 \\
@@ -51,7 +50,7 @@ Si definiscono quindi le seguenti classi di età:
 \begin{figure}
 	\centering
 	\input{graphics/plots/rapp_eros_eta}
-	\caption[distribuzione del rapporto tra isole erose e la somma delle isole presenti]{distribuzione del rapporto tra le isole erose e la sommatoria di tutte le isole presenti per ogni tratto nei tratti da \numrange[range-phrase={ a }, mode=text]{1}{23} in base all'età; le linee verticali rosse tratteggiate indicano l'età di \SIrange[range-phrase={ e }]{5}{8}{\anni}.}
+	\caption[distribuzione del rapporto tra isole erose e la somma delle isole presenti per ogni età rilevata]{distribuzione del rapporto tra le isole erose e la sommatoria di tutte le isole presenti in base all'età, per ogni tratto nei tratti da \numrange[range-phrase = { a }, mode = text]{1}{23}; le linee verticali rosse tratteggiate indicano l'età di \SIrange[range-phrase = { e }]{5}{8}{\anni}.}
 	\label{graph:distrib-rapp-eros-eta}
 \end{figure}
 
@@ -72,7 +71,7 @@ Da un controllo visuale delle mappe di età, si vede una corrispondenza tra stru
 Il CHM (\emph{Canopy Height Model}) è il modello digitale della copertura arborea; questo mostra, in ogni cella, il valore di quota della vegetazione, misurata rispetto al terreno.
 \\
 È generalmente sensato affermare che piante mature abbiano un'altezza maggiore rispetto a piante giovani.
-Quindi si sono utilizzati i dati di altezza della copertura arborea contenuti nei CHM di agosto~2010 e del~2013-10-22 per verificare che nelle celle della mappa di età della vegetazione, rispettivamente del~2010-09-29 e del~2013-09-05, l'altezza fosse all'incirca proporzionale all'età.
+Quindi, si sono utilizzati i dati di altezza della copertura arborea contenuti nei CHM del~2010-08 e del~2013-10-22 per verificare che nelle celle della mappa di età della vegetazione, rispettivamente del~2010-09-29 e del~2013-09-05, l'altezza fosse all'incirca proporzionale all'età.
 Tra le date di ottenimento dei CHM e delle immagini \AST{} non vi sono stati eventi idrologici rilevanti.
 I CHM sono stati ricampionati a \SI{15}{\m} (larghezza delle celle delle immagini \AST{}) applicando il valore del $75_{\mathrm{mo}}$ percentile, in quanto rappresenta l'altezza delle chiome più elevate ed espanse, le quali dovrebbero definire i valori di età nelle mappe, essendo maggiormente visibili da satellite.
 \\

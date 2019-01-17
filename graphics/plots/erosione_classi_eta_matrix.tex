@@ -86,6 +86,11 @@
 			ylabel = {Vegetazione erosa rapportata alla vegetazione presente},
 			yticklabel style = {
 				rotate = 90,
+				/pgf/number format/.cd,
+				fixed,
+				fixed zerofill,
+				precision = 1,
+				/tikz/.cd,
 			},
 		},
 		colormap/bluered,
