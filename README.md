@@ -1,6 +1,6 @@
 # Tesi
 
-##Dinamiche della vegetazione riparia sul fiume Tagliamento: traiettorie evolutive e relazioni piene - vegetazione
+## Dinamiche della vegetazione riparia sul fiume Tagliamento: traiettorie evolutive e relazioni piene - vegetazione
 
 Questo repository contiene i file necessari alla compilazione con LaTeX della tesi di laurea magistrale in Ingegneria per l'Ambiente e il Territorio di Robin Castellani.
 Questa tesi può essere composta in accordo con gli standard di archiviabilità PDF/A: tabella di colori standard RGB, nessun collegamento ipertestuale a fonti esterne e font, metadati e licenza inclusi nel documento. Il report di [`veraPDF`](verapdf.org), applicativo *opensource* per validare la compatibilità di file `.PDF` con lo standard PDF/A, è presente tra i file del progetto.
